@@ -9,7 +9,8 @@
     "photo": "review-team",
     "art": null,
     "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\n3:30-3:33 | Welcome | SAY THIS\nHi, everyone. I'm Miguel. I'm glad you're here. Whether you've been using AI every day or you're still wondering where it fits, you have a place in this conversation.\n\nToday we're going to work through a scholarship application together. We'll try a few ways AI might help, and we'll practice checking its work. You don't need to be a technology expert. Bring the judgment you already use when you work with applicants.\n\nPRESENTER CUE: Advance to slide 2 for the three takeaways.\n\nVISUAL: AI-generated photograph of fictional people.",
-    "sources": []
+    "sources": [],
+    "links": []
   },
   {
     "title": "Three things to take home",
@@ -37,8 +38,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\n3:30-3:33 | Welcome, continued | SAY THIS\nBy five o'clock, you'll have the beginnings of three things you can take home: a better request to give an AI tool, a plan for where people need to check the work, and a fair way to respond when an applicant uses AI. These are starting points you can adapt with your colleagues.",
-    "sources": []
+    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\n3:30-3:33 | Welcome, continued | SAY THIS\nBy five o'clock, you'll have the beginnings of three things you can take home: a better request to give an AI tool, a plan for where people need to check the work, and a fair way to respond when an applicant uses AI. These are starting points you can adapt with your colleagues.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf\nWorkshop materials: https://mguhlin.github.io/nspa/2026/",
+    "sources": [],
+    "links": [
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Workshop materials",
+        "url": "https://mguhlin.github.io/nspa/2026/",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "People make the decisions",
@@ -66,8 +85,18 @@
     ],
     "photo": "review-team",
     "art": null,
-    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\nFacilitator guide: Welcome and find a starting point\n\n3:33-3:35 | Set the ground rules | SAY THIS\nEverything we use today is made up for this workshop. Please don't paste a real application into a tool while we're here. You can do every activity on paper if you prefer.\n\nAn AI tool might help us organize information or draft a summary. People still need to check the facts, apply the program's rules, and make the decision. If something looks wrong, we can pause. Speed isn't much help if we have to untangle a bad decision later.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
-    "sources": []
+    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\nFacilitator guide: Welcome and find a starting point\n\n3:33-3:35 | Set the ground rules | SAY THIS\nEverything we use today is made up for this workshop. Please don't paste a real application into a tool while we're here. You can do every activity on paper if you prefer.\n\nAn AI tool might help us organize information or draft a summary. People still need to check the facts, apply the program's rules, and make the decision. If something looks wrong, we can pause. Speed isn't much help if we have to untangle a bad decision later.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nFictional application packet: https://mguhlin.github.io/nspa/2026/practice.html#packet",
+    "sources": [],
+    "links": [
+      {
+        "label": "Fictional application packet",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#packet",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Where are you today?",
@@ -95,8 +124,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\nFacilitator guide: Welcome and find a starting point\n\n3:35-3:38 | Choose a starting point | PRESENTER CUE\nShow slide 4. Open the capacity matrix from the workshop hub. Give people one minute to read, one minute to choose, and one minute to talk with a neighbor.\n\nInvite a personal starting point | SAY THIS\nOpen the capacity matrix, or use the printed copy. Pick one row that matters to your work. Read a statement and mark 'Ready to learn,' 'In progress,' or 'Ready to go.' Use Notes for a question or something you want to try.\n\nThis isn't a test, and nobody needs a perfect row of answers. Tell a neighbor one thing you'd like to feel more comfortable doing by the end of today.\n\nTransition | SAY THIS\nKeep that goal in mind. Let's begin with the request we give the AI tool.",
-    "sources": []
+    "notes": "3:30-3:38 PM | Slides 1-4 | 8 minutes\nFacilitator guide: Welcome and find a starting point\n\n3:35-3:38 | Choose a starting point | PRESENTER CUE\nShow slide 4. Open the capacity matrix from the workshop hub. Give people one minute to read, one minute to choose, and one minute to talk with a neighbor.\n\nInvite a personal starting point | SAY THIS\nOpen the capacity matrix, or use the printed copy. Pick one row that matters to your work. Read a statement and mark 'Ready to learn,' 'In progress,' or 'Ready to go.' Use Notes for a question or something you want to try.\n\nThis isn't a test, and nobody needs a perfect row of answers. Tell a neighbor one thing you'd like to feel more comfortable doing by the end of today.\n\nTransition | SAY THIS\nKeep that goal in mind. Let's begin with the request we give the AI tool.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nCapacity checklist: https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+    "sources": [],
+    "links": [
+      {
+        "label": "Capacity checklist",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Give the AI a clear job",
@@ -134,8 +173,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\n3:38-3:43 | Explain and compare | SAY THIS\nA prompt is simply the request you give an AI tool. Think about asking a new colleague for help. 'Find our best applicants' leaves a lot for that person to guess. What does best mean? Which rules should they use? What should they do when something is missing?\n\nWe can be much clearer: 'Look through this application. List the required items. Show me where each item appears. If you can't find something, mark it missing and suggest a question for a person to follow up on.'\n\nThat request gives the tool a job we can check. We tell it what to do, which rules to use, what information it may use, what it must not decide, and how to show the answer. It can still make mistakes. A clearer request makes those mistakes easier to find.\n\nPRESENTER CUE: Advance to slide 6 when comparing \u201cFind our best applicants\u201d with the clearer request.",
-    "sources": []
+    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\n3:38-3:43 | Explain and compare | SAY THIS\nA prompt is simply the request you give an AI tool. Think about asking a new colleague for help. 'Find our best applicants' leaves a lot for that person to guess. What does best mean? Which rules should they use? What should they do when something is missing?\n\nWe can be much clearer: 'Look through this application. List the required items. Show me where each item appears. If you can't find something, mark it missing and suggest a question for a person to follow up on.'\n\nThat request gives the tool a job we can check. We tell it what to do, which rules to use, what information it may use, what it must not decide, and how to show the answer. It can still make mistakes. A clearer request makes those mistakes easier to find.\n\nPRESENTER CUE: Advance to slide 6 when comparing \u201cFind our best applicants\u201d with the clearer request.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPrompt practice lab: https://mguhlin.github.io/nspa/2026/practice.html#prompt",
+    "sources": [],
+    "links": [
+      {
+        "label": "Prompt practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#prompt",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Remove the guesswork",
@@ -158,8 +207,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\nUse the two examples | PRESENTER CUE\nShow slides 5 and 6. Read the vague request, then the more specific request. Ask for one quick observation before moving to slide 7.",
-    "sources": []
+    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\nUse the two examples | PRESENTER CUE\nShow slides 5 and 6. Read the vague request, then the more specific request. Ask for one quick observation before moving to slide 7.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPrompt practice lab: https://mguhlin.github.io/nspa/2026/practice.html#prompt",
+    "sources": [],
+    "links": [
+      {
+        "label": "Prompt practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#prompt",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Activity: improve your request",
@@ -187,8 +246,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\n3:43-3:48 | Pair activity | SAY THIS\nFind a partner. For the first two minutes, choose one small job you might ask AI to help with. You could check whether an application includes the required documents or draft a follow-up question.\n\nFor the next two minutes, write your request. Say what information it may use, ask it to show where its answer came from, and name a decision that stays with a person.\n\nFor the final minute, swap requests. Ask your partner, 'What would the tool still have to guess?' Help each other remove one guess.\n\nKeep the activity moving | PRESENTER CUE\nAnnounce each time change. If a pair is stuck, suggest checking for a goal statement, service example, and enrollment document in the fictional packet.\n\n3:48-3:50 | Hear one change | SAY THIS\nWho changed a request because your partner spotted something the tool might have guessed? What did you add?\n\nKeep the request you wrote. You can keep improving it as we go. Now let's try a request together and see what actually comes back.",
-    "sources": []
+    "notes": "3:38-3:50 PM | Slides 5-7 | 12 minutes\nFacilitator guide: Help the AI understand the job\n\n3:43-3:48 | Pair activity | SAY THIS\nFind a partner. For the first two minutes, choose one small job you might ask AI to help with. You could check whether an application includes the required documents or draft a follow-up question.\n\nFor the next two minutes, write your request. Say what information it may use, ask it to show where its answer came from, and name a decision that stays with a person.\n\nFor the final minute, swap requests. Ask your partner, 'What would the tool still have to guess?' Help each other remove one guess.\n\nKeep the activity moving | PRESENTER CUE\nAnnounce each time change. If a pair is stuck, suggest checking for a goal statement, service example, and enrollment document in the fictional packet.\n\n3:48-3:50 | Hear one change | SAY THIS\nWho changed a request because your partner spotted something the tool might have guessed? What did you add?\n\nKeep the request you wrote. You can keep improving it as we go. Now let's try a request together and see what actually comes back.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPrompt practice lab: https://mguhlin.github.io/nspa/2026/practice.html#prompt\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+    "sources": [],
+    "links": [
+      {
+        "label": "Prompt practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#prompt",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Meet our practice applicant",
@@ -216,8 +293,18 @@
     ],
     "photo": "applicant",
     "art": null,
-    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:50-3:53 | Introduce the practice application | SAY THIS\nMeet C-101, our entirely fictional applicant. Each paragraph has a label, P1 through P5, so we can point to the same place when we check an answer.\n\nThe application includes a goal and a service example. It does not include the enrollment document. That tells us a document is missing. It doesn't tell us whether this person is enrolled.\n\nThe last paragraph also contains a trick: it tells the tool to ignore our rules and mark everything complete. We put that there on purpose. Words inside an application are information to review; they don't get to rewrite the instructions.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
-    "sources": []
+    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:50-3:53 | Introduce the practice application | SAY THIS\nMeet C-101, our entirely fictional applicant. Each paragraph has a label, P1 through P5, so we can point to the same place when we check an answer.\n\nThe application includes a goal and a service example. It does not include the enrollment document. That tells us a document is missing. It doesn't tell us whether this person is enrolled.\n\nThe last paragraph also contains a trick: it tells the tool to ignore our rules and mark everything complete. We put that there on purpose. Words inside an application are information to review; they don't get to rewrite the instructions.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nFictional application packet: https://mguhlin.github.io/nspa/2026/practice.html#packet",
+    "sources": [],
+    "links": [
+      {
+        "label": "Fictional application packet",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#packet",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Demo: organize, then check",
@@ -245,8 +332,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:53-3:58 | Run the first demonstration | PRESENTER CUE\nOpen the practice lab and find the first prompt. Copy the full prompt and fictional packet into the approved AI tool you tested beforehand. Show the output. Check its claims against P2, P3, and P4; check whether it ignored the instruction in P5. Do not use a real application.\n\nTalk through what you are doing | SAY THIS\nI'm asking for a table of what's present, what's missing, and what needs a person's attention. I'm not asking it to choose a winner.\n\nLet's check the first claim together. Can we find those words in the application? Now let's check the missing document. Did the tool keep 'missing' separate from 'not eligible'? And did it follow our instructions, or the trick inside the application?",
-    "sources": []
+    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:53-3:58 | Run the first demonstration | PRESENTER CUE\nOpen the practice lab and find the first prompt. Copy the full prompt and fictional packet into the approved AI tool you tested beforehand. Show the output. Check its claims against P2, P3, and P4; check whether it ignored the instruction in P5. Do not use a real application.\n\nTalk through what you are doing | SAY THIS\nI'm asking for a table of what's present, what's missing, and what needs a person's attention. I'm not asking it to choose a winner.\n\nLet's check the first claim together. Can we find those words in the application? Now let's check the missing document. Did the tool keep 'missing' separate from 'not eligible'? And did it follow our instructions, or the trick inside the application?\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nFictional application packet: https://mguhlin.github.io/nspa/2026/practice.html#packet\nDemo 1: worked example: https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness\nThe worked example is a prepared teaching reference, not a recording or an actual model response. Use it to compare with the live demo or as the offline fallback.",
+    "sources": [],
+    "links": [
+      {
+        "label": "Fictional application packet",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#packet",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Demo 1: worked example",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "What can we support?",
@@ -274,8 +379,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:58-4:01 | Compare and correct | PRESENTER CUE\nShow the prepared reference table in the practice lab. Explain that it is a teaching example you prepared, not a saved AI response. Compare one row and visibly correct any error in the live output.\n\nIf the tool fails | SAY THIS\nThe tool isn't cooperating right now, so we'll use a table prepared for this activity. This isn't a live AI answer. We can still practice the most useful part: checking every claim against the application.",
-    "sources": []
+    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n3:58-4:01 | Compare and correct | PRESENTER CUE\nShow the prepared reference table in the practice lab. Explain that it is a teaching example you prepared, not a saved AI response. Compare one row and visibly correct any error in the live output.\n\nIf the tool fails | SAY THIS\nThe tool isn't cooperating right now, so we'll use a table prepared for this activity. This isn't a live AI answer. We can still practice the most useful part: checking every claim against the application.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nDemo 1: worked example: https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness\nThe worked example is a prepared teaching reference, not a recording or an actual model response. Use it to compare with the live demo or as the offline fallback.",
+    "sources": [],
+    "links": [
+      {
+        "label": "Demo 1: worked example",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Activity: check one row",
@@ -303,8 +418,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n4:01-4:05 | Partner check and transition | SAY THIS\nWith your partner, choose one row. Find the paragraph that supports it. Look for anything added, left out, or misunderstood. Write one correction or one follow-up question.\n\nWhat did you find? Would a busy reviewer have noticed it?\n\nWe have checked whether information is there. Next we'll look at how people use the same scoring guide to judge that information.",
-    "sources": []
+    "notes": "3:50-4:05 PM | Slides 8-11 | 15 minutes\nFacilitator guide: Try the tool, then check its work\n\n4:01-4:05 | Partner check and transition | SAY THIS\nWith your partner, choose one row. Find the paragraph that supports it. Look for anything added, left out, or misunderstood. Write one correction or one follow-up question.\n\nWhat did you find? Would a busy reviewer have noticed it?\n\nWe have checked whether information is there. Next we'll look at how people use the same scoring guide to judge that information.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nFictional application packet: https://mguhlin.github.io/nspa/2026/practice.html#packet\nDemo 1: worked example: https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness\nThe worked example is a prepared teaching reference, not a recording or an actual model response. Use it to compare with the live demo or as the offline fallback.",
+    "sources": [],
+    "links": [
+      {
+        "label": "Fictional application packet",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#packet",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Demo 1: worked example",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#demo-completeness",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Use the same scoring guide",
@@ -332,8 +465,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:05-4:09 | Explain the scoring guide | SAY THIS\nA rubric is a scoring guide. Ours describes what a zero, one, or two looks like for three things: a clear goal, a contribution, and a lesson or change connected to an experience.\n\nFor example, a two for goal clarity means the application states a goal and a concrete next step. We're looking for those details. We're not scoring how fancy the writing sounds.\n\nIf the information we need is missing or contradicts itself, we'll write 'not enough information' and follow up. That's different from reading an answer and deciding it doesn't meet a particular description in the guide.\n\nBefore we ask AI for a rating, let's see how we read the application ourselves. Seeing its answer first can make it harder to form our own view.",
-    "sources": []
+    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:05-4:09 | Explain the scoring guide | SAY THIS\nA rubric is a scoring guide. Ours describes what a zero, one, or two looks like for three things: a clear goal, a contribution, and a lesson or change connected to an experience.\n\nFor example, a two for goal clarity means the application states a goal and a concrete next step. We're looking for those details. We're not scoring how fancy the writing sounds.\n\nIf the information we need is missing or contradicts itself, we'll write 'not enough information' and follow up. That's different from reading an answer and deciding it doesn't meet a particular description in the guide.\n\nBefore we ask AI for a rating, let's see how we read the application ourselves. Seeing its answer first can make it harder to form our own view.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nScoring practice lab: https://mguhlin.github.io/nspa/2026/practice.html#rubric",
+    "sources": [],
+    "links": [
+      {
+        "label": "Scoring practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#rubric",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Compare your reasons first",
@@ -361,8 +504,26 @@
     ],
     "photo": "pair-review",
     "art": null,
-    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:09-4:15 | Three rounds, two minutes each | SAY THIS\nTake two minutes on your own. Read the fictional application and give each of the three areas a rating. Write down the paragraph and detail that led you there.\n\nNow take two minutes with a partner. Compare your reasons. If you disagree, ask, 'Did we notice different information, or did we read the scoring guide differently?'\n\nFor the last two minutes, choose one description that could be clearer. How would you rewrite it so the next reviewer knows what to look for?\n\nListen for useful disagreement | PRESENTER CUE\nGoal clarity and contribution each support a 2. The service example describes changing a queue; reviewers may disagree about whether that fully shows reflection. Use that disagreement to clarify the scoring guide. Do not total scores or rank the applicant.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
-    "sources": []
+    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:09-4:15 | Three rounds, two minutes each | SAY THIS\nTake two minutes on your own. Read the fictional application and give each of the three areas a rating. Write down the paragraph and detail that led you there.\n\nNow take two minutes with a partner. Compare your reasons. If you disagree, ask, 'Did we notice different information, or did we read the scoring guide differently?'\n\nFor the last two minutes, choose one description that could be clearer. How would you rewrite it so the next reviewer knows what to look for?\n\nListen for useful disagreement | PRESENTER CUE\nGoal clarity and contribution each support a 2. The service example describes changing a queue; reviewers may disagree about whether that fully shows reflection. Use that disagreement to clarify the scoring guide. Do not total scores or rank the applicant.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nScoring practice lab: https://mguhlin.github.io/nspa/2026/practice.html#rubric\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+    "sources": [],
+    "links": [
+      {
+        "label": "Scoring practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#rubric",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Demo: compare the AI draft",
@@ -390,8 +551,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:15-4:20 | Run and discuss the second demonstration | PRESENTER CUE\nCopy the rubric prompt, the full scoring guide, and the fictional packet from the practice lab into the approved tool. Show the AI draft only after people have written their own ratings. If the tool is unavailable, use the calibration discussion reference and identify it as a prepared teaching example.\n\nCompare aloud and transition | SAY THIS\nHere's the tool's draft. Where does it agree with you? Where doesn't it? Let's look at the paragraph and the scoring description before deciding which rating makes sense.\n\nYou can accept the suggestion, change it, or reject it. Write down why. The tool's answer is another answer to examine.\n\nNow let's talk about what needs to be in place before any real application goes into a tool.",
-    "sources": []
+    "notes": "4:05-4:20 PM | Slides 12-14 | 15 minutes\nFacilitator guide: Get people on the same page first\n\n4:15-4:20 | Run and discuss the second demonstration | PRESENTER CUE\nCopy the rubric prompt, the full scoring guide, and the fictional packet from the practice lab into the approved tool. Show the AI draft only after people have written their own ratings. If the tool is unavailable, use the calibration discussion reference and identify it as a prepared teaching example.\n\nCompare aloud and transition | SAY THIS\nHere's the tool's draft. Where does it agree with you? Where doesn't it? Let's look at the paragraph and the scoring description before deciding which rating makes sense.\n\nYou can accept the suggestion, change it, or reject it. Write down why. The tool's answer is another answer to examine.\n\nNow let's talk about what needs to be in place before any real application goes into a tool.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nScoring practice lab: https://mguhlin.github.io/nspa/2026/practice.html#rubric\nDemo 2: worked example: https://mguhlin.github.io/nspa/2026/practice.html#demo-scoring\nThe worked example is a prepared teaching reference, not a recording or an actual model response. Use it to compare with the live demo or as the offline fallback.",
+    "sources": [],
+    "links": [
+      {
+        "label": "Scoring practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#rubric",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Demo 2: worked example",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#demo-scoring",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Before using real information",
@@ -419,9 +598,19 @@
     ],
     "photo": "privacy-team",
     "art": null,
-    "notes": "4:20-4:30 PM | Slides 15-16 | 10 minutes\nFacilitator guide: Protect the information and name the people\n\n4:20-4:24 | Explain the checks | SAY THIS\nSo far, we've used made-up information. Working with real applications brings a different responsibility. People have trusted us with details about their lives.\n\nBefore using a tool, we need to know whether our organization has approved it for that information. Who can see what we enter? How long is it kept? Can it be deleted? What happens if something goes wrong? Removing a name may not be enough if the rest of the story still identifies the person.\n\nYou don't have to answer every technology question yourself. You do need to know who can help you answer it. Until the people responsible for privacy and the service have approved the use, keep practicing with made-up examples.\n\nWe also need to name who checks the output and who owns the final decision. 'Someone will check it' is easy to say and easy to miss.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
+    "notes": "4:20-4:30 PM | Slides 15-16 | 10 minutes\nFacilitator guide: Protect the information and name the people\n\n4:20-4:24 | Explain the checks | SAY THIS\nSo far, we've used made-up information. Working with real applications brings a different responsibility. People have trusted us with details about their lives.\n\nBefore using a tool, we need to know whether our organization has approved it for that information. Who can see what we enter? How long is it kept? Can it be deleted? What happens if something goes wrong? Removing a name may not be enough if the rest of the story still identifies the person.\n\nYou don't have to answer every technology question yourself. You do need to know who can help you answer it. Until the people responsible for privacy and the service have approved the use, keep practicing with made-up examples.\n\nWe also need to name who checks the output and who owns the final decision. 'Someone will check it' is easy to say and easy to miss.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nWorkflow reference (PDF): https://mguhlin.github.io/nspa/2026/handouts/protected-workflow.pdf",
     "sources": [
       0
+    ],
+    "links": [
+      {
+        "label": "Workflow reference (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/protected-workflow.pdf",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
     ]
   },
   {
@@ -450,9 +639,27 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:20-4:30 PM | Slides 15-16 | 10 minutes\nFacilitator guide: Protect the information and name the people\n\n4:24-4:30 | Map one job together | PRESENTER CUE\nShow slide 16. Use workbook page 5. Allow two minutes for the before/during/after checks, two for naming people, and two for a pause rule and brief sharing.\n\nGive the activity directions | SAY THIS\nGo back to the job you chose earlier. With your partner, write down three places where a person needs to check something.\n\nBefore the tool: who approves the information and the task? Before anyone relies on the answer: who compares it with the application? Before a decision: who makes the call and handles a question or correction?\n\nName a person or role at each point. Then finish this sentence: 'We will stop and check if ...' You might say, 'If the tool invents a quote,' or 'If we aren't sure we have permission to use the information.'\n\nAsk and transition | SAY THIS\nWho will share one reason you would pause the work? Who would help you decide what happens next?\n\nKeep that plan. We've been looking at our own use of AI. Now let's turn to a question many of us are hearing: what should we do when applicants use it?",
+    "notes": "4:20-4:30 PM | Slides 15-16 | 10 minutes\nFacilitator guide: Protect the information and name the people\n\n4:24-4:30 | Map one job together | PRESENTER CUE\nShow slide 16. Use workbook page 5. Allow two minutes for the before/during/after checks, two for naming people, and two for a pause rule and brief sharing.\n\nGive the activity directions | SAY THIS\nGo back to the job you chose earlier. With your partner, write down three places where a person needs to check something.\n\nBefore the tool: who approves the information and the task? Before anyone relies on the answer: who compares it with the application? Before a decision: who makes the call and handles a question or correction?\n\nName a person or role at each point. Then finish this sentence: 'We will stop and check if ...' You might say, 'If the tool invents a quote,' or 'If we aren't sure we have permission to use the information.'\n\nAsk and transition | SAY THIS\nWho will share one reason you would pause the work? Who would help you decide what happens next?\n\nKeep that plan. We've been looking at our own use of AI. Now let's turn to a question many of us are hearing: what should we do when applicants use it?\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nWorkflow reference (PDF): https://mguhlin.github.io/nspa/2026/handouts/protected-workflow.pdf\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
     "sources": [
       0
+    ],
+    "links": [
+      {
+        "label": "Workflow reference (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/protected-workflow.pdf",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
     ]
   },
   {
@@ -481,11 +688,29 @@
     ],
     "photo": "fair-conversation",
     "art": null,
-    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:30-4:33 | Explain a detector flag | SAY THIS\nSuppose a tool flags an essay as AI-written. It's understandable to want a clear answer. But a flag isn't proof that someone broke a rule. These tools can flag writing a person wrote, and they can miss writing produced by AI. Results also depend on the tool, language, and kind of writing.\n\nFirst ask, 'What did our published rules allow, and what specific concern do we have?' A score by itself doesn't answer those questions. Don't use it alone to deny an award or decide that someone was dishonest.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
+    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:30-4:33 | Explain a detector flag | SAY THIS\nSuppose a tool flags an essay as AI-written. It's understandable to want a clear answer. But a flag isn't proof that someone broke a rule. These tools can flag writing a person wrote, and they can miss writing produced by AI. Results also depend on the tool, language, and kind of writing.\n\nFirst ask, 'What did our published rules allow, and what specific concern do we have?' A score by itself doesn't answer those questions. Don't use it alone to deny an award or decide that someone was dishonest.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nFair response reference (PDF): https://mguhlin.github.io/nspa/2026/handouts/fair-ai-policy.pdf\nSources & context: https://mguhlin.github.io/nspa/2026/#sources",
     "sources": [
       1,
       2,
       3
+    ],
+    "links": [
+      {
+        "label": "Fair response reference (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/fair-ai-policy.pdf",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Sources & context",
+        "url": "https://mguhlin.github.io/nspa/2026/#sources",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
     ]
   },
   {
@@ -514,8 +739,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:33-4:36 | Walk through the numbers | SAY THIS\nHere's a made-up example, not a measured error rate for a particular tool. Imagine a thousand essays, all written by people. If a detector wrongly flags one percent, that's ten people whose writing gets flagged even though they wrote it themselves.\n\nThat one percent does not tell us the chance that a particular flagged applicant used AI. The point is that even a small error rate can affect real people. We need a fair way to ask questions and correct mistakes.",
-    "sources": []
+    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:33-4:36 | Walk through the numbers | SAY THIS\nHere's a made-up example, not a measured error rate for a particular tool. Imagine a thousand essays, all written by people. If a detector wrongly flags one percent, that's ten people whose writing gets flagged even though they wrote it themselves.\n\nThat one percent does not tell us the chance that a particular flagged applicant used AI. The point is that even a small error rate can affect real people. We need a fair way to ask questions and correct mistakes.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nSources & context: https://mguhlin.github.io/nspa/2026/#sources",
+    "sources": [],
+    "links": [
+      {
+        "label": "Sources & context",
+        "url": "https://mguhlin.github.io/nspa/2026/#sources",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Make the rules clear before people apply",
@@ -543,8 +778,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:36-4:39 | Make the rules clear | SAY THIS\nApplicants shouldn't have to guess what we mean by 'AI use.' Are spelling help, translation, or brainstorming allowed? What about generating whole paragraphs? When do we ask for a short explanation of the help someone used?\n\nThe policy starter gives you language to discuss with your team. It isn't an official NSPA policy. Decide what fits your program, explain it with examples, and publish it before people apply. Include a way for applicants to explain their work and ask for another person to review a concern.",
-    "sources": []
+    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:36-4:39 | Make the rules clear | SAY THIS\nApplicants shouldn't have to guess what we mean by 'AI use.' Are spelling help, translation, or brainstorming allowed? What about generating whole paragraphs? When do we ask for a short explanation of the help someone used?\n\nThe policy starter gives you language to discuss with your team. It isn't an official NSPA policy. Decide what fits your program, explain it with examples, and publish it before people apply. Include a way for applicants to explain their work and ask for another person to review a concern.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPolicy practice lab: https://mguhlin.github.io/nspa/2026/practice.html#policy\nFair response reference (PDF): https://mguhlin.github.io/nspa/2026/handouts/fair-ai-policy.pdf",
+    "sources": [],
+    "links": [
+      {
+        "label": "Policy practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#policy",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Fair response reference (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/fair-ai-policy.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Activity: ask without assuming",
@@ -572,9 +825,27 @@
     ],
     "photo": "fair-conversation",
     "art": null,
-    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:39-4:45 | Work through a concern | PRESENTER CUE\nUse workbook page 4. Give pairs two minutes to discuss the published rule, two to draft a message, and two to share a response and name who reviews it.\n\nGive the scenario and a sample opening | SAY THIS\nAn essay is flagged. The applicant says they used translation help. Start with the rule applicants were given. What does it actually say? What else would you need to know?\n\nDraft a message that asks a question without assuming wrongdoing. You might begin: 'Thank you for explaining that you used translation help. We'd like to understand what help you used and how it fits the guidance we shared. You can explain in writing, or we can arrange another accessible way to talk.'\n\nWho should review that explanation? How can the applicant ask for another look? Keep your draft. Next, we'll choose one change you can take back to your own work.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
+    "notes": "4:30-4:45 PM | Slides 17-20 | 15 minutes\nFacilitator guide: Respond fairly when applicants use AI\n\n4:39-4:45 | Work through a concern | PRESENTER CUE\nUse workbook page 4. Give pairs two minutes to discuss the published rule, two to draft a message, and two to share a response and name who reviews it.\n\nGive the scenario and a sample opening | SAY THIS\nAn essay is flagged. The applicant says they used translation help. Start with the rule applicants were given. What does it actually say? What else would you need to know?\n\nDraft a message that asks a question without assuming wrongdoing. You might begin: 'Thank you for explaining that you used translation help. We'd like to understand what help you used and how it fits the guidance we shared. You can explain in writing, or we can arrange another accessible way to talk.'\n\nWho should review that explanation? How can the applicant ask for another look? Keep your draft. Next, we'll choose one change you can take back to your own work.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nPolicy practice lab: https://mguhlin.github.io/nspa/2026/practice.html#policy\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
     "sources": [
       1
+    ],
+    "links": [
+      {
+        "label": "Policy practice lab",
+        "url": "https://mguhlin.github.io/nspa/2026/practice.html#policy",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
     ]
   },
   {
@@ -603,8 +874,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:45-4:48 | Return to the matrix | SAY THIS\nLet's return to the capacity matrix. You don't need to move up in every row today. Choose the row that would make the biggest difference to the work you actually do.\n\nRead the statements again. Which feel ready to go? Which are still in progress? Pick one you'd like to work on next.\n\nThe resource links beside each section are there to help. For example, if you want to write a clearer prompt, follow the prompt practice link. If you're working on applicant rules, start with the policy activity and fair-response reference.",
-    "sources": []
+    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:45-4:48 | Return to the matrix | SAY THIS\nLet's return to the capacity matrix. You don't need to move up in every row today. Choose the row that would make the biggest difference to the work you actually do.\n\nRead the statements again. Which feel ready to go? Which are still in progress? Pick one you'd like to work on next.\n\nThe resource links beside each section are there to help. For example, if you want to write a clearer prompt, follow the prompt practice link. If you're working on applicant rules, start with the policy activity and fair-response reference.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nCapacity checklist: https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+    "sources": [],
+    "links": [
+      {
+        "label": "Capacity checklist",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Activity: mark, choose, and plan",
@@ -632,8 +913,26 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:48-4:53 | Make a small plan | PRESENTER CUE\nKeep the matrix on screen. Let people work quietly for two minutes, compare plans with a neighbor for two minutes, and revise for one minute. Paper participants can use the matrix and workbook page 5.\n\nGive the directions | SAY THIS\nChoose one statement and mark where you are today. Then write one small action you could take in the next month. Make it specific enough that you would know whether you did it.\n\nFor example: 'I'll try our completeness-check request on three made-up applications. I'll record anything it gets wrong and ask a colleague to check my corrections.'\n\nWhat would you keep to show your progress? Who needs to be involved? Pick a date and write down what would make you pause the work. Then tell your neighbor your plan. Ask them, 'Is this small enough to try, and clear enough to check?'",
-    "sources": []
+    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:48-4:53 | Make a small plan | PRESENTER CUE\nKeep the matrix on screen. Let people work quietly for two minutes, compare plans with a neighbor for two minutes, and revise for one minute. Paper participants can use the matrix and workbook page 5.\n\nGive the directions | SAY THIS\nChoose one statement and mark where you are today. Then write one small action you could take in the next month. Make it specific enough that you would know whether you did it.\n\nFor example: 'I'll try our completeness-check request on three made-up applications. I'll record anything it gets wrong and ask a colleague to check my corrections.'\n\nWhat would you keep to show your progress? Who needs to be involved? Pick a date and write down what would make you pause the work. Then tell your neighbor your plan. Ask them, 'Is this small enough to try, and clear enough to check?'\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nCapacity checklist: https://mguhlin.github.io/nspa/2026/capacity-matrix.html\nMy action plan: https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title",
+    "sources": [],
+    "links": [
+      {
+        "label": "Capacity checklist",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "My action plan",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Try one small change this month",
@@ -661,8 +960,18 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:53-4:55 | Save the plan and transition | SAY THIS\nYou can start with made-up examples and learn a great deal before using real information. A useful first month might simply show you which parts of the job need a clearer instruction or a better check.\n\nIf you're using the website, choose 'Export my plan' to keep a text copy, or print your plan. Your answers stay in this browser unless you export them; they aren't sent to me. Clear them if you're using a shared device.\n\nLet's finish by choosing what you most want to remember.",
-    "sources": []
+    "notes": "4:45-4:55 PM | Slides 21-23 | 10 minutes\nFacilitator guide: Choose one next step you can use\n\n4:53-4:55 | Save the plan and transition | SAY THIS\nYou can start with made-up examples and learn a great deal before using real information. A useful first month might simply show you which parts of the job need a clearer instruction or a better check.\n\nIf you're using the website, choose 'Export my plan' to keep a text copy, or print your plan. Your answers stay in this browser unless you export them; they aren't sent to me. Clear them if you're using a shared device.\n\nLet's finish by choosing what you most want to remember.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nMy action plan: https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title",
+    "sources": [],
+    "links": [
+      {
+        "label": "My action plan",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "What will you take back?",
@@ -690,8 +999,26 @@
     ],
     "photo": "pair-review",
     "art": null,
-    "notes": "4:55-5:00 PM | Slides 24-25 | 5 minutes\nFacilitator guide: Close with something people can take home\n\n4:55-4:58 | Write and share | SAY THIS\nBefore we wrap up, write three short notes. One change you'll make to an AI request. One check you'll put in place before trusting an answer. And one thing applicants should know about your program's AI rules.\n\nYou don't need a polished plan. Choose something you can explain to a colleague when you get back. Take a minute to write, then share one of your notes with a neighbor.\n\nKeep the closing on time | PRESENTER CUE\nGive one minute to write and one to share. Use the third minute for one volunteer response and your acknowledgment. Avoid beginning a new whole-room discussion.\n\nAcknowledge a response | SAY THIS\nThank you. You've named something specific you can try and a way to check whether it helps. That's a useful place to begin.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
-    "sources": []
+    "notes": "4:55-5:00 PM | Slides 24-25 | 5 minutes\nFacilitator guide: Close with something people can take home\n\n4:55-4:58 | Write and share | SAY THIS\nBefore we wrap up, write three short notes. One change you'll make to an AI request. One check you'll put in place before trusting an answer. And one thing applicants should know about your program's AI rules.\n\nYou don't need a polished plan. Choose something you can explain to a colleague when you get back. Take a minute to write, then share one of your notes with a neighbor.\n\nKeep the closing on time | PRESENTER CUE\nGive one minute to write and one to share. Use the third minute for one volunteer response and your acknowledgment. Avoid beginning a new whole-room discussion.\n\nAcknowledge a response | SAY THIS\nThank you. You've named something specific you can try and a way to check whether it helps. That's a useful place to begin.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nMy action plan: https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title\nPractice workbook (PDF): https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+    "sources": [],
+    "links": [
+      {
+        "label": "My action plan",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html#plan-title",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Practice workbook (PDF)",
+        "url": "https://mguhlin.github.io/nspa/2026/handouts/participant-workbook.pdf",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Keep the materials close",
@@ -714,8 +1041,26 @@
     ],
     "photo": "review-team",
     "art": null,
-    "notes": "4:55-5:00 PM | Slides 24-25 | 5 minutes\nFacilitator guide: Close with something people can take home\n\n4:58-5:00 | Questions and materials | SAY THIS\nWhat question would help you take that next step? We have time for one or two.\n\nAll the materials are at mguhlin.github.io/nspa/2026. You'll find the slides, practice application, workbook, quick references, and capacity matrix there. Keep your notes and adapt the examples with the people who do this work alongside you.\n\nThank you for spending this afternoon with me. I hope you leave with a little more confidence about where AI can help, what you need to check, and which decisions belong with people.\n\nIf a question needs more time or local advice | SAY THIS\nThat's a useful question, and I don't want to guess at the answer for your program. Let's name what we'd need to know and who in your organization could help decide.\n\nIf you are running behind | PRESENTER CUE\nShorten volunteer reporting and extra examples first. Keep the independent scoring activity and fair-response discussion. At 4:55, move to the three closing notes. Point people to the hub for anything not discussed. Slide 26 holds source references; it is available for questions rather than part of the timed presentation.\n\nWhat participants keep | PRESENTER CUE\nTheir revised prompt, corrections, scoring notes, workflow checks, policy draft, and next-step plan. Do not ask people to submit applicant information or their private browser exports.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.",
-    "sources": []
+    "notes": "4:55-5:00 PM | Slides 24-25 | 5 minutes\nFacilitator guide: Close with something people can take home\n\n4:58-5:00 | Questions and materials | SAY THIS\nWhat question would help you take that next step? We have time for one or two.\n\nAll the materials are at mguhlin.github.io/nspa/2026. You'll find the slides, practice application, workbook, quick references, and capacity matrix there. Keep your notes and adapt the examples with the people who do this work alongside you.\n\nThank you for spending this afternoon with me. I hope you leave with a little more confidence about where AI can help, what you need to check, and which decisions belong with people.\n\nIf a question needs more time or local advice | SAY THIS\nThat's a useful question, and I don't want to guess at the answer for your program. Let's name what we'd need to know and who in your organization could help decide.\n\nIf you are running behind | PRESENTER CUE\nShorten volunteer reporting and extra examples first. Keep the independent scoring activity and fair-response discussion. At 4:55, move to the three closing notes. Point people to the hub for anything not discussed. Slide 26 holds source references; it is available for questions rather than part of the timed presentation.\n\nWhat participants keep | PRESENTER CUE\nTheir revised prompt, corrections, scoring notes, workflow checks, policy draft, and next-step plan. Do not ask people to submit applicant information or their private browser exports.\n\nVISUAL: AI-generated photograph of fictional people, not a real applicant or conference attendee.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nWorkshop materials: https://mguhlin.github.io/nspa/2026/\nCapacity checklist: https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+    "sources": [],
+    "links": [
+      {
+        "label": "Workshop materials",
+        "url": "https://mguhlin.github.io/nspa/2026/",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      },
+      {
+        "label": "Capacity checklist",
+        "url": "https://mguhlin.github.io/nspa/2026/capacity-matrix.html",
+        "left": 542,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
+    ]
   },
   {
     "title": "Sources and scope",
@@ -743,12 +1088,22 @@
     ],
     "photo": null,
     "art": null,
-    "notes": "APPENDIX - outside the 90-minute sequence.\nThese sources support the workshop guidance. The application, scoring guide, checklist, and policy starter are teaching examples, not validated selection instruments or official NSPA policy. The detector studies do not establish one error rate for all tools or settings. Recheck the linked guidance before the conference.",
+    "notes": "APPENDIX - outside the 90-minute sequence.\nThese sources support the workshop guidance. The application, scoring guide, checklist, and policy starter are teaching examples, not validated selection instruments or official NSPA policy. The detector studies do not establish one error rate for all tools or settings. Recheck the linked guidance before the conference.\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\nSources & context: https://mguhlin.github.io/nspa/2026/#sources",
     "sources": [
       0,
       1,
       2,
       3
+    ],
+    "links": [
+      {
+        "label": "Sources & context",
+        "url": "https://mguhlin.github.io/nspa/2026/#sources",
+        "left": 90,
+        "top": 735,
+        "width": 432,
+        "height": 34
+      }
     ]
   }
 ]

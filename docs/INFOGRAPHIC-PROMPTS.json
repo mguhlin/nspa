@@ -1,0 +1,50 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "name": "takeaways",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, white background, for a professional NSPA scholarship workshop. Three equally spaced visual groups at x=17%,50%,83%, all on same baseline, fully inside margins. LEFT: dimensional teal pencil completing an orange request sheet. CENTER: large navy and teal magnifying glass examining a document with a bright golden checkmark. RIGHT: two teal speech bubbles above an open orange policy booklet. A subtle aqua ribbon visually connects the three groups. Sophisticated editorial infographic, crisp matte dimensional shapes, large meaningful objects, generous white space, vibrant but restrained teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, aqua #E4F4F4. No text, letters, numbers, logos, watermark. Objects occupy central 80% vertically. Supporting art only, not a complete slide.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-4d5b0e32-ca68-43cb-8eb4-3969667410a3.png"
+    },
+    {
+      "name": "readiness",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Three equally spaced scenes centered at x17%,50%,83%. Left: an open teal book with golden light above it, representing ready to learn. Middle: a large orange pencil actively writing in a half-completed golden workbook, representing practice in progress. Right: a large confident teal circular checkmark beside a finished slate document, representing ready to go. A flowing aqua path connects them. No flags or podium.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-faee85c6-21f3-4089-b378-8d73255ef134.png"
+    },
+    {
+      "name": "prompt-parts",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Five equally spaced large objects across the width centered x10%,30%,50%,70%,90%, forming a left-to-right connected assembly: teal bullseye target, slate checklist, gold folder holding blank source papers, orange protective shield, teal magnifying glass over a neatly structured blank answer sheet. Thin aqua horizontal connectors behind objects. Cohesive precise infographic; no extra groups.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-5f1c21ab-2bcf-4a6e-b50e-a825ad8360af.png"
+    },
+    {
+      "name": "comparison",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Two distinct scenes separated by generous white space. LEFT centered x25%: a tangled orange ball of thread next to a blank page and a confused maze, representing an unclear request. RIGHT centered x75%: three orderly teal document rows with golden checkmarks, connected to a large teal magnifying glass, representing a clear request that can be checked. A bold orange right-pointing arrow at the center joins the scenes. No lettering or glyphs.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-05879e78-112b-4b84-80a6-9487f525ca5d.png"
+    },
+    {
+      "name": "review-flow",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Three equally spaced large scenes centered x17%,50%,83%, linked by bold orange right-pointing arrows in the gaps. LEFT: teal folder of blank application documents feeding into a slate laptop. CENTER: laptop displays a tidy teal draft table, with a gold pencil. RIGHT: human hand holds a teal magnifying glass over the original document, a large teal checkmark and orange correction pencil alongside. Clear input, draft, human verification workflow. No text, fake script, letters or digits.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-7a663cf9-474f-47b3-9d88-a82932f66998.png"
+    },
+    {
+      "name": "checkpoints",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Three equally spaced checkpoint gates centered x17%,50%,83%, connected left to right by a flowing aqua path. LEFT: orange gate with large teal shield and a document folder, data approval. CENTER: golden gate with a large teal magnifying glass over paper, checking evidence. RIGHT: teal gate with a human figure and large orange approval stamp, human decision. No padlock on third gate. Bold tangible professional infographic with gates clearly distinct and path passing through each. No text or lettering.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-613b68b0-fdf9-4f0b-9b23-0ad4746402db.png"
+    },
+    {
+      "name": "policy",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, solid white background, professional scholarship workshop. Crisp sophisticated dimensional editorial graphic, large objects with coherent geometry, generous white margins, objects fully visible. Palette teal #007681, slate #2E4F66, orange #FF7233, yellow #FFCD34, pale aqua #E4F4F4. No text, letters, numbers, logos, watermarks. Do not make a complete slide. Three equally spaced equally sized scenes centered x17%,50%,83%. LEFT: teal speech bubble beside a pencil and document with large teal checkmark, allowed help. CENTER: golden open booklet with two orange speech bubbles, explanation and disclosure. RIGHT: orange shield with dark slate diagonal prohibition slash over a fabricated blank document, not allowed. Consistent professionally designed dimensional infographic, clean white separation between scenes. No text or lettering.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-1605567f-bf34-4a91-85d3-8c8d74371ca1.png"
+    },
+    {
+      "name": "evidence-check",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, white background. Three equally spaced groups at x17%,50%,83%, all objects fully visible, linked by bold orange right-pointing arrows in gaps. Sophisticated dimensional editorial infographic, crisp clean matte surfaces, teal #007681 slate #2E4F66 orange #FF7233 yellow #FFCD34 aqua #E4F4F4. No text, letters, digits, logos, watermarks. LEFT a large teal magnifying glass finding an orange highlighted row on a blank application document. CENTER a golden question mark above two slightly different application pages being compared. RIGHT an orange pencil correcting a table row on a teal clipboard with large teal checkmark. The question mark is the only typographic symbol permitted.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-7b3e5a34-918e-4c7f-a9bb-4b738abb0d4f.png"
+    },
+    {
+      "name": "human-decision",
+      "prompt": "Create ONE wide supporting infographic illustration, 3:1 aspect ratio, white background. Three equally spaced groups at x17%,50%,83%, all objects fully visible, linked by bold orange right-pointing arrows in gaps. Sophisticated dimensional editorial infographic, crisp clean matte surfaces, teal #007681 slate #2E4F66 orange #FF7233 yellow #FFCD34 aqua #E4F4F4. No text, letters, digits, logos, watermarks. LEFT a slate laptop producing a gold draft scoring table. CENTER two human hands hold separate teal and orange scoring documents side by side with a large magnifying glass between. RIGHT a human reviewer silhouette behind an upright teal clipboard, with an orange pencil recording the final reason and a gold checkmark. Emphasize accountable human judgment.",
+      "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-67a6b8c7-800f-4ef1-9ec1-3fe1b610b30d.png"
+    }
+  ]
+}

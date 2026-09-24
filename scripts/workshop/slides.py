@@ -63,6 +63,12 @@ SLIDES[1]['notes']=SECTIONS[0]['time']+'\n3:30-3:33 | Welcome, continued | SAY T
 SLIDES[0]['notes']+='\n\nVISUAL: AI-generated photograph of fictional people.'
 SLIDES[25]['notes']='APPENDIX - outside the 90-minute sequence.\nThese sources support the workshop guidance. The application, scoring guide, checklist, and policy starter are teaching examples, not validated selection instruments or official NSPA policy. The detector studies do not establish one error rate for all tools or settings. Recheck the linked guidance before the conference.'
 for n,ids in {15:[0],16:[0],17:[1,2,3],20:[1],26:[0,1,2,3]}.items():SLIDES[n-1]['sources']=ids
+from resources import links_for_slide
+for n,slide in enumerate(SLIDES,1):
+ slide['links']=links_for_slide(n)
+ if slide['links']:
+  slide['notes']+='\n\nOPEN FROM THIS SLIDE (click a resource button in Slide Show):\n'+'\n'.join(link['label']+': '+link['url'] for link in slide['links'])
+  if n in (9,10,11,14):slide['notes']+='\nThe worked example is a prepared teaching reference, not a recording or an actual model response. Use it to compare with the live demo or as the offline fallback.'
 # Human-readable script stays independently useful; JSON feeds PPTX notes and accessible transcript.
 if __name__=='__main__':
  (ROOT/'docs/workshop-slide-map.json').write_text(json.dumps(SLIDES,indent=2)+'\n')

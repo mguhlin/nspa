@@ -17,9 +17,9 @@ Purpose: help participants design an evidence-based AI-supported review task, pr
 
 - The supplied `2026_NSPA_PPT_Template.pptx` provides the actual cover artwork, content footer, Arial type, orange headings (#FF7233), slate (#2E4F66), teal (#007681), pale aqua (#E4F4F4), and yellow (#FFCD34).
 - Exact template slide dimensions: 13.3333 × 7.5 inches, 16:9. Each slide is rendered as a 1536 × 864 PNG and placed full-frame in the PPTX, as requested in the production guide. Speaker notes remain editable; an accessible HTML transcript accompanies the deck.
-- 26 slides: 25 timed workshop slides and a source appendix. Processes and activities use authored icon diagrams and timelines. Five photorealistic scenes of fictional adults appear across nine slides. Built-in imagegen prompts are recorded in `PHOTO-PROMPTS.json`; final photo assets are in `2026/images/photorealistic/`.
+- 26 slides: 25 timed workshop slides and a source appendix. Processes and activities use nine generated infographic illustrations, a proportional 2/2/1-minute timeline, an evidence status board, and a color-coded scoring table. A 100-block chart visualizes the hypothetical detector example (each block represents ten essays; the assumed rate is not a measured result). Five photorealistic scenes of fictional adults appear across nine slides. Built-in imagegen prompts are recorded in `PHOTO-PROMPTS.json`; final photo assets are in `2026/images/photorealistic/`.
 - The official supplied logo is used unchanged, proportionally scaled on light backgrounds. Its teal and gold also anchor the printable handouts.
-- Friendly spoken wording and presenter cues share one source, `scripts/workshop/facilitator.py`, for the nine-page facilitator guide and slide notes. The agenda runs 3:30–5:00 PM.
+- Friendly spoken wording and presenter cues share one source, `scripts/workshop/facilitator.py`, for the ten-page facilitator guide and slide notes. The agenda runs 3:30–5:00 PM. A final resource directory matches the slide navigation.
 - The three-page capacity checklist has 24 first-person statements in the first column, blank Ready to learn / In progress / Ready to go columns, and Notes. The website starts unmarked and offers matching resources, saved responses, export, and print.
 
 ## Source and factual boundaries
@@ -37,3 +37,9 @@ Production used the installed Codex primary runtime (26.905.11957), Artifact Too
 Validate links using `python3 scripts/check_site.py`. Website deployment excludes supplemental inputs and build scripts.
 
 Rebuild order: `python3 scripts/workshop/render_slides.py`, `node scripts/workshop/capture.cjs`, then `assemble.mjs` with the bundled Node runtime and `RUNTIME_NODE_MODULES` set to its node_modules directory. The assembly source records the validated production paths; change final/receipt filenames for subsequent revisions. Convert the validated PPTX with bundled LibreOffice, regenerate the slide ZIP, run `pdfs.py` with the bundled Python, render the handouts to PNG, and run `site.py`.
+
+## Clickable slide resources
+
+`resources.py` is the shared source for 38 slide buttons pointing to 13 unique destinations, including practice documents, both worked demo references, labs, the capacity checklist, and the action plan. Buttons are native PowerPoint hyperlink actions over the full-slide image; LibreOffice PDF export preserves all 38 links. Notes, the HTML transcript, and the speaking-guide directory carry the same destinations. PNGs are static images; use the PowerPoint, PDF, or transcript for clickable navigation.
+
+`infographics.py` controls the new illustration captions and numerical displays. Exact imagegen prompts are in `INFOGRAPHIC-PROMPTS.json`; `INFOGRAPHIC-REVISION.json` records the evidence-comparison artwork correction. Final artwork lives in `2026/images/infographics/`. Required wording and numerical charts are deterministically typeset.

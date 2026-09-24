@@ -1,0 +1,5 @@
+{
+  "name": "human-decision-v2",
+  "prompt": "Edit this supporting infographic. Preserve exact composition, white background, palette, arrows, laptop, hands, magnifying glass and human reviewer. Remove ALL star ratings from laptop and documents. Remove ALL person/profile icons from document and laptop rows. Replace those marks with plain abstract horizontal evidence lines and small square checkboxes, so the graphic shows comparing documented evidence for ONE application, never ranking applicants and never a five-star rating scale. No text, digits or letters. Keep same 3:1 aspect ratio and generous margins. Everything else unchanged.",
+  "path": "/home/mg/.codex/generated_images/01a0d3e0-eba5-7152-a4ef-e01984ebc6c5/exec-4cfbf56e-0132-4677-8dba-7c66252a2008.png"
+}

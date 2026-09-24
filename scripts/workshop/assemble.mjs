@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
 import {Presentation,PresentationFile} from '@oai/artifact-tool';
 import {finalizePresentation} from '/home/mg/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs';
 const root=process.env.NSPA_ROOT || '/home/mg/Documents/vibecoding/mguhlin/nspa';
@@ -12,8 +13,10 @@ for(let i=0;i<data.length;i++){
  if(data[i].sources.length)notes+='\n\nSources:\n'+data[i].sources.map(n=>sources[n].join(' — ')).join('\n');
  s.speakerNotes.textFrame.setText(notes);
 }
-const candidatePath='/tmp/nspa-workshop/build/candidate.pptx';
-await(await PresentationFile.exportPptx(presentation)).save(candidatePath);
+const candidatePath='/tmp/nspa-workshop/build/candidate-linked.pptx';
+const rawPath='/tmp/nspa-workshop/build/candidate-raw.pptx';
+await(await PresentationFile.exportPptx(presentation)).save(rawPath);
+execFileSync('/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',[root+'/scripts/workshop/pptx_links.py',rawPath,candidatePath,root+'/docs/workshop-slide-map.json'],{stdio:'inherit'});
 const skill='/home/mg/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations';
-const result=await finalizePresentation({workspaceDir:'/tmp/nspa-workshop',candidatePath,finalPath:'/tmp/nspa-workshop/output/nspa-trust-transparency-ai-template-v1.pptx',pythonExecutable:'/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],explicitTotalSlideCount:26,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],verifyArtifactToolImport:true,receiptPath:'/tmp/nspa-workshop/build/validation-template-v1.json'});
+const result=await finalizePresentation({workspaceDir:'/tmp/nspa-workshop',candidatePath,finalPath:'/tmp/nspa-workshop/output/nspa-trust-transparency-ai-linked-v3.pptx',pythonExecutable:'/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],explicitTotalSlideCount:26,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],verifyArtifactToolImport:true,receiptPath:'/tmp/nspa-workshop/build/validation-linked-v3.json'});
 console.log(JSON.stringify(result));

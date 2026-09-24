@@ -99,5 +99,11 @@ for section in SECTIONS:
   story.append(text(label+' | '+('SAY THIS' if kind=='say' else 'PRESENTER CUE'),'script-label'))
   for paragraph in words.split('\n\n'):
    story.append(text(paragraph,'say' if kind=='say' else 'cue'))
+from resources import RESOURCES, BASE
+story += [PageBreak()]+title('Your links during the workshop','The same resources appear as buttons on the slides')
+story += [text('In PowerPoint Slide Show, click a teal resource button to open its page. In editing view, use the link menu or Ctrl-click. The presentation PDF also has clickable buttons. Return to the slide show after each activity.','small'),text('The two worked examples are prepared teaching references. They are not recordings or actual AI responses. Run the live demo in your approved tool, compare it with the reference, and use the reference if the tool fails.','small')]
+for key in ['workbook','matrix','prompt','packet','demo1','rubric','demo2','workflow','policy','policyref','action']:
+ label,path=RESOURCES[key]
+ story += [p(f'<b>{escape(label)}</b><br/><link href="{BASE+path}" color="#007c89">{BASE+path}</link>','small')]
 doc('facilitator-guide',story)
 print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))
