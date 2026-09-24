@@ -147,6 +147,21 @@ footer strong{color:rgba(255,255,255,.9)}
 .no-results{text-align:center;padding:48px;color:var(--slate);font-size:1rem}
 </style>
 <link rel="stylesheet" href="../assets/resource-theme.css" data-creations-theme>
+<style>
+/* Preserve readable badge colors against the shared dark card header theme. */
+.card-header .tag{font-size:12px;line-height:1.5;letter-spacing:.02em;padding:3px 9px}
+.card-header .tag-cat{color:#175761!important;background:#e4f3f5!important}
+.card-header .tag-tier-fast{color:#624900!important;background:#fff8e1!important}
+.card-header .tag-tier-high{color:#225b27!important;background:#e8f5e9!important}
+.card-header .tag-tier-gov{color:#452780!important;background:#ede7f6!important}
+.card-header .card-title{font-size:17px;line-height:1.4}
+.toc-list a.active .toc-num{color:#fff!important}
+.site-header{top:32px!important}.search-strip{top:90px!important}
+.toc-wrap{top:var(--prompt-stack,190px)}
+html{scroll-padding-top:var(--prompt-stack,190px)}
+.card-header:focus-visible{outline:3px solid #fdb414;outline-offset:-4px}
+@media(max-width:650px){.header-inner{height:auto;min-height:58px;padding:10px 16px}.header-inner h1{font-size:13px}.hbadge{display:none}.search-strip{position:relative;top:0!important}.search-inner{gap:10px}.search-box{flex-basis:100%}.filter-btn{min-height:40px}.page-wrap{padding:24px 12px}.card-header{grid-template-columns:36px 1fr 20px;padding:14px 12px;gap:10px}}
+</style>
 </head>
 <body>
 <!-- MG-BACK-NAV v2 -->
@@ -1593,5 +1608,12 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(s => observer.observe(s));
 </script>
-</body>
+<script>
+(function(){
+ const header=document.querySelector('.site-header'),strip=document.querySelector('.search-strip');
+ function offset(){document.documentElement.style.setProperty('--prompt-stack',(32+header.offsetHeight+(getComputedStyle(strip).position==='sticky'?strip.offsetHeight:0)+16)+'px');strip.style.setProperty('top',(32+header.offsetHeight)+'px','important');}
+ new ResizeObserver(offset).observe(strip);new ResizeObserver(offset).observe(header);offset();
+ document.querySelectorAll('.card-header').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-expanded',el.classList.contains('open'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});el.addEventListener('click',()=>el.setAttribute('aria-expanded',el.classList.contains('open')));});
+})();
+</script></body>
 </html>

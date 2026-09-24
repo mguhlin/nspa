@@ -43,3 +43,11 @@ Rebuild order: `python3 scripts/workshop/render_slides.py`, `node scripts/worksh
 `resources.py` is the shared source for 38 slide buttons pointing to 13 unique destinations, including practice documents, both worked demo references, labs, the capacity checklist, and the action plan. Buttons are native PowerPoint hyperlink actions over the full-slide image; LibreOffice PDF export preserves all 38 links. Notes, the HTML transcript, and the speaking-guide directory carry the same destinations. PNGs are static images; use the PowerPoint, PDF, or transcript for clickable navigation.
 
 `infographics.py` controls the new illustration captions and numerical displays. Exact imagegen prompts are in `INFOGRAPHIC-PROMPTS.json`; `INFOGRAPHIC-REVISION.json` records the evidence-comparison artwork correction. Final artwork lives in `2026/images/infographics/`. Required wording and numerical charts are deterministically typeset.
+
+## Self-contained webdeck and session banner
+
+`2026/webdeck.html` embeds the workshop template, real HTML slide text, illustrations, and shared speaking notes in one offline-capable file. The workshop hub includes presentation and download links. Online practice destinations still require a connection. Arrow keys navigate, S toggles notes, V opens the synchronized presenter window, F enters fullscreen, and P prints one slide per page.
+
+Rebuild with `python3 scripts/workshop/webdeck.py`, then `python3 scripts/workshop/site.py`. The generator uses the existing slide renderer and content sources; no separate slide narrative is maintained. `deck-framework.css/js` preserve the framework supplied in `supplemental-resources/webdeck_instructions.md`; the duplicate presenter Next-button ID was corrected so it does not collide with the next-slide preview. NSPA palette, reflow layouts, accessibility fixes, and keyboard/touch integration are isolated in `webdeck-theme.css` and `webdeck-extras.js`.
+
+The session banner uses generated concept art with reviewers, visible evidence, a protective shield, and a path to opportunity. The source PNG and optimized WebP are in `2026/images/session-concept.*`; the generation prompt is recorded in `BANNER-PROMPT.json`.
