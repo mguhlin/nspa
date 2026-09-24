@@ -5,186 +5,31 @@
   <title>Scholarship Provider AI Fluency Self-Assessment</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #222;
-      background-color: #f5f5f5;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      background-color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      min-height: 100vh;
-    }
-
-    .banner {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 1rem auto;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    p.intro {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 0.98rem;
-      color: #444;
-    }
-
-    fieldset {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    legend {
-      font-weight: 600;
-      padding: 0 0.4rem;
-    }
-
-    .options {
-      margin-top: 0.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.35rem 1.5rem;
-    }
-
-    label {
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    input[type="radio"] {
-      margin-right: 0.35rem;
-    }
-
-    .actions {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-
-    button {
-      padding: 0.6rem 1.4rem;
-      font-size: 1rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background-color: #1f6feb;
-      color: white;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-    }
-
-    button:hover {
-      background-color: #1450aa;
-    }
-
-    .result {
-      border-top: 1px solid #ddd;
-      padding-top: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .result h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .result-level {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .result-score {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-      color: #555;
-    }
-
-    .level-grid {
-      margin-top: 1.2rem;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      font-size: 0.9rem;
-    }
-
-    .level-grid-header,
-    .level-grid-row {
-      display: grid;
-      grid-template-columns: 120px 1fr 1.4fr;
-    }
-
-    .level-grid-header {
-      background-color: #f5f5f5;
-      font-weight: 600;
-    }
-
-    .level-grid-header div,
-    .level-grid-row div {
-      padding: 0.5rem 0.6rem;
-      border-bottom: 1px solid #eee;
-      border-right: 1px solid #eee;
-    }
-
-    .level-grid-header div:last-child,
-    .level-grid-row div:last-child {
-      border-right: none;
-    }
-
-    .level-grid-row:last-child div {
-      border-bottom: none;
-    }
-
-    .error {
-      color: #b00020;
-      font-size: 0.9rem;
-      margin-top: 0.4rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      .level-grid-header,
-      .level-grid-row {
-        grid-template-columns: 90px 1fr;
-      }
-      .level-grid-header div:nth-child(3),
-      .level-grid-row div:nth-child(3) {
-        grid-column: 1 / -1;
-        border-right: none;
-      }
-    }
-  </style>
-<link rel="stylesheet" href="../assets/resource-theme.css"></head>
-<body><nav style="padding:12px 24px;background:#2e4f66;color:white"><a style="color:white" href="../index.html#library">← NSPA resource library</a></nav>
-<div class="page">
-  <!-- Keep this file name the same as your PNG -->
-  <img src="AI_Fluency_levels.png"
-       alt="AI fluency levels banner illustration"
-       class="banner">
-
-  <h1>Scholarship Provider AI Fluency Self-Assessment</h1>
-  <p class="intro">
-    Choose the option that best matches your current practice. When you are done,
-    select “Calculate My Level” to see your score and fluency level.
-  </p>
-
-  <form id="quizForm">
+  <meta name="description" content="Reflect on your AI practice in scholarship work with a five-question self-assessment and resources for your next step.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/fluency.css">
+</head>
+<body>
+<a class="skip" href="#assessment">Skip to assessment</a>
+<header class="masthead"><a class="brand" href="../">nspa<span>↗</span></a><span class="byline">A resource collection<br>by <a href="https://mguhlin.org">Miguel Guhlin</a></span><a class="back" href="../#library">← Resource library</a></header>
+<main class="page">
+<section class="intro-hero" aria-labelledby="title">
+  <div class="hero-copy"><p class="eyebrow">REFLECT · PRACTICE · GROW</p><h1 id="title">Find your next<br><em>AI fluency step.</em></h1><p class="subtitle">Scholarship Provider AI Fluency Self-Assessment</p><p class="intro">A moment to reflect on how you use AI—and choose one practical way to grow.</p><a class="button" href="#assessment">Take the assessment <span aria-hidden="true">↗</span></a><div class="hero-meta"><span>5 questions</span><span>4 fluency levels</span><span>Results stay in this page</span></div></div>
+  <div class="journey" aria-label="Four fluency levels: Disconnected, Foundational, Integrated, Strategic">
+    <div class="journey-heading">YOUR PRACTICE, IN PERSPECTIVE <span aria-hidden="true">↗</span></div>
+    <div class="journey-steps">
+      <div class="step"><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="8"/><path d="M16 3v3m0 20v3M3 16h3m20 0h3"/></svg></span><div><small>01 · NOTICE</small><strong>Disconnected</strong><span>Discover a useful starting point.</span></div></div>
+      <div class="step"><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 27V15M16 21C5 21 5 8 5 8s11 0 11 11M16 16C16 5 27 5 27 5s0 11-11 11"/></svg></span><div><small>02 · EXPERIMENT</small><strong>Foundational</strong><span>Try a prompt. Learn by doing.</span></div></div>
+      <div class="step"><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="3" y="3" width="10" height="10" rx="2"/><rect x="19" y="19" width="10" height="10" rx="2"/><path d="M13 8h11v11M8 13v11h11"/></svg></span><div><small>03 · CONNECT</small><strong>Integrated</strong><span>Make useful practices repeatable.</span></div></div>
+      <div class="step"><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m16 3 12 6v8c0 6-12 12-12 12S4 23 4 17V9zM10 16l4 4 8-9"/></svg></span><div><small>04 · REFINE</small><strong>Strategic</strong><span>Improve systems. Share learning.</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="assessment" id="assessment" aria-labelledby="assessment-title">
+<div class="assessment-heading"><div><p class="eyebrow">YOUR STARTING POINT</p><h2 id="assessment-title">How does AI fit into your work?</h2></div><div class="progress-wrap"><span id="progressText" aria-live="polite">0 of 5 answered</span><progress id="progress" max="5" value="0" aria-label="Questions answered"></progress></div></div>
+<p class="guidance">Choose the response closest to your current practice. This is a reflection tool, not a certification; more AI use does not always mean better practice. Human judgment remains essential.</p>
+<noscript><p>Enable JavaScript to calculate your result. You can also add your five responses (A = 1, B = 2, C = 3, D = 4) and use the level guide below.</p></noscript>
+<form id="quizForm">
     <fieldset>
       <legend>1. How often do you use AI when drafting scholarship materials?</legend>
       <div class="options">
@@ -236,17 +81,22 @@
     </fieldset>
 
     <div class="actions">
-      <button type="button" onclick="calculateScore()">Calculate My Level</button>
+      <button type="submit">Show my next step <span aria-hidden="true">↗</span></button>
+      <button type="reset" class="secondary">Start over</button>
       <div id="error" class="error" aria-live="polite"></div>
     </div>
   </form>
 
-  <div id="result" class="result" style="display:none;">
-    <h2>Your AI Fluency Result</h2>
+  <section id="result" class="result" hidden tabindex="-1" aria-labelledby="result-title">
+    <p class="eyebrow">YOUR REFLECTION</p><h2 id="result-title">Your AI fluency snapshot</h2>
     <div class="result-level" id="resultLevel"></div>
     <div class="result-score" id="resultScore"></div>
     <p id="resultText"></p>
 
+    <a id="nextResource" class="button" href="./nspa3_guide.html">Explore your next step ↗</a>
+    <button type="button" class="secondary" onclick="window.print()">Print my results</button>
+  </section>
+  <details class="level-guide"><summary>Explore all four levels &amp; score ranges</summary>
     <div class="level-grid" aria-label="Level descriptions">
       <div class="level-grid-header">
         <div>Level</div>
@@ -274,8 +124,10 @@
         <div>Redesigns processes around AI, automates drafting, standardizes templates, and uses AI for equity reviews and data insights.</div>
       </div>
     </div>
-  </div>
-</div>
+  </details>
+</section>
+</main>
+<footer>Keep learning. <a href="../#library">Explore the NSPA resource library ↗</a></footer>
 
 <script>
   function calculateScore() {
@@ -287,7 +139,7 @@
     const textEl = document.getElementById("resultText");
 
     errorEl.textContent = "";
-    resultEl.style.display = "none";
+    resultEl.hidden = true;
 
     const questions = ["q1","q2","q3","q4","q5"];
     let total = 0;
@@ -296,6 +148,7 @@
       const value = form.querySelector('input[name="' + q + '"]:checked');
       if (!value) {
         errorEl.textContent = "Please answer all questions before calculating your score.";
+        form.querySelector('input[name="' + q + '"]').focus();
         return;
       }
       total += parseInt(value.value, 10);
@@ -322,8 +175,34 @@
     scoreEl.textContent = "Total score: " + total + " out of 20";
     textEl.textContent = summary;
 
-    resultEl.style.display = "block";
+    const resources = [
+      ["nspa3_guide.html", "Discover scholarship AI tasks"],
+      ["nspa3_workflow_prompting.html", "Practice workflow prompting"],
+      ["nspa3_222_framework.html", "Plan a focused AI pilot"],
+      ["nspa3_222_framework.html", "Refine your implementation plan"]
+    ];
+    const resource = resources[Math.floor((total - 5) / 4)];
+    const next = document.getElementById("nextResource");
+    next.href = resource[0]; next.textContent = resource[1] + " ↗";
+    resultEl.hidden = false;
+    resultEl.focus();
+    resultEl.scrollIntoView({block: "nearest"});
   }
+  const quiz = document.getElementById("quizForm");
+  quiz.addEventListener("submit", event => { event.preventDefault(); calculateScore(); });
+  quiz.addEventListener("change", () => {
+    const count = quiz.querySelectorAll("input:checked").length;
+    document.getElementById("progress").value = count;
+    document.getElementById("progressText").textContent = count + " of 5 answered";
+    document.getElementById("result").hidden = true;
+    document.getElementById("error").textContent = "";
+  });
+  quiz.addEventListener("reset", () => {
+    document.getElementById("progress").value = 0;
+    document.getElementById("progressText").textContent = "0 of 5 answered";
+    document.getElementById("result").hidden = true;
+    document.getElementById("error").textContent = "";
+  });
 </script>
 </body>
 </html>
