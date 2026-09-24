@@ -24,6 +24,13 @@
       "bounded task",
       "human decision owner",
       "review workflow"
+    ],
+    "matrix_title": "Knowing where AI fits",
+    "indicators": [
+      "I know which review tasks AI can help with.",
+      "I understand which decisions must stay with people.",
+      "I can check an AI answer against the application.",
+      "I know when to stop and ask a person for help."
     ]
   },
   {
@@ -51,6 +58,13 @@
       "synthetic data",
       "verify",
       "retest"
+    ],
+    "matrix_title": "Writing clear AI requests",
+    "indicators": [
+      "I can write a clear request for one task.",
+      "I can tell the AI which information it may use.",
+      "I can ask the AI to show where its answer came from.",
+      "I can test my request with a made-up application."
     ]
   },
   {
@@ -78,6 +92,13 @@
       "independently",
       "calibrate",
       "scoring patterns"
+    ],
+    "matrix_title": "Using a scoring guide",
+    "indicators": [
+      "I understand the descriptions in our scoring guide.",
+      "I can use the guide to score a practice application.",
+      "I can point to the details that support my rating.",
+      "I can discuss different ratings with another reviewer."
     ]
   },
   {
@@ -105,6 +126,13 @@
       "data minimization",
       "service terms",
       "approved AI uses"
+    ],
+    "matrix_title": "Protecting applicant information",
+    "indicators": [
+      "I can recognize sensitive applicant information.",
+      "I know how to check whether an AI tool is approved.",
+      "I can limit what I share to what the task needs.",
+      "I know whom to ask about privacy or a data problem."
     ]
   },
   {
@@ -132,6 +160,13 @@
       "disclosure",
       "review or appeal",
       "policy outcomes"
+    ],
+    "matrix_title": "Responding fairly to applicant AI use",
+    "indicators": [
+      "I understand that an AI detector flag is not proof.",
+      "I can explain what AI help our applicant rules allow.",
+      "I can ask about AI use without assuming wrongdoing.",
+      "I know how an applicant can ask for another review."
     ]
   },
   {
@@ -159,6 +194,13 @@
       "human reference",
       "stop conditions",
       "monitor results"
+    ],
+    "matrix_title": "Trying a small change",
+    "indicators": [
+      "I can plan a small test using made-up applications.",
+      "I can keep a record of errors and corrections.",
+      "I can check whether the change helps our work.",
+      "I can explain how we use AI and how people check it."
     ]
   }
 ]

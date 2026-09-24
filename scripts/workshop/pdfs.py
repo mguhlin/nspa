@@ -54,16 +54,19 @@ story+=[source_line([1,2,3]),p(f'<link href="{URL}practice.html#policy" color="#
 doc('fair-ai-policy',story)
 # Matrix: two landscape pages, clickable resource links.
 story=[]
-for page in range(2):
+styles['check-head']=ParagraphStyle('check-head',parent=styles['table'],fontName='Bold',fontSize=8,leading=10)
+for page in range(3):
  if page:story.append(PageBreak())
- story+=title('Responsible review capacity matrix',f'Page {page+1} of 2 | Choose the highest statement you can demonstrate. No overall score; this is not a certification.')
- rows=[[text('Capacity / evidence','white')]+[text(f'{i+1}. {l}','white') for i,l in enumerate(LEVELS)]]
- for d in DOMAINS[page*3:page*3+3]:
-  label=f'<b>{escape(d["title"])}</b><br/>Evidence: {escape(d["evidence"])}<br/>'+ '<br/>'.join(f'<link href="{urljoin(URL,u)}" color="#007c89">{escape(t)}</link>' for t,u in d['links'])+'<br/>Today: ____  Next: ____'
-  rows.append([p(label,'table')]+[p(escape(v).replace(escape(term), '<b>'+escape(term)+'</b>'),'table') for v,term in zip(d['levels'],d['vocabulary'])])
- t=Table(rows,colWidths=[184,134,134,134,134],hAlign='LEFT');t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('BACKGROUND',(0,1),(0,-1),PALE),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.5,colors.HexColor('#CCDDDD')),('LEFTPADDING',(0,0),(-1,-1),9),('RIGHTPADDING',(0,0),(-1,-1),9),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7)]));story.append(t)
- story += [Spacer(1,12),text('Priority: _____________________  Next action: __________________________________________','small'),text('Evidence: ____________________  Owner: ____________________  Date: ____________________','small'),p(f'<link href="{URL}capacity-matrix.html" color="#007c89">Online matrix: linked resources, local saving, and plan export</link>','small')]
-doc('capacity-matrix',story,landscape(letter))
+ story+=title('My capacity checklist',f'Page {page+1} of 3 | Read each statement. Mark one blank box to show where you are today. Use Notes for a question or next step.')
+ for n,d in enumerate(DOMAINS[page*2:page*2+2],page*2+1):
+  story+=[text(f'{n}. {d["matrix_title"]}','h2')]
+  heads=[p('What I know or can do','white'),p('Ready to<br/>learn','check-head'),p('In<br/>progress','check-head'),p('<font color="white">Ready to<br/>go</font>','check-head'),p('Notes','white')]
+  rows=[heads]+[[text(item,'table'),'','','',''] for item in d['indicators']]
+  t=Table(rows,colWidths=[250,58,58,58,116],rowHeights=[36]+[44]*4,hAlign='LEFT')
+  t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('BACKGROUND',(1,0),(1,0),PALE),('BACKGROUND',(2,0),(2,0),ORANGE),('GRID',(0,0),(-1,-1),.5,colors.HexColor('#91ABB0')),('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),8),('RIGHTPADDING',(0,0),(-1,-1),8),('ALIGN',(1,0),(3,0),'CENTER')]))
+  story+=[t,p('Resources: '+' | '.join(f'<link href="{urljoin(URL,u)}" color="#007c89">{escape(t)}</link>' for t,u in d['links']),'small'),Spacer(1,8)]
+ story+=[text('One thing I want to work on: __________________________________________________','small'),text('My next step: __________________________________________________________________','small')]
+doc('capacity-matrix',story)
 # Workbook with explicit writing space and offline activities.
 story=title('Participant workbook','October 21, 2026 | 3:30-5:00 PM CT | Trust, Transparency, and AI')
 story+=[text('1. Read the fictional packet','h2'),text('Program requirements: enrollment confirmation, a goal statement of no more than 150 words, and one service example. No real person or application is represented. Use no real applicant data in this exercise.')]
@@ -81,13 +84,20 @@ story+=[table([['Before the tool','Before reviewer use','Before a decision'],['D
 story+=lines('One capacity to build and my next action',2)+lines('Evidence of progress and a stop condition',2)+lines('Owner / role and target date',1)+lines('Exit ticket: one prompt change, safeguard, and policy decision',3)
 story+=[p(f'<link href="{URL}practice.html" color="#007c89">Full prompts, prepared reference outputs, and policy starter</link>'),text('The reference outputs are authored teaching examples, not live model transcripts. The training rubric and capacity matrix are not validated award-selection instruments.','small')]
 doc('participant-workbook',story)
-# Facilitator guide - detailed timing separate from conversational slide notes.
-story=title('Facilitator guide','90 minutes | October 21, 2026 | 3:30-5:00 PM CT')
-story+=[table([['Time','Slides','Focus / product']]+[[t+' ('+d+')',sl,topic+'. '+out] for t,d,topic,out,sl in AGENDA],[98,60,382]),text('Before the session','h2'),text('Open the hub, practice page, and capacity matrix. Download the PPTX, PDF, workbook, and reference outputs. Test an approved Gen AI account with the synthetic packet only. Verify projection and Wi-Fi; print the workbook and matrix for participants without devices. Recheck detection guidance shortly before the workshop. Slide 26 is a source appendix, outside the 90-minute flow.','small')]
-story+=[PageBreak()]+title('Demonstrations and debriefs','Keep both demos bounded; never substitute real applicant records.')
-for a,b in [('3:38-3:50 | Prompt design','Slides 5-6: explain the five prompt components and compare the vague and bounded requests. Slide 7: give pairs 2 minutes to choose a task, 2 to revise, and 1 to critique. Ask which assumption they removed.'),('3:50-4:05 | Administrative triage','3:50-3:53: introduce P1-P5. 3:53-3:58: copy the triage prompt and synthetic packet from the practice page into an approved tool. Inspect missing enrollment confirmation, evidence IDs, and P5 instruction handling. 3:58-4:01: compare against the prepared reference. 4:01-4:05: pairs trace, challenge, and correct one output. If the tool fails, use the authored reference table; label it as such.'),('4:05-4:20 | Rubric calibration','4:05-4:09: explain the 0-2 anchors and insufficient-evidence distinction. 4:09-4:15: allow 2 minutes for independent ratings, 2 for comparison, and 2 for anchor revision. 4:15-4:20: run the rubric prompt on the same synthetic packet. Compare the AI draft only after human ratings. Expected discussion: goal and contribution support 2; reflection can expose differences in how reviewers interpret the anchor. Do not present a total or rank.'),('Debrief questions','What fact was unsupported? Which source location supports the claim? Did the output treat P5 as an instruction? Was disagreement about evidence or about the rubric? Who can stop the process? Keep a visible record of corrections rather than celebrating only fast generation.')]:story+=section(a,b)
-story+=[PageBreak()]+title('Policy, capacity, and closure','Protect time for participant decisions.')
-for a,b in [('4:20-4:30 | Protected workflow','Use 4 minutes for the data gate and 6 for mapping checkpoints. Ask pairs to name the owner before the tool, before reviewer use, and before a final decision. Require one explicit stop condition.'),('4:30-4:45 | Applicant AI use','3 minutes: explain detector limitations and study context. 3 minutes: use the hypothetical 1,000 x 1% = 10 example; this is not a product benchmark. 3 minutes: separate permitted use, disclosure, and misrepresentation. 6 minutes: groups analyze translation-support scenario, draft a neutral message, and name a review path. Debrief against the published rule, not impressions of writing style.'),('4:45-4:55 | Capacity target','3 minutes: revisit the six capacities. 5 minutes: choose a row, current evidence, and next action. 2 minutes: define a 30-day pilot with owner, measure, and stop rule. Ask participants to export their local plan or mark the printed matrix.'),('4:55-5:00 | Exit and questions','3 minutes: one prompt change, one safeguard, one policy decision. 2 minutes: questions and hub reminder. If running late, shorten whole-group reporting and optional explanation, not the independent rubric pass or the policy-response activity.'),('What to collect or retain','Participants keep their prompt, evidence corrections, rubric discussion, workflow map, policy starter, and capacity plan. No applicant information is collected by this workshop site. Do not collect participant browser exports unless there is an explicit agreed purpose.')]:story+=section(a,b)
-story+=[source_line([0,1,2,3])]
+# Facilitator guide: conversational words to say, with separate stage directions.
+from facilitator import SECTIONS
+styles['say']=ParagraphStyle('say',parent=styles['body'],fontSize=10.5,leading=14.5,spaceAfter=7)
+styles['cue']=ParagraphStyle('cue',parent=styles['small'],fontSize=9.5,leading=13,backColor=PALE,borderPadding=7,spaceBefore=5,spaceAfter=10)
+styles['script-label']=ParagraphStyle('script-label',parent=styles['h2'],fontSize=10.5,leading=14,spaceBefore=9,spaceAfter=5,keepWithNext=True)
+story=title('Your workshop speaking guide','Miguel Guhlin | October 21, 2026 | 3:30-5:00 PM CT')
+story+=[text('Words to say aloud, with short reminders for you. Make the wording your own. Each workshop block starts on a fresh page; the times leave room for activities and discussion.'),text('SAY THIS: wording for the room. PRESENTER CUE: a reminder for you.','small'),text('Before people arrive','h2'),text('Open the hub, practice lab, and matrix. Download the slides and handouts. Test both demos in an approved AI tool with the fictional packet. Keep the prepared examples ready if the tool fails. Bring printed workbooks and matrices.','small'),p(f'<link href="{URL}" color="#007c89">Workshop hub: {URL}</link>','small')]
+story += [table([['Time','Slides','What happens']]+[[section['time'].split(' PM')[0],section['time'].split(' | ')[1].replace('Slides ',''),section['title']] for section in SECTIONS],[100,60,380])]
+story += [text('Before October 21','h2'),text('Recheck the linked guidance on AI detectors and your organization’s rules. This workshop gives people examples to discuss and adapt; it does not establish official NSPA policy. The practice applications are entirely fictional.','small'),source_line([0,1,2,3])]
+for section in SECTIONS:
+ story += [PageBreak()]+title(section['title'],section['time'])
+ for label,kind,words in section['parts']:
+  story.append(text(label+' | '+('SAY THIS' if kind=='say' else 'PRESENTER CUE'),'script-label'))
+  for paragraph in words.split('\n\n'):
+   story.append(text(paragraph,'say' if kind=='say' else 'cue'))
 doc('facilitator-guide',story)
 print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))

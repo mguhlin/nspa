@@ -15,15 +15,12 @@ Purpose: help participants design an evidence-based AI-supported review task, pr
 
 ## Design decisions
 
-- NSPA colors and supplied conference artwork take precedence over the TCEA-specific names and colors in the generic production specification.
-- 16:9 canvas (1536 x 864 PNGs) matches the supplied NSPA deck. The generic guide's 3:2 example was raised with the user; absent a preference, widescreen was used as stated in the conversation.
-- Every slide is its own PNG and one full-slide image in the PPTX. No composite slides. Required text is deterministically typeset; source art was generated separately with the built-in image tool. See ARTWORK.md for prompts.
-- 26 slides: 25 timed workshop slides plus a source appendix. Title notes are 49 words; content notes are 98-107 words, excluding source URLs.
-- Slide text is rasterized per the supplied production guide. Speaker notes remain editable. Source wording, layouts, artwork, and a browser-accessible transcript are retained for revision.
-- Arial/system sans and Georgia headings replace unavailable DM-family fonts while retaining the requested serif/sans contrast.
-- `example1.png` was not supplied. The written visual standard and supplied NSPA template guided the design.
-
-The supplied `supplemental-resources/logo.png` is used unchanged as `assets/nspa-logo.png` across the site, assessment, slides, and handouts. Primary teal #007C89 and gold #F9C20A are sampled from the logo; slate and pale aqua remain supporting template colors.
+- The supplied `2026_NSPA_PPT_Template.pptx` provides the actual cover artwork, content footer, Arial type, orange headings (#FF7233), slate (#2E4F66), teal (#007681), pale aqua (#E4F4F4), and yellow (#FFCD34).
+- Exact template slide dimensions: 13.3333 × 7.5 inches, 16:9. Each slide is rendered as a 1536 × 864 PNG and placed full-frame in the PPTX, as requested in the production guide. Speaker notes remain editable; an accessible HTML transcript accompanies the deck.
+- 26 slides: 25 timed workshop slides and a source appendix. Processes and activities use authored icon diagrams and timelines. Five photorealistic scenes of fictional adults appear across nine slides. Built-in imagegen prompts are recorded in `PHOTO-PROMPTS.json`; final photo assets are in `2026/images/photorealistic/`.
+- The official supplied logo is used unchanged, proportionally scaled on light backgrounds. Its teal and gold also anchor the printable handouts.
+- Friendly spoken wording and presenter cues share one source, `scripts/workshop/facilitator.py`, for the nine-page facilitator guide and slide notes. The agenda runs 3:30–5:00 PM.
+- The three-page capacity checklist has 24 first-person statements in the first column, blank Ready to learn / In progress / Ready to go columns, and Notes. The website starts unmarked and offers matching resources, saved responses, export, and print.
 
 ## Source and factual boundaries
 
@@ -33,7 +30,7 @@ The capacity matrix, rubric, and policy starter are original workshop teaching t
 
 ## Rebuild and maintenance
 
-`content.py` holds shared agenda, packet, prompts, rubric, policy, sources, and capacity descriptors. `slides.py` contains slide text and notes; `render_slides.py` creates deterministic HTML layouts. `pdfs.py` creates printable handouts with ReportLab. `site.py` produces the workshop pages. The JavaScript interaction files and workshop CSS are maintained directly.
+`content.py` holds shared agenda, packet, prompts, rubric, policy, sources, and capacity statements. `facilitator.py` holds the speaking script; `slides.py` contains slide text and maps the shared script into notes; `render_slides.py` creates deterministic HTML layouts. `pdfs.py` creates printable handouts with ReportLab. `site.py` produces the workshop pages. The JavaScript interaction files and workshop CSS are maintained directly.
 
 Production used the installed Codex primary runtime (26.905.11957), Artifact Tool 2.8.59 for PPTX assembly, and its bundled LibreOffice for rendering. No desktop LibreOffice was used. Runtime loading tools were not exposed in this session; the matching installed runtime paths were inspected directly. Slide screenshot rendering used the existing local Playwright installation. All build intermediates and QA renders stay outside public output directories.
 

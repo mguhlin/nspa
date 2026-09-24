@@ -25,3 +25,7 @@ Prompt: Use case: productivity-visual. Create ONE text-free premium dimensional 
 ## Official logo
 
 `assets/nspa-logo.png` is an unchanged copy of the user-supplied `supplemental-resources/logo.png`. The logo is scaled proportionally and used on a light background. It is not AI-generated. Teal #007C89, gold #F9C20A, gray #79858B.
+
+## September 24 template revision
+
+The current slide deck uses five new photorealistic scenes created with built-in imagegen. Exact prompts and saved asset paths are in [PHOTO-PROMPTS.json](PHOTO-PROMPTS.json). People are fictional and images are labeled accordingly. The four illustrations above remain available as earlier supporting artwork; they are not the current deck’s photo assets. Flow diagrams use authored SVG icons and exact typeset text.

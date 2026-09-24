@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "fictionalPeople": true,
+  "prompts": [
+    [
+      "review-team",
+      "Photorealistic editorial photograph for a scholarship-provider conference presentation. Three fictional adult colleagues of different ages and backgrounds collaboratively reviewing a fictional application at a bright modern nonprofit office table. Natural candid conversation, one woman in her 50s listening, one man in his 30s pointing to a paper, one woman in her 40s considering it. Accurate natural faces and hands, real skin texture, realistic proportions. Teal and navy clothing with a small gold notebook accent, soft daylight, professional but approachable. Horizontal 3:2 composition, medium shot, no posing for camera. Papers contain no legible text or personal data, no logos, no watermark. NOT illustration, NOT 3D render, NOT plastic skin."
+    ],
+    [
+      "applicant",
+      "Photorealistic editorial photograph for a responsible scholarship review workshop. A fictional adult student about 28 years old at a public library desk thoughtfully revising a scholarship application on a laptop, a notebook and pencil nearby. Natural expression of concentration and hope, authentic skin texture, anatomically accurate hands, realistic laptop. Inclusive everyday setting, casual teal cardigan, warm daylight, subtle golden accent. Horizontal 3:2 crop, show person from waist up with generous space around them. No visible readable text, no brands, no logos, no watermark. Real documentary photography feel, not illustration, not glamour, not stock-photo grin."
+    ],
+    [
+      "pair-review",
+      "Photorealistic editorial photograph of two fictional adult scholarship reviewers comparing printed notes at a conference workshop table. A Black woman around 45 and an East Asian man around 50 in relaxed professional clothing, engaged in a thoughtful respectful conversation, neither looking at camera. One open laptop at side, two separate sets of paper notes and pens, realistic natural hands. Bright window light, slate blue and teal palette with small orange accent, human approachable atmosphere. Horizontal 3:2 composition. No legible writing on papers or screens, no logos, no watermark, no stylized rendering."
+    ],
+    [
+      "privacy-team",
+      "Photorealistic editorial photograph of two fictional adult colleagues in a nonprofit office discussing whether it is appropriate to use a software tool with private scholarship information. A Latina program manager in her 40s and a white male IT colleague in his 50s look together at a laptop, with a closed teal document folder on the desk. Natural attentive expressions, accurate hands, believable office, daylight and soft shadows. Horizontal 3:2 medium composition, teal/navy/cream colors, subtle gold detail. Laptop display is indistinct with no readable text. No floating graphics, no locks floating in air, no logos, no watermark, no illustration."
+    ],
+    [
+      "fair-conversation",
+      "Photorealistic documentary-style photograph for a conference presentation about a fair conversation with a scholarship applicant. A fictional adult applicant around 24 and a scholarship adviser around 50 seated at the same level across a small round table in a welcoming campus advising space. The adviser listens with an open posture while the student explains their work, a notebook on the table. Warm, respectful, everyday atmosphere, genuine skin texture, anatomically correct hands, soft window lighting. Teal accents and warm neutral colors. Horizontal 3:2 composition, both faces clearly visible, no text, no logos, no watermark. Avoid patronizing or adversarial expressions, no cartoon or 3D rendering."
+    ]
+  ]
+}
