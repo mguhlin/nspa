@@ -656,8 +656,23 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/resource-theme.css" data-creations-theme>
+<style>
+  /* Keep legacy hero details readable on the shared theme's pale background. */
+  .framework-page .hero::before { opacity: .06; }
+  .framework-page .hero::after { opacity: .05; }
+  .framework-page .hero-eyebrow { color: #006570; }
+  .framework-page .hero-meta-item { color: #2e4f66; font-weight: 600; }
+  .framework-page .hero-meta-icon { background: #d3e7e7; }
+  .framework-page .framework-visual { background: #2e4f66; border-color: #2e4f66; }
+  .framework-page .framework-number,
+  .framework-page .sprint-pill-weeks { color: #ffcd34; }
+  .framework-page .framework-label,
+  .framework-page .sprint-pill-text { color: #fff; }
+  .framework-page .sprint-pill { background: #254358; border-color: #668495; }
+  .framework-page .sprint-pill-num { background: #ffcd34; color: #203c50; }
+</style>
 </head>
-<body>
+<body class="framework-page">
 <!-- MG-BACK-NAV v2 -->
 <style id="mg-back-nav-style">
   .mg-back-bar {
