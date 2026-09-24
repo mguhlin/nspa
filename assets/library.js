@@ -33,7 +33,7 @@ function filterResources() {
   document.querySelector('#empty').hidden = true;
   if (!query) {showTopic(selected); return;}
   panels.forEach(panel => panel.hidden = true);
-  const matches = searchable.filter(link => link.textContent.toLocaleLowerCase().includes(query));
+  const matches = searchable.filter(link => (link.textContent+' '+(link.dataset.keywords||'')).toLocaleLowerCase().includes(query));
   for(const link of matches) {
     const clone = link.cloneNode(true); clone.className = 'resource-row';
     clone.querySelector('.quick-icon')?.remove();

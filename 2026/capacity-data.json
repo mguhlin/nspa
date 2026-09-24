@@ -1,0 +1,128 @@
+[
+  {
+    "id": "scope",
+    "title": "Task scope & human ownership",
+    "levels": [
+      "I can distinguish organizing information from deciding an award.",
+      "I can define a bounded task using a fictional packet.",
+      "Our workflow names the human decision owner and escalation route.",
+      "We review errors, overrides, and applicant feedback on a schedule."
+    ],
+    "evidence": "A workflow with a named owner and one stop condition.",
+    "links": [
+      [
+        "AI task guide",
+        "../resources/nspa3_guide.html"
+      ],
+      [
+        "2/2/2 framework",
+        "../resources/nspa3_222_framework.html"
+      ]
+    ]
+  },
+  {
+    "id": "prompt",
+    "title": "Structured prompting",
+    "levels": [
+      "I can identify task, criteria, evidence, limits, and output.",
+      "I can draft and test a constrained prompt with synthetic data.",
+      "Our team uses a versioned prompt and checks its output against sources.",
+      "We retest changes and share examples of failures and revisions."
+    ],
+    "evidence": "A prompt plus a corrected evidence table.",
+    "links": [
+      [
+        "Prompt practice",
+        "practice.html#prompt"
+      ],
+      [
+        "Workflow prompting workshop",
+        "../resources/nspa3_workflow_prompting.html"
+      ]
+    ]
+  },
+  {
+    "id": "rubric",
+    "title": "Rubrics & reviewer calibration",
+    "levels": [
+      "I can explain an observable criterion and its scoring anchors.",
+      "I can score the same fictional case independently and compare reasons.",
+      "Our reviewers calibrate before use and record disagreements and overrides.",
+      "We examine consistency and inequitable patterns, then revise and retest."
+    ],
+    "evidence": "An anchored rubric and a disagreement log.",
+    "links": [
+      [
+        "Workshop rubric",
+        "practice.html#rubric"
+      ],
+      [
+        "Reviewer onboarding",
+        "../resources/nspa-example3-onboarding.html"
+      ]
+    ]
+  },
+  {
+    "id": "privacy",
+    "title": "Data protection & approved tools",
+    "levels": [
+      "I can identify sensitive data and why a public chatbot is not a default destination.",
+      "I can rehearse minimization and a data approval gate with synthetic data.",
+      "We verify service terms, access, retention, deletion, and incident ownership.",
+      "We audit approved uses and revisit settings, contracts, and access over time."
+    ],
+    "evidence": "A documented data gate and service approval decision.",
+    "links": [
+      [
+        "Protected workflow reference",
+        "handouts/protected-workflow.pdf"
+      ],
+      [
+        "Application triage example",
+        "../resources/nspa-example2-triage.html"
+      ]
+    ]
+  },
+  {
+    "id": "policy",
+    "title": "Applicant AI use & fair response",
+    "levels": [
+      "I can distinguish a detector signal from proof of a rule violation.",
+      "I can explain permitted uses, disclosure, and a fair follow-up.",
+      "Our published rules include accessible explanations and review or appeal.",
+      "We review policy outcomes and revise confusing or unfair requirements."
+    ],
+    "evidence": "A policy starter and one worked response scenario.",
+    "links": [
+      [
+        "Policy lab",
+        "practice.html#policy"
+      ],
+      [
+        "Fair response reference",
+        "handouts/fair-ai-policy.pdf"
+      ]
+    ]
+  },
+  {
+    "id": "improve",
+    "title": "Pilot evaluation & transparency",
+    "levels": [
+      "I can name an error that could harm an applicant.",
+      "I can test a small fictional set against a human reference.",
+      "Our pilot logs source errors, omissions, review time, and stop conditions.",
+      "We publish appropriate process information and monitor after changes."
+    ],
+    "evidence": "A pilot plan with baseline, measures, owner, and stop rule.",
+    "links": [
+      [
+        "30-day action plan",
+        "practice.html#action"
+      ],
+      [
+        "2/2/2 pilot framework",
+        "../resources/nspa3_222_framework.html"
+      ]
+    ]
+  }
+]

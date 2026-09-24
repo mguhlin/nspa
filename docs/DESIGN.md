@@ -8,4 +8,4 @@ Actual slide colors: slate `#2E4F66`, teal `#007681`, orange `#FF7233`, gray `#5
 
 Use Georgia for large editorial headings and a system sans serif for navigation and body copy. This avoids a font download on the main site. The original resource pages retain their typography and interactions with an adapted shared color theme.
 
-Presentation-specific AI images should be commissioned after reviewing the session brief. Keep final assets in `2026/images/` and record prompts and provenance here. No presentation-specific images have been generated yet.
+Workshop images and individual slide PNGs are in `2026/images/`. See `ARTWORK.md` for the built-in generation prompts and `WORKSHOP.md` for the production decisions.

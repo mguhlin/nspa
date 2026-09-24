@@ -25,7 +25,7 @@ The standalone fluency repository's `main` branch has a pre-existing redirect, b
 - `vc/dreg.html` originally contained raw React source instead of a runnable HTML page. It now provides an explanatory page and download of the original source (`deadline-reminder-source.jsx`).
 - The marketing assessment retains its existing Google Apps Script endpoint. This migration does not change its backend or submit test participant data.
 - External slide decks, videos, articles, and third-party services remain external. Their availability and account permissions are not controlled by this repository.
-- The conference page intentionally contains no invented session title, session time, presentation, or handout. These will be added after the supplemental materials arrive.
+- The conference page was initially a placeholder. The workshop package now follows the supplied session brief; see `WORKSHOP.md`.
 
 ## Verification
 
