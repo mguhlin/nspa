@@ -1,0 +1,134 @@
+[
+  [
+    "Start here",
+    "Training series & session materials",
+    "All four earlier sessions, original slide links, recordings, activities, and supporting documents.",
+    "index.html"
+  ],
+  [
+    "Assessments",
+    "AI fluency self-assessment",
+    "Reflect on your current AI skills and identify your next step.",
+    "ai_fluency_levels.html"
+  ],
+  [
+    "Assessments",
+    "Marketing & engagement self-assessment",
+    "Explore your readiness to use AI for outreach and engagement.",
+    "assess/"
+  ],
+  [
+    "Office workflows",
+    "The 2/2/2 implementation framework",
+    "Plan a focused AI pilot with clear policies, review, and measurable results.",
+    "nspa3_222_framework.html"
+  ],
+  [
+    "Office workflows",
+    "Scholarship program AI task guide",
+    "Match scholarship office tasks with useful AI approaches.",
+    "nspa3_guide.html"
+  ],
+  [
+    "Office workflows",
+    "Office task automation guide",
+    "Explore repeatable tasks and opportunities for assisted workflows.",
+    "nspa3_oag.html"
+  ],
+  [
+    "Office workflows",
+    "Workflow prompting workshop",
+    "Build prompts around a complete workflow, from inputs to review.",
+    "nspa3_workflow_prompting.html"
+  ],
+  [
+    "Marketing",
+    "100 AI marketing prompts",
+    "A searchable prompt collection for scholarship providers.",
+    "nspa4_100_marketing_prompts.html"
+  ],
+  [
+    "Marketing",
+    "Marketing scenarios & prompt toolkit",
+    "Work through realistic outreach and engagement situations.",
+    "nspa4_marketing_scenarios.html"
+  ],
+  [
+    "Build & explore",
+    "Vibe coding project cards",
+    "Copy a project prompt and build a tool for your scholarship program.",
+    "nspa4cards.html"
+  ],
+  [
+    "Office workflows",
+    "Applicant communications",
+    "A worked example of the 2/2/2 implementation framework.",
+    "nspa-example1-communications.html"
+  ],
+  [
+    "Office workflows",
+    "Application triage",
+    "A worked example of the 2/2/2 implementation framework.",
+    "nspa-example2-triage.html"
+  ],
+  [
+    "Office workflows",
+    "Reviewer onboarding & calibration",
+    "A worked example of the 2/2/2 implementation framework.",
+    "nspa-example3-onboarding.html"
+  ],
+  [
+    "Office workflows",
+    "Donor & board reporting",
+    "A worked example of the 2/2/2 implementation framework.",
+    "nspa-example4-reporting.html"
+  ],
+  [
+    "Office workflows",
+    "FAQ & eligibility page optimization",
+    "A worked example of the 2/2/2 implementation framework.",
+    "nspa-example5-faq-geo.html"
+  ],
+  [
+    "Build & explore",
+    "Counselor outreach generator",
+    "Create a concise counselor outreach email in your browser.",
+    "vc/scog.html"
+  ],
+  [
+    "Build & explore",
+    "GEO FAQ generator",
+    "Archived prototype; AI service setup required.",
+    "vc/geofaq.html"
+  ],
+  [
+    "Build & explore",
+    "Eligibility equity lens",
+    "Archived prototype; AI service setup required.",
+    "vc/eel.html"
+  ],
+  [
+    "Build & explore",
+    "Donor impact report builder",
+    "Archived prototype; AI service setup required.",
+    "vc/dirb.html"
+  ],
+  [
+    "Build & explore",
+    "Social media privacy screener",
+    "Archived prototype; AI service setup required.",
+    "vc/spp.html"
+  ],
+  [
+    "Build & explore",
+    "Scholarship talking points generator",
+    "Archived prototype; AI service setup required.",
+    "vc/tpg.html"
+  ],
+  [
+    "Build & explore",
+    "Deadline reminder email generator",
+    "Original React source and project prompt for a build activity.",
+    "vc/dreg.html"
+  ]
+]
