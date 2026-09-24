@@ -1,4 +1,5 @@
 from content import *
+import sys
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter,landscape
@@ -26,6 +27,7 @@ def text(s,style='body'):return p(escape(s),style)
 def header(c,doc):
  w,h=doc.pagesize;c.saveState();c.drawImage(str(ROOT/'assets/nspa-logo.png'),w-82,h-34,width=46,height=29,mask='auto');c.setFillColor(TEAL);c.setFont('Bold',9);c.drawString(36,h-28,'NSPA 2026  |  TRUST, TRANSPARENCY, AND AI');c.setStrokeColor(ORANGE);c.setLineWidth(2);c.line(36,h-37,w-36,h-37);c.setStrokeColor(colors.HexColor('#CCDDDD'));c.setLineWidth(.5);c.line(36,38,w-36,38);c.setFont('Body',8);c.setFillColor(INK);c.drawString(36,25,URL);c.linkURL(URL,(36,21,300,34),relative=0);c.drawRightString(w-36,25,f'Miguel Guhlin  |  {doc.page}');c.restoreState()
 def doc(name,story,size=letter):
+ if len(sys.argv)>1 and name not in sys.argv[1:]:return
  d=SimpleDocTemplate(str(OUT/(name+'.pdf')),pagesize=size,rightMargin=36,leftMargin=36,topMargin=53,bottomMargin=50,title=name.replace('-',' ').title(),author='Miguel Guhlin');d.build(story,onFirstPage=header,onLaterPages=header)
 def title(a,b):return [text(a,'h1'),text(b)]
 def section(a,b):return [text(a,'h2'),text(b)]
@@ -54,11 +56,11 @@ doc('fair-ai-policy',story)
 story=[]
 for page in range(2):
  if page:story.append(PageBreak())
- story+=title('Responsible review capacity matrix',f'Page {page+1} of 2 | Choose the highest descriptor you can demonstrate. No overall score; this is not a certification.')
+ story+=title('Responsible review capacity matrix',f'Page {page+1} of 2 | Choose the highest statement you can demonstrate. No overall score; this is not a certification.')
  rows=[[text('Capacity / evidence','white')]+[text(f'{i+1}. {l}','white') for i,l in enumerate(LEVELS)]]
  for d in DOMAINS[page*3:page*3+3]:
   label=f'<b>{escape(d["title"])}</b><br/>Evidence: {escape(d["evidence"])}<br/>'+ '<br/>'.join(f'<link href="{urljoin(URL,u)}" color="#007c89">{escape(t)}</link>' for t,u in d['links'])+'<br/>Today: ____  Next: ____'
-  rows.append([p(label,'table')]+[text(v,'table') for v in d['levels']])
+  rows.append([p(label,'table')]+[p(escape(v).replace(escape(term), '<b>'+escape(term)+'</b>'),'table') for v,term in zip(d['levels'],d['vocabulary'])])
  t=Table(rows,colWidths=[184,134,134,134,134],hAlign='LEFT');t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('BACKGROUND',(0,1),(0,-1),PALE),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.5,colors.HexColor('#CCDDDD')),('LEFTPADDING',(0,0),(-1,-1),9),('RIGHTPADDING',(0,0),(-1,-1),9),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7)]));story.append(t)
  story += [Spacer(1,12),text('Priority: _____________________  Next action: __________________________________________','small'),text('Evidence: ____________________  Owner: ____________________  Date: ____________________','small'),p(f'<link href="{URL}capacity-matrix.html" color="#007c89">Online matrix: linked resources, local saving, and plan export</link>','small')]
 doc('capacity-matrix',story,landscape(letter))
@@ -88,4 +90,4 @@ story+=[PageBreak()]+title('Policy, capacity, and closure','Protect time for par
 for a,b in [('4:20-4:30 | Protected workflow','Use 4 minutes for the data gate and 6 for mapping checkpoints. Ask pairs to name the owner before the tool, before reviewer use, and before a final decision. Require one explicit stop condition.'),('4:30-4:45 | Applicant AI use','3 minutes: explain detector limitations and study context. 3 minutes: use the hypothetical 1,000 x 1% = 10 example; this is not a product benchmark. 3 minutes: separate permitted use, disclosure, and misrepresentation. 6 minutes: groups analyze translation-support scenario, draft a neutral message, and name a review path. Debrief against the published rule, not impressions of writing style.'),('4:45-4:55 | Capacity target','3 minutes: revisit the six capacities. 5 minutes: choose a row, current evidence, and next action. 2 minutes: define a 30-day pilot with owner, measure, and stop rule. Ask participants to export their local plan or mark the printed matrix.'),('4:55-5:00 | Exit and questions','3 minutes: one prompt change, one safeguard, one policy decision. 2 minutes: questions and hub reminder. If running late, shorten whole-group reporting and optional explanation, not the independent rubric pass or the policy-response activity.'),('What to collect or retain','Participants keep their prompt, evidence corrections, rubric discussion, workflow map, policy starter, and capacity plan. No applicant information is collected by this workshop site. Do not collect participant browser exports unless there is an explicit agreed purpose.')]:story+=section(a,b)
 story+=[source_line([0,1,2,3])]
 doc('facilitator-guide',story)
-print('Created 6 handout PDFs')
+print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))

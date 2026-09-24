@@ -3,10 +3,10 @@
     "id": "scope",
     "title": "Task scope & human ownership",
     "levels": [
-      "I can distinguish organizing information from deciding an award.",
-      "I can define a bounded task using a fictional packet.",
-      "Our workflow names the human decision owner and escalation route.",
-      "We review errors, overrides, and applicant feedback on a schedule."
+      "I am aware of the difference between organizing information and making an award decision.",
+      "I know how to define a bounded task using a fictional application.",
+      "I can name the human decision owner and explain when to escalate a concern.",
+      "I can use errors, overrides, and applicant feedback to improve a review workflow."
     ],
     "evidence": "A workflow with a named owner and one stop condition.",
     "links": [
@@ -18,16 +18,22 @@
         "2/2/2 framework",
         "../resources/nspa3_222_framework.html"
       ]
+    ],
+    "vocabulary": [
+      "award decision",
+      "bounded task",
+      "human decision owner",
+      "review workflow"
     ]
   },
   {
     "id": "prompt",
     "title": "Structured prompting",
     "levels": [
-      "I can identify task, criteria, evidence, limits, and output.",
-      "I can draft and test a constrained prompt with synthetic data.",
-      "Our team uses a versioned prompt and checks its output against sources.",
-      "We retest changes and share examples of failures and revisions."
+      "I am aware of the parts of a structured prompt: task, criteria, evidence, limits, and output.",
+      "I know how to draft and test a prompt with synthetic data.",
+      "I can track prompt versions and verify each output against its sources.",
+      "I can retest prompt changes and share failures and revisions with colleagues."
     ],
     "evidence": "A prompt plus a corrected evidence table.",
     "links": [
@@ -39,16 +45,22 @@
         "Workflow prompting workshop",
         "../resources/nspa3_workflow_prompting.html"
       ]
+    ],
+    "vocabulary": [
+      "structured prompt",
+      "synthetic data",
+      "verify",
+      "retest"
     ]
   },
   {
     "id": "rubric",
     "title": "Rubrics & reviewer calibration",
     "levels": [
-      "I can explain an observable criterion and its scoring anchors.",
-      "I can score the same fictional case independently and compare reasons.",
-      "Our reviewers calibrate before use and record disagreements and overrides.",
-      "We examine consistency and inequitable patterns, then revise and retest."
+      "I am aware of how observable criteria and scoring anchors guide a review.",
+      "I know how to score a fictional case independently and compare my reasons with a colleague.",
+      "I can calibrate ratings with other reviewers and document disagreements and overrides.",
+      "I can identify inconsistent or inequitable scoring patterns, revise the rubric, and retest it."
     ],
     "evidence": "An anchored rubric and a disagreement log.",
     "links": [
@@ -60,16 +72,22 @@
         "Reviewer onboarding",
         "../resources/nspa-example3-onboarding.html"
       ]
+    ],
+    "vocabulary": [
+      "scoring anchors",
+      "independently",
+      "calibrate",
+      "scoring patterns"
     ]
   },
   {
     "id": "privacy",
     "title": "Data protection & approved tools",
     "levels": [
-      "I can identify sensitive data and why a public chatbot is not a default destination.",
-      "I can rehearse minimization and a data approval gate with synthetic data.",
-      "We verify service terms, access, retention, deletion, and incident ownership.",
-      "We audit approved uses and revisit settings, contracts, and access over time."
+      "I am aware of sensitive applicant data and why it needs protection when using AI.",
+      "I know how to practice data minimization and an approval check with synthetic data.",
+      "I can check service terms, access, retention, deletion, and who handles an incident.",
+      "I can review approved AI uses and identify when settings, contracts, or access need updating."
     ],
     "evidence": "A documented data gate and service approval decision.",
     "links": [
@@ -81,16 +99,22 @@
         "Application triage example",
         "../resources/nspa-example2-triage.html"
       ]
+    ],
+    "vocabulary": [
+      "sensitive applicant data",
+      "data minimization",
+      "service terms",
+      "approved AI uses"
     ]
   },
   {
     "id": "policy",
     "title": "Applicant AI use & fair response",
     "levels": [
-      "I can distinguish a detector signal from proof of a rule violation.",
-      "I can explain permitted uses, disclosure, and a fair follow-up.",
-      "Our published rules include accessible explanations and review or appeal.",
-      "We review policy outcomes and revise confusing or unfair requirements."
+      "I am aware that AI detectors can produce false positives and cannot prove a rule violation.",
+      "I know how to explain permitted AI uses, disclosure requirements, and a fair follow-up.",
+      "I can apply published rules and offer an accessible explanation and review or appeal route.",
+      "I can use policy outcomes to identify and revise confusing or unfair requirements."
     ],
     "evidence": "A policy starter and one worked response scenario.",
     "links": [
@@ -102,16 +126,22 @@
         "Fair response reference",
         "handouts/fair-ai-policy.pdf"
       ]
+    ],
+    "vocabulary": [
+      "false positives",
+      "disclosure",
+      "review or appeal",
+      "policy outcomes"
     ]
   },
   {
     "id": "improve",
     "title": "Pilot evaluation & transparency",
     "levels": [
-      "I can name an error that could harm an applicant.",
-      "I can test a small fictional set against a human reference.",
-      "Our pilot logs source errors, omissions, review time, and stop conditions.",
-      "We publish appropriate process information and monitor after changes."
+      "I am aware of AI errors that could harm an applicant.",
+      "I know how to test fictional applications against a human reference.",
+      "I can record source errors, omissions, review time, and stop conditions during a pilot.",
+      "I can explain the review process to others and monitor results after changes."
     ],
     "evidence": "A pilot plan with baseline, measures, owner, and stop rule.",
     "links": [
@@ -123,6 +153,12 @@
         "2/2/2 pilot framework",
         "../resources/nspa3_222_framework.html"
       ]
+    ],
+    "vocabulary": [
+      "AI errors",
+      "human reference",
+      "stop conditions",
+      "monitor results"
     ]
   }
 ]
