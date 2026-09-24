@@ -1611,7 +1611,7 @@ sections.forEach(s => observer.observe(s));
 <script>
 (function(){
  const header=document.querySelector('.site-header'),strip=document.querySelector('.search-strip');
- function offset(){document.documentElement.style.setProperty('--prompt-stack',(32+header.offsetHeight+(getComputedStyle(strip).position==='sticky'?strip.offsetHeight:0)+16)+'px');strip.style.setProperty('top',(32+header.offsetHeight)+'px','important');}
+ function offset(){document.documentElement.style.setProperty('--prompt-stack',(32+header.offsetHeight+(getComputedStyle(strip).position==='sticky'?strip.offsetHeight:0)+16)+'px');strip.style.setProperty('top',(getComputedStyle(strip).position==='sticky'?32+header.offsetHeight:0)+'px','important');}
  new ResizeObserver(offset).observe(strip);new ResizeObserver(offset).observe(header);offset();
  document.querySelectorAll('.card-header').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-expanded',el.classList.contains('open'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});el.addEventListener('click',()=>el.setAttribute('aria-expanded',el.classList.contains('open')));});
 })();
