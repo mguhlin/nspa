@@ -1,0 +1,154 @@
+{
+  "version": "PROTECT Rubric v2.0",
+  "subtitle": "Safeguarding Student Data Privacy",
+  "purpose": "A practical tool for evaluating whether an educational technology solution meets the necessary standards for protecting student data across U.S. federal, state, and international regulatory environments.",
+  "regulationAware": "FERPA, COPPA, CIPA, PPRA, SCOPE Act (Texas), SOPIPA-style state laws, NY Ed Law 2-d, IL SOPPA, CCPA/CPRA, GDPR, and the Student Data Privacy Consortium NDPA.",
+  "scores": [
+    {"value":0,"label":"Does not meet expectations","description":"Silent on the topic, vague, or actively contradicts best practice."},
+    {"value":1,"label":"Partially meets","description":"Addresses the topic but leaves material gaps, lacks specifics, or has carve-outs that weaken the commitment."},
+    {"value":2,"label":"Fully meets","description":"Clear, specific, time-bound, regulation-aware, and operationally verifiable."}
+  ],
+  "interpretation": [
+    {"range":"12–14","label":"Approve","description":"Document the score and re-audit annually."},
+    {"range":"9–11","label":"Approve with conditions","description":"Require a signed district data privacy addendum that closes the gaps below a 2 on any category."},
+    {"range":"6–8","label":"Hold","description":"Request remediation; reassess after the vendor revises documentation or product behavior."},
+    {"range":"0–5","label":"Do not approve for student use","description":"Does not meet minimum privacy expectations."}
+  ],
+  "categories": [
+    {
+      "number": 1,
+      "code": "P",
+      "name": "Parental Rights and Access",
+      "lookForShort": "Access, correction, export, deletion, response timelines, working intake channel.",
+      "regulatoryAnchors": "FERPA (34 CFR §99), COPPA (16 CFR §312), state student privacy laws (NY Ed Law 2-d, SCOPE Act §509.052, IL SOPPA, CA SOPIPA), GDPR Articles 12–22.",
+      "whatToLookFor": [
+        "Named procedure for parents and eligible students 18+ to request access, correction, export, and deletion of student records.",
+        "Stated response time windows — best practice: acknowledge within 10 school days, fulfill within 30 calendar days.",
+        "A working intake mechanism such as a web form, dedicated email, or parent portal — not just a generic contact address.",
+        "For COPPA-covered students under 13: explicit verifiable parental consent mechanism, or a clear FERPA school official delegation of consent."
+      ],
+      "levels": {
+        "0": "No mention of parental rights, or rights are conditional on payment / extra agreement.",
+        "1": "Parental rights are listed but lack timeframes, lack an intake mechanism, or apply only to some accounts.",
+        "2": "Specific rights enumerated, with named timeframes, working intake channel, and explicit handling for COPPA-covered minors and eligible students."
+      }
+    },
+    {
+      "number": 2,
+      "code": "R",
+      "name": "Retention and Deletion",
+      "lookForShort": "Retention schedule, return/destruction on termination, backups, user-initiated deletion.",
+      "regulatoryAnchors": "FERPA, COPPA, SCOPE Act, NY Ed Law 2-d, GDPR Article 17, CCPA §1798.105.",
+      "whatToLookFor": [
+        "Concrete retention schedule by data type, not just 'until you ask us to delete it.'",
+        "Return-and-destruction-on-termination clause with a clear deadline.",
+        "Backup handling and explicit deletion propagation through backup cycles.",
+        "User-initiated deletion path with confirmation.",
+        "De-identification or aggregation before any retention beyond the educational purpose."
+      ],
+      "levels": {
+        "0": "No retention schedule; data kept indefinitely; deletion is best-effort or requires unlocking a paid tier.",
+        "1": "Some retention windows stated; deletion possible but backups, exports, or third-party copies not addressed.",
+        "2": "Per-data-type retention schedule, named termination process with explicit active/backup deadlines, user-initiated deletion, and de-identification rules for any post-termination retention."
+      }
+    },
+    {
+      "number": 3,
+      "code": "O",
+      "name": "Opt-Out Options",
+      "lookForShort": "No targeted ads, no profiling, no AI/ML training on student data, per-feature opt-outs.",
+      "regulatoryAnchors": "COPPA, CCPA/CPRA Do Not Sell or Share, GDPR Article 21, PPRA.",
+      "whatToLookFor": [
+        "Explicit prohibition on targeted advertising, behavioral profiling, and cross-context tracking of students.",
+        "Explicit prohibition on AI / ML model training with student data.",
+        "Opt-out for optional features that increase data collection.",
+        "Browser-only or local-only mode, or a clear statement that no opt-out is needed because no data is collected by default.",
+        "Honors Global Privacy Control and Do Not Track where applicable."
+      ],
+      "levels": {
+        "0": "No opt-out provided, or opt-out only by terminating the account. Advertising / AI training silent or permitted.",
+        "1": "Some opt-outs exist but advertising, profiling, or model training are not explicitly prohibited; modern signals not honored.",
+        "2": "Targeted advertising, profiling, sale, and AI/ML training are categorically prohibited for student data; per-feature opt-outs exist; modern signals honored where applicable."
+      }
+    },
+    {
+      "number": 4,
+      "code": "T",
+      "name": "Transparency",
+      "lookForShort": "Data inventory, hosting/data residency, named subprocessors, feature boundaries, update dates.",
+      "regulatoryAnchors": "GDPR Articles 13–14, CCPA §1798.100, FERPA annual notification, state data inventory laws including NY Ed Law 2-d.",
+      "whatToLookFor": [
+        "Definition of student personal information that meets or exceeds the strictest applicable law's definition.",
+        "Comprehensive data inventory: what is collected, how, by which subsystem, and whether it is persisted, transmitted, or only in browser memory.",
+        "Hosting / data residency disclosure including country, region, provider, and backup locations.",
+        "Named subprocessors with their roles and jurisdictions.",
+        "Per-widget or per-feature security boundary if the product is modular.",
+        "Visible Last updated date and a changelog or notification mechanism for material changes."
+      ],
+      "levels": {
+        "0": "Vague 'we collect what we need' language; no data inventory; no hosting info; no subprocessors named.",
+        "1": "Some data categories listed, but vague about subprocessors, hosting, or per-feature differences; changelog absent.",
+        "2": "Full data inventory, named subprocessors with jurisdictions, hosting location stated, per-feature security boundary, dated revisions, and a notification path for material changes."
+      }
+    },
+    {
+      "number": 5,
+      "code": "E",
+      "name": "Encryption and Security",
+      "lookForShort": "TLS in transit, encryption at rest, backup protection, breach timeline, access controls.",
+      "regulatoryAnchors": "FERPA reasonable methods, COPPA §312.8, HIPAA where health data is implicated, state breach notification laws, NIST SP 800-171 / 800-53, NDPA Exhibit E.",
+      "whatToLookFor": [
+        "TLS in transit everywhere: HTTPS, HSTS, modern cipher suites.",
+        "Encryption at rest for databases, object storage, file uploads, audio recordings, and backups.",
+        "Content security policy and modern hardening headers.",
+        "Breach notification timeline named in the policy.",
+        "Access control model, including who can see student data and what audit logging exists.",
+        "For self-hosted products: guidance on secrets management, secure defaults, and patch cadence."
+      ],
+      "levels": {
+        "0": "No mention of encryption, or only HTTPS without at-rest commitment; no breach timeline; no documented access controls.",
+        "1": "TLS confirmed; some at-rest encryption; breach process exists but timeline is vague; access controls undocumented.",
+        "2": "TLS + at-rest including backups, named breach notification window, documented access-control model with audit logs, modern web hardening, and self-host security guidance if applicable."
+      }
+    },
+    {
+      "number": 6,
+      "code": "C",
+      "name": "Consent and Age Restrictions",
+      "lookForShort": "Age bands, COPPA / FERPA pathways, parent visibility, age-appropriate design.",
+      "regulatoryAnchors": "COPPA, SCOPE Act (Texas), GDPR Article 8, CCPA under-16 sale opt-in, ISO/IEC 27701, age-appropriate design laws, CIPA.",
+      "whatToLookFor": [
+        "Explicit age band model and how each band's data is treated differently.",
+        "FERPA school-official consent delegation clearly stated when school-controlled use substitutes for direct parental consent.",
+        "Minors-by-default protections, parental visibility into account actions, restrictions on advertising and addictive design patterns.",
+        "Verifiable parental consent mechanism for COPPA-covered direct use outside a school-authorized context.",
+        "Age-appropriate UX: default privacy, no dark patterns, accessible consent prompts."
+      ],
+      "levels": {
+        "0": "One-size-fits-all consent; no age-band treatment; relies on user-asserted age with no district override.",
+        "1": "COPPA addressed; FERPA school-official path exists; older-minor protections weak or unstated; no SCOPE / state-specific posture.",
+        "2": "Explicit age bands with differentiated processing, both COPPA VPC and FERPA school-official paths documented, SCOPE-Act / state-of-deployment posture stated, age-appropriate design defaults enforced."
+      }
+    },
+    {
+      "number": 7,
+      "code": "T",
+      "name": "Third-party Management",
+      "lookForShort": "Live subprocessor list, roles and jurisdictions, 30-day notice, scope-of-processing limits.",
+      "regulatoryAnchors": "FERPA school official doctrine, COPPA §312.4(d)(1), GDPR Articles 28–29, NDPA Exhibit H, SOC 2 Trust Services Criteria.",
+      "whatToLookFor": [
+        "Current subprocessor list with company name, country, and function.",
+        "Change-notification window for subprocessor additions, ideally 30 days with district objection path.",
+        "Flow-down requirements binding subprocessors to the same data protection standards.",
+        "Cross-border transfer mechanism where applicable.",
+        "No data sale or sharing for the subprocessor's own purposes.",
+        "If SSO / OAuth is supported, requested scopes and what is stored after authentication."
+      ],
+      "levels": {
+        "0": "Subprocessors not named; 'we may use third parties' boilerplate; no change notice; cross-border transfers undocumented.",
+        "1": "Some major subprocessors listed but list is not comprehensive, dated, or kept current; change notice exists but no objection path.",
+        "2": "Live subprocessor list with named jurisdiction and role, 30-day change notice with objection path, flow-down requirements stated, named cross-border transfer mechanism, and clear scope-of-processing limits."
+      }
+    }
+  ]
+}

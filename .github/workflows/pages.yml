@@ -22,7 +22,9 @@ jobs:
         with:
           python-version: '3.x'
       - name: Check local links and migration destinations
-        run: python3 scripts/check_site.py
+        run: |
+          python3 scripts/check_site.py
+          python3 scripts/check_offline.py
       - name: Stage public files
         run: python3 scripts/build_site.py
       - uses: actions/configure-pages@v5

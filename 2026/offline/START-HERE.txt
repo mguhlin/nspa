@@ -1,0 +1,9 @@
+NSPA 2026 OFFLINE WORKSHOP
+
+Extract the entire ZIP first. Open index.html in a browser. Keep all files together.
+No installation, server, login, or internet is required for slides and activities.
+Open facilitator.html for the offline 90-minute route. Prepared examples replace live AI calls.
+Print handouts/participant-workbook.pdf and handouts/capacity-matrix.pdf for paper activities.
+Export drafts and the capacity plan before closing the browser.
+External research is summarized in references.html; full external publications and services are not bundled.
+PowerPoint/PDF link behavior depends on your viewer; use the webdeck for local navigation.
