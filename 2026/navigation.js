@@ -10,3 +10,9 @@ function revealLinkedSection() {
 }
 window.addEventListener('hashchange', revealLinkedSection);
 revealLinkedSection();
+
+const currentWorkshopPath = location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
+document.querySelectorAll('.workshop-nav a').forEach(link => {
+  const path = link.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
+  if (!link.hash && path === currentWorkshopPath) link.setAttribute('aria-current', 'page');
+});

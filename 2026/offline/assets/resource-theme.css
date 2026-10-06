@@ -398,3 +398,9 @@ footer a,
 }
 
 .nspa-prototype-note {position:relative; margin:40px auto 16px; padding:16px 24px; max-width:1100px; background:#fff3df!important; color:#2e4f66!important; border-left:4px solid #ff7233; font:16px/1.6 system-ui;}
+
+.resource-start{margin:20px 0 30px;padding:22px;border:1px solid var(--mg-line);border-left:5px solid var(--mg-blue);border-radius:8px;background:white;font:16px/1.65 Arial,sans-serif}
+.resource-start h2{font:700 21px/1.35 Arial,sans-serif;margin:0 0 12px!important;color:var(--mg-navy)!important}
+.resource-start p{max-width:70ch;margin:10px 0!important;font-size:16px!important;line-height:1.65!important}
+.resource-start a{font-weight:700;text-decoration:underline!important}.resource-start p:last-child{font-size:15px!important}
+@media(max-width:650px){.resource-start{padding:18px}.resource-start h2{font-size:19px}.resource-start p{font-size:16px!important}}

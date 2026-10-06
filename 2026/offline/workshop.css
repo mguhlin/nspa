@@ -12,3 +12,29 @@
 /* Session concept art complements the title without displacing the actions. */
 .workshop-title{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px;align-items:center}.workshop-hero-copy{min-width:0}.workshop-hero-art{margin:0}.workshop-hero-art img{display:block;width:100%;height:auto;border-radius:16px}.workshop-title .actions .button{padding:14px 18px}
 @media(max-width:850px){.workshop-title{grid-template-columns:1fr}.workshop-hero-art{max-width:520px;width:100%;margin:0 auto}.workshop-title h1{font-size:clamp(36px,7vw,56px)}}
+
+/* One activity or readiness area at a time. */
+.workshop-title p:not(.eyebrow),.workshop .lead{max-width:65ch}
+.workshop-title{grid-template-areas:"copy art" "choices choices"}
+.workshop-hero-copy{grid-area:copy}.workshop-hero-art{grid-area:art}
+.workshop-title .workshop-choices{grid-area:choices;margin:0}
+.workshop-hero-art{max-width:400px}.presenter-link{font-size:16px;margin-bottom:32px}
+.download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.download small{font-size:14px}.download strong{font-size:17px}
+.workshop-nav a{font-size:14px;min-height:44px;display:flex;align-items:center}.workshop-nav a[aria-current="page"]{background:var(--teal);color:white}
+.activity-nav{gap:8px;margin:24px 0}.activity-nav a{font-size:15px;min-height:44px;display:flex;align-items:center;border:1px solid transparent}
+.activity-nav a[aria-current="step"]{background:var(--teal);color:white}
+[data-step]{scroll-margin-top:18px}[data-step]>h2:focus{outline:none}
+.activity-meta{font-size:14px;color:var(--muted)}.activity-outcome{max-width:65ch;background:var(--aqua);padding:14px 18px;border-radius:6px}
+.workshop [data-step]>p:not(.activity-meta){max-width:70ch}
+.workshop pre{max-width:85ch;font:16px/1.65 Arial,sans-serif;padding:20px}
+.draft-field{max-width:85ch;margin-top:28px}.draft-field label{display:block;font-size:16px;font-weight:700;line-height:1.5}
+.draft-field textarea{display:block;width:100%;min-height:120px;margin-top:10px;padding:14px;border:1px solid #97b8bb;border-radius:5px;font:16px/1.6 Arial,sans-serif;color:var(--ink);resize:vertical}
+.step-pager{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-pager p{margin:0;font-size:15px}.step-pager button:disabled{opacity:.5;cursor:default}
+.draft-actions{max-width:85ch}.print-answer{display:none}.text-link{font-size:16px;font-weight:700}
+.presenter-table th:first-child{width:16%}.presenter-table th:nth-child(2){width:22%}.presenter-table th:nth-child(3){width:43%}
+.presenter-table{font-size:16px}.presenter-table th span{font-weight:400}.presenter-table td a{font-weight:700}
+.presenter-setup,.presenter-backup{max-width:80ch}.presenter-setup{margin-block:24px}
+@media(max-width:650px){.download-grid{grid-template-columns:1fr}.workshop-nav a{font-size:13px}.workshop-title{padding:24px 20px}.workshop-title h2{font-size:21px}.workshop-hero-art{max-width:280px}.workshop pre{font-size:16px;padding:16px}.step-pager .button{padding:13px 14px;font-size:14px}.step-pager p{font-size:13px}.presenter-table thead{display:none}.presenter-table,.presenter-table tbody,.presenter-table tr,.presenter-table th,.presenter-table td{display:block;width:100%!important}.presenter-table tr{margin-bottom:18px;border:1px solid var(--line)}.presenter-table th,.presenter-table td{border:0;padding:10px 14px}.presenter-table td:last-child:before{content:'Keep: ';font-weight:700}.indicator-table .rating-cell span{font-size:13px}.checklist-resources{font-size:14px}.indicator-table tbody th{font-size:16px}.notes-cell:before{font-size:14px}.notes-cell textarea{font-size:16px}.notes-cell .clear-row{font-size:13px;min-height:40px}}
+@media print{[data-step][hidden]{display:block!important}.activity-nav,.step-pager,.draft-actions .actions,.presenter-link,.presenter-setup .actions{display:none!important}.draft-field textarea{display:none}.print-answer{display:block;white-space:pre-wrap;font-size:11pt;border:1px solid #aaa;padding:12px}.draft-field{break-inside:avoid}.presenter-table{font-size:10px}.workshop-choices{display:none}.presenter-backup{font-size:11px}}
+@media(max-width:850px){.workshop-title{grid-template-areas:"copy" "choices" "art"}.workshop-title .workshop-choices{grid-template-columns:1fr}}

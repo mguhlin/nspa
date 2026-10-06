@@ -1,14 +1,26 @@
 # NSPA project handoff
 
-Updated September 25, 2026. All requested implementation work is complete. The user asked to save context so work can resume later; no new content task is pending. Do not restart completed work or add PDFsplat (the user explicitly canceled that request).
+Updated October 6, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
+
+## October 6 readability and presentation update
+
+- The homepage leads directly to the October workshop. Three routes distinguish following the workshop, getting handouts, and exploring resources afterward. Earlier sessions and assessments remain available in an expandable group.
+- The hub initially offers the workbook and two-page takeaways. Other references, presenter formats, and the complete offline download are grouped separately.
+- Online and offline practice now share six activities: request, fictional application, ratings, checkpoints, policy, and next step. One activity appears at a time; existing slide fragments reveal the correct activity and prepared demonstration. Drafts save in the browser and export together. No-JavaScript and print paths preserve all content.
+- The readiness checklist shows one area at a time, with four statements, blank rating choices, notes, and a direct action-plan link. Prior ratings and notes remain compatible with the existing storage key.
+- `2026/presenter.html` and `handouts/presenter-route.pdf` provide a compact time/slide/activity/question route. The full speaking guide and 26-slide presentation remain available. The workbook is now six pages in the same activity order. Speaking cues, transcript, webdeck, and editable PowerPoint notes share the updated workbook page references.
+- Archive wording now uses the same three two-week phases for 2/2/2, removes the stale June “coming” badge, and distinguishes earlier account prerequisites from October participation. Ten longer reference pages have short starting instructions; resource descriptions and phone text are larger.
+- Reviewed presentation copies are saved in `/media/mg/data/nspa`: PowerPoint, PDF, `nspa-presentation.html`, `nspa-speaking-guide.pdf`, and `nspa-presenter-route.pdf`. Copy hashes were verified.
+- New shared sources: `scripts/workshop/route.py` and `experience.py`; interaction: `2026/workshop-flow.js` and maintained `practice.js`; `sync_notes.py` updates PowerPoint notes while preserving all other package parts.
+- Validation covers desktop/phone overflow, guided navigation, direct demo fragments, clipboard, saved drafts and ratings, exports, print, no-JavaScript fallback, and local-file offline operation without remote requests. Workbook and one-page route were visually inspected; updated speaking-guide pages were checked. Git treats PDFs and presentation packages as binary through `.gitattributes`.
 
 ## Project and publication
 
-- Repository: `/home/mg/Documents/vibecoding/mguhlin/nspa`, `mguhlin/nspa`, branch `main`.
+- Repository: `/media/mg/data/vibecoding/mguhlin/nspa`, `mguhlin/nspa`, branch `main`.
 - Website: https://mguhlin.github.io/nspa/
 - Conference hub: https://mguhlin.github.io/nspa/2026/
-- Last implementation commit: `e5c9f93c59a56130e7d9ac7aa025988861e77e88`.
-- Verified successful Pages deployment: run `36078866838`. Live ZIP, DOCX, PDF, offline landing page, PROTECT worksheet, ethics toolkit, library, and conference hub matched local hashes.
+- September implementation commit: `e5c9f93c59a56130e7d9ac7aa025988861e77e88`; see the current Git log for the October readability update.
+- September verified Pages deployment: run `36078866838`. For the latest deployment, check GitHub Actions and compare the live workshop pages and offline archive with the current checkout.
 - Standing user authorization in the parent `AGENTS.md`: finish changes, check, commit, push, deploy, and verify live without routine confirmation. Recheck working-tree status before edits.
 - Git push uses the scoped repository credentials. Default `gh` account may be `mglearn`; for `mguhlin` operations use the appropriate authenticated account. `/tmp/nspa-gh.py` was a temporary helper that selects the existing `mguhlin` token internally. Never print tokens; temporary helpers may disappear.
 

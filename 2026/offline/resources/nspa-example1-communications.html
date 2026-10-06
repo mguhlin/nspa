@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -268,21 +268,21 @@
   <div class="header-top">
     <span class="nspa-badge">NSPA</span>
     <span class="header-divider">|</span>
-    <span class="series-label">AI Implementation Series &mdash; 2/2/2 Framework</span>
+    <span class="series-label">AI Implementation Series — 2/2/2 Framework</span>
   </div>
   <div class="header-main">
     <div class="header-title-group">
       <h1>Example 1: AI-Assisted Applicant Communications Pilot</h1>
-      <div class="subtitle">6-Week Implementation Package &mdash; Rejection &amp; Acceptance Letter Workflows</div>
+      <div class="subtitle">6-Week Implementation Package — Rejection &amp; Acceptance Letter Workflows</div>
     </div>
-    <div class="framework-badge">Weeks 1&ndash;6 / Sprint 1</div>
+    <div class="framework-badge">Weeks 1–6 / Sprint 1</div>
   </div>
   <nav class="toc-nav">
     <a href="#overview">Overview</a>
     <a href="#policy">Policy Statement</a>
-    <a href="#planning">Weeks 1&ndash;2</a>
-    <a href="#building">Weeks 3&ndash;4</a>
-    <a href="#review">Weeks 5&ndash;6</a>
+    <a href="#planning">Weeks 1–2</a>
+    <a href="#building">Weeks 3–4</a>
+    <a href="#review">Weeks 5–6</a>
     <a href="#prompts">Prompt Pack</a>
     <a href="#checklist">Verification Checklist</a>
     <a href="#metrics">Metrics</a>
@@ -291,7 +291,7 @@
 
 <main class="page-wrap">
 
-  <section id="overview">
+  <aside class="resource-start" aria-label="Start here"><h2>Start with one type of applicant letter</h2><p>This reference walks through a six-week pilot. Read the milestone goal and boundaries first; return to the detailed plans and prompt pack when your team is ready to try it.</p><p><a href="../index.html">Follow the October workshop</a> · <a href="../index.html#library">Return to the resource library</a></p></aside><section id="overview">
     <div class="overview-bar">
       <div class="overview-item">
         <label>Milestone Goal</label>
@@ -320,10 +320,10 @@
   <section id="policy">
     <div class="section-title">Program Policy Statement</div>
     <div class="policy-block">
-      <div class="policy-header">AI-Assisted Applicant Communications &mdash; We Will / We Will Not</div>
+      <div class="policy-header">AI-Assisted Applicant Communications — We Will / We Will Not</div>
       <div class="policy-cols">
         <div class="policy-col will">
-          <div class="policy-col-header will">&#10003; We Will</div>
+          <div class="policy-col-header will">✓ We Will</div>
           <ul>
             <li>Use AI to generate a consistent first-draft rejection letter from an approved, anonymized tone template.</li>
             <li>Require staff review and personalization of every AI-generated draft before sending.</li>
@@ -335,7 +335,7 @@
           </ul>
         </div>
         <div class="policy-col will-not">
-          <div class="policy-col-header will-not">&#10005; We Will Not</div>
+          <div class="policy-col-header will-not">✕ We Will Not</div>
           <ul>
             <li>Include applicant names, IDs, financial data, or any PII in any AI prompt.</li>
             <li>Send an AI-generated letter without staff review and explicit approval.</li>
@@ -349,7 +349,7 @@
     </div>
     <div class="alert alert-info">
       <span class="alert-icon">📋</span>
-      <div>This policy statement should be reviewed and signed off by the program director before Weeks 3&ndash;4 begin. It becomes part of the pilot documentation and is retained for board reporting if requested.</div>
+      <div>This policy statement should be reviewed and signed off by the program director before Weeks 3–4 begin. It becomes part of the pilot documentation and is retained for board reporting if requested.</div>
     </div>
   </section>
 
@@ -358,17 +358,17 @@
     <div class="sprint-header">
       <div class="sprint-num">1</div>
       <div class="sprint-header-text">
-        <div class="sprint-weeks">Weeks 1&ndash;2</div>
+        <div class="sprint-weeks">Weeks 1–2</div>
         <h2>Planning: Define the Problem Before Touching Any Tool</h2>
       </div>
     </div>
     <div class="alert alert-success">
       <span class="alert-icon">🎯</span>
-      <div><strong>Sprint goal:</strong> Leave Weeks 1&ndash;2 with a scoped problem statement, anonymized benchmark samples, a data handling agreement, and a policy statement on file. No prompts are written yet.</div>
+      <div><strong>Sprint goal:</strong> Leave Weeks 1–2 with a scoped problem statement, anonymized benchmark samples, a data handling agreement, and a policy statement on file. No prompts are written yet.</div>
     </div>
 
     <div class="card">
-      <div class="card-title">Task 1 &mdash; Communications Workflow Audit</div>
+      <div class="card-title">Task 1 — Communications Workflow Audit</div>
       <p class="text-sm mb-4">Before building anything, audit where time is being lost and where errors cluster. Fill in this table using last cycle's data.</p>
       <div style="overflow-x:auto;">
         <table class="data-table">
@@ -376,7 +376,7 @@
             <tr><th>Letter Type</th><th>Avg. Volume / Cycle</th><th>Avg. Time per Letter (min)</th><th>Common Errors or Delays</th><th>AI Pilot Candidate?</th></tr>
           </thead>
           <tbody>
-            <tr><td>Rejection letter</td><td><em>Fill in</em></td><td><em>Fill in</em></td><td>Tone inconsistency, delayed sends</td><td style="color:var(--success);font-weight:700;">YES &mdash; Start here</td></tr>
+            <tr><td>Rejection letter</td><td><em>Fill in</em></td><td><em>Fill in</em></td><td>Tone inconsistency, delayed sends</td><td style="color:var(--success);font-weight:700;">YES — Start here</td></tr>
             <tr><td>Waitlist notification</td><td><em>Fill in</em></td><td><em>Fill in</em></td><td>Status confusion, multiple edits</td><td style="color:var(--gold-text);">Cycle 2</td></tr>
             <tr><td>Award acceptance packet</td><td><em>Fill in</em></td><td><em>Fill in</em></td><td>Details vary by award type</td><td style="color:var(--gold-text);">Cycle 3</td></tr>
             <tr><td>Follow-up / missing docs</td><td><em>Fill in</em></td><td><em>Fill in</em></td><td><em>Fill in</em></td><td style="color:var(--gray-mid);">Evaluate later</td></tr>
@@ -387,10 +387,10 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Task 2 &mdash; Benchmark Sample Collection</div>
-      <p class="text-sm mb-4">Pull 5&ndash;10 approved rejection letters from the previous award cycle. These become your quality baseline and few-shot reference examples.</p>
+      <div class="card-title">Task 2 — Benchmark Sample Collection</div>
+      <p class="text-sm mb-4">Pull 5–10 approved rejection letters from the previous award cycle. These become your quality baseline and few-shot reference examples.</p>
       <ol class="step-list">
-        <li>Pull 5&ndash;10 approved rejection letters from last cycle's sent folder.</li>
+        <li>Pull 5–10 approved rejection letters from last cycle's sent folder.</li>
         <li>Remove all applicant names, IDs, school names, and identifying details. Replace with placeholders: [APPLICANT], [SCHOOL], [PROGRAM NAME].</li>
         <li>Select 3 representing the range of tone and scenario (standard, borderline, special circumstances). Label them HIGH, MID, EDGE.</li>
         <li>Have program director confirm these three represent your quality standard. Document approval with date and initials.</li>
@@ -403,7 +403,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Task 3 &mdash; Pilot Scope Document and Handoff Protocol</div>
+      <div class="card-title">Task 3 — Pilot Scope Document and Handoff Protocol</div>
       <p class="text-sm mb-4">Document the following decisions in writing before building begins.</p>
       <div class="two-col">
         <div>
@@ -431,7 +431,7 @@
     <div class="section-title">Sprint 1 Deliverable Checklist</div>
     <div class="outputs-grid">
       <div class="output-chip"><span class="output-icon">📄</span>Scoped problem statement (1 page)</div>
-      <div class="output-chip"><span class="output-icon">📁</span>Anonymized benchmark samples (3&ndash;5)</div>
+      <div class="output-chip"><span class="output-icon">📁</span>Anonymized benchmark samples (3–5)</div>
       <div class="output-chip"><span class="output-icon">📋</span>Letter type inventory with time log</div>
       <div class="output-chip"><span class="output-icon">🔒</span>Data handling agreement (signed)</div>
       <div class="output-chip"><span class="output-icon">📝</span>Policy statement (We Will / We Will Not)</div>
@@ -444,17 +444,17 @@
     <div class="sprint-header">
       <div class="sprint-num">2</div>
       <div class="sprint-header-text">
-        <div class="sprint-weeks">Weeks 3&ndash;4</div>
+        <div class="sprint-weeks">Weeks 3–4</div>
         <h2>Building: Prompt Pipeline, Calibration, and Staff Reference</h2>
       </div>
     </div>
     <div class="alert alert-success">
       <span class="alert-icon">🎯</span>
-      <div><strong>Sprint goal:</strong> Leave Weeks 3&ndash;4 with a tested, three-tier prompt set, a calibration log, a human review checklist, and a one-page workflow reference staff can use without re-reading this document.</div>
+      <div><strong>Sprint goal:</strong> Leave Weeks 3–4 with a tested, three-tier prompt set, a calibration log, a human review checklist, and a one-page workflow reference staff can use without re-reading this document.</div>
     </div>
 
     <div class="card">
-      <div class="card-title">Task 4 &mdash; Calibration Session Protocol</div>
+      <div class="card-title">Task 4 — Calibration Session Protocol</div>
       <p class="text-sm mb-4">Before finalizing any prompt, run a calibration session with two staff members. This catches AI drift before it becomes a pattern.</p>
       <ol class="step-list">
         <li>Each staff member independently uses the same Fast Draft prompt to generate 5 rejection letter drafts using the same anonymized scenario inputs.</li>
@@ -498,7 +498,7 @@
     <div class="sprint-header">
       <div class="sprint-num">3</div>
       <div class="sprint-header-text">
-        <div class="sprint-weeks">Weeks 5&ndash;6</div>
+        <div class="sprint-weeks">Weeks 5–6</div>
         <h2>Review &amp; Wrap-Up: Measure, Audit, and Scope the Next Cycle</h2>
       </div>
     </div>
@@ -510,7 +510,7 @@
     <div class="two-col">
       <div class="card">
         <div class="card-title">Equity Audit Protocol</div>
-        <p class="text-sm mb-4">Pull 10&ndash;15 AI-drafted letters that were approved and sent. Review each against these equity checks:</p>
+        <p class="text-sm mb-4">Pull 10–15 AI-drafted letters that were approved and sent. Review each against these equity checks:</p>
         <ul class="checklist">
           <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Check</span>Did language shift in tone or warmth across applicants from different school types (public vs. private, urban vs. rural)?</li>
           <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Check</span>Did any letter include language interpretable as tied to zip code, demographics, or socioeconomic signals?</li>
@@ -547,7 +547,7 @@
 
   <div class="sprint-divider"></div>
   <section id="prompts">
-    <div class="section-title">Full Prompt Pack &mdash; Rejection Letter Drafts</div>
+    <div class="section-title">Full Prompt Pack — Rejection Letter Drafts</div>
     <div class="alert alert-info">
       <span class="alert-icon">ℹ️</span>
       <div>All three prompts assume <strong>no PII is included in the input</strong>. Staff provide the program context block and a brief scenario summary only. The AI is never told who the applicant is.</div>
@@ -555,7 +555,7 @@
 
     <div class="prompt-tier tier-good">
       <div class="prompt-tier-header">
-        <div><span class="tier-label">Good</span> <span class="tier-name">&mdash; Fast Draft: Quick first pass, familiar scenarios</span></div>
+        <div><span class="tier-label">Good</span> <span class="tier-name">— Fast Draft: Quick first pass, familiar scenarios</span></div>
         <button class="copy-btn" onclick="copyPrompt(this,'p1')">Copy</button>
       </div>
       <pre class="prompt-body" id="p1">You are a professional communications writer for a nonprofit scholarship program.
@@ -581,7 +581,7 @@ Output: One complete letter draft, ready for staff to personalize.</pre>
 
     <div class="prompt-tier tier-better">
       <div class="prompt-tier-header">
-        <div><span class="tier-label">Better</span> <span class="tier-name">&mdash; High-Accuracy Draft: Adds checks, flags uncertainty</span></div>
+        <div><span class="tier-label">Better</span> <span class="tier-name">— High-Accuracy Draft: Adds checks, flags uncertainty</span></div>
         <button class="copy-btn" onclick="copyPrompt(this,'p2')">Copy</button>
       </div>
       <pre class="prompt-body" id="p2">You are a professional communications writer for a nonprofit scholarship program.
@@ -612,7 +612,7 @@ Output: One complete letter draft followed by a brief list of any [STAFF: VERIFY
 
     <div class="prompt-tier tier-best">
       <div class="prompt-tier-header">
-        <div><span class="tier-label">Best</span> <span class="tier-name">&mdash; Governed Workflow: Full audit trail, mandatory review gates</span></div>
+        <div><span class="tier-label">Best</span> <span class="tier-name">— Governed Workflow: Full audit trail, mandatory review gates</span></div>
         <button class="copy-btn" onclick="copyPrompt(this,'p3')">Copy</button>
       </div>
       <pre class="prompt-body" id="p3">You are a professional communications writer for a nonprofit scholarship program. This prompt is part of a governed workflow. Follow all steps in order.
@@ -651,11 +651,11 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
 
   <div class="sprint-divider"></div>
   <section id="checklist">
-    <div class="section-title">Staff Verification Checklist &mdash; Before Every Letter Is Sent</div>
+    <div class="section-title">Staff Verification Checklist — Before Every Letter Is Sent</div>
     <p class="text-sm text-muted mb-4">Mandatory for every AI-assisted letter during the pilot cycle. Staff initials and date required before the letter moves to the supervisor approval queue.</p>
 
     <div class="card">
-      <div class="card-title">Section 1 &mdash; Accuracy Checks</div>
+      <div class="card-title">Section 1 — Accuracy Checks</div>
       <ul class="checklist">
         <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>All placeholders ([APPLICANT], [PROGRAM NAME], etc.) have been replaced with correct information.</li>
         <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>No invented award amounts, deadlines, or reviewer names appear in the letter.</li>
@@ -666,7 +666,7 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
     </div>
 
     <div class="card">
-      <div class="card-title">Section 2 &mdash; Tone and Equity Checks</div>
+      <div class="card-title">Section 2 — Tone and Equity Checks</div>
       <ul class="checklist">
         <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>Tone is warm and respectful throughout. No clinical, bureaucratic, or dismissive language.</li>
         <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>No language referencing the applicant's score, rank, or comparison to other applicants.</li>
@@ -677,10 +677,10 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
     </div>
 
     <div class="card">
-      <div class="card-title">Section 3 &mdash; Approval Sign-Off</div>
+      <div class="card-title">Section 3 — Approval Sign-Off</div>
       <ul class="checklist">
-        <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>Staff reviewer name and initials: _______________ &nbsp; Date: _______________</li>
-        <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>Supervisor approval received: _______________ &nbsp; Date: _______________</li>
+        <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>Staff reviewer name and initials: _______________   Date: _______________</li>
+        <li class="critical"><span class="check-box"></span><span class="priority-badge badge-critical">Required</span>Supervisor approval received: _______________   Date: _______________</li>
         <li class="standard"><span class="check-box"></span><span class="priority-badge badge-standard">Log</span>Letter logged as AI-assisted in the pilot tracking sheet (required for audit at end of cycle).</li>
       </ul>
     </div>
@@ -698,7 +698,7 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
       <div class="metric-card">
         <div class="metric-label">Quality Metric</div>
         <div class="metric-value">Edit Rounds</div>
-        <div class="metric-desc">Number of staff revision cycles per letter. Target: 1&ndash;2 rounds. 3+ signals prompt needs revision.</div>
+        <div class="metric-desc">Number of staff revision cycles per letter. Target: 1–2 rounds. 3+ signals prompt needs revision.</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">Accuracy Metric</div>
@@ -718,7 +718,7 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
             <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
             <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
             <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td colspan="8" style="text-align:center;color:var(--gray-mid);font-style:italic;font-size:13px;">Continue for full batch. Compile summary at end of Weeks 5&ndash;6.</td></tr>
+            <tr><td colspan="8" style="text-align:center;color:var(--gray-mid);font-style:italic;font-size:13px;">Continue for full batch. Compile summary at end of Weeks 5–6.</td></tr>
           </tbody>
         </table>
       </div>
@@ -733,10 +733,10 @@ C. List of [STAFF: VERIFY] flags with the specific concern for each</pre>
 </main>
 
 <footer class="page-footer">
-  <strong>NSPA AI Implementation Series</strong> &mdash; 2/2/2 Framework &mdash; Example 1: Applicant Communications Pilot
+  <strong>NSPA AI Implementation Series</strong> — 2/2/2 Framework — Example 1: Applicant Communications Pilot
   <hr class="footer-sep">
-  Produced for the "Automating Office Tasks with AI" session &mdash; March 4, 2026<br>
-  Contact: <a href="../references.html#ref-554d5f1feaf1">mguhlin@tcea.org</a> &nbsp;|&nbsp; <strong><a href="nspa3_222_framework.html">Return to Session Resources</a></strong>
+  Produced for the "Automating Office Tasks with AI" session — March 4, 2026<br>
+  Contact: <a href="../references.html#ref-554d5f1feaf1">mguhlin@tcea.org</a>  |  <strong><a href="nspa3_222_framework.html">Return to Session Resources</a></strong>
 </footer>
 
 <script>
@@ -746,4 +746,4 @@ function copyPrompt(btn,id){
     setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
   });
 }
-document.querySele
+document.querySele</script></body></html>

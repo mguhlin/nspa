@@ -1,0 +1,6 @@
+# Keep document packages and generated artwork out of text whitespace checks.
+*.pdf binary
+*.pptx binary
+*.zip binary
+*.png binary
+*.webp binary

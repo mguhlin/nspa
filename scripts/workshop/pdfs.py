@@ -67,21 +67,23 @@ for page in range(3):
   story+=[t,p('Resources: '+' | '.join(f'<link href="{urljoin(URL,u)}" color="#007c89">{escape(t)}</link>' for t,u in d['links']),'small'),Spacer(1,8)]
  story+=[text('One thing I want to work on: __________________________________________________','small'),text('My next step: __________________________________________________________________','small')]
 doc('capacity-matrix',story)
-# Workbook with explicit writing space and offline activities.
+# Workbook: the same six activities as the slides and guided practice lab.
 story=title('Participant workbook','October 21, 2026 | 3:30-5:00 PM CT | Trust, Transparency, and AI')
-story+=[text('1. Read the fictional packet','h2'),text('Program requirements: enrollment confirmation, a goal statement of no more than 150 words, and one service example. No real person or application is represented. Use no real applicant data in this exercise.')]
-for id,v in CASE:story+=[p(f'<b>{id}</b>  {escape(v)}')]
-story+=lines('What is present? What is missing or unclear?',3)
-story+=[PageBreak()]+title('2. Repair the prompt','Define a task that a human can verify.')
+story+=[text('1. Write a clear AI request','h2'),text('Choose one small task. Say which rules and source information to use, which decisions stay with people, and how the answer should be presented.')]
 story+=[p(escape(PROMPT).replace('\n','<br/>'),'small')]+lines('My task and approved criteria',2)+lines('Evidence requirement and boundaries',2)+lines('Output format and human follow-up',2)
-story+=[PageBreak()]+title('3. Calibrate before comparing AI','Work independently first. Compare evidence, then resolve the anchor interpretation.')
-story+=[table([['Criterion','0','1','2']]+RUBRIC,[108,144,144,144]),Spacer(1,16),text('Missing source pages or contradictory information require follow-up; do not manufacture a rating. Do not score writing polish unless it is an explicit, justified criterion.'),table([['Criterion','My rating / evidence','Partner / AI draft','Final human reason'],['Goal clarity','','',''],['Contribution','','',''],['Reflection','','','']],[108,144,144,144])]+lines('Which anchor would we revise, and why?',3)
-story+=[PageBreak()]+title('4. Policy lab','A fictional essay is flagged. The applicant reports translation assistance.')
+story+=[PageBreak()]+title('2. Check a fictional application','Program requirements: enrollment confirmation, a goal statement of no more than 150 words, and one service example. Missing evidence is a follow-up item.')
+for id,v in CASE:story+=[p(f'<b>{id}</b>  {escape(v)}')]
+story+=lines('What is present, missing, or unclear? What should a person check?',3)
+story+=[PageBreak()]+title('3. Compare ratings using the same scoring guide','Work independently first. Compare evidence, then discuss what each score description means.')
+story+=[table([['Criterion','0','1','2']]+RUBRIC,[108,144,144,144]),Spacer(1,16),text('Missing source pages or contradictory information require follow-up; do not manufacture a rating. Do not score writing polish unless it is an explicit, justified criterion.'),table([['Criterion','My rating / evidence','Partner / AI draft','Final human reason'],['Goal clarity','','',''],['Contribution','','',''],['Reflection','','','']],[108,144,144,144])]+lines('Which score description would we revise, and why?',3)
+story+=[PageBreak()]+title('4. Map the human review checkpoints','Draw the route: approved input -> AI draft -> evidence check -> human decision -> record. Name a person at each check.')
+story+=[table([['Before the tool','Before reviewer use','Before a decision'],['Data approval + minimization','Evidence check + correction','Human owner + response route']],[180,180,180])]
+story+=lines('My workflow and the people who check each handoff',5)+lines('When we pause, and who handles the concern',3)
+story+=[PageBreak()]+title('5. Draft a fair applicant AI-use policy','A fictional essay is flagged. The applicant reports translation assistance.')
 story+=[text('The detector flag and polished style do not establish misconduct. Start with the published rules and relevant evidence. If a rule is unclear, address the ambiguity prospectively.')]
 story+=lines('Permitted assistance and disclosure requirements',3)+lines('Specific rule and evidence relevant to this concern',3)+lines('A neutral clarification request and accessible response option',3)+lines('Decision owner and review / appeal path',2)
-story+=[PageBreak()]+title('5. A protected workflow and next step','Use the capacity matrix to choose one change you can demonstrate.')
-story+=[table([['Before the tool','Before reviewer use','Before a decision'],['Data approval + minimization','Evidence check + correction','Human owner + response route']],[180,180,180])]
-story+=lines('One capacity to build and my next action',2)+lines('Evidence of progress and a stop condition',2)+lines('Owner / role and target date',1)+lines('Exit ticket: one prompt change, safeguard, and policy decision',3)
+story+=[PageBreak()]+title('6. Choose one next step for 30 days','Choose one readiness area and mark its four statements. Complete the remaining areas afterward. Plan one change you can demonstrate.')
+story+=lines('One capacity to build and my next action',3)+lines('Evidence of progress and a stop condition',3)+lines('Owner / role and target date',2)+lines('Exit ticket: one prompt change, safeguard, and policy decision',3)
 story+=[p(f'<link href="{URL}practice.html" color="#007c89">Full prompts, prepared reference outputs, and policy starter</link>'),text('The reference outputs are authored teaching examples, not live model transcripts. The training rubric and capacity matrix are not validated award-selection instruments.','small')]
 doc('participant-workbook',story)
 # Facilitator guide: conversational words to say, with separate stage directions.
@@ -106,4 +108,14 @@ for key in ['workbook','matrix','prompt','packet','demo1','rubric','demo2','work
  label,path=RESOURCES[key]
  story += [p(f'<b>{escape(label)}</b><br/><link href="{BASE+path}" color="#007c89">{BASE+path}</link>','small')]
 doc('facilitator-guide',story)
+# A compact, one-page route complements the full speaking guide.
+from route import RUN_OF_SHOW
+styles['route']=ParagraphStyle('route',parent=styles['small'],fontSize=9.5,leading=12.5,spaceAfter=0)
+route_rows=[[p('Time / slides','white'),p('Open this activity','white'),p('Ask or do / keep','white')]]
+for time,slide,activity,path,question,keep in RUN_OF_SHOW:
+ route_rows.append([text(time+'\nSlides '+slide,'route'),p(f'<link href="{URL+path}" color="#007c89"><b>{escape(activity)}</b></link>','route'),p(escape(question)+'<br/><b>Keep:</b> '+escape(keep),'route')])
+route_table=Table(route_rows,colWidths=[80,130,330],hAlign='LEFT')
+route_table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.5,colors.HexColor('#CCDDDD')),('LEFTPADDING',(0,0),(-1,-1),8),('RIGHTPADDING',(0,0),(-1,-1),8),('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
+route_story=title('Your presenter route','October 21, 2026 | 3:30-5:00 PM CT | Keep this beside the presentation.')+[route_table,text('Prepared demo fallback','h2'),p(f'<link href="{URL}practice.html#demo-completeness" color="#007c89">Completeness table</link> | <link href="{URL}practice.html#demo-scoring" color="#007c89">Scoring discussion</link>. Say: This is a prepared teaching example, not a live model response.','small'),text('If time is short: shorten volunteer reporting and extra examples. Keep independent ratings and the fair-response discussion. At 4:55, move to the closing notes. Slide 26 is the source appendix.','small'),p(f'<link href="{URL}handouts/facilitator-guide.pdf" color="#007c89">Full speaking guide</link> | <link href="{URL}presenter.html" color="#007c89">Online presenter route</link>','small')]
+doc('presenter-route',route_story)
 print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))

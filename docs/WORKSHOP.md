@@ -30,6 +30,10 @@ The capacity matrix, rubric, and policy starter are original workshop teaching t
 
 ## Rebuild and maintenance
 
+October 6 experience update: `route.py` holds the six-activity order and compact presenter cues. `experience.py` builds the guided hub, adds draft fields and navigation to the preserved practice content, and adds the readiness-area selector and presenter page. `practice.js` and `workshop-flow.js` are maintained directly; `site.py` does not overwrite them. The workbook is six pages in the same order as the activities. `presenter-route.pdf` is one page.
+
+For content or speaking-cue changes, run `pdfs.py` for the affected handouts, `slides.py`, `site.py`, `webdeck.py`, and `sync_notes.py`, then rebuild with `offline.py` and `package_offline.py`. `sync_notes.py` changes only editable PowerPoint notes. Re-render slides and rebuild the presentation only when the actual slide content or artwork changes. Run the link and offline checks after packaging. The local Python installation supplies ReportLab, Pillow, lxml, and pypdf; the older bundled runtime path below is historical.
+
 `content.py` holds shared agenda, packet, prompts, rubric, policy, sources, and capacity statements. `facilitator.py` holds the speaking script; `slides.py` contains slide text and maps the shared script into notes; `render_slides.py` creates deterministic HTML layouts. `pdfs.py` creates printable handouts with ReportLab. `site.py` produces the workshop pages. The JavaScript interaction files and workshop CSS are maintained directly.
 
 Production used the installed Codex primary runtime (26.905.11957), Artifact Tool 2.8.59 for PPTX assembly, and its bundled LibreOffice for rendering. No desktop LibreOffice was used. Runtime loading tools were not exposed in this session; the matching installed runtime paths were inspected directly. Slide screenshot rendering used the existing local Playwright installation. All build intermediates and QA renders stay outside public output directories.

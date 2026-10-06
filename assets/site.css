@@ -13,3 +13,19 @@
 @media(max-width:650px){.hero{min-height:470px}.hero-copy{background:none}}
 
 .nspa-logo{display:block;width:110px;height:auto;object-fit:contain}
+
+/* Clear workshop entrances and readable library descriptions. */
+.workshop-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-block:24px}
+.route-card{display:block;padding:22px;border:1px solid var(--line);border-radius:9px;background:white;text-decoration:none}
+.route-card strong{display:block;font-size:19px;line-height:1.35}
+.route-card span{display:block;margin-top:8px;font-size:15px;line-height:1.5;color:var(--muted)}
+.route-card.primary{background:var(--teal);border-color:var(--teal);color:white}
+.route-card.primary span{color:white}.route-card:hover{border-color:var(--teal)}
+.additional-resources{padding:18px;border:1px solid var(--line);border-radius:9px;margin-block:24px}
+.additional-resources summary{font-size:16px;font-weight:700;cursor:pointer}
+.additional-resources .quick-links{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:0}
+.quick-link small,.resource-row small{font-size:14px;line-height:1.6}
+.resource-row strong{font-size:16px}.resource-row{padding-block:18px}
+.library-top h2{margin-bottom:10px}.library-intro{max-width:65ch;font-size:16px;line-height:1.65}
+button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+@media(max-width:650px){.workshop-choices,.additional-resources .quick-links{grid-template-columns:1fr}.route-card{padding:18px}.quick-link small,.resource-row small{font-size:14px}.quick-link strong{font-size:16px}.topic-tabs button{font-size:12px;min-height:64px}.masthead nav{font-size:12px}.additional-resources{padding:16px}}
