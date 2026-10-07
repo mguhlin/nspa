@@ -1,0 +1,128 @@
+{
+  "checks": [
+    "1440px pages, seven conversations, all 18 slides",
+    "390px pages, seven conversations, all 18 slides",
+    "draft persistence/export, print, presenter synchronization",
+    "offline and extracted archive routes, separate storage, no-JavaScript"
+  ],
+  "errors": [],
+  "remote": [],
+  "presentation_finalization": {
+    "schemaVersion": "presentation-finalization.v1",
+    "finalSha256": "449df04491cf3267af7b7e261c8022590fb8dbe66e9063dde5093238e49ace2e",
+    "byteCount": 8436080,
+    "packageIntegrity": {
+      "chart_count": 0,
+      "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+      "finding_count": 0,
+      "findings": [],
+      "notes_parts_skipped": 18,
+      "relationship_part_count": 41,
+      "slide_count": 18,
+      "status": "pass",
+      "exitCode": 0,
+      "findingCount": 0,
+      "warnings": []
+    },
+    "presentationLayout": {
+      "finding_count": 0,
+      "findings": [],
+      "slide_count": 18,
+      "slide_size_in": [
+        13.3333,
+        7.5
+      ],
+      "warning_count": 0,
+      "warnings": [],
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    "fontSelection": {
+      "basis": "unspecified",
+      "approvedFamilies": [],
+      "scriptFonts": {},
+      "referenceSha256": null,
+      "referenceFontsVerifiedInEncodedText": false
+    },
+    "firstPartyImport": {
+      "performed": true,
+      "passed": true,
+      "slideCount": 18,
+      "sha256": "449df04491cf3267af7b7e261c8022590fb8dbe66e9063dde5093238e49ace2e",
+      "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    },
+    "nativeTableArithmetic": {
+      "performed": true,
+      "checked_column_count": 0,
+      "checks": [],
+      "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+      "eligible_table_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "native_table_count": 0,
+      "passed": true,
+      "schema_version": "presentation-native-table-arithmetic.v1",
+      "skipped_tables": [],
+      "slide_count": 18,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "nativeChartTitles": {
+      "performed": true,
+      "checks": [],
+      "finding_count": 0,
+      "findings": [],
+      "native_chart_count": 0,
+      "native_powerpoint_verified": false,
+      "passed": true,
+      "presentation_sha256": "449df04491cf3267af7b7e261c8022590fb8dbe66e9063dde5093238e49ace2e",
+      "schema_version": "presentation-native-chart-titles.v1",
+      "slide_count": 18,
+      "source_text_emitted": false,
+      "unresolved_linked_title_count": 0
+    },
+    "sourceDerivedPolicyFlags": [
+      "--expected-slide-size-emu",
+      "12192000,6858000",
+      "--validate-bullet-geometry",
+      "--validate-heading-fit",
+      "--cover-role",
+      "none",
+      "--expected-slide-count",
+      "18"
+    ],
+    "nativeChartValidation": {
+      "detectedOwnerSlides": [],
+      "detectedChartCount": 0,
+      "targetApplication": "portable",
+      "sourceChartOwnersExplicitlyDeclared": true,
+      "validatorRan": false,
+      "passed": true
+    }
+  },
+  "preservation": "Library and all ten supplied infographic entries/assets unchanged from prior HEAD.",
+  "handout_pages": {
+    "participant-workbook": 6,
+    "facilitator-guide": 15,
+    "presenter-route": 1
+  },
+  "slide_pdf_pages": 18,
+  "slide_pdf_links": 24,
+  "png_count": 18,
+  "local_link_check": "PASS",
+  "offline_reference_check": {
+    "count": 485,
+    "failures": 0
+  },
+  "offline_archive_manifest": "79 SHA-256 checksums passed; extracted archive tested.",
+  "pdf_visual_review": "All 18 presentation pages, 15 speaker guide pages, 6 workbook pages, and one route page inspected.",
+  "sha256": {
+    "2026/slides/nspa-trust-transparency-ai.pptx": "449df04491cf3267af7b7e261c8022590fb8dbe66e9063dde5093238e49ace2e",
+    "2026/slides/nspa-trust-transparency-ai.pdf": "104b55969714119b40464a7c2ee6c7ba8d5d550a0e94d7859b609a4422f50f07",
+    "2026/handouts/facilitator-guide.pdf": "b02f9982f4b46214a30e713053d33512d70a83f352d3a5f5bd3bb1c7cb1c72d6",
+    "2026/handouts/participant-workbook.pdf": "4cf4b618c8a6eb559338f21155a96337c7c09e851808b49a0a69f911a9fb29d5",
+    "2026/handouts/presenter-route.pdf": "26e55e419a50640867b6447ddf0c4df597064dca63035286c3bd357eb8f452aa",
+    "2026/offline/nspa-2026-offline.zip": "e0094c96b9e7cf4921e864bff83d2fdb58d0a2571d08ff3fcd6d4c83161f28e2"
+  }
+}

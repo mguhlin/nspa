@@ -1,6 +1,6 @@
 """Self-contained webdeck using the supplied framework and the reviewed slide layouts."""
 from content import ROOT, TITLE, SOURCES
-from slides import SLIDES
+from slides import SLIDES, CORE_COUNT
 import render_slides  # Rebuild the same real-text HTML used for the reviewed slide PNGs.
 import re,base64,io
 from pathlib import Path
@@ -40,11 +40,11 @@ for n,s in enumerate(SLIDES,1):
  html=html.replace('<h1>','<h1 class="slide-title">',1).replace('<nav class="nspa-resource-links">','<nav class="nspa-resource-links" aria-label="Slide resources">')
  notes=''.join('<p>'+E(p).replace('\n','<br>')+'</p>' for p in s['notes'].split('\n\n'))
  notes+=''.join(f'<p><a href="{E(SOURCES[i][1])}" target="_blank" rel="noopener noreferrer">{E(SOURCES[i][0])}</a></p>' for i in s['sources'])
- sections.append(f'<section class="slide{ " current" if n==1 else ""}" aria-label="Slide {n}: {E(s["title"])}"><div class="slide-body nspa-body">{html}</div><div class="slide-footer nspa-footer"><span class="brand">NSPA 2026</span><span>Miguel Guhlin</span><span>{n} / 26</span></div><div class="notes">{notes}</div></section>')
+ sections.append(f'<section class="slide{ " current" if n==1 else ""}" aria-label="Slide {n}: {E(s["title"])}"><div class="slide-body nspa-body">{html}</div><div class="slide-footer nspa-footer"><span class="brand">NSPA 2026</span><span>Miguel Guhlin</span><span>{n} / {len(SLIDES)}</span></div><div class="notes">{notes}</div></section>')
 framework_css=(HERE/'deck-framework.css').read_text()
 framework_js=(HERE/'deck-framework.js').read_text()
 theme=(HERE/'webdeck-theme.css').read_text()
 extras=(HERE/'webdeck-extras.js').read_text()
 html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2e4f66"><title>{E(TITLE)} | NSPA webdeck</title><link rel="canonical" href="https://mguhlin.github.io/nspa/2026/webdeck.html"><style>{framework_css}\n{css}\n{theme}</style></head><body><a id="exitDeck" href="https://mguhlin.github.io/nspa/2026/">← Workshop materials</a><div class="deck">{''.join(sections)}</div><noscript><p style="position:fixed;bottom:0;background:white;color:#2e4f66;padding:12px">Navigation requires JavaScript. <a href="https://mguhlin.github.io/nspa/2026/slides/nspa-trust-transparency-ai.pdf">Open the presentation PDF</a>.</p></noscript><script>{framework_js}</script><script>{extras}</script></body></html>'''
 (ROOT/'2026/webdeck.html').write_text(html)
-print(f'Created 26-slide self-contained webdeck: {len(html.encode())/1024/1024:.1f} MB, {len(cache)} embedded assets')
+print(f'Created {len(SLIDES)}-slide self-contained webdeck: {len(html.encode())/1024/1024:.1f} MB, {len(cache)} embedded assets')

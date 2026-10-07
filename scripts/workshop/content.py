@@ -5,18 +5,12 @@ TITLE='Trust, Transparency, and AI: Building Responsible Scholarship Review Prac
 URL='https://mguhlin.github.io/nspa/2026/'
 SOURCES=[
 ('NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf','Gen AI can produce confident falsehoods; evaluate performance in the intended setting, verify sources, and document oversight.'),
-('Turnitin detection FAQ (reviewed September 24, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs','The indicator estimates the share of qualifying prose flagged by the model. It is not a probability of misconduct or a determination of misconduct; Turnitin advises against using it alone for adverse action.'),
+('Turnitin detection FAQ (reviewed October 7, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs','The indicator estimates the share of qualifying prose flagged by the model. It is not a probability of misconduct or a determination of misconduct; Turnitin advises against using it alone for adverse action.'),
 ('Liang et al., Patterns (2023)','https://arxiv.org/abs/2304.02819','This study found false-positive disparities for the non-native English writing and detectors it tested. It does not establish error rates for all current tools.'),
 ('Al Ali, Helcl & Libovicky, EACL SRW (2026)','https://arxiv.org/abs/2602.05769','A later study centered on Czech writing found no systematic non-native-speaker bias across its tested detector families. Context, language, and detector matter.')]
-AGENDA=[
-('3:30–3:38','8 min','Frame the decisions','Identify one review task and rate a starting capacity.','1–4'),
-('3:38–3:50','12 min','Build a structured prompt','Draft a constrained prompt with an evidence requirement.','5–7'),
-('3:50–4:05','15 min','Demonstrate administrative review','Test synthetic application triage; catch omissions and unsupported claims.','8–11'),
-('4:05–4:20','15 min','Calibrate a review rubric','Compare independent human ratings before seeing an AI draft.','12–14'),
-('4:20–4:30','10 min','Protect the workflow','Place a data gate and a named human decision owner in a workflow.','15–16'),
-('4:30–4:45','15 min','Evaluate applicant AI use','Interpret a detector signal; draft a fair policy response.','17–20'),
-('4:45–4:55','10 min','Choose a capacity target','Select one capacity, evidence of progress, and a 30-day action.','21–23'),
-('4:55–5:00','5 min','Commit and close','Share an exit ticket and address remaining questions.','24–25')]
+from route import RUN_OF_SHOW, CONVERSATIONS
+AGENDA=[(time, step[3], title, keep, slides) for (time,slides,title,path,question,keep),step in zip(RUN_OF_SHOW,CONVERSATIONS)]
+
 PROMPT='''You support a human scholarship review team. This is a fictional training exercise.
 TASK: Create an administrative completeness table. Do not rank applicants or recommend awards.
 CRITERIA: The fictional program requires enrollment confirmation, a 150-word maximum goal statement, and one service example. A missing document is a follow-up item, not proof of ineligibility.

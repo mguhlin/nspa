@@ -12,9 +12,13 @@ document.querySelectorAll('[data-copy]').forEach(button => button.addEventListen
 }));
 
 const drafts = [...document.querySelectorAll('[data-draft]')];
+if (drafts.length) {
 const draftStatus = document.querySelector('#draft-status');
-const draftKey = location.protocol === 'file:' || location.pathname.includes('/offline/')
-  ? 'nspa-offline-drafts-v1' : 'nspa-workshop-drafts-v1';
+const offlineDrafts = location.protocol === 'file:' || location.pathname.includes('/offline/');
+const conversationDrafts = location.pathname.endsWith('/conversation.html');
+const draftKey = conversationDrafts
+  ? (offlineDrafts ? 'nspa-offline-conversation-v1' : 'nspa-conversation-v1')
+  : (offlineDrafts ? 'nspa-offline-drafts-v1' : 'nspa-workshop-drafts-v1');
 try {
   const saved = JSON.parse(localStorage.getItem(draftKey) || '{}');
   drafts.forEach(field => { field.value = typeof saved[field.dataset.draft] === 'string' ? saved[field.dataset.draft] : ''; });
@@ -36,7 +40,7 @@ document.querySelector('#export-drafts').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([text], {type: 'text/plain;charset=utf-8'}));
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'nspa-workshop-drafts.txt';
+  link.download = conversationDrafts ? 'nspa-conversation-notes.txt' : 'nspa-workshop-drafts.txt';
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   draftStatus.textContent = 'Drafts exported.';
@@ -51,3 +55,4 @@ window.addEventListener('beforeprint', () => drafts.forEach(field => {
   }
   output.textContent = field.value || 'No response entered.';
 }));
+}

@@ -2,9 +2,10 @@ import fs from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {Presentation,PresentationFile} from '@oai/artifact-tool';
 import {finalizePresentation} from '/home/mg/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs';
+process.env.RUNTIME_NODE_MODULES ??= '/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
 const root=process.env.NSPA_ROOT || '/home/mg/Documents/vibecoding/mguhlin/nspa';
 const data=JSON.parse(await fs.readFile(root+'/docs/workshop-slide-map.json','utf8'));
-const sources=[['NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'],['Turnitin AI detection FAQ (reviewed September 24, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs'],['Liang et al. (2023)','https://arxiv.org/abs/2304.02819'],['Al Ali, Helcl & Libovicky (2026)','https://arxiv.org/abs/2602.05769']];
+const sources=[['NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'],['Turnitin AI detection FAQ (reviewed October 7, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs'],['Liang et al. (2023)','https://arxiv.org/abs/2304.02819'],['Al Ali, Helcl & Libovicky (2026)','https://arxiv.org/abs/2602.05769']];
 const presentation=Presentation.create({slideSize:{width:1280,height:720}});
 for(let i=0;i<data.length;i++){
  const s=presentation.slides.add();const id=String(i+1).padStart(2,'0');
@@ -18,5 +19,5 @@ const rawPath='/tmp/nspa-workshop/build/candidate-raw.pptx';
 await(await PresentationFile.exportPptx(presentation)).save(rawPath);
 execFileSync('/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',[root+'/scripts/workshop/pptx_links.py',rawPath,candidatePath,root+'/docs/workshop-slide-map.json'],{stdio:'inherit'});
 const skill='/home/mg/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations';
-const result=await finalizePresentation({workspaceDir:'/tmp/nspa-workshop',candidatePath,finalPath:'/tmp/nspa-workshop/output/nspa-trust-transparency-ai-linked-v3.pptx',pythonExecutable:'/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],explicitTotalSlideCount:26,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],verifyArtifactToolImport:true,receiptPath:'/tmp/nspa-workshop/build/validation-linked-v3.json'});
+const result=await finalizePresentation({workspaceDir:'/tmp/nspa-workshop',candidatePath,finalPath:'/tmp/nspa-workshop/output/nspa-trust-transparency-ai-conversation-v1.pptx',pythonExecutable:'/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit'],explicitTotalSlideCount:data.length,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],verifyArtifactToolImport:true,receiptPath:'/tmp/nspa-workshop/build/validation-conversation-v1.json'});
 console.log(JSON.stringify(result));

@@ -31,7 +31,7 @@ def doc(name,story,size=letter):
  d=SimpleDocTemplate(str(OUT/(name+'.pdf')),pagesize=size,rightMargin=36,leftMargin=36,topMargin=53,bottomMargin=50,title=name.replace('-',' ').title(),author='Miguel Guhlin');d.build(story,onFirstPage=header,onLaterPages=header)
 def title(a,b):return [text(a,'h1'),text(b)]
 def section(a,b):return [text(a,'h2'),text(b)]
-def lines(label,n=2):return [text(label,'h2')]+[Spacer(1,6),Table([['']]*n,colWidths=[530],rowHeights=23,style=TableStyle([('LINEBELOW',(0,0),(-1,-1),.5,colors.HexColor('#AFC5CA'))]))]
+def lines(label,n=2,hint=''):return [text(label,'h2')]+([text(hint,'small')] if hint else [])+[Spacer(1,6),Table([['']]*n,colWidths=[530],rowHeights=23,style=TableStyle([('LINEBELOW',(0,0),(-1,-1),.5,colors.HexColor('#AFC5CA'))]))]
 def table(rows,widths,head=True):
  data=[[text(str(v),'white' if i==0 and head else 'table') for v in row] for i,row in enumerate(rows)]
  t=Table(data,colWidths=widths,hAlign='LEFT');style=[('VALIGN',(0,0),(-1,-1),'TOP'),('BOX',(0,0),(-1,-1),.5,colors.HexColor('#AFC5CA')),('INNERGRID',(0,0),(-1,-1),.4,colors.HexColor('#CCDDDD')),('LEFTPADDING',(0,0),(-1,-1),9),('RIGHTPADDING',(0,0),(-1,-1),9),('TOPPADDING',(0,0),(-1,-1),9),('BOTTOMPADDING',(0,0),(-1,-1),9)]
@@ -67,46 +67,59 @@ for page in range(3):
   story+=[t,p('Resources: '+' | '.join(f'<link href="{urljoin(URL,u)}" color="#007c89">{escape(t)}</link>' for t,u in d['links']),'small'),Spacer(1,8)]
  story+=[text('One thing I want to work on: __________________________________________________','small'),text('My next step: __________________________________________________________________','small')]
 doc('capacity-matrix',story)
-# Workbook: the same six activities as the slides and guided practice lab.
-story=title('Participant workbook','October 21, 2026 | 3:30-5:00 PM CT | Trust, Transparency, and AI')
-story+=[text('1. Write a clear AI request','h2'),text('Choose one small task. Say which rules and source information to use, which decisions stay with people, and how the answer should be presented.')]
-story+=[p(escape(PROMPT).replace('\n','<br/>'),'small')]+lines('My task and approved criteria',2)+lines('Evidence requirement and boundaries',2)+lines('Output format and human follow-up',2)
-story+=[PageBreak()]+title('2. Check a fictional application','Program requirements: enrollment confirmation, a goal statement of no more than 150 words, and one service example. Missing evidence is a follow-up item.')
-for id,v in CASE:story+=[p(f'<b>{id}</b>  {escape(v)}')]
-story+=lines('What is present, missing, or unclear? What should a person check?',3)
-story+=[PageBreak()]+title('3. Compare ratings using the same scoring guide','Work independently first. Compare evidence, then discuss what each score description means.')
-story+=[table([['Criterion','0','1','2']]+RUBRIC,[108,144,144,144]),Spacer(1,16),text('Missing source pages or contradictory information require follow-up; do not manufacture a rating. Do not score writing polish unless it is an explicit, justified criterion.'),table([['Criterion','My rating / evidence','Partner / AI draft','Final human reason'],['Goal clarity','','',''],['Contribution','','',''],['Reflection','','','']],[108,144,144,144])]+lines('Which score description would we revise, and why?',3)
-story+=[PageBreak()]+title('4. Map the human review checkpoints','Draw the route: approved input -> AI draft -> evidence check -> human decision -> record. Name a person at each check.')
-story+=[table([['Before the tool','Before reviewer use','Before a decision'],['Data approval + minimization','Evidence check + correction','Human owner + response route']],[180,180,180])]
-story+=lines('My workflow and the people who check each handoff',5)+lines('When we pause, and who handles the concern',3)
-story+=[PageBreak()]+title('5. Draft a fair applicant AI-use policy','A fictional essay is flagged. The applicant reports translation assistance.')
-story+=[text('The detector flag and polished style do not establish misconduct. Start with the published rules and relevant evidence. If a rule is unclear, address the ambiguity prospectively.')]
-story+=lines('Permitted assistance and disclosure requirements',3)+lines('Specific rule and evidence relevant to this concern',3)+lines('A neutral clarification request and accessible response option',3)+lines('Decision owner and review / appeal path',2)
-story+=[PageBreak()]+title('6. Choose one next step for 30 days','Choose one readiness area and mark its four statements. Complete the remaining areas afterward. Plan one change you can demonstrate.')
-story+=lines('One capacity to build and my next action',3)+lines('Evidence of progress and a stop condition',3)+lines('Owner / role and target date',2)+lines('Exit ticket: one prompt change, safeguard, and policy decision',3)
-story+=[p(f'<link href="{URL}practice.html" color="#007c89">Full prompts, prepared reference outputs, and policy starter</link>'),text('The reference outputs are authored teaching examples, not live model transcripts. The training rubric and capacity matrix are not validated award-selection instruments.','small')]
+# Conversation workbook: six pages, with one shared case and a single change to try.
+from conversation import FLAWED_DRAFT, FAIR_SCENARIO, FAIR_RULE
+story=title('My conversation workbook','October 21, 2026 | 3:30-5:00 PM CT | Trust, Transparency, and AI')
+story += [text('Every ruled space is for your own notes. No AI tool is needed during these conversations. Use fictional information only. You may reflect privately or pass on speaking.'),text('1. What makes a review worthy of trust?','h2'),text('One quiet minute, then two minutes per partner. Recall a review that built or weakened trust. Leave out identifying details.')]
+story += lines('A quality of trust I want our process to protect',3,'Write one quality and why it matters. Example: clear reasons, so applicants understand a decision.')
+story += [text('2. What could a polished summary hide?','h2'),text(FLAWED_DRAFT),text('Intentionally flawed teaching draft, authored for discussion. It is not an actual model response. Compare it with P4 and P5 on page 2.','small')]
+story += lines('What would I check? What should our request require?',3,'Write one source check and one instruction an AI request should include. Example: check P4; report missing evidence instead of calling the packet complete.')
+story += [PageBreak()]+title('Our shared case: C-101','Entirely fictional. Required: enrollment confirmation, a goal statement of no more than 150 words, and one service example. Missing evidence requires follow-up.')
+for id,v in CASE:story += [p(f'<b>{id}</b>  {escape(v)}')]
+story += [text('Read alone for three minutes. Mark one detail to rely on and one question. Then turn to the scoring guide on page 3.')]+lines('My evidence and an open question',3,'Write a paragraph ID, a short quote, and a question. Example: P4 says "not included"; how should we request the enrollment document?')
+story += [PageBreak()]+title('3. What do you see that I might miss?','Three minutes alone, two minutes per partner, then three minutes to clarify a scoring description. Focus on reflection or adaptation in P3.')
+story += [table([['Criterion','0','1','2']]+RUBRIC,[108,144,144,144]),text('Practice guide, not a validated award-selection instrument. Missing or contradictory source information requires follow-up. Do not infer personal traits or rate writing polish.','small')]
+story += lines('My rating and the words that support it',2,'Write 0, 1, or 2 for reflection/adaptation, then quote P3 to explain your judgment.')+lines('My partner’s reason; what I would clarify or change',2,'Write what your partner noticed and a scoring phrase to clarify. You may keep your original rating.')
+story += [text('4. What are you reconsidering?','h2'),text('Two full minutes of silence. What assumption changed, and why? What question remains? Share only what you choose.')]+lines('My private reflection',2,'Finish "I first thought ...; now I wonder ... because ..." or write an open question.')
+story += [PageBreak()]+title('5. Where does our process need a person?','Choose one small task for C-101. Map seven minutes, test three minutes, then exchange a challenge with another group.')
+story += [text('Map approved input, AI draft, evidence check, human decision, and record. Name roles before the tool, before relying on the draft, and before a decision.')]
+story += lines('Our task and workflow; the people who approve, check, and decide',5,'Write one task, then sketch the steps with a role at each check. Example: completeness draft; program lead approves, reviewer checks P1-P5, authorized staff decide follow-up.')+lines('Our pause condition and the person who resolves the concern',2,'Finish "We pause if ...; ... investigates before we resume." Example: an invented quote; the review lead checks the source.')
+story += [text('What might another team question?','h2'),text('Each group gets two minutes to explain and receive a question. Revise for two minutes.')]+lines('The peer challenge and what we changed',2,'Write the other group’s question and your revision. Example: "Who checks a missing document?" We added a named reviewer.')
+story += [PageBreak()]+title('6. What would a fair response sound like?',FAIR_SCENARIO)
+story += [text('Published practice rule','h2'),text(FAIR_RULE),text('A detector flag alone does not establish misconduct. If no policy concern is justified, follow up on the missing enrollment document. Do not add a rule retroactively.','small')]
+story += lines('Our first message; the actual concern or ordinary follow-up',3,'Write words you would send to C-101. If no policy concern is justified, request the missing enrollment confirmation through an approved channel.')
+story += [text('How might it feel to receive our question?','h2'),text('Draft three minutes, read and listen three minutes, revise two minutes. You may review silently instead of role-playing.')]
+story += lines('What felt assumed? Our revised wording and response method',2,'Write what sounded unclear or accusatory, then your revised message and an accessible way to respond.')+lines('Response time, decision owner, and route for another review',2,'Name a locally appropriate deadline, the role deciding next steps, and how to request another review. These are your proposed choices, not supplied program rules.')
+story += [PageBreak()]+title('7. What will you try, and who will help you learn?','Three minutes to plan, then two minutes per partner. Choose one change to your review practice within the next 30 days.')
+story += lines('The quality of trust I want to protect and my one action',2,'Write the quality from page 1 and one small action. Example: clear reasons; add source paragraph IDs to a fictional completeness test.')+lines('A colleague to invite and a date to review what happens',2,'Write a colleague’s role or name and a specific review date within 30 days.')+lines('Evidence of improvement; when we will pause or revise',2,'Write what you will observe and a reason to stop or change course. Example: another reviewer can find every source; pause if any quote is invented.')+lines('What changed in my thinking because of another person?',2,'Write the perspective you heard and how it changed your thinking, or a question you will keep exploring together.')
+story += [p(f'<link href="{URL}conversation.html" color="#007c89">Keep and export conversation notes online</link>'),p(f'<link href="{URL}" color="#007c89">All infographics, optional labs, readiness checklist, and resources</link>'),text('Keep first AI tests fictional. These examples support local discussion; they are not official NSPA policy.','small')]
 doc('participant-workbook',story)
 # Facilitator guide: conversational words to say, with separate stage directions.
 from facilitator import SECTIONS
-styles['say']=ParagraphStyle('say',parent=styles['body'],fontSize=10.5,leading=14.5,spaceAfter=7)
-styles['cue']=ParagraphStyle('cue',parent=styles['small'],fontSize=9.5,leading=13,backColor=PALE,borderPadding=7,spaceBefore=5,spaceAfter=10)
-styles['script-label']=ParagraphStyle('script-label',parent=styles['h2'],fontSize=10.5,leading=14,spaceBefore=9,spaceAfter=5,keepWithNext=True)
-story=title('Your workshop speaking guide','Miguel Guhlin | October 21, 2026 | 3:30-5:00 PM CT')
-story+=[text('Words to say aloud, with short reminders for you. Make the wording your own. Each workshop block starts on a fresh page; the times leave room for activities and discussion.'),text('SAY THIS: wording for the room. PRESENTER CUE: a reminder for you.','small'),text('Before people arrive','h2'),text('Open the hub, practice lab, and matrix. Download the slides and handouts. Test both demos in an approved AI tool with the fictional packet. Keep the prepared examples ready if the tool fails. Bring printed workbooks and matrices.','small'),p(f'<link href="{URL}" color="#007c89">Workshop hub: {URL}</link>','small')]
-story += [table([['Time','Slides','What happens']]+[[section['time'].split(' PM')[0],section['time'].split(' | ')[1].replace('Slides ',''),section['title']] for section in SECTIONS],[100,60,380])]
-story += [text('Before October 21','h2'),text('Recheck the linked guidance on AI detectors and your organization’s rules. This workshop gives people examples to discuss and adapt; it does not establish official NSPA policy. The practice applications are entirely fictional.','small'),source_line([0,1,2,3])]
-for section in SECTIONS:
- story += [PageBreak()]+title(section['title'],section['time'])
+styles['say']=ParagraphStyle('say',parent=styles['body'],fontSize=12,leading=17,spaceAfter=9)
+styles['cue']=ParagraphStyle('cue',parent=styles['small'],fontSize=11,leading=15.5,backColor=PALE,borderPadding=7,spaceBefore=5,spaceAfter=10)
+styles['script-label']=ParagraphStyle('script-label',parent=styles['h2'],fontSize=11.5,leading=16,spaceBefore=11,spaceAfter=5,keepWithNext=True)
+from route import RUN_OF_SHOW
+from slides import SLIDES, CORE_COUNT
+story=title('Your workshop speaker’s guide','Miguel Guhlin | October 21, 2026 | 3:30-5:00 PM CT')
+story += [text('How can we use AI to support scholarship review while strengthening human judgment, trust, and connection?'),text('The experience to protect','h2'),text('People have time to think, hear another perspective, reconsider an assumption, and choose one change to try with a colleague. Twelve core slides carry the session. Six optional references answer questions afterward.'),text('Before people arrive','h2'),text('Open the webdeck and conversation companion. Print the six-page workbook. Keep the prepared draft ready; no live AI call or participant account is required. Have a silent timer and a place to capture a few ideas. Invite paper, private reflection, and passing on speaking.','small')]
+story += [table([['Time CT','Slides','Conversation']]+[[time,slides,title] for time,slides,title,path,question,keep in RUN_OF_SHOW],[100,55,385])]
+story += [text('Adjust the strategy, protect the learning','h2'),text('If time is short, shorten whole-room reporting and extra examples. Keep independent thinking, the two-minute silence, and the fair-response discussion. Move to slide 12 at 4:50. If a discussion matters, invite one useful follow-up and record the question for later.','small'),text('SAY THIS gives friendly wording to adapt. PRESENTER CUE gives timing and facilitation reminders. Each core slide starts on a fresh page.','small')]
+for number,section in enumerate(SECTIONS,1):
+ story += [PageBreak()]+title(f'{number:02}. '+section['title'],section['time'])
  for label,kind,words in section['parts']:
   story.append(text(label+' | '+('SAY THIS' if kind=='say' else 'PRESENTER CUE'),'script-label'))
-  for paragraph in words.split('\n\n'):
-   story.append(text(paragraph,'say' if kind=='say' else 'cue'))
+  for paragraph in words.split('\n\n'):story.append(text(paragraph,'say' if kind=='say' else 'cue'))
+story += [PageBreak()]+title('Optional references, when a question calls for one','Slides 13-18 are outside the timed route. Keep the core conversation intact.')
+for number,sld in enumerate(SLIDES[CORE_COUNT:],CORE_COUNT+1):
+ story += [text(f'{number}. '+sld['title'],'h2'),text(' '.join(h+': '+t for h,t in sld['blocks']),'small')]
+story += [text('Sources and scope','h2'),source_line([0,1,2,3]),text('Guidance reviewed October 7, 2026. Study findings depend on the tested writing, language, and detector. The cases, rubric, policy starter, and checklist are workshop teaching tools, not validated instruments or official NSPA policy. Recheck source guidance and local rules before real use.','small')]
+story += [PageBreak()]+title('Your links during the workshop','The same destinations appear on the slides and in the companion.')
 from resources import RESOURCES, BASE
-story += [PageBreak()]+title('Your links during the workshop','The same resources appear as buttons on the slides')
-story += [text('In PowerPoint Slide Show, click a teal resource button to open its page. In editing view, use the link menu or Ctrl-click. The presentation PDF also has clickable buttons. Return to the slide show after each activity.','small'),text('The two worked examples are prepared teaching references. They are not recordings or actual AI responses. Run the live demo in your approved tool, compare it with the reference, and use the reference if the tool fails.','small')]
-for key in ['workbook','matrix','prompt','packet','demo1','rubric','demo2','workflow','policy','policyref','action']:
+for key in ['conversation','workbook','tension','case','checkpoints','fair','change','hub','prompt','rubric','workflow','policyref','matrix','library']:
  label,path=RESOURCES[key]
- story += [p(f'<b>{escape(label)}</b><br/><link href="{BASE+path}" color="#007c89">{BASE+path}</link>','small')]
+ story += [p(f'<b>{escape(label)}</b><br/><link href="{urljoin(BASE,path)}" color="#007c89">{urljoin(BASE,path)}</link>','small')]
+story += [text('Using the resource links','h2'),text('Click the teal resource links in PowerPoint Slide Show, the PDF, or the webdeck. Use the complete offline package for local copies. Document viewers can restrict local links; the offline webdeck is the preferred navigation route.','small'),text('All photographic people and new infographic scenes are AI-generated fictional illustrations. Prepared outputs are authored teaching examples, not recordings of actual model responses.','small')]
 doc('facilitator-guide',story)
 # A compact, one-page route complements the full speaking guide.
 from route import RUN_OF_SHOW
@@ -116,6 +129,6 @@ for time,slide,activity,path,question,keep in RUN_OF_SHOW:
  route_rows.append([text(time+'\nSlides '+slide,'route'),p(f'<link href="{URL+path}" color="#007c89"><b>{escape(activity)}</b></link>','route'),p(escape(question)+'<br/><b>Keep:</b> '+escape(keep),'route')])
 route_table=Table(route_rows,colWidths=[80,130,330],hAlign='LEFT')
 route_table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.5,colors.HexColor('#CCDDDD')),('LEFTPADDING',(0,0),(-1,-1),8),('RIGHTPADDING',(0,0),(-1,-1),8),('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
-route_story=title('Your presenter route','October 21, 2026 | 3:30-5:00 PM CT | Keep this beside the presentation.')+[route_table,text('Prepared demo fallback','h2'),p(f'<link href="{URL}practice.html#demo-completeness" color="#007c89">Completeness table</link> | <link href="{URL}practice.html#demo-scoring" color="#007c89">Scoring discussion</link>. Say: This is a prepared teaching example, not a live model response.','small'),text('If time is short: shorten volunteer reporting and extra examples. Keep independent ratings and the fair-response discussion. At 4:55, move to the closing notes. Slide 26 is the source appendix.','small'),p(f'<link href="{URL}handouts/facilitator-guide.pdf" color="#007c89">Full speaking guide</link> | <link href="{URL}presenter.html" color="#007c89">Online presenter route</link>','small')]
+route_story=title('Your presenter route','October 21, 2026 | 3:30-5:00 PM CT | Keep this beside the presentation.')+[route_table,text('Prepared teaching example','h2'),p(f'<link href="{URL}practice.html#demo-completeness" color="#007c89">Completeness reference</link> | <link href="{URL}practice.html#demo-scoring" color="#007c89">Scoring discussion</link>. Say: This is a prepared teaching example, not a live model response.','small'),text('If time is short: shorten volunteer reporting and extra examples. Keep independent thinking, the two-minute silence, and the fair-response discussion. At 4:50, move to the one-change plan on slide 12. Slides 13-18 are optional references.','small'),p(f'<link href="{URL}handouts/facilitator-guide.pdf" color="#007c89">Full speaking guide</link> | <link href="{URL}presenter.html" color="#007c89">Online presenter route</link>','small')]
 doc('presenter-route',route_story)
 print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))

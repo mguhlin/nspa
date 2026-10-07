@@ -2,6 +2,24 @@
 
 Updated October 7, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
+## October 7 conversation redesign: current edition
+
+This section supersedes the older slide counts, route, and deliverables below. The user's approved direction is social learning through structured conversation, different perspectives, reflection, and silence. Preserve every library resource and infographic.
+
+- 12 core slides plus 6 optional references, with 24 native PPTX/PDF hyperlinks. The PNG ZIP and gallery contain 18 slides. Older slide assets remain available as historical files.
+- One shared fictional case, C-101, runs through the experience. Participants question a deliberately flawed summary, compare reasons for one rubric criterion, reflect quietly for two full minutes, challenge and revise a workflow, hear an applicant's perspective, and choose one change to try with a colleague.
+- `2026/conversation.html` is the core companion: seven conversations with saved/exportable notes. Original practice labs, readiness checklist, references, and resource library remain optional. Separate online/offline conversation storage keys protect older drafts.
+- New NSPA-colored infographic artwork uses built-in imagegen. Prompts are in `CONVERSATION-ART-PROMPTS.json` and `CONVERSATION-ART-REFINEMENTS.json`; source assets are in `2026/images/conversation/`. All ten supplied homepage infographics and their original downloads are preserved.
+- The speaker guide is 15 pages with one page for each core slide. It includes a friendly script, exact timing, partner turns, silence, debrief questions, workbook references, and adaptations. The workbook has six pages; the presenter route has one.
+- The offline edition includes the same core route and all ten supplied homepage infographics in `library.html`. The full online library address is preserved. Archive size is about 43 MB.
+- Current working checkout: `/home/mg/Documents/vibecoding/mguhlin/nspa`. Read the rewritten `WORKSHOP.md` for authoritative sources and rebuild order. The older `/media/mg/data/nspa` review copies predate this edition.
+
+Participant clarification: every workbook space now says what to write, with examples where useful. The companion has matching response instructions. The optional prompt lab distinguishes the AI instruction block from participant work and explains task/criteria, evidence/limits, and output/human follow-up.
+
+Final QA: all 18 slide layouts and every changed PDF page inspected; PPTX finalizer passed with no findings; 24 native links and substantive editable notes verified. Desktop/phone conversations, draft persistence/export, print, no-JavaScript, presenter synchronization, and extracted offline routes passed with zero script errors and zero external requests. All 79 archive checksums passed; 485 local offline references resolved. Full library preservation was compared against the previous commit. Evidence and artifact hashes are in `CONVERSATION-QA.json`.
+
+Publication and final live verification are recorded below once complete. Do not infer the current deployment from historical run IDs.
+
 ## October 6 front-page infographic additions
 
 - Five supplied scholarship-team infographics are featured on the homepage with full-resolution PNG downloads, optimized WebP previews, textual descriptions, and related guides. Assets live in `assets/infographics/`; the main navigation links directly to the section. The original artwork is unchanged. A duplicate 2/2/2 source was published once. Matching entries are in the public mguhlin.org infographic collection.

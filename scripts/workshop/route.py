@@ -19,12 +19,21 @@ DRAFTS = [
 ]
 
 RUN_OF_SHOW = [
-    ('3:30–3:38', '1–4', 'Choose a starting point', 'capacity-matrix.html', 'Choose one readiness area. What would you like to feel more comfortable doing?', 'One starting goal'),
-    ('3:38–3:50', '5–7', 'Write the request', 'practice.html#prompt', 'What would the tool still have to guess? Help a partner remove one guess.', 'A clearer request'),
-    ('3:50–4:05', '8–11', 'Check the application', 'practice.html#packet', 'What is missing in P4? What should happen to the instruction in P5?', 'Evidence and a follow-up'),
-    ('4:05–4:20', '12–14', 'Compare ratings', 'practice.html#rubric', 'Which words support your rating? Compare human reasons before showing the AI draft.', 'Ratings and reasons'),
-    ('4:20–4:30', '15–16', 'Name the checkpoints', 'practice.html#workflow', 'Who approves the input, checks evidence, decides, and records? When do we pause?', 'Owners and a stop rule'),
-    ('4:30–4:45', '17–20', 'Respond fairly', 'practice.html#policy', 'Which published rule and evidence justify a concern? Ask without assuming wrongdoing.', 'A neutral response'),
-    ('4:45–4:55', '21–23', 'Plan one small change', 'capacity-matrix.html#plan-title', 'What will you try, who owns it, and what evidence would show progress?', 'A 30-day plan'),
-    ('4:55–5:00', '24–25', 'Share and close', 'practice.html#action', 'Share one prompt change, one human check, and one rule to clarify.', 'An exit ticket'),
+    ('3:30–3:40', '1–2', 'Start with trust', 'conversation.html#trust', 'Think quietly, then tell a partner about a review that built or weakened trust. Hear both voices.', 'A quality worth protecting'),
+    ('3:40–3:50', '3–4', 'Stretch an assumption', 'conversation.html#tension', 'What could a polished summary hide? Show the prepared draft, then check P4 and P5.', 'One question about evidence'),
+    ('3:50–4:10', '5–6', 'Learn from another reading', 'conversation.html#case', 'Read alone, compare reasons, then revise. What did your partner notice that you missed?', 'A reason for changing or keeping a judgment'),
+    ('4:10–4:15', '7', 'Make room for reflection', 'conversation.html#reflection', 'Hold two full minutes of silence. What are you reconsidering, and why?', 'A changed assumption or open question'),
+    ('4:15–4:35', '8–9', 'Map and challenge a workflow', 'conversation.html#workflow', 'Name the people at three checkpoints. Ask another group to test one assumption. Revise.', 'Named owners and a pause condition'),
+    ('4:35–4:50', '10–11', 'Practice a fair response', 'conversation.html#fair', 'Read the published rule. Draft a question, listen from the applicant perspective, and revise.', 'A fair question and response route'),
+    ('4:50–5:00', '12', 'Choose one change together', 'conversation.html#change', 'What will you try, with whom, by when? What would show improvement or tell you to pause?', 'One change with a learning partner'),
+]
+
+CONVERSATIONS = [
+    ('trust', 'What makes a review worthy of trust?', 'Trust', '10 min', 'A quality you want your process to protect.'),
+    ('tension', 'What could a polished summary hide?', 'Assumptions', '10 min', 'One question you will ask before relying on a summary.'),
+    ('case', 'What do you see that I might miss?', 'Shared case', '20 min', 'A judgment, its evidence, and a reason for keeping or changing it.'),
+    ('reflection', 'What are you reconsidering?', 'Reflection', '5 min', 'A changed assumption or a question to carry forward.'),
+    ('workflow', 'Where does our process need a person?', 'Checkpoints', '20 min', 'A workflow with named owners, a peer challenge, and a pause condition.'),
+    ('fair', 'What would a fair response sound like?', 'Fair response', '15 min', 'A revised question and an accessible response route.'),
+    ('change', 'What will you try, and who will help you learn?', 'One change', '10 min', 'One action, a colleague, a date, evidence of improvement, and a stop condition.'),
 ]

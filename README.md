@@ -6,7 +6,7 @@ A consolidated home for NSPA training resources and the 2026 conference collecti
 
 - `index.html`: searchable resource library (works without JavaScript).
 - `resources/`: preserved training series, handouts, prompts, assessments, and teaching prototypes.
-- `2026/`: conference workshop hub with practice lab, capacity matrix, and downloadable materials in `slides/`, `handouts/`, and `images/`.
+- `2026/`: conference workshop hub with a seven-conversation companion, 12 core slides plus 6 optional references, matching speaker guide and workbook, optional practice labs, capacity matrix, and downloadable materials in `slides/`, `handouts/`, and `images/`.
 - `supplemental-resources/`: local session planning inputs; ignored by Git and excluded from deployment except this explanatory README is tracked.
 - `docs/redirect-map.json`: exact legacy page routes and their destinations.
 - `docs/MIGRATION.md`: source inventory, preservation notes, and known limitations.
