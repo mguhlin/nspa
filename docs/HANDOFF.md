@@ -4,7 +4,7 @@ Updated October 6, 2026. The workshop experience has been simplified for the Oct
 
 ## October 6 front-page infographic additions
 
-- Five supplied scholarship-team infographics are featured on the homepage with full-resolution PNG downloads, optimized WebP previews, textual descriptions, and related guides. Assets live in `assets/infographics/`; the hero and main navigation link directly to the section. The original artwork is unchanged. A duplicate 2/2/2 source was published once. Matching entries are in the public mguhlin.org infographic collection.
+- Five supplied scholarship-team infographics are featured on the homepage with full-resolution PNG downloads, optimized WebP previews, textual descriptions, and related guides. Assets live in `assets/infographics/`; the main navigation links directly to the section. The original artwork is unchanged. A duplicate 2/2/2 source was published once. Matching entries are in the public mguhlin.org infographic collection.
 - This update affects the public resource homepage only; existing workshop, presentation, and offline materials remain unchanged.
 
 ## October 6 readability and presentation update
