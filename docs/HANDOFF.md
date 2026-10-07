@@ -2,6 +2,11 @@
 
 Updated October 6, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
+## October 6 front-page infographic additions
+
+- Five supplied scholarship-team infographics are featured on the homepage with full-resolution PNG downloads, optimized WebP previews, textual descriptions, and related guides. Assets live in `assets/infographics/`; the hero and main navigation link directly to the section. The original artwork is unchanged. A duplicate 2/2/2 source was published once. Matching entries are in the public mguhlin.org infographic collection.
+- This update affects the public resource homepage only; existing workshop, presentation, and offline materials remain unchanged.
+
 ## October 6 readability and presentation update
 
 - The homepage leads directly to the October workshop. Three routes distinguish following the workshop, getting handouts, and exploring resources afterward. Earlier sessions and assessments remain available in an expandable group.
