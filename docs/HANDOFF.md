@@ -1,6 +1,6 @@
 # NSPA project handoff
 
-Updated October 6, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
+Updated October 7, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
 ## October 6 front-page infographic additions
 
@@ -79,3 +79,7 @@ Run `python3 scripts/check_site.py`, `python3 scripts/check_offline.py`, and `gi
 Completed QA: 386 offline references resolved; local-file browser tests with networking disabled and no remote requests/errors; all slides, presenter synchronization, local demo links, draft/plan export, mobile widths, PROTECT JSON restore and zero ratings. Extracted ZIP retested at a different path; archive checksums passed. PPTX slide XML and PDF page-content streams matched reviewed originals; offline hyperlinks and notes cues were the intended changes.
 
 Temporary QA/build files live in `/tmp/nspa-offline-review` and `/tmp/nspa-workshop`; do not depend on their persistence. Start a future turn by reading this file and `WORKSHOP.md`, checking Git status/log, and asking what the user wants to review next if no new task is supplied. Recheck time-sensitive guidance before the conference if revising it.
+
+## October 7 prompting infographic additions
+
+Five supplied prompting infographics were renamed descriptively before publication and added to the homepage and matching blog collection. Original PNGs are preserved with optimized WebP previews, descriptions, download links, and related workflow guides. The homepage now features ten supplied visual guides.
