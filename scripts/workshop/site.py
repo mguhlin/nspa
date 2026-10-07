@@ -1,6 +1,7 @@
 from content import *
 from slides import SLIDES, CORE_COUNT
 import html,re
+from urllib.parse import urlsplit
 from conversation import conversation_body
 from experience import workshop_intro, download_group, optimize_practice, optimize_matrix, presenter_body
 E=html.escape
@@ -10,28 +11,39 @@ def shell(title,body,name):
  head=source.split('<main id="main">')[0]
  head=re.sub(r'<title>.*?</title>',f'<title>{title} | NSPA 2026</title>',head)
  head=head.replace('href="https://mguhlin.github.io/nspa/"',f'href="{URL}{name}"')
- head=head.replace('href="./assets/','href="../assets/').replace('href="./"','href="../"').replace('href="./#library"','href="../#library"').replace('href="./2026/"','href="./"')
+ head=head.replace('href="./assets/','href="../assets/').replace('href="./"','href="../"').replace('href="./#library"','href="../#library"').replace('href="./2026/"','href="./"').replace('href="./resources/','href="../resources/').replace('href="./2026/','href="').replace('src="./assets/','src="../assets/')
  head=head.replace('src="./assets/', 'src="../assets/')
  head=head.replace('</head>','<link rel="stylesheet" href="workshop.css"><script src="navigation.js" defer></script></head>')
- nav='<nav class="workshop-nav wrap" aria-label="Workshop navigation"><a href="./">Workshop hub</a><a href="webdeck.html">Presentation</a><a href="conversation.html">Conversation</a><a href="practice.html">Optional labs</a><a href="capacity-matrix.html">Readiness checklist</a><a href="presenter.html">Presenter route</a><a href="./#downloads">Downloads</a></nav>'
- return head+nav+'<main id="main" class="wrap workshop">'+body+'</main><footer class="wrap footer"><p>NSPA 2026 workshop · <a href="https://mguhlin.org">Miguel Guhlin</a></p><p>October 21 · 3:30–5:00 PM CT</p></footer></body></html>'
+ nav='<nav class="workshop-nav wrap" aria-label="Workshop navigation"><a href="./">Workshop hub</a><a href="slides/nspa-trust-transparency-ai.pdf">Presentation PDF</a><a href="conversation.html">Conversation</a><a href="handouts/participant-workbook.pdf">Workbook</a></nav>'
+ result=head+nav+'<main id="main" class="wrap workshop">'+body+'</main><footer class="wrap footer"><p>NSPA 2026 workshop · <a href="https://mguhlin.org">Miguel Guhlin</a></p><p>October 21 · 3:30–5:00 PM CT</p></footer></body></html>'
+ if name.startswith('p/'):
+  result=result.replace('</head>','<meta name="robots" content="noindex"></head>')
+  result=re.sub(r'(href|src)="([^"]+)"',lambda m:m[1]+'="../'+m[2]+'"' if not urlsplit(m[2]).scheme and not m[2].startswith(('#','/')) else m[0],result)
+ return result
 intro=workshop_intro()
 agenda='<details class="workshop-details"><summary>The 90-minute workshop agenda</summary><div class="table-scroll"><table><thead><tr><th>Time (CT)</th><th>Focus</th><th>What you make</th></tr></thead><tbody>'+''.join(f'<tr><th>{t}<br><small>{d}</small></th><td>{topic}</td><td>{out}</td></tr>' for t,d,topic,out,slides in AGENDA)+'</tbody></table></div></details>'
-downloads=[('Complete offline workshop','offline/nspa-2026-offline.zip','Extract the ZIP, then open index.html; no internet required','ZIP'),('Session takeaways','offline/session-takeaways.docx','Key points in the NSPA takeaway template','DOCX'),('Printable takeaways','offline/session-takeaways.pdf','Two-page session reference','PDF'),('Webdeck','webdeck.html','Present online with clickable resources and notes','WEB'),('Presentation','slides/nspa-trust-transparency-ai.pptx','PowerPoint with speaker notes','PPTX'),('Presentation PDF','slides/nspa-trust-transparency-ai.pdf','Easy viewing and sharing','PDF'),('Individual slide images','slides/nspa-trust-transparency-ai-pngs.zip','18 numbered PNGs: 12 core slides and 6 optional references','ZIP'),('Participant workbook','handouts/participant-workbook.pdf','Shared case, reflection, conversation notes, and one-change plan','PDF'),('Facilitator guide','handouts/facilitator-guide.pdf','Slide-by-slide words, timing, silence, debriefs, and adjustments','PDF'),('Prompt & rubric reference','handouts/prompt-review.pdf','Structure the request and verify the result','PDF'),('Protected workflow reference','handouts/protected-workflow.pdf','Place data approval and human review gates','PDF'),('Fair applicant AI-use reference','handouts/fair-ai-policy.pdf','Interpret concerns and design a fair response','PDF'),('Capacity matrix','handouts/capacity-matrix.pdf','Blank rating boxes, notes, and resource links','PDF')]
+downloads=[('Complete offline workshop','offline/nspa-2026-offline.zip','Workbook, slide PDF, takeaways, and local conversation notes','ZIP'),('Session takeaways','offline/session-takeaways.docx','Key points in the NSPA takeaway template','DOCX'),('Printable takeaways','offline/session-takeaways.pdf','Two-page session reference','PDF'),('Webdeck','p/webdeck.html','Present online with clickable resources and notes','WEB'),('Presentation','p/slides/nspa-trust-transparency-ai.pptx','PowerPoint with speaker notes','PPTX'),('Presentation PDF','slides/nspa-trust-transparency-ai.pdf','18 slides for viewing and sharing; no speaker’s notes','PDF'),('Individual slide images','slides/nspa-trust-transparency-ai-pngs.zip','18 numbered PNGs: 12 core slides and 6 optional references','ZIP'),('Participant workbook','handouts/participant-workbook.pdf','Shared case, reflection, conversation notes, and one-change plan','PDF'),('Facilitator guide','p/facilitator-guide.pdf','Slide-by-slide words, timing, silence, debriefs, and adjustments','PDF'),('Prompt & rubric reference','handouts/prompt-review.pdf','Structure the request and verify the result','PDF'),('Protected workflow reference','handouts/protected-workflow.pdf','Place data approval and human review gates','PDF'),('Fair applicant AI-use reference','handouts/fair-ai-policy.pdf','Interpret concerns and design a fair response','PDF'),('Capacity matrix','handouts/capacity-matrix.pdf','Blank rating boxes, notes, and resource links','PDF')]
 dl=download_group(downloads)
 refs='<details class="workshop-details"><summary>Quick references as online images</summary><div class="reference-gallery">'
 for f,title in [('prompt-review','Prompt & rubric'),('protected-workflow','Protected workflow'),('fair-ai-policy','Fair applicant AI use'),('capacity-matrix-1','Capacity matrix · page 1'),('capacity-matrix-2','Capacity matrix · page 2'),('capacity-matrix-3','Capacity matrix · page 3')]:refs+=f'<a href="images/quick-reference/{f}.png"><img loading="lazy" src="images/quick-reference/{f}.png" alt="{title} quick reference"><strong>{title}</strong></a>'
 refs+='</div></details>'
 sources='<details class="workshop-details" id="sources"><summary>Sources, interpretation, and reuse</summary><p>Reviewed October 7, 2026. Recheck product guidance before the October workshop. The packet, rubric, policy starter, and capacity matrix are workshop teaching tools, not validated selection instruments or official NSPA policy.</p><ul class="source-list">'+''.join(f'<li><a href="{url}">{title}</a><p>{desc}</p></li>' for title,url,desc in SOURCES)+'</ul><p>All examples are fictional. Use an organization-approved workflow before processing any real applicant data. Policy language needs local review. Generated artwork supports the slides; all instructional wording is separately typeset.</p></details>'
-gallery='<details class="workshop-details"><summary>Browse the 12 core slides and 6 optional references</summary><div class="reference-gallery">'+''.join(f'<a href="images/nspa-trust-transparency-ai/{i:02}.png"><img loading="lazy" src="images/nspa-trust-transparency-ai/{i:02}.png" alt="{E(slide["title"])}"><strong>{i:02}. {E(slide["title"])}</strong></a>' for i,slide in enumerate(SLIDES,1))+'</div><p><a href="slide-transcript.html">Read the slide text and speaker notes</a></p></details>'
+gallery='<details class="workshop-details"><summary>Browse the 12 core slides and 6 optional references</summary><div class="reference-gallery">'+''.join(f'<a href="images/nspa-trust-transparency-ai/{i:02}.png"><img loading="lazy" src="images/nspa-trust-transparency-ai/{i:02}.png" alt="{E(slide["title"])}"><strong>{i:02}. {E(slide["title"])}</strong></a>' for i,slide in enumerate(SLIDES,1))+'</div><p><a href="slide-transcript.html">Read the slide text</a></p></details>'
 (W/'conversation.html').write_text(shell('Conversation companion',conversation_body(),'conversation.html'))
-(W/'index.html').write_text(shell(TITLE,intro+dl+agenda+refs+gallery+sources,''))
+(W/'index.html').write_text(shell(TITLE,intro+dl+'<p id="sources"><a href="resources.html#sources">Sources and interpretation</a></p>',''))
+extras='<p class="eyebrow">For later exploration</p><h1>Optional workshop materials</h1><p>Choose one resource when it helps with a question or a task. The core session uses the conversation companion and participant workbook.</p><nav class="jump-links"><a href="practice.html">Practice labs</a><a href="capacity-matrix.html">Readiness checklist</a><a href="../resources/infographics.html">Infographic collection</a><a href="../resources/library.html">Resource library</a></nav>'+agenda+gallery+sources
+extras+='<section><h2>Reference downloads</h2><div class="download-grid">'+''.join(f'<a class="download" href="{path}"><span class="filetype">{kind}</span><span><strong>{E(title)}</strong><small>{E(desc)}</small></span></a>' for title,path,desc,kind in downloads if title in ['Prompt & rubric reference','Protected workflow reference','Fair applicant AI-use reference','Capacity matrix','Session takeaways','Individual slide images'])+'</div></section>'
+(W/'resources.html').write_text(shell('Optional workshop materials',extras,'resources.html'))
+
 transcript='<p class="eyebrow">Accessible presentation transcript</p><h1>Slide text and speaker notes</h1><p>12 core slides carry the 90-minute conversation. Slides 13–18 are optional references. Sources appear with the relevant notes.</p>'
 for i,slide in enumerate(SLIDES,1):
  transcript+=f'<details class="workshop-details"><summary>{i:02}. {E(slide["title"])}</summary><p>{E(slide["subtitle"])}</p><ul>'+''.join(f'<li><strong>{E(h)}</strong>: {E(t)}</li>' for h,t in slide['blocks'])+f'</ul><p><strong>Your move:</strong> {E(slide["action"])}</p><h2>Speaker notes</h2><p>{E(slide["notes"])}</p>'
  transcript+='<nav class="jump-links" aria-label="Slide resources">'+''.join(f'<a href="{E(link["url"])}">{E(link["label"])}</a>' for link in slide.get('links',[]))+'</nav>'
  transcript+=''.join(f'<p><a href="{SOURCES[n][1]}">{E(SOURCES[n][0])}</a></p>' for n in slide['sources'])+'</details>'
-(W/'slide-transcript.html').write_text(shell('Presentation transcript',transcript,'slide-transcript.html'))
+(W/'p').mkdir(exist_ok=True)
+(W/'p/slide-transcript.html').write_text(shell('Presentation transcript',transcript,'p/slide-transcript.html'))
+participant_transcript=re.sub(r'<h2>Speaker notes</h2><p>.*?</p>', '', transcript, flags=re.S).replace('Slide text and speaker notes','Slide text').replace('Sources appear with the relevant notes.','Supporting sources appear with the relevant slides.')
+(W/'slide-transcript.html').write_text(shell('Presentation transcript',participant_transcript,'slide-transcript.html'))
 # Practice lab: deterministic copyable content, human reference output and offline activities.
 body='<p class="eyebrow">Workshop practice lab</p><h1>Evidence before judgment</h1><p class="lead">Use these fictional materials with an approved Gen AI tool, or complete the activities on paper. No real applicant data is needed.</p><nav class="jump-links" aria-label="Practice sections"><a href="#prompt">Prompt</a><a href="#packet">Packet</a><a href="#rubric">Rubric</a><a href="#policy">Policy</a><a href="#action">Action plan</a></nav>'
 def codeblock(id,text):return f'<pre id="{id}">{E(text)}</pre><button type="button" class="button" data-copy="{id}">Copy text</button>'
@@ -58,4 +70,5 @@ body+='<section class="plan-form" aria-labelledby="plan-title"><h2 id="plan-titl
 
 optimize_practice(W/'practice.html')
 optimize_matrix(W/'capacity-matrix.html')
-(W/'presenter.html').write_text(shell('Presenter route',presenter_body(),'presenter.html'))
+(W/'p').mkdir(exist_ok=True)
+(W/'p/index.html').write_text(shell('Presenter route',presenter_body(),'p/'))

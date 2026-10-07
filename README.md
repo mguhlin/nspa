@@ -4,9 +4,12 @@ Website: https://mguhlin.github.io/nspa/
 
 A consolidated home for NSPA training resources and the 2026 conference collection.
 
-- `index.html`: searchable resource library (works without JavaScript).
+- `index.html`: workshop starting point with a Resources drop-down.
+- `resources/library.html`: complete searchable resource library (works without JavaScript).
+- `resources/infographics.html`: all original infographic downloads and workshop visual references.
+- `2026/p/`: unlisted presenter route, speaking guide, presentation with notes, and one complete offline ZIP.
 - `resources/`: preserved training series, handouts, prompts, assessments, and teaching prototypes.
-- `2026/`: conference workshop hub with a seven-conversation companion, 12 core slides plus 6 optional references, matching speaker guide and workbook, optional practice labs, capacity matrix, and downloadable materials in `slides/`, `handouts/`, and `images/`.
+- `2026/`: conference workshop hub with a seven-conversation companion, 12 core slides plus 6 optional references, participant workbook, slide PDF without notes, and a small participant session kit. Optional practice labs, capacity matrix, and reference downloads sit behind Resources.
 - `supplemental-resources/`: local session planning inputs; ignored by Git and excluded from deployment except this explanatory README is tracked.
 - `docs/redirect-map.json`: exact legacy page routes and their destinations.
 - `docs/MIGRATION.md`: source inventory, preservation notes, and known limitations.

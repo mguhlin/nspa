@@ -6,7 +6,7 @@ from lxml import etree
 from content import ROOT, SOURCES
 from slides import SLIDES
 
-path = ROOT / '2026/slides/nspa-trust-transparency-ai.pptx'
+path = ROOT / '2026/p/slides/nspa-trust-transparency-ai.pptx'
 namespace = {'p': 'http://schemas.openxmlformats.org/presentationml/2006/main',
              'a': 'http://schemas.openxmlformats.org/drawingml/2006/main'}
 with ZipFile(path) as source:

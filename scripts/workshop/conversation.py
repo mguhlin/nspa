@@ -1,5 +1,6 @@
 """The participant companion follows the seven conversations in the core deck."""
 from html import escape as E
+import re
 from content import CASE, RUBRIC, URL
 from route import CONVERSATIONS
 
@@ -43,4 +44,4 @@ def conversation_body():
  for i,(id,title,short,duration,keep) in enumerate(CONVERSATIONS,1):
   body+=f'<section id="{id}" data-step=""><h2 tabindex="-1">{i}. {E(title)}</h2><p class="activity-meta">{duration} · Core slides and workbook</p><p class="activity-outcome"><strong>What to keep:</strong> {E(keep)}</p>{content[id]}<div class="draft-field"><label for="draft-{id}">{E(labels[id])}</label><p id="hint-{id}">{E(hints[id])}</p><textarea id="draft-{id}" data-draft="{id}" aria-describedby="hint-{id}" rows="5" maxlength="15000" placeholder="Write your notes here."></textarea></div></section>'
  body+='''<div class="step-pager" data-step-pager="" hidden><button class="button secondary" type="button" data-step-prev="">← Previous</button><p data-step-status="" role="status" aria-live="polite">Conversation 1 of 7</p><button class="button" type="button" data-step-next="">Next →</button></div><section class="draft-actions" aria-label="Keep your conversation notes"><h2>Keep your notes and your one-change plan</h2><p>Notes save in this browser when storage is available. Export a copy to keep.</p><div class="actions"><button type="button" class="button" id="export-drafts">Export all my notes</button><button type="button" class="button secondary" id="print-drafts">Print conversations &amp; notes</button></div><p id="draft-status" role="status" aria-live="polite"></p></section><script src="practice.js" defer></script><script src="workshop-flow.js" defer></script>'''
- return body
+ return re.sub(r'<p><a href="(?:practice|capacity-matrix|handouts/(?:protected-workflow|fair-ai-policy)|\.\./#library)[^>]*>.*?</p>', '', body)

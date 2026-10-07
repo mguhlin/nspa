@@ -2,6 +2,18 @@
 
 Updated October 7, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
+## October 7 participant simplification: current navigation
+
+This section supersedes the public presenter paths and offline packaging described below. The participant landing page now shows only the conversation companion, workbook, slide PDF without notes, two-page takeaways, and a small session kit. Optional references, slide-image downloads, agenda, and sources are on `2026/resources.html`.
+
+Resources is a native, keyboard-accessible drop-down on the landing page and workshop pages. It opens the infographic collection (`resources/infographics.html`), complete resource library (`resources/library.html`), and optional workshop materials. All ten original infographic downloads and every original library entry are preserved. The collection also includes six workshop quick-reference images. Old homepage `#library` and `#infographics` links redirect to their collections, with valid fallback anchors.
+
+Presenter materials are unlisted under `2026/p/`: route, one-page route PDF, 15-page speaking guide, webdeck, full transcript, and PowerPoint with notes. Participant pages contain no presenter links. Presenter HTML has `noindex`; the folder remains public by direct URL. Participant slide text omits the speaking script. The canonical 18-slide PPTX and participant PDF retain their original bytes.
+
+Only one complete offline ZIP appears on the presenter side: `2026/p/nspa-2026-presenter-offline.zip` (about 43.1 MB). Extract it and open `p/index.html`; the full guide is `p/facilitator.html`. It retains the optional offline library and original visuals. The participant session kit at `2026/offline/nspa-2026-offline.zip` is about 3.4 MB and contains 12 files plus its manifest: the local companion, workbook, slide PDF, takeaways, required styles/scripts/logo, and start instructions. It excludes presenter notes, PowerPoint, infographic/library files, and optional labs. Canonical PDF links in the participant kit lead to the website for optional references.
+
+Build `site.py` and `webdeck.py`, then the selected PDFs, `offline.py`, and `scripts/package_offline.py`. The package builder emits two different manifests. Update and validate the offline PowerPoint after link changes before packaging. Verification evidence is in `PARTICIPANT-SIMPLIFICATION-QA.json`; it includes preservation checks, both archive hashes, and the offline presentation finalizer receipt. Repeat link checks, desktop/phone navigation, no-JavaScript Resources access, and extracted local-file kit checks before publishing.
+
 ## October 7 conversation redesign: current edition
 
 This section supersedes the older slide counts, route, and deliverables below. The user's approved direction is social learning through structured conversation, different perspectives, reflection, and silence. Preserve every library resource and infographic.

@@ -28,7 +28,7 @@ The new artwork uses paper-cut and frosted-glass illustrations in the NSPA palet
 
 Exact template dimensions are 13.3333 × 7.5 inches. Per the supplied production instructions, each slide is rendered as a 1536 × 864 PNG and placed full-frame in the PPTX. PowerPoint speaker notes remain editable. There are 24 native slide hyperlink actions; PDF export preserves them. The PNG ZIP contains exactly 18 numbered images. Older unreferenced slide PNGs are retained as historical assets.
 
-`2026/webdeck.html` embeds the template, real HTML slide text, illustrations, and shared speaker notes in one file. It supports phone reflow, keyboard/touch navigation, notes, a synchronized presenter window, full screen, and one-slide-per-page printing. Arrow keys navigate; S toggles notes, V opens presenter view, F enters full screen, and P prints. Its framework comes from the supplied `webdeck_instructions.md`; integration fixes live in `webdeck-theme.css` and `webdeck-extras.js`.
+`2026/p/webdeck.html` embeds the template, real HTML slide text, illustrations, and shared speaker notes in one file. It supports phone reflow, keyboard/touch navigation, notes, a synchronized presenter window, full screen, and one-slide-per-page printing. Arrow keys navigate; S toggles notes, V opens presenter view, F enters full screen, and P prints. Its framework comes from the supplied `webdeck_instructions.md`; integration fixes live in `webdeck-theme.css` and `webdeck-extras.js`.
 
 ## Shared sources and rebuild sequence
 
@@ -59,7 +59,11 @@ C-101 is entirely fictional. The flawed summary is an authored teaching example,
 
 ## Offline edition and preservation
 
-Extract `2026/offline/nspa-2026-offline.zip` and open `index.html`. The edition includes the conversation companion, 18-slide webdeck, slides and handouts, speaking guide, optional labs, readiness checklist, ethics toolkit, and PROTECT manual worksheet. `library.html` includes all ten supplied homepage infographics and selected local guides, with the full online library address for later use. External publications and online services are not mirrored. Core participation needs no account or network connection.
+Participant pages offer the conversation, workbook, slide PDF without speaker notes, and takeaways. Optional materials and both full collections sit behind the Resources drop-down. Infographics are consolidated at `resources/infographics.html`; the complete library is `resources/library.html`. Preserve every original asset and library entry. The ten original infographics and six workshop quick references remain available online.
+
+Presenter materials are unlisted at `2026/p/`. Its one complete offline download is `2026/p/nspa-2026-presenter-offline.zip`. Extract it and open `p/index.html` for the route, `p/webdeck.html` for presenting, or `p/facilitator.html` for the full offline guide. It includes all presenter materials and the preserved local resources. The folder is public by direct URL and has no participant navigation links.
+
+The participant kit remains at `2026/offline/nspa-2026-offline.zip` (about 3.4 MB). It contains only the companion and its required assets, workbook, slide PDF, two-page takeaways, and start instructions. Infographics, resource-library files, optional labs, PowerPoint, and all speaker materials are excluded. Participant PDFs retain website links for later reference. Both ZIPs have independent SHA-256 manifests; test the extracted kits at a different path. Core participation needs no account or network connection.
 
 The original two-page template-based takeaway DOCX/PDF remains unchanged. When it needs editing, render a temporary copy with the Documents skill so normalization cannot alter the canonical template package. Run `offline.py`, `scripts/package_offline.py`, and `site.py` after source changes. The ZIP excludes itself and includes SHA-256 checksums. Repackage after any offline file change, including README updates.
 

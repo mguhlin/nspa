@@ -16,3 +16,8 @@ document.querySelectorAll('.workshop-nav a').forEach(link => {
   const path = link.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
   if (!link.hash && path === currentWorkshopPath) link.setAttribute('aria-current', 'page');
 });
+
+// Existing slide source links now open the optional reference page directly.
+if (location.hash === "#sources" && currentWorkshopPath.endsWith("/2026")) {
+  location.replace(new URL("resources.html#sources", location.href));
+}
