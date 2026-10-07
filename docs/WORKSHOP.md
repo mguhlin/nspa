@@ -18,7 +18,7 @@ The presentation contains **12 core slides and 6 optional reference slides**. Ho
 | 4:35-4:50 | 10-11 | Discuss a fair rule; hear the applicant's perspective and revise a message |
 | 4:50-5:00 | 12 | One change, a learning colleague, a date, and evidence of improvement |
 
-`conversation.html` provides seven guided conversations with saved, exportable notes. The six-page workbook follows that sequence. The 15-page speaker guide has an opening page, one page for each core slide, optional references, and a link directory. The presenter route is one page. Existing `practice.html` labs and the readiness checklist remain optional.
+`conversation.html` provides seven guided conversations with saved, exportable notes. The 10-page workbook has a cover, six activity pages (2-7), and three optional visual references (8-10): evidence before interpretation, human checkpoints, and a fair applicant response. All original activity writing lines are preserved. The 15-page speaker guide has an opening page, one page for each core slide, optional references, and a link directory. The presenter route is one page. Existing `practice.html` labs and the readiness checklist remain optional.
 
 ## Design and artifact production
 
@@ -41,11 +41,14 @@ Private production inputs stay in git-ignored `supplemental-resources/`. Do not 
 - `resources.py`: slide navigation and the matching resource directory.
 - `render_slides.py`, `capture.cjs`, `assemble.mjs`: deterministic layouts, screenshots, and PPTX assembly.
 - `conversation.py`, `experience.py`, `site.py`: guided companion, hub, optional labs, and presenter page.
-- `pdfs.py`: matching workbook, guide, route, and preserved reference handouts.
+- `pdfs.py` and `participant_packet.py`: matching workbook, cover/visual references, guide, route, and preserved reference handouts.
+- `presentation_script.py`: exports the full first-person Markdown script to `docs/presentation-script.md`; the requested copy is on the Desktop.
 - `webdeck.py`: self-contained HTML presentation.
 - `offline.py` and `scripts/package_offline.py`: local edition and ZIP manifest.
 
 Rebuild authored content first. Run `python3 scripts/workshop/render_slides.py`, then `node scripts/workshop/capture.cjs`. Assemble using the bundled Node runtime and the validated `assemble.mjs` build path; update output/receipt names for each revision. Run the presentation skill finalizer. Convert the validated PPTX with bundled LibreOffice, regenerate the 18-image ZIP, and visually inspect every rendered slide. Run `pdfs.py`, render every changed handout page, inspect it, then run `site.py` and `webdeck.py`.
+
+For workbook-only changes, rebuild the selected PDFs and check their exact page count and every rendered page. Update `facilitator.py` workbook references, run `sync_notes.py` and `presentation_script.py`, then rebuild `site.py` and `webdeck.py`. Build `offline.py`, validate the online and offline PowerPoint packages with the presentation finalizer, and run `scripts/package_offline.py`. Participant-facing PDF descriptions should describe the slides without mentioning removed speaker notes.
 
 For script-only cue changes, `sync_notes.py` can update editable PowerPoint notes without replacing other package parts. Changes to the slide text or artwork require re-rendering and assembly. `practice.js`, `workshop-flow.js`, and the workshop CSS are maintained directly. Conversation notes use separate online/offline storage keys and remain separate from older lab drafts.
 
@@ -63,7 +66,7 @@ Participant pages offer the conversation, workbook, slide PDF without speaker no
 
 Presenter materials are unlisted at `2026/p/`. Its one complete offline download is `2026/p/nspa-2026-presenter-offline.zip`. Extract it and open `p/index.html` for the route, `p/webdeck.html` for presenting, or `p/facilitator.html` for the full offline guide. It includes all presenter materials and the preserved local resources. The folder is public by direct URL and has no participant navigation links.
 
-The participant kit remains at `2026/offline/nspa-2026-offline.zip` (about 3.4 MB). It contains only the companion and its required assets, workbook, slide PDF, two-page takeaways, and start instructions. Infographics, resource-library files, optional labs, PowerPoint, and all speaker materials are excluded. Participant PDFs retain website links for later reference. Both ZIPs have independent SHA-256 manifests; test the extracted kits at a different path. Core participation needs no account or network connection.
+The participant kit remains at `2026/offline/nspa-2026-offline.zip` (about 4.9 MiB). It contains only the companion and its required assets, workbook, slide PDF, two-page takeaways, and start instructions. Standalone infographic and resource-library files, optional labs, PowerPoint, and all speaker materials are excluded. The three visual references embedded in the workbook are included. Participant PDFs retain website links for later reference. Both ZIPs have independent SHA-256 manifests; test the extracted kits at a different path. Core participation needs no account or network connection.
 
 The original two-page template-based takeaway DOCX/PDF remains unchanged. When it needs editing, render a temporary copy with the Documents skill so normalization cannot alter the canonical template package. Run `offline.py`, `scripts/package_offline.py`, and `site.py` after source changes. The ZIP excludes itself and includes SHA-256 checksums. Repackage after any offline file change, including README updates.
 

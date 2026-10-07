@@ -3,6 +3,6 @@ NSPA 2026 OFFLINE WORKSHOP
 Extract the entire ZIP first. Open index.html in a browser. Keep all files together.
 No installation, server, login, or internet is required for slides and activities.
 Open conversation.html for the activities. Prepared examples replace live AI calls.
-Print the six-page handouts/participant-workbook.pdf. Export conversation notes before closing the browser.
+Print the 10-page handouts/participant-workbook.pdf. Activities are on pages 2-7; visual references are on pages 8-10. Export conversation notes before closing the browser.
 External research is summarized in references.html; full external publications and services are not bundled.
 PowerPoint/PDF link behavior depends on your viewer; use the workshop start page for local navigation.

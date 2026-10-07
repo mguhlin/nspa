@@ -1,0 +1,344 @@
+{
+  "pages": 10,
+  "activity_writing_lines": [
+    6,
+    3,
+    6,
+    9,
+    7,
+    8
+  ],
+  "speaker_guide_pages": 15,
+  "pptx_changed_parts": [
+    "ppt/notesSlides/notesSlide1.xml",
+    "ppt/notesSlides/notesSlide2.xml",
+    "ppt/notesSlides/notesSlide3.xml",
+    "ppt/notesSlides/notesSlide4.xml",
+    "ppt/notesSlides/notesSlide5.xml",
+    "ppt/notesSlides/notesSlide6.xml",
+    "ppt/notesSlides/notesSlide7.xml",
+    "ppt/notesSlides/notesSlide8.xml",
+    "ppt/notesSlides/notesSlide9.xml",
+    "ppt/notesSlides/notesSlide10.xml",
+    "ppt/notesSlides/notesSlide11.xml",
+    "ppt/notesSlides/notesSlide12.xml",
+    "ppt/notesSlides/notesSlide13.xml",
+    "ppt/notesSlides/notesSlide14.xml",
+    "ppt/notesSlides/notesSlide15.xml",
+    "ppt/notesSlides/notesSlide16.xml",
+    "ppt/notesSlides/notesSlide17.xml",
+    "ppt/notesSlides/notesSlide18.xml"
+  ],
+  "archives": {
+    "participant": {
+      "files": 12,
+      "bytes": 5154142,
+      "sha256": "b1cc60e91fe325c4500caea45d96df1ffeac5f56c91491889260fbca717105ad"
+    },
+    "presenter": {
+      "files": 83,
+      "bytes": 46846504,
+      "sha256": "46c780b8556646a7e789a94a6852831e3cb7c0ca4eaf6ce6764df92ea543a354"
+    }
+  },
+  "desktop_script": "/home/mg/Desktop/NSPA2026-Presentation-Script.md",
+  "visual_review": {
+    "workbook_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "speaker_guide_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "issues": [],
+    "offline_pdf_content_identical": true
+  },
+  "checks": {
+    "site_links": "pass",
+    "offline_links": {
+      "references": 534,
+      "failures": 0
+    },
+    "git_diff_check": "pass",
+    "browser": {
+      "checks": [
+        {
+          "width": 1440,
+          "path": "/"
+        },
+        {
+          "width": 1440,
+          "path": "/2026/"
+        },
+        {
+          "width": 1440,
+          "path": "/2026/conversation.html"
+        },
+        {
+          "width": 1440,
+          "path": "/resources/library.html"
+        },
+        {
+          "width": 1440,
+          "path": "/resources/infographics.html"
+        },
+        {
+          "width": 1440,
+          "path": "/2026/p/"
+        },
+        {
+          "width": 390,
+          "path": "/"
+        },
+        {
+          "width": 390,
+          "path": "/2026/"
+        },
+        {
+          "width": 390,
+          "path": "/2026/conversation.html"
+        },
+        {
+          "width": 390,
+          "path": "/resources/library.html"
+        },
+        {
+          "width": 390,
+          "path": "/resources/infographics.html"
+        },
+        {
+          "width": 390,
+          "path": "/2026/p/"
+        },
+        {
+          "edition": "participant",
+          "offline": true
+        },
+        {
+          "edition": "presenter",
+          "offline": true
+        }
+      ],
+      "errors": []
+    }
+  },
+  "presentations": {
+    "online": {
+      "schemaVersion": "presentation-finalization.v1",
+      "finalSha256": "d59ec09df8aca198da17d5dec32904163a045ef210b2dd417df4a642475139e7",
+      "byteCount": 8437555,
+      "packageIntegrity": {
+        "chart_count": 0,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 18,
+        "relationship_part_count": 41,
+        "slide_count": 18,
+        "status": "pass",
+        "exitCode": 0,
+        "findingCount": 0,
+        "warnings": []
+      },
+      "presentationLayout": {
+        "finding_count": 0,
+        "findings": [],
+        "slide_count": 18,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": [],
+        "exitCode": 0,
+        "findingCount": 0
+      },
+      "fontSelection": {
+        "basis": "unspecified",
+        "approvedFamilies": [],
+        "scriptFonts": {},
+        "referenceSha256": null,
+        "referenceFontsVerifiedInEncodedText": false
+      },
+      "firstPartyImport": {
+        "performed": true,
+        "passed": true,
+        "slideCount": 18,
+        "sha256": "d59ec09df8aca198da17d5dec32904163a045ef210b2dd417df4a642475139e7",
+        "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+        "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+      },
+      "nativeTableArithmetic": {
+        "performed": true,
+        "checked_column_count": 0,
+        "checks": [],
+        "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+        "eligible_table_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "native_table_count": 0,
+        "passed": true,
+        "schema_version": "presentation-native-table-arithmetic.v1",
+        "skipped_tables": [],
+        "slide_count": 18,
+        "warning_count": 0,
+        "warnings": []
+      },
+      "nativeChartTitles": {
+        "performed": true,
+        "checks": [],
+        "finding_count": 0,
+        "findings": [],
+        "native_chart_count": 0,
+        "native_powerpoint_verified": false,
+        "passed": true,
+        "presentation_sha256": "d59ec09df8aca198da17d5dec32904163a045ef210b2dd417df4a642475139e7",
+        "schema_version": "presentation-native-chart-titles.v1",
+        "slide_count": 18,
+        "source_text_emitted": false,
+        "unresolved_linked_title_count": 0
+      },
+      "sourceDerivedPolicyFlags": [
+        "--expected-slide-size-emu",
+        "12192000,6858000",
+        "--validate-bullet-geometry",
+        "--validate-heading-fit",
+        "--cover-role",
+        "none",
+        "--expected-slide-count",
+        "18"
+      ],
+      "nativeChartValidation": {
+        "detectedOwnerSlides": [],
+        "detectedChartCount": 0,
+        "targetApplication": "portable",
+        "sourceChartOwnersExplicitlyDeclared": true,
+        "validatorRan": false,
+        "passed": true
+      }
+    },
+    "offline": {
+      "schemaVersion": "presentation-finalization.v1",
+      "finalSha256": "7614e17a6b756ef57570a7a6049ec09347dbefd14b8d54b375b844659ae950d4",
+      "byteCount": 8439153,
+      "packageIntegrity": {
+        "chart_count": 0,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 18,
+        "relationship_part_count": 41,
+        "slide_count": 18,
+        "status": "pass",
+        "exitCode": 0,
+        "findingCount": 0,
+        "warnings": []
+      },
+      "presentationLayout": {
+        "finding_count": 0,
+        "findings": [],
+        "slide_count": 18,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": [],
+        "exitCode": 0,
+        "findingCount": 0
+      },
+      "fontSelection": {
+        "basis": "unspecified",
+        "approvedFamilies": [],
+        "scriptFonts": {},
+        "referenceSha256": null,
+        "referenceFontsVerifiedInEncodedText": false
+      },
+      "firstPartyImport": {
+        "performed": true,
+        "passed": true,
+        "slideCount": 18,
+        "sha256": "7614e17a6b756ef57570a7a6049ec09347dbefd14b8d54b375b844659ae950d4",
+        "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+        "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+      },
+      "nativeTableArithmetic": {
+        "performed": true,
+        "checked_column_count": 0,
+        "checks": [],
+        "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+        "eligible_table_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "native_table_count": 0,
+        "passed": true,
+        "schema_version": "presentation-native-table-arithmetic.v1",
+        "skipped_tables": [],
+        "slide_count": 18,
+        "warning_count": 0,
+        "warnings": []
+      },
+      "nativeChartTitles": {
+        "performed": true,
+        "checks": [],
+        "finding_count": 0,
+        "findings": [],
+        "native_chart_count": 0,
+        "native_powerpoint_verified": false,
+        "passed": true,
+        "presentation_sha256": "7614e17a6b756ef57570a7a6049ec09347dbefd14b8d54b375b844659ae950d4",
+        "schema_version": "presentation-native-chart-titles.v1",
+        "slide_count": 18,
+        "source_text_emitted": false,
+        "unresolved_linked_title_count": 0
+      },
+      "sourceDerivedPolicyFlags": [
+        "--expected-slide-size-emu",
+        "12192000,6858000",
+        "--validate-bullet-geometry",
+        "--validate-heading-fit",
+        "--cover-role",
+        "none",
+        "--expected-slide-count",
+        "18"
+      ],
+      "nativeChartValidation": {
+        "detectedOwnerSlides": [],
+        "detectedChartCount": 0,
+        "targetApplication": "portable",
+        "sourceChartOwnersExplicitlyDeclared": true,
+        "validatorRan": false,
+        "passed": true
+      }
+    }
+  },
+  "artifact_hashes": {
+    "2026/handouts/participant-workbook.pdf": "05fe840e93bc98c359ba24cbfb543767ef23ad4d0dd158f70bb6ab03e5c837fe",
+    "2026/p/facilitator-guide.pdf": "1eb8f608789764593dee2db95593b93ec16e4c4a0c5f34c795fde076b93dd4da",
+    "2026/p/slides/nspa-trust-transparency-ai.pptx": "d59ec09df8aca198da17d5dec32904163a045ef210b2dd417df4a642475139e7",
+    "2026/slides/nspa-trust-transparency-ai.pdf": "104b55969714119b40464a7c2ee6c7ba8d5d550a0e94d7859b609a4422f50f07",
+    "docs/presentation-script.md": "136d0c13ef0b9d76be8a2a40256cd85eda50cc4f056a2357f42dd583601f2135"
+  }
+}

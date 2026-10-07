@@ -37,4 +37,4 @@ with ZipFile(buffer, 'w') as target:
     for info in metadata:
         target.writestr(info, parts[info.filename])
 path.write_bytes(buffer.getvalue())
-print('Synchronized all 26 PowerPoint speaker notes; slide content preserved.')
+print(f'Synchronized all {len(SLIDES)} PowerPoint speaker notes; slide content preserved.')
