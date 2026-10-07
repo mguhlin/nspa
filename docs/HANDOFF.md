@@ -18,7 +18,7 @@ Participant clarification: every workbook space now says what to write, with exa
 
 Final QA: all 18 slide layouts and every changed PDF page inspected; PPTX finalizer passed with no findings; 24 native links and substantive editable notes verified. Desktop/phone conversations, draft persistence/export, print, no-JavaScript, presenter synchronization, and extracted offline routes passed with zero script errors and zero external requests. All 79 archive checksums passed; 485 local offline references resolved. Full library preservation was compared against the previous commit. Evidence and artifact hashes are in `CONVERSATION-QA.json`.
 
-Publication and final live verification are recorded below once complete. Do not infer the current deployment from historical run IDs.
+Published content commit: `952347579e6eee49c62af04e5cf03a32a0a03e14`. Pages deployment [37672960807](https://github.com/mguhlin/nspa/actions/runs/37672960807) succeeded. Normal live URLs for 13 pages/downloads matched the local bytes, including PowerPoint, PDF, all three updated handouts, the PNG ZIP, and the offline ZIP. The downloaded archive passed every manifest checksum. Live desktop/phone browser checks verified all 18 slides, seven conversations, response guidance, presenter synchronization, separate online/offline storage, all ten infographic cards, and zero script errors. Documentation-only publication records follow this content commit; check Actions for the latest HEAD.
 
 ## October 6 front-page infographic additions
 

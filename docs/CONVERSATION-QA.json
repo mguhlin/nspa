@@ -124,5 +124,23 @@
     "2026/handouts/participant-workbook.pdf": "4cf4b618c8a6eb559338f21155a96337c7c09e851808b49a0a69f911a9fb29d5",
     "2026/handouts/presenter-route.pdf": "26e55e419a50640867b6447ddf0c4df597064dca63035286c3bd357eb8f452aa",
     "2026/offline/nspa-2026-offline.zip": "e0094c96b9e7cf4921e864bff83d2fdb58d0a2571d08ff3fcd6d4c83161f28e2"
+  },
+  "publication": {
+    "content_commit": "952347579e6eee49c62af04e5cf03a32a0a03e14",
+    "deployment": "https://github.com/mguhlin/nspa/actions/runs/37672960807",
+    "status": "success",
+    "live_files_byte_verified": 13,
+    "live_downloaded_archive_checksums": "all passed",
+    "live_browser": {
+      "slides": 18,
+      "core": 12,
+      "optional": 6,
+      "infographicsPreserved": 10,
+      "fieldInstructions": true,
+      "onlineOfflineStorageSeparate": true,
+      "desktopPhone": true,
+      "presenterSync": true,
+      "errors": []
+    }
   }
 }
