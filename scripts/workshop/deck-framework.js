@@ -193,7 +193,9 @@
             '<div class="pv-frame" id="pvNext"></div>' +
           '</div>' +
           '<div style="display:flex;flex-direction:column;min-height:0;flex:1;">' +
-            '<div class="pv-label"><span class="dot"></span>Speaker notes</div>' +
+            '<div class="pv-label"><span class="dot"></span><span>Speaker notes</span>' +
+              '<span class="pv-note-size"><button class="pv-size-btn" id="pvNotesDown" title="Smaller notes text (-)" aria-label="Smaller notes text">A−</button>' +
+              '<button class="pv-size-btn" id="pvNotesUp" title="Larger notes text (+)" aria-label="Larger notes text">A+</button></span></div>' +
             '<div class="pv-notes"><div class="pv-notes-body" id="pvNotes"></div></div>' +
           '</div>' +
         '</div>' +
@@ -205,6 +207,19 @@
     var elNext = document.getElementById('pvNext');
     var elNotes = document.getElementById('pvNotes');
     var elCount = document.getElementById('pvCount');
+
+    // Speaker-notes text sizing (A- / A+, or + / - keys), persisted across sessions.
+    var NOTE_SCALE_KEY = 'webdeck-notes-scale';
+    var noteScale = parseFloat(localStorage.getItem(NOTE_SCALE_KEY)) || 1;
+    function applyNoteScale() {
+      noteScale = Math.max(0.7, Math.min(2.2, noteScale));
+      elNotes.style.fontSize = (20 * noteScale).toFixed(1) + 'px';
+      try { localStorage.setItem(NOTE_SCALE_KEY, noteScale); } catch (e) {}
+    }
+    function bumpNotes(d) { noteScale = Math.round((noteScale + d) * 10) / 10; applyNoteScale(); }
+    document.getElementById('pvNotesUp').onclick = function () { bumpNotes(0.1); };
+    document.getElementById('pvNotesDown').onclick = function () { bumpNotes(-0.1); };
+    applyNoteScale();
 
     function preview(container, i, big) {
       container.innerHTML = '';
@@ -248,6 +263,8 @@
         case 'Home': goto(0); break;
         case 'End': goto(TOTAL - 1); break;
         case 't': case 'T': resetTimer(); break;
+        case '+': case '=': bumpNotes(0.1); e.preventDefault(); break;
+        case '-': case '_': bumpNotes(-0.1); e.preventDefault(); break;
       }
     });
     window.addEventListener('resize', render);

@@ -392,6 +392,10 @@ body.presenter-mode .slide.current .slide-body > * { animation: none !important;
 .pv-right { gap: 16px; }
 .pv-right > * { min-width: 0; }
 .pv-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #8FA6C8; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.pv-note-size { margin-left: auto; display: inline-flex; gap: 6px; }
+.pv-size-btn { font-family: var(--font-body); font-size: 12px; font-weight: 700; line-height: 1; letter-spacing: normal; cursor: pointer; background: rgba(16,42,84,.75); border: 1px solid rgba(200,210,220,.3); color: #EAF0FB; border-radius: 5px; padding: 4px 9px; transition: all .15s; }
+.pv-size-btn:hover { background: var(--gold-lt); color: var(--navy-dk); border-color: var(--gold-lt); }
+.pv-size-btn:focus-visible { outline: 3px solid #F4F8FE; outline-offset: 2px; }
 .pv-label .dot { width: 6px; height: 6px; background: var(--gold-lt); transform: rotate(45deg); }
 .pv-frame { width: 100%; background: #04070E; border: 1px solid rgba(200,210,220,.2); border-radius: 6px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
 .pv-holder { position: absolute; top: 0; left: 0; width: 1280px; height: 720px; transform-origin: top left; }
