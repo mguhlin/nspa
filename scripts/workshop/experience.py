@@ -21,6 +21,10 @@ def download_group(downloads):
 
 
 
+def learning_intentions():
+    return '<section id="learning-intentions" aria-labelledby="learning-intentions-title"><h2 id="learning-intentions-title">Our learning intentions</h2><figure class="learning-infographic"><a href="images/learning-intentions.png" aria-label="Open the learning intentions infographic at full resolution"><img src="images/learning-intentions.webp" width="1086" height="1448" loading="lazy" alt="Learning intentions for Trust, Transparency, and AI. The complete wording is available in the text version below."></a><figcaption>AI-generated infographic · <a href="images/learning-intentions.png" download>Download the infographic (PNG)</a></figcaption></figure><details class="workshop-details"><summary>Read the learning intentions as text</summary><h3>What am I learning today?</h3><p>I am learning how to use AI to support scholarship review while protecting applicant privacy, checking evidence, keeping people responsible for decisions, and responding fairly to applicants.</p><h3>Why am I learning this?</h3><p>My review practices affect applicants’ opportunities and trust. Learning to question AI outputs and consider different perspectives will help me make more accurate, fair, and transparent decisions with my colleagues.</p><h3>How will I know that I learned it?</h3><p>I can:</p><ul><li>Identify an unsupported claim in an AI draft and explain what evidence needs checking.</li><li>Explain my review judgment using application evidence and reflect on a colleague’s perspective.</li><li>Map a workflow with named human checkpoints and a clear reason to pause.</li><li>Draft a fair applicant response based on the published rules and available facts.</li><li>Choose one change to try with a colleague, set a review date within 30 days, and identify evidence of improvement.</li></ul></details></section>'
+
+
 def fragment(text):
     return html.fragment_fromstring(text)
 

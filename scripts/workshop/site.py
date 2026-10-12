@@ -3,7 +3,7 @@ from slides import SLIDES, CORE_COUNT
 import html,re
 from urllib.parse import urlsplit
 from conversation import conversation_body
-from experience import workshop_intro, download_group, optimize_practice, optimize_matrix, presenter_body
+from experience import workshop_intro, download_group, learning_intentions, optimize_practice, optimize_matrix, presenter_body
 E=html.escape
 W=ROOT/'2026'
 def shell(title,body,name):
@@ -30,7 +30,7 @@ refs+='</div></details>'
 sources='<details class="workshop-details" id="sources"><summary>Sources, interpretation, and reuse</summary><p>Reviewed October 7, 2026. Recheck product guidance before the October workshop. The packet, rubric, policy starter, and capacity matrix are workshop teaching tools, not validated selection instruments or official NSPA policy.</p><ul class="source-list">'+''.join(f'<li><a href="{url}">{title}</a><p>{desc}</p></li>' for title,url,desc in SOURCES)+'</ul><p>All examples are fictional. Use an organization-approved workflow before processing any real applicant data. Policy language needs local review. Generated artwork supports the slides; all instructional wording is separately typeset.</p></details>'
 gallery='<details class="workshop-details"><summary>Browse the 12 core slides and 6 optional references</summary><div class="reference-gallery">'+''.join(f'<a href="images/nspa-trust-transparency-ai/{i:02}.png"><img loading="lazy" src="images/nspa-trust-transparency-ai/{i:02}.png" alt="{E(slide["title"])}"><strong>{i:02}. {E(slide["title"])}</strong></a>' for i,slide in enumerate(SLIDES,1))+'</div><p><a href="slide-transcript.html">Read the slide text</a></p></details>'
 (W/'conversation.html').write_text(shell('Conversation companion',conversation_body(),'conversation.html'))
-(W/'index.html').write_text(shell(TITLE,intro+dl+'<p id="sources"><a href="resources.html#sources">Sources and interpretation</a></p>',''))
+(W/'index.html').write_text(shell(TITLE,intro+dl+learning_intentions()+'<p id="sources"><a href="resources.html#sources">Sources and interpretation</a></p>',''))
 extras='<p class="eyebrow">For later exploration</p><h1>Optional workshop materials</h1><p>Choose one resource when it helps with a question or a task. The core session uses the conversation companion and participant workbook.</p><nav class="jump-links"><a href="practice.html">Practice labs</a><a href="capacity-matrix.html">Readiness checklist</a><a href="../resources/infographics.html">Infographic collection</a><a href="../resources/library.html">Resource library</a></nav>'+agenda+gallery+sources
 extras+='<section><h2>Reference downloads</h2><div class="download-grid">'+''.join(f'<a class="download" href="{path}"><span class="filetype">{kind}</span><span><strong>{E(title)}</strong><small>{E(desc)}</small></span></a>' for title,path,desc,kind in downloads if title in ['Prompt & rubric reference','Protected workflow reference','Fair applicant AI-use reference','Capacity matrix','Session takeaways','Individual slide images'])+'</div></section>'
 (W/'resources.html').write_text(shell('Optional workshop materials',extras,'resources.html'))
