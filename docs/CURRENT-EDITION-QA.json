@@ -204,5 +204,218 @@
   "webdeckPrint": {
     "pages": 28,
     "notesExcluded": true
+  },
+  "offlinePowerpointValidation": {
+    "schemaVersion": "presentation-finalization.v1",
+    "finalSha256": "2d26b56e3c98804a1565df6bb572617b41db22d5bcc517fcaeaccc3828a1de3e",
+    "byteCount": 28437862,
+    "packageIntegrity": {
+      "chart_count": 0,
+      "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+      "finding_count": 0,
+      "findings": [],
+      "notes_parts_skipped": 28,
+      "relationship_part_count": 66,
+      "slide_count": 28,
+      "status": "pass",
+      "exitCode": 0,
+      "findingCount": 0,
+      "warnings": []
+    },
+    "presentationLayout": {
+      "finding_count": 0,
+      "findings": [],
+      "slide_count": 28,
+      "slide_size_in": [
+        13.3333,
+        7.5
+      ],
+      "warning_count": 0,
+      "warnings": [],
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    "fontSelection": {
+      "basis": "unspecified",
+      "approvedFamilies": [],
+      "scriptFonts": {},
+      "referenceSha256": null,
+      "referenceFontsVerifiedInEncodedText": false
+    },
+    "firstPartyImport": {
+      "performed": true,
+      "passed": true,
+      "slideCount": 28,
+      "sha256": "2d26b56e3c98804a1565df6bb572617b41db22d5bcc517fcaeaccc3828a1de3e",
+      "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    },
+    "nativeTableArithmetic": {
+      "performed": true,
+      "checked_column_count": 0,
+      "checks": [],
+      "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+      "eligible_table_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "native_table_count": 9,
+      "passed": true,
+      "schema_version": "presentation-native-table-arithmetic.v1",
+      "skipped_tables": [
+        {
+          "reason": "insufficient_rows",
+          "slide": 7,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 10,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 11,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 12,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 13,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 14,
+          "table": 1
+        },
+        {
+          "reason": "insufficient_rows",
+          "slide": 15,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 20,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 26,
+          "table": 1
+        }
+      ],
+      "slide_count": 28,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "nativeChartTitles": {
+      "performed": true,
+      "checks": [],
+      "finding_count": 0,
+      "findings": [],
+      "native_chart_count": 0,
+      "native_powerpoint_verified": false,
+      "passed": true,
+      "presentation_sha256": "2d26b56e3c98804a1565df6bb572617b41db22d5bcc517fcaeaccc3828a1de3e",
+      "schema_version": "presentation-native-chart-titles.v1",
+      "slide_count": 28,
+      "source_text_emitted": false,
+      "unresolved_linked_title_count": 0
+    },
+    "sourceDerivedPolicyFlags": [
+      "--expected-slide-size-emu",
+      "12192000,6858000",
+      "--validate-bullet-geometry",
+      "--validate-heading-fit",
+      "--cover-role",
+      "none",
+      "--expected-slide-count",
+      "28"
+    ],
+    "nativeChartValidation": {
+      "detectedOwnerSlides": [],
+      "detectedChartCount": 0,
+      "targetApplication": "portable",
+      "sourceChartOwnersExplicitlyDeclared": true,
+      "validatorRan": false,
+      "passed": true
+    }
+  },
+  "liveDownloads": [
+    {
+      "path": "index.html",
+      "sha256": "3b45a847a83732d4b5392afa88fa0b3d0a79011041c4bf94ac166ce0f49d6fb1",
+      "matched": true
+    },
+    {
+      "path": "2026/index.html",
+      "sha256": "fe5afd9f00338e394db3fc549ede846d19df109ce59052633c82ad9b721fa27a",
+      "matched": true
+    },
+    {
+      "path": "2026/conversation.html",
+      "sha256": "ffabcc5b4e43fa1b503fc86aeaf8a230d0a49d4b5b3cdf6fabaadc59cf51253e",
+      "matched": true
+    },
+    {
+      "path": "2026/resources.html",
+      "sha256": "bb6c70acfbe29b5723984bd31afff57a568869f321c55d268b52a55505728ad7",
+      "matched": true
+    },
+    {
+      "path": "2026/p/webdeck.html",
+      "sha256": "c0480cdb8141be3cd27b6055b78164ee1e6e715f86fc4766a921637c8f7d7429",
+      "matched": true
+    },
+    {
+      "path": "2026/slides/nspa-trust-transparency-ai.pdf",
+      "sha256": "34f61162d052e62075ba2f1e07f34f1d372b13f4b135ab509911c4a27664250e",
+      "matched": true
+    },
+    {
+      "path": "2026/handouts/participant-workbook.pdf",
+      "sha256": "1d6f261abe438f488f648c6cc1c88774b11b2bbf504fb7e8e0a78412da074173",
+      "matched": true
+    },
+    {
+      "path": "2026/offline/session-takeaways.pdf",
+      "sha256": "993aeb09d8e79d5c06c2023dd627fc67259a2da2f4ed1f1c89c0508a5b0bdb0d",
+      "matched": true
+    },
+    {
+      "path": "2026/offline/session-takeaways.docx",
+      "sha256": "cef0bc15a4b3cd4f47e997920b1983c79162dc05498e87903aa5b91a42927f82",
+      "matched": true
+    },
+    {
+      "path": "2026/p/slides/nspa-trust-transparency-ai.pptx",
+      "sha256": "a69a87120c014e2ebfaafc8d057d14d2f6015e9d32668b6b4f2bc8784237d6b9",
+      "matched": true
+    },
+    {
+      "path": "2026/offline/nspa-2026-offline.zip",
+      "sha256": "f6bbac2c4b3b95c429aeaece388429368808745935d968e4383ecb6178fe0670",
+      "matched": true
+    },
+    {
+      "path": "2026/p/nspa-2026-presenter-offline.zip",
+      "sha256": "a024d666416a2f9413cf3636783ad107bd9c55806d5cc68e30ad373095a592be",
+      "matched": true
+    }
+  ],
+  "deployment": {
+    "commit": "2a5fa7c",
+    "run": "https://github.com/mguhlin/nspa/actions/runs/39167428895",
+    "status": "success"
+  },
+  "liveBrowser": {
+    "issues": [],
+    "errors": [],
+    "sync": "2 / 28",
+    "noJsSections": 8
   }
 }
