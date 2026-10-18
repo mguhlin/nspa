@@ -1,5 +1,24 @@
 # NSPA project handoff
 
+Updated October 18, 2026.
+
+## October 18 supplied presentation replaces the core workshop
+
+This section supersedes all earlier slide counts, core activities, workbook lengths, and rebuild instructions below. The session remains **90 minutes, October 21, 3:30–5:00 PM CT**. The user confirmed that they will expand resources to use the time. The supplied deck has **24 core slides plus four backups**. Its original core cues total about 60 minutes; 30 minutes remain flexible for discussion and resource practice.
+
+Private inputs copied into ignored `supplemental-resources/`: `NSPA26-Scholarship-Review-Webdeck.html` and `trust_transparency_ai_scholarship_review_nspa26.pptx`, supplied from the Desktop. The published PowerPoint preserves all parts except the cover’s 90-minute label and matching notes on slides 1 and 24. All nine native tables and all other slide/package parts remain intact. The webdeck retains its supplied embedded v5 framework and NSPA design, with a local exit link, 90-minute label, corrected privacy-source URL, and a slightly taller slide 21 quote box.
+
+Participant hub: `2026/`; companion: `2026/conversation.html`; 28-slide PDF without speaker notes: `2026/slides/nspa-trust-transparency-ai.pdf`; six-page workbook: `2026/handouts/participant-workbook.pdf`; two-page NSPA-template takeaways: `2026/offline/session-takeaways.pdf` (editable DOCX beside it). Eight companion sections cover trust, six-part prompts, three demos, workflow checks, applicant policy, and the 30 / 60 / 90-day plan. New storage keys preserve earlier conversation drafts.
+
+Presenter materials remain unlisted under `2026/p/`: webdeck, PowerPoint, one-page route, 29-page guide, transcript with notes, and complete offline kit. Participant transcript and session kit exclude speaker notes. Presenter guide/script derive directly from the supplied webdeck notes. `docs/presentation-script.md` is current; the previously saved Desktop Markdown script predates this edition.
+
+Additional C-101 labs and their 0–2 rubric remain optional and are explicitly distinguished from the current A-101–A-103 exercises and 1–4 community-impact criterion. The original resource library, infographic collection, and all their original assets remain unchanged.
+
+Verification: all 28 slides and every changed handout page inspected; online desktop/phone and both extracted kits passed with zero script errors. Presenter sync, notes resizing, persistence/export, no-JavaScript access, and 28-page slide-only webdeck printing passed. PowerPoint finalizer passed package, layout and import checks; 12 participant and 83 presenter manifest entries verified. Evidence: `docs/CURRENT-EDITION-QA.json`.
+
+Canonical new builder: `scripts/workshop/current_edition.py`. It uses the private supplied webdeck when available, otherwise the committed current webdeck, to generate current pages, workbook, route, guide, transcript and private script. `site.py` runs it after the preserved reference/lab builders. `webdeck.py` detects and preserves the current supplied edition. `pdfs.py` rebuilds the legacy references before replacing core participant/presenter PDFs with the current edition. Do not run `render_slides.py`, `capture.cjs`, `assemble.mjs`, `sync_notes.py`, or `presentation_script.py` for this edition; those remain legacy production tools. Read the October 18 section in WORKSHOP.md for the current export/package order.
+
+
 Updated October 7, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
 ## October 7 ten-page participant packet and Desktop script

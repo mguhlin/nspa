@@ -40,3 +40,9 @@
 @media(max-width:850px){.workshop-title{grid-template-areas:"copy" "choices" "art"}.workshop-title .workshop-choices{grid-template-columns:1fr}}
 /* Conversation companion: the case and the draft remain readable on paper or phone. */
 .prepared-draft{margin:22px 0;padding:20px 24px;border-left:5px solid #ffcd34;background:#fff8df;font-size:1.1rem}.prepared-draft p{margin:0}.case-packet{padding:6px 22px;border-left:4px solid #007681;background:#f1f8f8}.case-packet p{margin:18px 0}.workshop section ol li,.workshop section ul li{margin-bottom:12px}
+
+/* Learning intentions: full-resolution download with an accessible text companion. */
+.learning-infographic{max-width:900px;margin:24px auto}.learning-infographic img{display:block;width:100%;height:auto;border-radius:12px}.learning-infographic figcaption{margin-top:12px;font-size:15px;line-height:1.6}
+
+/* Current session: long source URLs and tables remain within phone width. */
+.workshop a{overflow-wrap:anywhere}.workshop .table-scroll{max-width:100%;overflow-x:auto}.workshop table{max-width:100%}.workshop pre{box-sizing:border-box;max-width:100%}

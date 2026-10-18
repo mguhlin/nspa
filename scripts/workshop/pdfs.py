@@ -137,3 +137,8 @@ route_table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),TEAL),('VALIGN',(0,0
 route_story=title('Your presenter route','October 21, 2026 | 3:30-5:00 PM CT | Keep this beside the presentation.')+[route_table,text('Prepared teaching example','h2'),p(f'<link href="{URL}practice.html#demo-completeness" color="#007c89">Completeness reference</link> | <link href="{URL}practice.html#demo-scoring" color="#007c89">Scoring discussion</link>. Say: This is a prepared teaching example, not a live model response.','small'),text('If time is short: shorten volunteer reporting and extra examples. Keep independent thinking, the two-minute silence, and the fair-response discussion. At 4:50, move to the one-change plan on slide 12. Slides 13-18 are optional references.','small'),p(f'<link href="{URL}p/facilitator-guide.pdf" color="#007c89">Full speaking guide</link> | <link href="{URL}p/" color="#007c89">Online presenter route</link>','small')]
 doc('presenter-route',route_story)
 print('Created handout PDFs: '+(', '.join(sys.argv[1:]) if len(sys.argv)>1 else 'all six'))
+
+# Current workbook and speaking materials replace the earlier conversation route.
+from current_edition import slides as current_slides, build_pdfs as build_current_pdfs
+if "Three complete demo prompts" in (ROOT/"2026/p/webdeck.html").read_text():
+ build_current_pdfs(current_slides())

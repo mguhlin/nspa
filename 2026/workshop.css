@@ -43,3 +43,6 @@
 
 /* Learning intentions: full-resolution download with an accessible text companion. */
 .learning-infographic{max-width:900px;margin:24px auto}.learning-infographic img{display:block;width:100%;height:auto;border-radius:12px}.learning-infographic figcaption{margin-top:12px;font-size:15px;line-height:1.6}
+
+/* Current session: long source URLs and tables remain within phone width. */
+.workshop a{overflow-wrap:anywhere}.workshop .table-scroll{max-width:100%;overflow-x:auto}.workshop table{max-width:100%}.workshop pre{box-sizing:border-box;max-width:100%}

@@ -1,0 +1,208 @@
+{
+  "changedPptxParts": [
+    "ppt/slides/slide1.xml",
+    "ppt/notesSlides/notesSlide1.xml",
+    "ppt/notesSlides/notesSlide24.xml"
+  ],
+  "changedDocxParts": [
+    "word/document.xml"
+  ],
+  "2026/handouts/participant-workbook.pdf": {
+    "pages": 6,
+    "sha256": "1d6f261abe438f488f648c6cc1c88774b11b2bbf504fb7e8e0a78412da074173"
+  },
+  "2026/p/presenter-route.pdf": {
+    "pages": 1,
+    "sha256": "8fa9953350a6e8ddb32ce53cab6be625f1b902fd6f218087050edabf2f5ab82a"
+  },
+  "2026/p/facilitator-guide.pdf": {
+    "pages": 29,
+    "sha256": "49c3d5c90b26de09ccb9db11539ba195356a6ca86e8485a7546dbe59d3da7601"
+  },
+  "2026/offline/session-takeaways.pdf": {
+    "pages": 2,
+    "sha256": "993aeb09d8e79d5c06c2023dd627fc67259a2da2f4ed1f1c89c0508a5b0bdb0d"
+  },
+  "2026/slides/nspa-trust-transparency-ai.pdf": {
+    "pages": 28,
+    "sha256": "34f61162d052e62075ba2f1e07f34f1d372b13f4b135ab509911c4a27664250e"
+  },
+  "participantSlideNotesExcluded": true,
+  "2026/offline/nspa-2026-offline.zip": {
+    "files": 12,
+    "sha256": "f6bbac2c4b3b95c429aeaece388429368808745935d968e4383ecb6178fe0670"
+  },
+  "2026/p/nspa-2026-presenter-offline.zip": {
+    "files": 83,
+    "sha256": "a024d666416a2f9413cf3636783ad107bd9c55806d5cc68e30ad373095a592be"
+  },
+  "browser": {
+    "issues": [],
+    "errors": [],
+    "sync": "2 / 28",
+    "noJsSections": 8
+  },
+  "offlineBrowser": {
+    "issues": [],
+    "errors": [],
+    "sync": "2 / 28",
+    "noJsSections": 8
+  },
+  "powerpointValidation": {
+    "schemaVersion": "presentation-finalization.v1",
+    "finalSha256": "a69a87120c014e2ebfaafc8d057d14d2f6015e9d32668b6b4f2bc8784237d6b9",
+    "byteCount": 28434840,
+    "packageIntegrity": {
+      "chart_count": 0,
+      "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+      "finding_count": 0,
+      "findings": [],
+      "notes_parts_skipped": 28,
+      "relationship_part_count": 66,
+      "slide_count": 28,
+      "status": "pass",
+      "exitCode": 0,
+      "findingCount": 0,
+      "warnings": []
+    },
+    "presentationLayout": {
+      "finding_count": 0,
+      "findings": [],
+      "slide_count": 28,
+      "slide_size_in": [
+        13.3333,
+        7.5
+      ],
+      "warning_count": 0,
+      "warnings": [],
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    "fontSelection": {
+      "basis": "unspecified",
+      "approvedFamilies": [],
+      "scriptFonts": {},
+      "referenceSha256": null,
+      "referenceFontsVerifiedInEncodedText": false
+    },
+    "firstPartyImport": {
+      "performed": true,
+      "passed": true,
+      "slideCount": 28,
+      "sha256": "a69a87120c014e2ebfaafc8d057d14d2f6015e9d32668b6b4f2bc8784237d6b9",
+      "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    },
+    "nativeTableArithmetic": {
+      "performed": true,
+      "checked_column_count": 0,
+      "checks": [],
+      "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+      "eligible_table_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "native_table_count": 9,
+      "passed": true,
+      "schema_version": "presentation-native-table-arithmetic.v1",
+      "skipped_tables": [
+        {
+          "reason": "insufficient_rows",
+          "slide": 7,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 10,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 11,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 12,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 13,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 14,
+          "table": 1
+        },
+        {
+          "reason": "insufficient_rows",
+          "slide": 15,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 20,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 26,
+          "table": 1
+        }
+      ],
+      "slide_count": 28,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "nativeChartTitles": {
+      "performed": true,
+      "checks": [],
+      "finding_count": 0,
+      "findings": [],
+      "native_chart_count": 0,
+      "native_powerpoint_verified": false,
+      "passed": true,
+      "presentation_sha256": "a69a87120c014e2ebfaafc8d057d14d2f6015e9d32668b6b4f2bc8784237d6b9",
+      "schema_version": "presentation-native-chart-titles.v1",
+      "slide_count": 28,
+      "source_text_emitted": false,
+      "unresolved_linked_title_count": 0
+    },
+    "sourceDerivedPolicyFlags": [
+      "--expected-slide-size-emu",
+      "12192000,6858000",
+      "--validate-bullet-geometry",
+      "--validate-heading-fit",
+      "--cover-role",
+      "none",
+      "--expected-slide-count",
+      "28"
+    ],
+    "nativeChartValidation": {
+      "detectedOwnerSlides": [],
+      "detectedChartCount": 0,
+      "targetApplication": "portable",
+      "sourceChartOwnersExplicitlyDeclared": true,
+      "validatorRan": false,
+      "passed": true
+    }
+  },
+  "visualReview": {
+    "slides": 28,
+    "workbookPages": 6,
+    "takeawayPages": 2,
+    "speakerGuidePages": 29,
+    "routePages": 1
+  },
+  "participantBrowser": {
+    "errors": [],
+    "localFile": true,
+    "notesSaved": true,
+    "printPath": "/tmp/nspa-refresh/webdeck-print.pdf"
+  },
+  "webdeckPrint": {
+    "pages": 28,
+    "notesExcluded": true
+  }
+}

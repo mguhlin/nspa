@@ -1,14 +1,14 @@
 {
   "assets/nspa-logo.png": "e1c760c4d4dedc705512872d039f80bb7e467ca42ac21d02ea57af6db22a6a9e",
-  "conversation.html": "8a955b9f352270c27fa254d4f367f7ec40a44103e201cd3ea5e671fa85935938",
-  "handouts/participant-workbook.pdf": "05fe840e93bc98c359ba24cbfb543767ef23ad4d0dd158f70bb6ab03e5c837fe",
-  "index.html": "81bee1683d7cfea1fe20098608a1e3c927cd3d7803faff5ac664a01980a187c9",
+  "conversation.html": "1cfd411bcd534399e1beb34a92922c9aae11af329806508ad93ab812a8b6ebd7",
+  "handouts/participant-workbook.pdf": "1d6f261abe438f488f648c6cc1c88774b11b2bbf504fb7e8e0a78412da074173",
+  "index.html": "ece16103fc3518671bd3e33043828b343224ec358200a5ac479aeaa35d6db04c",
   "navigation.js": "03ed2f8c920d59676315795e7d2e2eb5b54055e35003c46729d5c17872c8d093",
   "offline.css": "945f010068b853d60667e5ebcc5a23695841f70df68db4f2a8acbd9e47a77881",
-  "practice.js": "c92b99b2a83d250167600ad62383f0823467ac237ac462a514cf13441ff6f915",
-  "session-takeaways.pdf": "1175dad57b57af603dab04db49f1b41bb787edbc8d1a7abea3d500c7bca14641",
-  "slides/nspa-trust-transparency-ai.pdf": "104b55969714119b40464a7c2ee6c7ba8d5d550a0e94d7859b609a4422f50f07",
+  "practice.js": "848d3d367044e0045b3c2b7eee0199a7eedb87b8987fd68818ff327a289f2a2f",
+  "session-takeaways.pdf": "993aeb09d8e79d5c06c2023dd627fc67259a2da2f4ed1f1c89c0508a5b0bdb0d",
+  "slides/nspa-trust-transparency-ai.pdf": "34f61162d052e62075ba2f1e07f34f1d372b13f4b135ab509911c4a27664250e",
   "workshop-flow.js": "b130aed8efe622ef75d5ec4f6769598d614694b41012732ddbb65e6e17f5ee88",
-  "workshop.css": "51bfb5452ad5efd34fc06ebb08fbd24286863ec2f326a788e7a3a1c80b68497e",
+  "workshop.css": "65bd3de6cca0c47f482263bbdad543994a85362b6209197b094d94cfc24a86ce",
   "START-HERE.txt": "524836adec80f7520f5abf551483ba3d6334ad1f43a6153cc5e64cf77909bc00"
 }

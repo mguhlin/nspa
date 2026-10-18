@@ -1,3 +1,11 @@
+# Retain the supplied current edition rather than regenerating legacy slides.
+from pathlib import Path
+if (Path(__file__).resolve().parents[2]/'2026/p/webdeck.html').exists():
+    current = (Path(__file__).resolve().parents[2]/'2026/p/webdeck.html').read_text()
+    if 'Three complete demo prompts' in current:
+        from current_edition import prepare_deck
+        prepare_deck()
+        raise SystemExit(0)
 """Self-contained webdeck using the supplied framework and the reviewed slide layouts."""
 from content import ROOT, TITLE, SOURCES
 from slides import SLIDES, CORE_COUNT

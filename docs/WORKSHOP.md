@@ -1,5 +1,30 @@
 # 2026 workshop production and alignment
 
+## October 18 supplied-deck edition — current
+
+Session: **Trust, Transparency, and AI: Building Responsible Scholarship Review Practices**. October 21, 2026, **3:30–5:00 PM CT, 90 minutes**. The user explicitly confirmed the session length and plans to expand resource use. Preserve the supplied presentation and allow flexible discussion alongside its core cues.
+
+- 24 core slides plus backups B1–B4 (28 slides total), with nine editable native PowerPoint tables.
+- Three separate fictional teaching examples: triage of A-101–A-103, a repair-table essay with a 1–4 community-impact criterion, and supplied-evidence tags. Reused IDs do not imply a combined applicant record.
+- Eight-section companion with local notes, copyable prompts, export, print, and no-JavaScript access. It needs no AI account. Separate current storage keys protect previous notes.
+- Six-page workbook, two-page NSPA-template takeaways, participant slide-only PDF and transcript, 28-image ZIP/gallery. Unlisted presenter route, 29-page notes guide, PowerPoint, webdeck and full transcript.
+- Existing C-101 labs, references, readiness checklist, library and infographics remain supplementary. C-101 uses a different packet and 0–2 rubric.
+
+Current sources are `scripts/workshop/current_edition.py` and the supplied files in ignored `supplemental-resources/`. The committed `2026/p/webdeck.html` is the fallback content source on machines without private inputs. The builder preserves supplied slide text/design while updating the session label and obsolete site-mismatch notes. Only three PPTX parts change; all other parts must match the supplied source.
+
+Rebuild order:
+
+1. Run `python3 scripts/workshop/current_edition.py` (or `site.py` when preserved references/labs also need rebuilding). Do not use the earlier slide assembler or notes synchronizer.
+2. Export the current `2026/p/slides/nspa-trust-transparency-ai.pptx` with bundled LibreOffice and `impress_pdf_Export`, explicitly setting `ExportNotesPages=false` and `ExportOnlyNotesPages=false`. Verify 28 pages and save to `2026/slides/nspa-trust-transparency-ai.pdf`.
+3. Render that PDF with `pdftoppm -scale-to 1536 -png`. Save numbered images `01.png`–`28.png` under `2026/images/nspa-trust-transparency-ai/`, and zip exactly those 28 numbered images into `2026/slides/nspa-trust-transparency-ai-pngs.zip`.
+4. Run `takeaways.py` with the bundled Python. Render a temporary copy using Documents `render_docx.py --emit_pdf`, inspect both pages, and save the verified PDF to `2026/offline/session-takeaways.pdf`. Preserve every DOCX package part except `word/document.xml`.
+5. Run `offline.py`, then `scripts/package_offline.py`. Participant kit: 12 payload files; presenter kit: 83. Validate both manifests and extracted local-file operation.
+6. Run `scripts/check_site.py`, `scripts/check_offline.py`, `scripts/build_site.py`, and `git diff --check`. Validate desktop/phone slides and every companion section, presenter sync and notes sizing, exports/persistence, no-JavaScript, print, 28-page participant PDF without speaker notes, and source package preservation.
+7. Commit, push and verify GitHub Pages and live download hashes under the parent AGENTS.md standing authorization.
+
+The earlier production history below is retained for optional materials and provenance. It does not define the current core presentation.
+
+
 Session: **Trust, Transparency, and AI: Building Responsible Scholarship Review Practices**. October 21, 2026, 3:30-5:00 PM CT, 90 minutes. Audience: scholarship providers and review teams.
 
 ## October 7 conversation edition

@@ -72,3 +72,7 @@ optimize_practice(W/'practice.html')
 optimize_matrix(W/'capacity-matrix.html')
 (W/'p').mkdir(exist_ok=True)
 (W/'p/index.html').write_text(shell('Presenter route',presenter_body(),'p/'))
+
+# The supplied October 18 presentation supersedes the legacy core route.
+from current_edition import build as build_current_edition
+build_current_edition()
