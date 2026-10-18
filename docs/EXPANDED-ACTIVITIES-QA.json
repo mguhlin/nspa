@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-18",
+  "sessionMinutes": 90,
+  "coreSlides": 24,
+  "backupSlides": 4,
+  "revisedVisualSlides": [
+    3,
+    6,
+    7,
+    10,
+    11,
+    12,
+    13,
+    20,
+    22
+  ],
+  "participantDownloads": [
+    "workbook",
+    "presentation PDF without notes",
+    "session takeaways"
+  ],
+  "workbookPages": 16,
+  "takeawaysPages": 2,
+  "guidePages": 29,
+  "routePages": 1,
+  "activities": 8,
+  "activityMinutes": 60,
+  "browser": {
+    "issues": [],
+    "errors": [],
+    "sync": "2 / 28",
+    "noJsSections": 8
+  },
+  "presentation": {
+    "schemaVersion": "presentation-finalization.v1",
+    "finalSha256": "28a2b508ca8aff4bdb0868655978e052b8c4d8c284207f467fa397faee1ab970",
+    "byteCount": 37418103,
+    "packageIntegrity": {
+      "chart_count": 0,
+      "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+      "finding_count": 0,
+      "findings": [],
+      "notes_parts_skipped": 28,
+      "relationship_part_count": 66,
+      "slide_count": 28,
+      "status": "pass",
+      "exitCode": 0,
+      "findingCount": 0,
+      "warnings": []
+    },
+    "presentationLayout": {
+      "finding_count": 0,
+      "findings": [],
+      "slide_count": 28,
+      "slide_size_in": [
+        13.3333,
+        7.5
+      ],
+      "warning_count": 0,
+      "warnings": [],
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    "fontSelection": {
+      "basis": "unspecified",
+      "approvedFamilies": [],
+      "scriptFonts": {},
+      "referenceSha256": null,
+      "referenceFontsVerifiedInEncodedText": false
+    },
+    "firstPartyImport": {
+      "performed": true,
+      "passed": true,
+      "slideCount": 28,
+      "sha256": "28a2b508ca8aff4bdb0868655978e052b8c4d8c284207f467fa397faee1ab970",
+      "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    },
+    "nativeTableArithmetic": {
+      "performed": true,
+      "checked_column_count": 0,
+      "checks": [],
+      "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+      "eligible_table_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "native_table_count": 5,
+      "passed": true,
+      "schema_version": "presentation-native-table-arithmetic.v1",
+      "skipped_tables": [
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 7,
+          "table": 1
+        },
+        {
+          "reason": "insufficient_rows",
+          "slide": 10,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 14,
+          "table": 1
+        },
+        {
+          "reason": "insufficient_rows",
+          "slide": 15,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 26,
+          "table": 1
+        }
+      ],
+      "slide_count": 28,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "nativeChartTitles": {
+      "performed": true,
+      "checks": [],
+      "finding_count": 0,
+      "findings": [],
+      "native_chart_count": 0,
+      "native_powerpoint_verified": false,
+      "passed": true,
+      "presentation_sha256": "28a2b508ca8aff4bdb0868655978e052b8c4d8c284207f467fa397faee1ab970",
+      "schema_version": "presentation-native-chart-titles.v1",
+      "slide_count": 28,
+      "source_text_emitted": false,
+      "unresolved_linked_title_count": 0
+    },
+    "sourceDerivedPolicyFlags": [
+      "--expected-slide-size-emu",
+      "12192000,6858000",
+      "--validate-bullet-geometry",
+      "--validate-heading-fit",
+      "--cover-role",
+      "none",
+      "--expected-slide-count",
+      "28"
+    ],
+    "nativeChartValidation": {
+      "detectedOwnerSlides": [],
+      "detectedChartCount": 0,
+      "targetApplication": "portable",
+      "sourceChartOwnersExplicitlyDeclared": true,
+      "validatorRan": false,
+      "passed": true
+    }
+  },
+  "notesMatchAllSlides": true,
+  "sourceLinksInNotes": 17,
+  "stagedReferencesChecked": 447,
+  "stagedMissingReferences": 0,
+  "publishedZipFiles": 0,
+  "visualReview": {
+    "participantSlidePages": 28,
+    "workbookPages": 16,
+    "guidePages": 29,
+    "routePages": 1,
+    "desktopRevisedSlides": 9,
+    "phoneSlides": [
+      1,
+      10,
+      11
+    ]
+  },
+  "hashes": {
+    "2026/index.html": "43507e02f8a665b9b65130a79de34d20ab6996726730bbf0af1468f8f09bc296",
+    "2026/conversation.html": "496466ef6201bff399a0ebafb7d1759179bfa80516c72ab4f791648d909399a7",
+    "2026/resources.html": "92e6dc0a30f6bf950aa7f60495002fbaecfb720a8916a7602a44c9dac629d9dc",
+    "2026/p/webdeck.html": "2f32293182d35fb3e267a38a1745632b57fbf878de773e1084f681f7713f83d3",
+    "2026/p/facilitator-guide.pdf": "a8cbae598ab2f59c12462b77d4c22e3318edf7df416d90e6c0bc6ce4046a2281",
+    "2026/p/presenter-route.pdf": "51a36f8e3de0059198dd6b5356f0450180bc1af2efda22163d3d01dadec416ee",
+    "2026/p/slides/nspa-trust-transparency-ai.pptx": "28a2b508ca8aff4bdb0868655978e052b8c4d8c284207f467fa397faee1ab970",
+    "2026/handouts/participant-workbook.pdf": "7362ddda8dc853cd90cafd335b0c7c53f4dd80bfa283c5d02fd285e55ddd462f",
+    "2026/slides/nspa-trust-transparency-ai.pdf": "21c1b5a7eceb759663d80dfe21f1fb27dc1e74b8ae0aa1d24e874006584497d4",
+    "2026/handouts/session-takeaways.pdf": "a2fcedd928cde72dd8955950d709b91ee8c68cae57c6dacbc93f63b6d08eccc8",
+    "2026/handouts/session-takeaways.docx": "42e41b3c249c52b7c1694df72520afa97ba36b11615042c784ef404e70025790",
+    "2026/images/learning-intentions.webp": "1eb440f975d6a5fab5b6b7ba46ab0b0b1c4da10b766cec4fe91558114f53939a"
+  },
+  "publication": "Explicitly authorized. GitHub Pages publishes main; verify Actions and compare live hashes after push. Deployment status is reported to the user."
+}

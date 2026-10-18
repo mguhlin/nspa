@@ -8,6 +8,11 @@ out.mkdir()
 for name in ['index.html', '404.html']:
     shutil.copy2(ROOT/name, out/name)
 for name in ['assets', 'resources', '2026']:
-    shutil.copytree(ROOT/name, out/name, ignore=shutil.ignore_patterns('README.md', 'Code.gs'))
+    shutil.copytree(ROOT/name, out/name, ignore=shutil.ignore_patterns('README.md', 'Code.gs', 'offline', '*.zip'))
+# Preserve the old takeaway addresses without publishing the retired offline kit.
+legacy=out/'2026/offline';legacy.mkdir(exist_ok=True)
+for suffix in ['pdf','docx']:
+    source=ROOT/f'2026/handouts/session-takeaways.{suffix}'
+    if source.exists():shutil.copy2(source,legacy/source.name)
 (out/'.nojekyll').touch()
 print('Staged public website in _site; supplemental inputs excluded.')

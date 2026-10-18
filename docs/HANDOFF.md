@@ -2,6 +2,18 @@
 
 Updated October 18, 2026.
 
+## October 18 expanded activities and visual revision — current
+
+This section supersedes earlier counts, source-preservation requirements and offline packaging instructions. The 90-minute session is still October 21, 3:30–5:00 PM CT. Its integrated route includes eight complete activities (60 minutes of participant work) and 30 minutes for explanations and transitions, with 24 core slides and four optional backups.
+
+The companion and **16-page participant workbook** now contain all case information, adopted practice rules, source quotations, examples, conversation steps and specific response prompts. The workbook has an illustrated cover. Participant wording uses first-person statements. The fictional-teaching disclosure appears once at the beginning of each format. There is no missing longer essay. Demo 1 is a two-channel document-follow-up procedure with a workload constraint; the rating activity models exact quoted evidence before participants compare their reasons. Reviewer roles, verification steps and policy boundaries are explicit.
+
+Slides **3, 6, 7, 10, 11, 12, 13, 20 and 22** now use shared visual layouts in `scripts/workshop/visual_deck.py`: real HTML text and native PowerPoint text/tables around meaningful illustrations. Five native tables remain. Activity source and timing live in `activities.py`; the shared six-part prompt is in `demo_one.py`. The main builder remains `current_edition.py`. Updated speaker notes, 29-page guide, one-page route and private script match the activities. Source links in notes are preserved. The learning-intentions infographic now has six aligned success criteria; exact built-in imagegen prompts are in `REVISED-VISUAL-PROMPTS.json`.
+
+Participant downloads are **only the workbook, slide-only presentation PDF, and session takeaways**, all linked from the hub. Canonical takeaway files are now `2026/handouts/session-takeaways.pdf` and `.docx`; the corrected standalone byline is preserved. The old takeaway addresses remain aliases in the staged site. The offline package, session kits and PNG ZIPs are no longer published. Historical tracked package files remain in the repository, but `build_site.py` excludes every ZIP and the old offline directories. Do not run `offline.py` or `package_offline.py` for this edition. Original resource collections are preserved.
+
+Rebuild: run the main builder with the bundled Python (python-pptx, reportlab and lxml required); export the PPTX as slide-only PDF with both notes export options false; render numbered gallery PNGs; stage with `scripts/build_site.py`. Do not invoke legacy slide renderers or assemblers. Verify the 28 slides, all workbook/guide pages, desktop/phone interactions, presenter synchronization, draft persistence/export, no-JavaScript fallback and staged links. Publication remains authorized. Evidence: `EXPANDED-ACTIVITIES-QA.json`.
+
 ## October 18 takeaway attribution correction
 
 The takeaway attribution is now a separate centered line after the six takeaway groups. The final bullet ends at “pause condition.” Both pages of the DOCX/PDF were rendered and inspected; all template parts other than `word/document.xml` are unchanged. Both offline archives and their manifests include the corrected files.

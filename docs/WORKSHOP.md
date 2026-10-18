@@ -1,6 +1,23 @@
 # 2026 workshop production and alignment
 
-## October 18 supplied-deck edition — current
+## October 18 expanded visual and activity edition — current
+
+Read the current section in HANDOFF.md first. It supersedes the supplied-deck preservation and kit instructions below. Current delivery: **28 slides (24 core + 4 backups), 16-page illustrated-cover workbook, eight complete first-person companion activities, two-page takeaways, 29-page guide, one-page route**. The participant hub offers only workbook, presentation PDF without notes, and takeaways. Kit and ZIP publication is canceled.
+
+Shared authoring sources: `current_edition.py`, `activities.py` (complete cases, worked examples and integrated 90-minute route), `demo_one.py` (six-part AI prompt), and `visual_deck.py` (nine revised HTML/native PPTX visual layouts and synchronized notes). Learning-intentions accessible text is in `experience.py`; imagegen prompts are in `REVISED-VISUAL-PROMPTS.json`. Five native PPTX tables remain; untouched slides retain their supplied design. All practice information is available in the companion/workbook; no longer essay is missing.
+
+Current rebuild order:
+
+1. Bundled Python: `scripts/workshop/current_edition.py`.
+2. Bundled LibreOffice: export the resulting PPTX with `impress_pdf_Export`, `ExportNotesPages=false` and `ExportOnlyNotesPages=false`. Verify 28 slide pages; copy to `2026/slides/nspa-trust-transparency-ai.pdf`.
+3. Render PDF with `pdftoppm -scale-to 1536 -png`; copy exactly `01.png`–`28.png` into the slide gallery. No ZIP rebuild.
+4. Takeaway sources now belong in `2026/handouts/`. Preserve the separate author byline and original NSPA template. Do not run offline builders or legacy presentation assemblers.
+5. Run local links, presentation finalizer, visual and interaction checks, `scripts/build_site.py` and staged link checks. The staging step excludes historical offline packages and all ZIPs, while retaining old takeaway URL aliases.
+6. Commit, push, deploy and verify live downloads. Publication is explicitly authorized.
+
+The earlier production history follows for provenance.
+
+## October 18 supplied-deck edition — superseded
 
 Session: **Trust, Transparency, and AI: Building Responsible Scholarship Review Practices**. October 21, 2026, **3:30–5:00 PM CT, 90 minutes**. The user explicitly confirmed the session length and plans to expand resource use. Preserve the supplied presentation and allow flexible discussion alongside its core cues.
 
