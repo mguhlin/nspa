@@ -2,6 +2,10 @@
 
 Updated October 18, 2026.
 
+## October 18 takeaway attribution correction
+
+The takeaway attribution is now a separate centered line after the six takeaway groups. The final bullet ends at “pause condition.” Both pages of the DOCX/PDF were rendered and inspected; all template parts other than `word/document.xml` are unchanged. Both offline archives and their manifests include the corrected files.
+
 ## October 18 supplied presentation replaces the core workshop
 
 This section supersedes all earlier slide counts, core activities, workbook lengths, and rebuild instructions below. The session remains **90 minutes, October 21, 3:30–5:00 PM CT**. The user confirmed that they will expand resources to use the time. The supplied deck has **24 core slides plus four backups**. Its original core cues total about 60 minutes; 30 minutes remain flexible for discussion and resource practice.
