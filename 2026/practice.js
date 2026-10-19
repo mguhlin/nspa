@@ -17,7 +17,7 @@ const draftStatus = document.querySelector('#draft-status');
 const offlineDrafts = location.protocol === 'file:' || location.pathname.includes('/offline/');
 const conversationDrafts = location.pathname.endsWith('/conversation.html');
 const draftKey = conversationDrafts
-  ? (offlineDrafts ? 'nspa-offline-review-20261018' : 'nspa-review-20261018')
+  ? (offlineDrafts ? 'nspa-offline-review-20261018-sr' : 'nspa-review-20261018-sr')
   : (offlineDrafts ? 'nspa-offline-drafts-v1' : 'nspa-workshop-drafts-v1');
 try {
   const saved = JSON.parse(localStorage.getItem(draftKey) || '{}');

@@ -1,5 +1,7 @@
 /* ============================================================
-   Web Deck Framework — navigation, presenter view, sync, print
+   Web Deck Framework (v5): navigation, presenter view, sync, print
+   Developed by Miguel Guhlin - mguhlin.org · https://mguhlin.github.io/webdecks/
+   Free to use (MIT). This header is attribution only; it never renders on a slide.
    No dependencies. Include once per deck, after the slides.
    Two-monitor use: press V (or the 🖥 button) to open the
    presenter window on your laptop; drag the main window to the
@@ -66,11 +68,15 @@
     '<tr><td><kbd>P</kbd></td><td>Print / export to PDF</td></tr>' +
     '</table><div class="close-hint">Press any key or click to close</div></div>';
 
+  var exitLink = el('a', { id: 'exitDeck', href: '../index.html', title: 'Exit to home', 'aria-label': 'Exit to home' });
+  exitLink.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>';
+
   // live region for slide-change announcements (WCAG 4.1.3)
   var liveRegion = el('div', { id: 'slideLive', 'aria-live': 'polite', 'aria-atomic': 'true', class: 'sr-only' });
 
   document.body.appendChild(progress);
   document.body.appendChild(controls);
+  document.body.appendChild(exitLink);
   document.body.appendChild(notesPanel);
   document.body.appendChild(help);
   document.body.appendChild(liveRegion);
@@ -97,6 +103,7 @@
     slides.forEach(function (s, i) { s.classList.toggle('current', i === idx); });
     counter.textContent = (idx + 1) + ' / ' + TOTAL;
     progress.style.width = ((idx + 1) / TOTAL * 100) + '%';
+    exitLink.style.display = (idx === 0) ? 'none' : 'flex';
     var titleEl = slides[idx].querySelector('.slide-title, h1, h2');
     liveRegion.textContent = 'Slide ' + (idx + 1) + ' of ' + TOTAL + (titleEl ? ': ' + titleEl.textContent.trim() : '');
     updateNotes();
@@ -173,7 +180,7 @@
         '<span class="brand">✦ Presenter</span>' +
         '<div class="pv-nav">' +
           '<button class="pv-btn icon" id="pvPrev" title="Previous">‹</button>' +
-          '<button class="pv-btn icon" id="pvNextButton" title="Next">›</button>' +
+          '<button class="pv-btn icon" id="pvNext" title="Next">›</button>' +
         '</div>' +
         '<span class="pv-count" id="pvCount">1 / ' + TOTAL + '</span>' +
         '<span class="pv-spacer"></span>' +
@@ -192,7 +199,7 @@
         '<div class="pv-right">' +
           '<div class="pv-next-wrap">' +
             '<div class="pv-label"><span class="dot"></span>Next up</div>' +
-            '<div class="pv-frame" id="pvNext"></div>' +
+            '<div class="pv-frame" id="pvNextFrame"></div>' +
           '</div>' +
           '<div style="display:flex;flex-direction:column;min-height:0;flex:1;">' +
             '<div class="pv-label"><span class="dot"></span><span>Speaker notes</span>' +
@@ -206,7 +213,7 @@
     document.body.appendChild(wrap);
 
     var elCur = document.getElementById('pvCurrent');
-    var elNext = document.getElementById('pvNext');
+    var elNext = document.getElementById('pvNextFrame');
     var elNotes = document.getElementById('pvNotes');
     var elCount = document.getElementById('pvCount');
 
@@ -256,7 +263,7 @@
     }
 
     document.getElementById('pvPrev').onclick = function () { goto(pIdx - 1); };
-    document.getElementById('pvNextButton').onclick = function () { goto(pIdx + 1); };
+    document.getElementById('pvNext').onclick = function () { goto(pIdx + 1); };
     document.getElementById('pvCurrent').onclick = function () { goto(pIdx + 1); };
     document.addEventListener('keydown', function (e) {
       switch (e.key) {

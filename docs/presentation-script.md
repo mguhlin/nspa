@@ -1,159 +1,365 @@
-# NSPA26 presentation script
+# Trust, Transparency, and AI
 
-90-minute session · October 21 · 3:30–5:00 PM CT. The timed route integrates the slides, eight activities, and transitions.
+Facilitator speaking notes · October 21, 2026 · 3:30–5:00 PM CT · 90 minutes
 
-## 01. TRUST, TRANSPARENCY, AND AI
+60-minute core plus 30 minutes for discussion and practice. Slides 30–31 are optional backups.
 
-Our session runs from 3:30 to 5:00 PM. The route integrates the slides and eight activities. All cases, records, operational constraints, and prepared drafts are fictional teaching examples. No participant needs an AI account. Generated illustrations depict fictional situations.
+## Slide 01: Trust, Transparency, and AI
 
-Welcome. Today covers both sides of the desk: AI supporting a scholarship team and AI supporting an applicant. Both raise the same question: how do we protect fairness and the trust of students? We will work through prompts, three prepared demonstrations, applicant AI use and practical policy. Our timed route includes explanations, eight activities and transitions. The four backup slides are optional.
+Welcome. Today we are looking at AI from both sides of the scholarship application: the people reviewing applications and the people submitting them.
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/photorealistic/review-team.png
+AI may save time, but we still need fair decisions that we can explain. We will practice prompt writing, look at three review examples, and finish with policy choices.
 
-## 02. A quick pulse
+## Slide 02: A Quick Pulse
 
-Five-minute activity. Read the short scenario. Invite the provider and applicant perspectives without asking for personal disclosures. Debrief the relationship between a proposed change and a specific need; there is no single approved phrase.
+First, a quick show of hands.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: The trust I want our process to earn. Participant work to keep: My quality of trust; one change our team could make; why it matters.
+Does your organization use AI anywhere in scholarship review?
 
-## 03. Our two perspectives on the same review
+Do you already have a written policy that applicants can read?
 
-Use this visual to compare needs, not to ask an unexplained question. A scholarship team needs a manageable workload, consistent rules and evidence it can explain. From an applicant’s perspective, the needs include knowing the rules, accurate representation and a correction route. Ask participants to use the Trust activity in the companion to propose one improvement and explain whose need it addresses.
+Now give me one word that describes how you feel about AI in this process.
 
-## 04. Our guiding principle
+There are no wrong answers. I want to see where we are starting.
 
-If you remember one sentence, make it this one. AI can sort, summarize and suggest. People decide. Privacy concerns what information enters the system. Transparency concerns what applicants and staff understand about its use. Human oversight means a person has the time, authority and evidence to correct the work. Fairness means we test the process and apply the published criteria consistently. These are practical checkpoints. We will use them to evaluate each demonstration.
+## Slide 03: Our 60-Minute Route
 
-## 05. Vague and structured prompts
+Here is our route for the hour.
 
-A vague prompt leaves the system to guess the criteria, scale and meaning of a strong response. A structured prompt makes the task inspectable. It still cannot guarantee accuracy or fairness. Compare the two requests and ask what the first leaves unsaid. Criteria, evidence requirements and decision boundaries belong in the instruction, so reviewers can check whether the response followed them.
+We will spend eight minutes on the balancing act, ten on prompting, seventeen on review workflows, twelve on applicants, and thirteen on policy.
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/infographics/comparison.png
+Each part builds on the last.
 
-## 06. My six-part review request
+We are aiming for one thing: scholarship decisions that people can understand and defend.
 
-Six-minute activity. Walk through the six labeled examples before participants adapt anything. Distinguish directions inside the AI prompt from directions for participants. Ask a pair to explain one edit and how a staff member would check the result.
+## Slide 04: The Balancing Act
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: My six-part review request. Participant work to keep: My changed prompt part; why I changed it; what our intake coordinator must verify before acting.
+Scholarship teams need to move through applications efficiently.
 
-## 07. The score descriptions I am using
+They also need to treat people consistently, be fair, and assess real accomplishments.
 
-The term reviewers means the scholarship team applying the rubric, including participants and their partners during the activity. Read the four descriptions before assigning a rating. If two reviewers interpret a score description differently, ask each to explain the exact words behind the judgment, then clarify the adopted rubric before real review. The repair-table paragraph on slide 11 is the material used in this activity; there is no missing longer essay.
+AI may help with repetitive work, but speed is not enough.
 
-## 08. The review workflow
+If we cannot point to the evidence and explain the decision, the process needs more work.
 
-Read the full sequence: intake; redact and minimize; completeness check; rubric pre-score with evidence; human review; committee decision; audit sample. AI can help at bounded drafting stages. A person approves the input, checks the evidence and owns the decision. Keep a record of the prompt version, corrections and reviewer. The final audit compares AI-assisted work with the source and independent human judgment. Repeat our principle: AI can sort, summarize and suggest. People decide.
+## Slide 05: Two Sides of One Application
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/conversation/workflow-wide.png
+Think about the two sides of the desk.
 
-## 09. Privacy before processing
+Reviewers may use AI to organize files or find evidence related to a rubric.
 
-Before any real applicant data enters a tool, obtain local approval for the actual service, settings and purpose. An account label alone does not establish privacy. Removing a name may leave enough details to identify someone. For this workshop, use fictional records only. Check the privacy notice and donor agreements, and ask the appropriate owners which laws apply. FERPA does not apply identically to every independent scholarship provider or every record. Never upload confidential applicant records to an unapproved consumer service. Redaction alone does not make every use safe.
+Applicants may use it to brainstorm, outline, or improve grammar.
 
-U.S. Department of Education, Privacy and Data Sharing: https://studentprivacy.ed.gov/privacy-and-data-sharing FERPA applicability and exceptions depend on the institution, records and disclosure; local owners must confirm applicable requirements.
+These are different uses, but both need clear rules.
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/photorealistic/privacy-team.png
+We should write policies that make sense to both groups.
 
-## 10. Demo 1 · Our document follow-up plan
+## Slide 06: Assist, Check, or Reserve for People
 
-Seven-minute activity. This is process design, not a hunt for an obvious missing-document label. Read the two-channel setup and the limited-time constraint. Ask pairs to compare workload, applicant burden, and consistent treatment. Do not supply a deadline or imply that a blank field establishes ineligibility.
+I find it useful to sort tasks into three groups.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: Our document follow-up plan. Participant work to keep: Our verification role; our trigger for applicant contact; our unresolved-case procedure; one trade-off.
+Some tasks, like naming files and checking for missing documents, are good candidates for assistance.
 
-## 11. Demo 2 · My rating and the words behind it
+Others, like matching evidence to a rubric, need careful human checking.
 
-Eight-minute activity. The displayed paragraph is the material participants review; there is no missing longer essay. Model what a quotation is using the example already on the page. Protect independent judgment before discussing the draft 3. Debrief what the paragraph establishes and what it leaves open.
+Award decisions, exceptions, and appeals stay with people.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: My rating and the words behind it. Participant work to keep: My rating (1–4); exact words copied from E1; how those words fit the score description; what I still do not know.
+The key is to decide the level of oversight before using AI.
 
-## 12. Demo 3 · The evidence behind my summary
+## Slide 07: Build a Prompt That Can Be Checked
 
-Six-minute activity. Give the definitions before asking participants to tag. The flawed summary is deliberately authored. Ask how an adjective or tag could change attention. Debrief preserving the applicant’s account rather than guessing character or eligibility.
+A good prompt makes our instructions visible.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: A summary that preserves the evidence. Participant work to keep: Our neutral summary (up to 60 words); tag and source words; uncertainty; how staff find the original record.
+Name the specific task. Say what information the tool may use.
 
-## 13. Our first tests before a pilot
+Provide the actual rubric.
 
-This visual supports the matching activity in the companion. Read the slide’s first-person statement as the participant’s learning target. The companion contains the rules, source material, examples and response space.
+Set boundaries: do not guess, and do not judge personal traits.
 
-## 14. Where AI fits
+Finally, ask for an output that shows the evidence and any uncertainty.
 
-Eight-minute activity. Define meaningful human oversight as time, evidence, and authority. Ask groups to name roles rather than writing “human review.” Compare one realistic pause-and-resume procedure; avoid implying that a small sample certifies fairness.
+That gives a reviewer something they can check.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: Our workflow and first test. Participant work to keep: Our workflow roles; first test; evidence to record; pause condition and the role who resolves it.
+## Slide 08: From a Vague Request to a Review Prompt
 
-## 15. Applicant AI use spans a spectrum
+Look at the first request: "Pick the best applicants."
 
-Applicant AI use is not one uniform behavior. Spell-check, brainstorming, feedback and generating a full personal essay raise different questions. Ask partners where their organization would draw a boundary and what purpose that boundary serves. Avoid assuming the spectrum represents a universal ethical scale. Accessibility tools, translation support and human editing can overlap with AI features. The organization must publish understandable rules, examples and an accessible disclosure route before applicants invest time in writing.
+It gives AI too much authority and no clear standard.
 
-## 16. Detection has practical limits
+The second request uses a supplied rubric, asks for quotations, identifies gaps, and says not to recommend an award.
 
-These are dated examples, not claims about every detector available today. OpenAI withdrew its particular classifier on July 20, 2023. Vanderbilt announced its decision on August 16, 2023. Editing and prompting reduced detection in the 2023 Liang study; performance depends on the system and sample. Turnitin’s current guidance says the indicator can misidentify text and must not be the sole basis for adverse action. A report describes a tool’s assessment of qualifying prose, not the probability that an applicant committed misconduct.
+Which one would you feel more comfortable explaining to an applicant?
 
-Sources: OpenAI historical classifier withdrawal, July 20, 2023: https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/
+The detailed request is better, but we still have to verify the result.
 
-Vanderbilt historical decision, August 16, 2023: https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/
+## Slide 09: Rubrics Come Before Model Output
 
-Turnitin, Using the AI Writing Report: warns against sole reliance for adverse action. https://guides.turnitin.com/hc/en-us/articles/22774058814093-Using-the-AI-Writing-Report
+People need to decide what counts before the model responds.
 
-Liang et al. (2023), Patterns. Seven detectors, 91 TOEFL essays; average false-positive rate 61.3% in that sample. https://doi.org/10.1016/j.patter.2023.100779
+These sample criteria look at community engagement, learning and persistence, and goals.
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/infographics/policy.png
+For each one, we ask what evidence should appear and what the reviewer must check.
 
-## 17. The human cost of a false positive
+We are evaluating what the applicant has shown, not how polished the writing sounds.
 
-The arithmetic assumes all five thousand submissions are human-written and an illustrative one-percent false-positive rate: the expected count is fifty. It is not an observed rate, a forecast for this organization or the chance that a flagged person is innocent. Liang and colleagues found a 61.3% average false-positive rate across seven detectors on 91 TOEFL essays in their 2023 study. That study provides evidence of a disparity in those samples and tools, not a universal current rate. A 2026 Czech-language study found no systematic bias in its tested detector families. Different samples can produce different findings. Avoid unsupported claims about neurodivergent writers.
+## Slide 10: Try It — Repair the Weak Prompt
 
-Sources: Liang et al. (2023), Patterns. Seven detectors, 91 TOEFL essays; average false-positive rate 61.3% in that sample. https://doi.org/10.1016/j.patter.2023.100779
+Turn to someone near you.
 
-Al Ali et al. (2026), Czech-language study; found no systematic bias against non-native writers in its tested detector families. Findings cannot be generalized across all languages or tools. https://arxiv.org/abs/2602.05769
+Here is the weak prompt: "Review all applications and choose the strongest students."
 
-## 18. Application design for authenticity
+Give it one clear rubric criterion, one rule limiting what AI can do, and one way to verify the output.
 
-Ask for a specific experience, the applicant’s contribution and the evidence of what happened. A follow-up conversation can clarify an account, but it does not prove authorship and must allow reasonable access and accommodations. Use the same process for similarly situated finalists. A brief optional reflection can describe writing support without turning disclosure into a penalty. Corroborate important claims through appropriate records or references. These practices support a richer review; none makes an application immune to fabrication.
+You only need a few sentences.
 
-VISUAL SOURCES: https://mguhlin.github.io/nspa/2026/images/photorealistic/applicant.png
+Let's hear one improvement from the room.
 
-## 19. A finalist’s essay feels “too perfect”
+## Slide 11: A Review Workflow You Can Explain
 
-Twelve-minute activity. The rule is supplied so participants can actually apply it. Do not introduce a new translation disclosure requirement. A conclusion that no misconduct inquiry is justified is legitimate. Debrief both applicant expectations and verified provider transparency.
+This is the six-step review path.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: Applicant rules and a fair response. Participant work to keep: The rule and facts supporting our action; our response or staff note; our provider-use statement and correction contact.
+Receive the materials, minimize personal information, organize files, map evidence to the rubric, verify the findings, and then make a human decision.
 
-## 20. The applicant AI rule my organization chooses
+Notice that AI is not the decision-maker.
 
-The four illustrated approaches are policy choices, not a ranking of ethical quality. A prohibition needs scope and accessibility exceptions. Disclosure needs a short, usable statement and an explanation of how it affects review. Bounded use needs permitted and prohibited examples. Embrace still requires truthful claims and examination of substance. The supplied practice rule in the companion combines bounded use with disclosure.
+It can help prepare information, but staff confirm the evidence and the committee applies its policy.
 
-## 21. Transparency goes both ways
+## Slide 12: Demo 1 — Administrative Review
 
-We cannot reasonably ask applicants to explain their AI assistance while leaving our own process obscure. The sample statement is a starting point, not a description of an existing organization. Confirm the service, data use, retention and training arrangements before publishing any promise. If the organization can substantiate that applicant data is never used for model training, it can state that clearly. Do not add that assurance merely because the account is paid. Explain how a human verifies the output and how an applicant can seek a correction or review.
+This first example is entirely fictional.
 
-## 22. The three gaps I will work on first
+We have three application codes and a list of required documents.
 
-The complete twelve-item checklist is in the companion. The slide groups it into tools and data, evidence and review, and rules and transparency. Ask participants to choose three gaps without promising to fix everything at once. The final activity turns a priority into a 30 / 60 / 90-day plan.
+The tool flags a missing reference for A17 and a missing transcript for C09.
 
-## 23. A 30 / 60 / 90-day plan
+That is a useful checklist, not a rejection list.
 
-Eight-minute activity. Protect the closing time. Ask for a small clerical task and a concrete next action, not a promise to adopt AI. Allow stopping or revising as a valid outcome. Close by returning to the trust qualities participants named at the start.
+A person still confirms the requirements, checks for exceptions, and contacts applicants according to policy.
 
-The companion and workbook contain all of the case information, examples and response prompts for this activity. Activity: My 30 / 60 / 90-day plan. Participant work to keep: My task and owner; steps for 30, 60, and 90 days; review date; evidence of improvement; pause condition.
+## Slide 13: Demo 2 — Map Rubric Evidence
 
-## 24. Back to trust
+Here is a fictional applicant statement:
 
-Every scholarship carries trust: donors entrust their intent to the provider, and applicants entrust their stories to the process. AI may help reduce administrative work, but a person remains responsible for the evidence, the treatment of the applicant and the final decision. Invite one change participants will try with a colleague and when they will review it. The complete activities and participant downloads are on the website. The four following slides are backups for questions and practice.
+"I organized 12 weekend tutoring sessions for sixth graders."
 
-## 25. B1 · Three complete demo prompts
+AI can connect that sentence to a community engagement criterion and offer a draft score of two out of three under our example rubric.
 
-Backup outside the timed ninety-minute route. These are full reusable practice prompts, not a guarantee of output quality. Put authorized rules and input evidence in clearly separated sections. Replace bracketed fields with approved criteria and fictional packets. Include stable paragraph identifiers so quotations can be traced. Keep the same prompt version and settings during comparisons. If a tool cannot support a requested format or reliable source tracing, pause and use a manual process. Read the generated response against the application before discussing it as a useful example.
+But the sentence does not tell us the impact.
 
-## 26. B2 · Questions for an AI vendor
+A reviewer has to check the scoring anchors and ask what evidence is still missing.
 
-Backup. Ask for written answers tied to the service edition and contract you would actually use. Training controls and retention controls are different. A no-training term does not automatically mean zero retention or no human access. Identify subprocessors, access controls, incident procedures and deletion mechanisms. Ask how model or service changes are communicated. Local privacy, security and program owners should decide whether the purpose, data and settings are appropriate. Preserve evidence of the approval and review it when the service or use changes.
+## Slide 14: Demo 3 — Prepare a Reviewer Handoff
 
-## 27. B3 · A simple applicant disclosure
+Now we combine the information into a reviewer handoff.
 
-Backup. This form is a sample rather than an existing organizational policy. Add a direct link to the permitted and prohibited examples. Explain whether disclosure affects review and give applicants a route to ask about accessibility and translation tools. Do not ask for complete chat histories or unnecessary personal information by default. An applicant should not have to guess which features count. Use a brief acknowledgment about factual accuracy and compliance with the published rule. Test the language with students before the application cycle opens.
+Each row shows the criterion, the source evidence, and a question that remains.
 
-## 28. B4 · A shared vocabulary
+For example, twelve tutoring sessions sounds relevant, but what exactly was the applicant's role?
 
-Backup. A shared vocabulary helps a team discuss a problem precisely. An LLM can generate fluent text without verifying the truth of its claims. Hallucination includes fabricated quotations as well as incorrect summaries. A false positive concerns a human text flagged by a detector; it is different from a false claim produced by a review assistant. Personal information can remain in an essay after names are removed because details can identify someone in combination. Human in the loop must describe actual authority, time and evidence for review. Simply clicking approve is not meaningful oversight.
+We want summaries that make open questions visible so the next reviewer can follow up.
+
+## Slide 15: Keep a Person in the Loop
+
+Human oversight has to happen before, during, and after the AI-assisted task.
+
+Before, approve the use and the data.
+
+During, verify quotes and correct mistakes.
+
+After, apply human judgment and record why the decision was made.
+
+Saying "a person looked at it" is not enough unless that person had a real chance to correct it.
+
+## Slide 16: Protect Information Before the Prompt
+
+The original application might contain a name, address, birth date, family income, and references.
+
+Most of that is not needed to check a specific rubric criterion.
+
+The task-ready version uses an application code, a relevant excerpt, and a source pointer.
+
+Even after removing unnecessary details, we still only use tools approved for that information.
+
+## Slide 17: Security Starts Before the Upload
+
+Before uploading anything, check four things.
+
+Is this tool approved for applicant data and this task?
+
+Who can access the information?
+
+How long is it stored, and is it reused?
+
+And what do we do if information is exposed?
+
+A friendly interface does not answer those questions.
+
+If the tool is not approved, do not put applicant data into it.
+
+## Slide 18: Consistency Does Not Guarantee Fairness
+
+Using the same prompt for every application may look consistent.
+
+It does not automatically make the results fair.
+
+Test the workflow with varied fictional examples.
+
+Compare whether the system overlooks evidence or treats similar situations differently.
+
+Then have reviewers discuss differences and adjust the process before any real use.
+
+## Slide 19: Applicants Use AI, Too
+
+Applicants may use AI for brainstorming, outlining, or proofreading, depending on your rules.
+
+That is different from inventing achievements, hardship, experiences, or references.
+
+We need to make this distinction clear before students apply.
+
+The important question is whether the claims they submit are truthful and meet the published requirements.
+
+## Slide 20: Assess Substance, Not the Writing Style
+
+We should be careful not to confuse good grammar with proof of AI use.
+
+Instead, ask the same questions of every applicant.
+
+What did the person actually do?
+
+What evidence supports the claim?
+
+What did they learn, and how does it connect to their goals?
+
+Those questions focus on the substance of the application.
+
+## Slide 21: AI Detection Is Not Proof of Authorship
+
+An AI detector can make two mistakes.
+
+It can flag something written by a person, or it can miss AI-assisted writing.
+
+So a detector score is not proof of who wrote the text.
+
+It should never be the only reason to deny someone a scholarship.
+
+We need to examine actual evidence and our published rules.
+
+## Slide 22: A Flagged Essay — What Would You Do?
+
+Here is a scenario.
+
+An essay gets flagged by a detector, but the student's activities and references appear consistent.
+
+Would you reject it, ignore the concern, or review the evidence and policy?
+
+Take a quick vote.
+
+The more defensible choice is a careful review, without treating the detector score as a verdict.
+
+## Slide 23: A Fair Response to an AI Concern
+
+If a concern comes up, start by pausing any automatic penalty.
+
+Check the application and the rules that were available to the applicant.
+
+When appropriate, let the applicant clarify the concern.
+
+Finally, record the evidence and the human decision, including how it can be reconsidered.
+
+Use the same process for everyone.
+
+## Slide 24: Make the Applicant Policy Readable
+
+Applicants should be able to answer four questions before submitting.
+
+What AI help is allowed?
+
+What must be their own truthful work?
+
+Do they need to disclose AI use?
+
+And what happens if the organization has a concern?
+
+If our policy cannot answer those questions in plain language, we should revise it.
+
+## Slide 25: Compare Policy Language
+
+The first policy says AI-generated applications may be disqualified.
+
+That leaves too much unclear.
+
+The second example names allowed brainstorming or proofreading, requires truthful claims, points to disclosure instructions, and says a detector score alone will not decide eligibility.
+
+This is sample language, not a universal legal rule, but it shows what clarity looks like.
+
+## Slide 26: Write Staff-Facing Rules, Too
+
+We should give staff rules as well as applicants.
+
+Staff need to know which tools and tasks are approved, what rubric to apply, how to verify AI-generated summaries, and what to document.
+
+If reviewers have no shared process, we cannot promise consistent treatment.
+
+Applicant and reviewer policies have to work together.
+
+## Slide 27: Workshop — Decide Your Local Rules
+
+Take two or three minutes to make three local choices.
+
+First, what AI help can applicants use, and when should they disclose it?
+
+Second, which review tasks can an approved tool support?
+
+Third, how will you investigate concerns fairly?
+
+Choose answers you can bring back to your team.
+
+Would anyone share one decision?
+
+## Slide 28: Bring It Into Your Next Review Cycle
+
+You do not have to change the entire process at once.
+
+First, clarify the rules.
+
+Next, pilot one limited AI-supported task using fictional cases and look for errors.
+
+Then decide who verifies the work and who makes final decisions.
+
+Improve the pilot before using real applicant information.
+
+## Slide 29: What Will You Change First?
+
+Let's close with three practical commitments.
+
+Name one review task AI might help with.
+
+Name one safeguard a person must perform.
+
+And name one policy statement every applicant should know.
+
+Think back to your opening reaction.
+
+What would help your team move forward while protecting trust?
+
+## Slide 30: Backup — Reusable Reviewer Prompt
+
+This is a take-home starting prompt, not part of our timed activity.
+
+It asks the tool to compare an approved excerpt with a published criterion, quote evidence, identify gaps, and avoid recommending an award.
+
+Use only fictional or properly approved, minimized information.
+
+Review every output before relying on it.
+
+## Slide 31: Backup — Sources and Further Reading
+
+These are optional references for your team.
+
+The NIST Generative AI Profile is a place to begin thinking about risks and controls.
+
+Turnitin's guidance discusses limitations of AI writing detection.
+
+Use these alongside your own organization's policies, contracts, and applicable requirements.
+
+Our workshop demonstrations used fictional data.

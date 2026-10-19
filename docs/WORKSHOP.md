@@ -1,5 +1,29 @@
 # 2026 workshop production and alignment
 
+## October 18 evening supplied 31-slide edition — current
+
+Read the first current section of HANDOFF.md. This supersedes all earlier core counts and activity sources. The user confirmed **90 minutes (3:30–5:00 PM CT)**, using the new **60-minute core plus 30-minute discussion reserve**. Current formats: 31 slides, 10-page workbook, eight companion activities, two-page takeaways, 32-page supplied illustrated guide, one-page route. Slides 30–31 are backups.
+
+Sources and entry points:
+
+- `scripts/workshop/supplied_edition.py`: native-text webdeck, current pages/transcripts, workbook, route, and notes-only PPTX update.
+- `scripts/workshop/presentation-20261018.txt`: the user's complete speaking notes, shared by the webdeck, PowerPoint, and private Markdown script.
+- `scripts/workshop/current_edition.py`: current build compatibility entry point; `webdeck.py` rebuilds just the webdeck.
+- `scripts/workshop/takeaways.py`: two-page original-template takeaways, with separate centered attribution. Only document.xml changes.
+- Private inputs: `supplemental-resources/NSPA26_TT_AI_SR.pptx` and `NSPA_Facilitator_Guide_Embedded_Images.docx`. The final published PowerPoint and guide DOCX provide committed fallbacks.
+- Canonical Web Deck v5 framework was refreshed from the full published standalone specification because the former local clone is absent. It is inlined in the portable webdeck with an exit link to the presenter hub. All projected content is HTML text, not screenshots.
+
+Rebuild order:
+
+1. Run `scripts/workshop/current_edition.py` with bundled Python: `/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python`. This preserves slide design/package parts while updating notes. Do not run the legacy slide assemblers, visual patchers, activity expansion, or offline builders.
+2. Export PPTX using bundled `/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/soffice`, `impress_pdf_Export`, and `ExportNotesPages=false`, `ExportOnlyNotesPages=false`. Save exactly 31 pages to `2026/slides/nspa-trust-transparency-ai.pdf`. Render `pdftoppm -scale-to 1536 -png`, copying 01.png–31.png into the numbered gallery. No ZIP.
+3. Run `takeaways.py`; render a temporary copy with the Documents skill `render_docx.py --emit_pdf`. Save the verified two-page PDF to `2026/handouts/session-takeaways.pdf`. Preserve the supplied NSPA template and every package part outside document.xml.
+4. The user-supplied illustrated guide is published unchanged as `2026/p/facilitator-guide.docx`; render/export it with `render_docx.py --emit_pdf` and save its verified 32-page PDF beside it. The 60-minute label describes the core; the presenter route explains the extra 30 minutes. The builder does not overwrite the supplied guide PDF when its DOCX exists.
+5. Check all slides and handout pages visually. Validate PPTX package/layout/import and notes, source-part preservation, 31-page slide-only PDF, participant/presenter separation, desktop/phone layouts, notes resizing and two-window synchronization, draft persistence/export, no-JavaScript companion, 31-page webdeck printing, and local/staged links. Do not publish obsolete kits or ZIPs.
+6. Run `scripts/check_site.py`, `scripts/build_site.py`, and `git diff --check`. Commit, push, monitor Pages deployment, then compare live download SHA-256 hashes with the published artifacts.
+
+Current workbook pages: cover; balancing act; prompt repair; inventory; evidence and handoff; human checks/data protection; flagged essay; local rules; next-cycle commitments; reusable prompt. The companion matches pages 2–9, with a separate draft storage key for this edition. Required inputs are complete; there is no longer essay to locate. All example data and prepared drafts are fictional.
+
 ## October 18 expanded visual and activity edition — current
 
 Read the current section in HANDOFF.md first. It supersedes the supplied-deck preservation and kit instructions below. Current delivery: **28 slides (24 core + 4 backups), 16-page illustrated-cover workbook, eight complete first-person companion activities, two-page takeaways, 29-page guide, one-page route**. The participant hub offers only workbook, presentation PDF without notes, and takeaways. Kit and ZIP publication is canceled.

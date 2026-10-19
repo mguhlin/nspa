@@ -1,142 +1,157 @@
 [
   {
     "number": 1,
-    "title": "TRUST, TRANSPARENCY, AND AI",
+    "title": "Trust, Transparency, and AI",
     "core": true
   },
   {
     "number": 2,
-    "title": "A quick pulse",
+    "title": "A Quick Pulse",
     "core": true
   },
   {
     "number": 3,
-    "title": "Our two perspectives on the same review",
+    "title": "Our 60-Minute Route",
     "core": true
   },
   {
     "number": 4,
-    "title": "Our guiding principle",
+    "title": "The Balancing Act",
     "core": true
   },
   {
     "number": 5,
-    "title": "Vague and structured prompts",
+    "title": "Two Sides of One Application",
     "core": true
   },
   {
     "number": 6,
-    "title": "My six-part review request",
+    "title": "Assist, Check, or Reserve for People",
     "core": true
   },
   {
     "number": 7,
-    "title": "The score descriptions I am using",
+    "title": "Build a Prompt That Can Be Checked",
     "core": true
   },
   {
     "number": 8,
-    "title": "The review workflow",
+    "title": "From a Vague Request to a Review Prompt",
     "core": true
   },
   {
     "number": 9,
-    "title": "Privacy before processing",
+    "title": "Rubrics Come Before Model Output",
     "core": true
   },
   {
     "number": 10,
-    "title": "Demo 1 \u00b7 Our document follow-up plan",
+    "title": "Try It \u2014 Repair the Weak Prompt",
     "core": true
   },
   {
     "number": 11,
-    "title": "Demo 2 \u00b7 My rating and the words behind it",
+    "title": "A Review Workflow You Can Explain",
     "core": true
   },
   {
     "number": 12,
-    "title": "Demo 3 \u00b7 The evidence behind my summary",
+    "title": "Demo 1 \u2014 Administrative Review",
     "core": true
   },
   {
     "number": 13,
-    "title": "Our first tests before a pilot",
+    "title": "Demo 2 \u2014 Map Rubric Evidence",
     "core": true
   },
   {
     "number": 14,
-    "title": "Where AI fits",
+    "title": "Demo 3 \u2014 Prepare a Reviewer Handoff",
     "core": true
   },
   {
     "number": 15,
-    "title": "Applicant AI use spans a spectrum",
+    "title": "Keep a Person in the Loop",
     "core": true
   },
   {
     "number": 16,
-    "title": "Detection has practical limits",
+    "title": "Protect Information Before the Prompt",
     "core": true
   },
   {
     "number": 17,
-    "title": "The human cost of a false positive",
+    "title": "Security Starts Before the Upload",
     "core": true
   },
   {
     "number": 18,
-    "title": "Application design for authenticity",
+    "title": "Consistency Does Not Guarantee Fairness",
     "core": true
   },
   {
     "number": 19,
-    "title": "A finalist\u2019s essay feels \u201ctoo perfect\u201d",
+    "title": "Applicants Use AI, Too",
     "core": true
   },
   {
     "number": 20,
-    "title": "The applicant AI rule my organization chooses",
+    "title": "Assess Substance, Not the Writing Style",
     "core": true
   },
   {
     "number": 21,
-    "title": "Transparency goes both ways",
+    "title": "AI Detection Is Not Proof of Authorship",
     "core": true
   },
   {
     "number": 22,
-    "title": "The three gaps I will work on first",
+    "title": "A Flagged Essay \u2014 What Would You Do?",
     "core": true
   },
   {
     "number": 23,
-    "title": "A 30 / 60 / 90-day plan",
+    "title": "A Fair Response to an AI Concern",
     "core": true
   },
   {
     "number": 24,
-    "title": "Back to trust",
+    "title": "Make the Applicant Policy Readable",
     "core": true
   },
   {
     "number": 25,
-    "title": "B1 \u00b7 Three complete demo prompts",
-    "core": false
+    "title": "Compare Policy Language",
+    "core": true
   },
   {
     "number": 26,
-    "title": "B2 \u00b7 Questions for an AI vendor",
-    "core": false
+    "title": "Write Staff-Facing Rules, Too",
+    "core": true
   },
   {
     "number": 27,
-    "title": "B3 \u00b7 A simple applicant disclosure",
-    "core": false
+    "title": "Workshop \u2014 Decide Your Local Rules",
+    "core": true
   },
   {
     "number": 28,
-    "title": "B4 \u00b7 A shared vocabulary",
+    "title": "Bring It Into Your Next Review Cycle",
+    "core": true
+  },
+  {
+    "number": 29,
+    "title": "What Will You Change First?",
+    "core": true
+  },
+  {
+    "number": 30,
+    "title": "Backup \u2014 Reusable Reviewer Prompt",
+    "core": false
+  },
+  {
+    "number": 31,
+    "title": "Backup \u2014 Sources and Further Reading",
     "core": false
   }
 ]

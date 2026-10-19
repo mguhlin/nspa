@@ -2,6 +2,20 @@
 
 Updated October 18, 2026.
 
+## October 18 evening replacement presentation — current
+
+This section supersedes the expanded-activity edition below. The user supplied `/home/mg/Downloads/NSPA26_TT_AI_SR.pptx` and `/media/mg/data/nspa/NSPA_Facilitator_Guide_Embedded_Images.docx`, then explicitly requested commit, push, and production deployment. The user confirmed the conference slot remains **October 21, 3:30–5:00 PM CT (90 minutes)**: **60-minute core plus 30 minutes for discussion and practice**.
+
+Current delivery: **31 slides (29 core + two backups), 10-page participant workbook, eight companion activities, two-page NSPA-template takeaways, 32-page illustrated facilitator guide, one-page presenter route**. Participant hub: `2026/`. Unlisted presenter hub: `2026/p/`, including webdeck, PPTX with supplied speaking notes, guide PDF and original DOCX, route, and transcript. Presenter pages retain noindex. ZIP/offline publication remains canceled. Original library and infographic collections remain intact.
+
+The PPTX preserves every supplied package part outside the 31 notes XML files. The notes use the user's supplied script, with pacing clarification on slide 1 and source links on slide 31. The guide DOCX is byte-identical to the supplied file and keeps all 31 embedded images. Participant PDF is a slide-only LibreOffice export, with both notes export options explicitly false. Most supplied slides are raster images; the readable participant transcript and webdeck provide real HTML text and tables.
+
+Canonical builder: `scripts/workshop/supplied_edition.py`; `current_edition.py` is its compatibility entry point. The exact speaking script is in `scripts/workshop/presentation-20261018.txt`. `webdeck.py` rebuilds only the current webdeck. `takeaways.py` preserves all original DOCX parts except document.xml and keeps the attribution separate from the final bullet. Private source copies are ignored in `supplemental-resources/`; the committed PPTX is the fallback. Do not use the earlier activity or visual patchers for this edition.
+
+The examples now use A17/B24/C09 document inventory, the tutoring excerpt and provisional 2/3 rubric match, and an evidence/source/question handoff. Earlier A-101–A-103 and 1–4 scoring are superseded. Optional C-101 labs retain their separate 0–2 rubric. Current companion storage uses `nspa-review-20261018-sr` to protect earlier drafts.
+
+Rebuild and validation details are in the current WORKSHOP.md section. Evidence: `docs/SUPPLIED-31-SLIDE-QA.json`. The presenter next-slide preview ID collision is corrected in the project framework and its spec snapshot `docs/webdeck_spec_v5.md`. Publication remains authorized.
+
 ## October 18 expanded activities and visual revision — current
 
 This section supersedes earlier counts, source-preservation requirements and offline packaging instructions. The 90-minute session is still October 21, 3:30–5:00 PM CT. Its integrated route includes eight complete activities (60 minutes of participant work) and 30 minutes for explanations and transitions, with 24 core slides and four optional backups.
