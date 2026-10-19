@@ -1,5 +1,9 @@
 # NSPA project handoff
 
+## October 18 workshop resources page removed
+
+The user requested removal of `2026/resources.html`. The page and its navigation links are removed; it is no longer generated or published. The original resource library and infographic collection remain available. The old URL returns 404. The hub also omits the supporting-resources link and the two introductory explanation paragraphs and describes the presentation download as “31 slides for viewing and sharing,” per the user’s follow-up edits.
+
 Updated October 18, 2026.
 
 ## October 18 evening replacement presentation — current

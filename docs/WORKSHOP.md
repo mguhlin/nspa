@@ -1,5 +1,9 @@
 # 2026 workshop production and alignment
 
+## October 18 workshop resources page removed
+
+The user requested removal of `2026/resources.html`. The page and its navigation links are removed; it is no longer generated or published. The original resource library and infographic collection remain available. The old URL returns 404. The hub also omits the supporting-resources link and the two introductory explanation paragraphs and describes the presentation download as “31 slides for viewing and sharing,” per the user’s follow-up edits.
+
 ## October 18 evening supplied 31-slide edition — current
 
 Read the first current section of HANDOFF.md. This supersedes all earlier core counts and activity sources. The user confirmed **90 minutes (3:30–5:00 PM CT)**, using the new **60-minute core plus 30-minute discussion reserve**. Current formats: 31 slides, 10-page workbook, eight companion activities, two-page takeaways, 32-page supplied illustrated guide, one-page route. Slides 30–31 are backups.
