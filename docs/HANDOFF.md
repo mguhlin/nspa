@@ -1,3 +1,7 @@
+# October 19 participant infographic collection
+
+Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` unchanged as `2026/handouts/nspa-responsible-scholarship-review-infographics.pptx`. It is linked from the participant hub, infographic collection, and resource library. The hub download is also maintained in `scripts/workshop/supplied_edition.py`.
+
 # NSPA project handoff
 
 ## October 18 success-criteria infographic restored
