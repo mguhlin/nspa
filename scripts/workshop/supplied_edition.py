@@ -10,6 +10,7 @@ import base64
 import json
 import re
 from lxml import etree, html
+from experience import learning_intentions
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.pagesizes import letter
@@ -195,7 +196,7 @@ def activities():
 def build_pages():
  intro=f'<p class="eyebrow">NSPA26 · {SCHEDULE}</p><h1>{TITLE}</h1><p class="lead">Building Responsible Scholarship Review Practices</p><p><a class="button" href="conversation.html">Open the session companion</a></p>'
  downloads=[('Participant workbook','handouts/participant-workbook.pdf','10 pages with the current cases, examples, and space for my notes','PDF'),('Presentation PDF','slides/nspa-trust-transparency-ai.pdf','31 slides for viewing and sharing','PDF'),('Session takeaways','handouts/session-takeaways.pdf','Two-page reference aligned with the updated presentation','PDF')]
- (W/'index.html').write_text(shell(TITLE,intro+'<section id="downloads"><h2>Keep the participant materials</h2>'+cards(downloads)+'</section><details class="workshop-details"><summary>Session route and discussion time</summary>'+agenda()+'</details>'))
+ (W/'index.html').write_text(shell(TITLE,intro+'<section id="downloads"><h2>Keep the participant materials</h2>'+cards(downloads)+'</section>'+learning_intentions()))
  sections=activities()
  body='<p class="eyebrow">My session companion</p><h1>Evidence, human checks, and clear expectations</h1><p class="lead">I can follow the slides or work with a colleague. All cases, source excerpts, inventories, and prepared AI drafts here are fictional teaching examples. Each activity includes the information I need.</p><p>No AI account is required. My notes save in this browser; I can export them below. <a href="handouts/participant-workbook.pdf">Download the matching 10-page workbook</a>.</p><noscript><p>All activities appear below. Use the workbook to keep notes without JavaScript.</p></noscript><nav class="jump-links activity-nav" aria-label="Session activities" data-step-nav data-step-label="Activity">'+''.join(f'<a href="#{id}" data-step-link>{i}. {E(name)}</a>' for i,(id,name,*_) in enumerate(sections,1))+'</nav>'
  for i,(id,name,ref,content,prompt) in enumerate(sections,1):
