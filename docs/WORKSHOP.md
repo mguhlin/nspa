@@ -1,5 +1,9 @@
 # 2026 workshop production and alignment
 
+## October 18 original webdeck infographics restored
+
+The user flagged the missing infographics in the native-text webdeck. The current webdeck now embeds all 31 original slide images as lossless WebP, preserving the supplied PowerPoint design, diagrams, logos, and existing artwork. Images come from the committed numbered PNG gallery. Do not replace the visuals with text cards. HTML equivalents remain for screen readers and are visible below each graphic on phones. The supplied speaking notes, presenter previews/synchronization, notes sizing, print, and source hyperlinks remain. The infographic slide image includes its original footer; the semantic sibling footer is hidden to avoid duplication. Only the webdeck is rebuilt with `webdeck.py`; participant documents and prior hub simplifications remain unchanged. Evidence: `docs/WEBDECK-ARTWORK-QA.json`.
+
 ## October 18 workshop resources page removed
 
 The user requested removal of `2026/resources.html`. The page and its navigation links are removed; it is no longer generated or published. The original resource library and infographic collection remain available. The old URL returns 404. The hub also omits the supporting-resources link and the two introductory explanation paragraphs and describes the presentation download as “31 slides for viewing and sharing,” per the user’s follow-up edits.
@@ -10,12 +14,12 @@ Read the first current section of HANDOFF.md. This supersedes all earlier core c
 
 Sources and entry points:
 
-- `scripts/workshop/supplied_edition.py`: native-text webdeck, current pages/transcripts, workbook, route, and notes-only PPTX update.
+- `scripts/workshop/supplied_edition.py`: original-artwork webdeck with readable text equivalents, current pages/transcripts, workbook, route, and notes-only PPTX update.
 - `scripts/workshop/presentation-20261018.txt`: the user's complete speaking notes, shared by the webdeck, PowerPoint, and private Markdown script.
 - `scripts/workshop/current_edition.py`: current build compatibility entry point; `webdeck.py` rebuilds just the webdeck.
 - `scripts/workshop/takeaways.py`: two-page original-template takeaways, with separate centered attribution. Only document.xml changes.
 - Private inputs: `supplemental-resources/NSPA26_TT_AI_SR.pptx` and `NSPA_Facilitator_Guide_Embedded_Images.docx`. The final published PowerPoint and guide DOCX provide committed fallbacks.
-- Canonical Web Deck v5 framework was refreshed from the full published standalone specification because the former local clone is absent. It is inlined in the portable webdeck with an exit link to the presenter hub. All projected content is HTML text, not screenshots.
+- Canonical Web Deck v5 framework was refreshed from the full published standalone specification because the former local clone is absent. It is inlined in the portable webdeck with an exit link to the presenter hub. The projected view preserves the original infographic artwork; HTML equivalents support screen readers and phone reflow.
 
 Rebuild order:
 

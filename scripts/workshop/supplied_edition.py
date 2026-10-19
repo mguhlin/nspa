@@ -49,7 +49,7 @@ def quote(s):return '<blockquote>'+E(s)+'</blockquote>'
 def note(s):return '<p class="n-callout">'+E(s)+'</p>'
 def paras(s):return ''.join('<p>'+E(x)+'</p>' for x in s.split('\n\n'))
 
-# Real HTML text is used throughout the webdeck, including all tables and paths.
+# HTML equivalents support the original slide artwork, transcripts, and phone reflow.
 CONTENT = [
  '<p class="n-subtitle">Building Responsible Scholarship Review Practices</p><p class="n-presenter">Miguel Guhlin<br>NSPA 2026 · San Antonio<br>October 21, 2026</p>'+note('60-minute core presentation · 30 minutes for discussion and practice'),
  grid([('AI in review','Do you use it anywhere in the process?'),('A written applicant policy','Do applicants know the rules?'),('Your one-word response','How do you feel about AI in review?')]),
@@ -123,22 +123,61 @@ def build_webdeck():
  js=(HERE/'deck-framework.js').read_text().replace("href: '../index.html'", "href: './'")
  from PIL import Image as PILImage
  from io import BytesIO
- # Keep the original logo asset unchanged; embed a small, proportional copy.
- with PILImage.open(ROOT/'assets/nspa-logo.png') as im:
-  im.thumbnail((220,140));buf=BytesIO();im.save(buf,format='PNG',optimize=True)
- logo='data:image/png;base64,'+base64.b64encode(buf.getvalue()).decode()
+ # Preserve the supplied slide artwork, with lossless compression and no cropping.
+ def artwork(number):
+  with PILImage.open(W/f'images/nspa-trust-transparency-ai/{number:02}.png') as im:
+   buf=BytesIO();im.save(buf,format='WEBP',lossless=True,method=4)
+  return 'data:image/webp;base64,'+base64.b64encode(buf.getvalue()).decode()
+ ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main','r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}
+ hotspots={}
+ with ZipFile(PPTX) as z:
+  size=etree.fromstring(z.read('ppt/presentation.xml')).find('p:sldSz',ns)
+  width,height=int(size.get('cx')),int(size.get('cy'))
+  for number in range(1,32):
+   rels=etree.fromstring(z.read(f'ppt/slides/_rels/slide{number}.xml.rels'))
+   urls={r.get('Id'):r.get('Target') for r in rels if r.get('Type','').endswith('/hyperlink') and r.get('TargetMode')=='External'}
+   slide=etree.fromstring(z.read(f'ppt/slides/slide{number}.xml'))
+   links=[]
+   for shape in slide.xpath('//p:sp[.//a:hlinkClick]',namespaces=ns):
+    link=shape.find('.//a:hlinkClick',ns);url=urls.get(link.get('{'+ns['r']+'}id'))
+    offset=shape.find('p:spPr/a:xfrm/a:off',ns);extent=shape.find('p:spPr/a:xfrm/a:ext',ns)
+    if not url or offset is None or extent is None:continue
+    label=next((t for t,u in SOURCE_LINKS if u==url),url)
+    style=f'left:{int(offset.get("x"))/width*100:.5f}%;top:{int(offset.get("y"))/height*100:.5f}%;width:{int(extent.get("cx"))/width*100:.5f}%;height:{int(extent.get("cy"))/height*100:.5f}%'
+    links.append(f'<a class="source-link no-advance" href="{E(url)}" aria-label="{E(label)}" title="{E(label)}" style="{style}" target="_blank" rel="noopener"></a>')
+   hotspots[number]=''.join(links)
  sections=[]
  for i,((title,script),content) in enumerate(zip(SCRIPT,CONTENT),1):
   act=next((name for name,nums,_ in ROUTE if int(nums.split('–')[0])<=i<=int(nums.split('–')[-1])),'Optional backup')
   heading='h1' if i==1 else 'h2'
   notes=paras(script)
   if i==1:notes+=paras('Session pacing: 60-minute core plus 30 minutes for discussion and practice in the 3:30–5:00 PM conference slot.')
-  sections.append(f'<section class="slide{" cover current" if i==1 else ""}" data-slide="{i}" aria-label="Slide {i}: {E(title)}"><div class="slide-body"><p class="slide-kicker">{E(act)}</p><{heading} class="slide-title">{E(title)}</{heading}>{content}</div><div class="slide-footer"><img src="{logo}" alt="NSPA"><span>Miguel Guhlin · NSPA 2026</span><span>{i:02} / 31</span></div><div class="notes">{notes}</div></section>')
+  sections.append(f'<section class="slide source-slide{" cover current" if i==1 else ""}" data-slide="{i}" aria-label="Slide {i}: {E(title)}"><div class="slide-body"><figure class="source-figure"><img class="source-artwork" src="{artwork(i)}" width="1536" height="864" alt="" decoding="sync">{hotspots[i]}</figure><div class="slide-readable"><p class="slide-kicker">{E(act)}</p><{heading} class="slide-title">{E(title)}</{heading}>{content}</div></div><div class="slide-footer"><span>NSPA 2026 · Miguel Guhlin</span><span>{i:02} / 31</span></div><div class="notes">{notes}</div></section>')
  theme='''
  :root{--navy:#2e4f66;--navy-dk:#224355;--navy-md:#007681;--steel:#007681;--gold:#ff7233;--gold-lt:#ffcd34;--text:#2e4f66;--paper:#fff;--font-display:Arial,sans-serif;--font-body:Arial,sans-serif;--metal:linear-gradient(90deg,#007681,#ffcd34)}
  .slide,.slide.cover{background:#fff;color:#2e4f66}.slide:before,.slide.cover:before,.slide.cover:after{display:none}.slide-body{padding:65px 74px 75px;gap:0}.slide-title,.cover .slide-title{color:#e8581d;font-family:Arial,sans-serif;font-size:39px;line-height:1.15;font-weight:700;max-width:none;margin:12px 0 30px}.slide-kicker{color:#007681;font-size:15px}.n-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.n-card{padding:24px;background:#e4f4f4;border-radius:14px;border-top:4px solid #007681;box-shadow:0 3px 0 #d2e3e5}.n-card:nth-child(2n){background:#edf2f6;border-color:#ff7233}.n-card h3{font-size:23px;line-height:1.2;color:#007681;margin-bottom:15px}.n-card p{font-size:22px;line-height:1.4}.n-card a{color:#007681}.n-callout{margin-top:24px;padding:16px 22px;background:#fff4e6;border-left:5px solid #ffcd34;font-size:22px;line-height:1.35}blockquote{font-size:27px;line-height:1.4;background:#fff1e9;border-left:5px solid #ff7233;padding:22px;margin-bottom:24px}.slide table{width:100%;border-collapse:separate;border-spacing:0 10px;font-size:23px;line-height:1.35}.slide th{background:#007681;color:white;padding:13px 16px;text-align:left;font-size:18px}.slide td{padding:18px 16px;background:#edf5f5;vertical-align:top}.slide tr:nth-child(even) td{background:#edf2f6}.slide-footer{background:#e4f4f4;color:#2e4f66;border-top:0;padding:12px 40px;height:57px;font-size:14px}.slide-footer img{width:65px;height:36px;object-fit:contain}.cover .slide-body{background:#e4f4f4;padding-top:85px}.cover .slide-title{max-width:900px;font-size:58px;margin-bottom:25px}.n-subtitle{font-size:29px;margin-bottom:35px}.n-presenter{font-size:22px;line-height:1.5}.cover .n-callout{font-size:20px;max-width:850px}.slide[data-slide="3"] .n-grid,.slide[data-slide="7"] .n-grid,.slide[data-slide="30"] .n-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.slide[data-slide="3"] .n-card,.slide[data-slide="7"] .n-card,.slide[data-slide="30"] .n-card{padding:20px 14px}.slide[data-slide="3"] .n-card h3,.slide[data-slide="7"] .n-card h3,.slide[data-slide="30"] .n-card h3{font-size:21px}.slide[data-slide="3"] .n-card p,.slide[data-slide="7"] .n-card p,.slide[data-slide="30"] .n-card p{font-size:21px}.slide[data-slide="25"] .n-grid,.slide[data-slide="5"] .n-grid,.slide[data-slide="8"] .n-grid,.slide[data-slide="13"] .n-grid,.slide[data-slide="16"] .n-grid,.slide[data-slide="19"] .n-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  .deck.reflow .slide-body,.deck.reflow .cover .slide-body{padding:65px 22px 30px}.deck.reflow .n-grid{grid-template-columns:1fr!important}.deck.reflow .slide-title,.deck.reflow .cover .slide-title{font-size:1.8rem}.deck.reflow .n-card h3{font-size:1.25rem}.deck.reflow .n-card p,.deck.reflow .n-callout,.deck.reflow .n-subtitle,.deck.reflow .n-presenter,.deck.reflow blockquote{font-size:1.1rem}.deck.reflow .slide table{font-size:1rem}.deck.reflow .slide th{font-size:.9rem}.deck.reflow .slide td,.deck.reflow .slide th{padding:9px 7px;overflow-wrap:anywhere}.deck.reflow .slide-footer{height:auto;padding:10px 15px;font-size:.7rem}
  @media print{.notes{display:none!important}.slide-body{padding:65px 74px 75px!important}.n-grid{break-inside:avoid}}
+
+ /* The user requested the original infographics and slide design. */
+ .source-slide .slide-body,.source-slide.cover .slide-body{padding:0;margin:0;flex:none;position:relative;width:1280px;height:720px;background:white}
+ .source-slide .slide-body::before,.source-slide .slide-body::after{display:none!important}
+ .source-figure{position:absolute;inset:0;margin:0;width:1280px;height:720px;animation:none!important}
+ .source-artwork{display:block;width:100%;height:100%;object-fit:contain}
+ .source-link{display:block;position:absolute;border-radius:12px}
+ .source-link:focus-visible{outline:4px solid #ff7233;outline-offset:4px}
+ .source-slide .slide-footer{display:none}
+ .slide-readable{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:normal}
+ .source-slide .slide-readable{animation:none!important}
+ .deck.reflow .source-slide .slide-body{position:relative;width:auto;height:auto;padding:0;display:block}
+ .deck.reflow .source-figure{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:16/9;margin:64px 0 0}
+ .deck.reflow .slide-readable{position:static;width:auto;height:auto;clip-path:none;overflow:visible;padding:24px 22px}
+ .deck.reflow .source-artwork{width:100%;height:auto}
+ @media print{
+  .source-slide .slide-body,.deck.reflow .source-slide .slide-body{padding:0!important;margin:0!important;position:relative!important;flex:none!important;width:1280px!important;height:720px!important}
+  .source-figure,.deck.reflow .source-figure{position:absolute!important;inset:0!important;margin:0!important;width:1280px!important;height:720px!important}
+  .slide-readable,.source-slide .slide-footer{display:none!important}
+ }
  '''
  (W/'p/webdeck.html').write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="generator" content="Web Deck v5 (https://mguhlin.github.io/webdecks/) — developed by Miguel Guhlin - mguhlin.org"><!-- Built with Web Deck v5 — https://mguhlin.github.io/webdecks/ · MIT --><title>{TITLE} | Presenter webdeck</title><style>{css}\n{theme}</style></head><body><div class="deck">'+''.join(sections)+f'</div><noscript><p style="padding:20px;background:white;position:fixed;z-index:100">Open the <a href="../slides/nspa-trust-transparency-ai.pdf">presentation PDF</a> or <a href="slide-transcript.html">full transcript</a>.</p></noscript><script>{js}</script></body></html>')
 

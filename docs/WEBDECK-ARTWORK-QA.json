@@ -1,0 +1,180 @@
+{
+  "edition": "Original supplied slide infographics restored",
+  "images": [
+    {
+      "slide": 1,
+      "source": "2026/images/nspa-trust-transparency-ai/01.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 2,
+      "source": "2026/images/nspa-trust-transparency-ai/02.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 3,
+      "source": "2026/images/nspa-trust-transparency-ai/03.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 4,
+      "source": "2026/images/nspa-trust-transparency-ai/04.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 5,
+      "source": "2026/images/nspa-trust-transparency-ai/05.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 6,
+      "source": "2026/images/nspa-trust-transparency-ai/06.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 7,
+      "source": "2026/images/nspa-trust-transparency-ai/07.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 8,
+      "source": "2026/images/nspa-trust-transparency-ai/08.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 9,
+      "source": "2026/images/nspa-trust-transparency-ai/09.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 10,
+      "source": "2026/images/nspa-trust-transparency-ai/10.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 11,
+      "source": "2026/images/nspa-trust-transparency-ai/11.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 12,
+      "source": "2026/images/nspa-trust-transparency-ai/12.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 13,
+      "source": "2026/images/nspa-trust-transparency-ai/13.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 14,
+      "source": "2026/images/nspa-trust-transparency-ai/14.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 15,
+      "source": "2026/images/nspa-trust-transparency-ai/15.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 16,
+      "source": "2026/images/nspa-trust-transparency-ai/16.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 17,
+      "source": "2026/images/nspa-trust-transparency-ai/17.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 18,
+      "source": "2026/images/nspa-trust-transparency-ai/18.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 19,
+      "source": "2026/images/nspa-trust-transparency-ai/19.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 20,
+      "source": "2026/images/nspa-trust-transparency-ai/20.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 21,
+      "source": "2026/images/nspa-trust-transparency-ai/21.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 22,
+      "source": "2026/images/nspa-trust-transparency-ai/22.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 23,
+      "source": "2026/images/nspa-trust-transparency-ai/23.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 24,
+      "source": "2026/images/nspa-trust-transparency-ai/24.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 25,
+      "source": "2026/images/nspa-trust-transparency-ai/25.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 26,
+      "source": "2026/images/nspa-trust-transparency-ai/26.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 27,
+      "source": "2026/images/nspa-trust-transparency-ai/27.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 28,
+      "source": "2026/images/nspa-trust-transparency-ai/28.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 29,
+      "source": "2026/images/nspa-trust-transparency-ai/29.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 30,
+      "source": "2026/images/nspa-trust-transparency-ai/30.png",
+      "losslessPixelMatch": true
+    },
+    {
+      "slide": 31,
+      "source": "2026/images/nspa-trust-transparency-ai/31.png",
+      "losslessPixelMatch": true
+    }
+  ],
+  "browser": {
+    "slides": 31,
+    "allOriginalImagesLoaded": true,
+    "uncropped": true,
+    "phoneAllSlides": true,
+    "presenterPreviews": true,
+    "presenterSync": true,
+    "notesSizing": {
+      "before": "20px",
+      "after": "22px"
+    },
+    "sourceLinks": 2,
+    "errors": []
+  },
+  "print": {
+    "pages": 31,
+    "artworkOnly": true,
+    "speakerNotesExcluded": true
+  },
+  "webdeckSha256": "75e85a66aaa3158d14a663f2d1fb99f51bab56a590586c45c53bf027a1d746f6"
+}
