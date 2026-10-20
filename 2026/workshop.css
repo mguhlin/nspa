@@ -46,3 +46,7 @@
 
 /* Current session: long source URLs and tables remain within phone width. */
 .workshop a{overflow-wrap:anywhere}.workshop .table-scroll{max-width:100%;overflow-x:auto}.workshop table{max-width:100%}.workshop pre{box-sizing:border-box;max-width:100%}
+/* Supplied QR artwork stays large enough to scan on phones and tablets. */
+.return-handouts{display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:2rem 0;padding:1.5rem;background:#e4f4f4;border-radius:12px}
+.return-handouts img{display:block;max-width:100%;height:auto;background:white}
+@media(max-width:650px){.return-handouts{flex-direction:column;align-items:flex-start}.return-handouts>div{min-width:0}.return-handouts a{overflow-wrap:anywhere}}

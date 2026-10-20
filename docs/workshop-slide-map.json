@@ -1,157 +1,170 @@
 [
   {
     "number": 1,
-    "title": "Trust, Transparency, and AI",
-    "core": true
+    "title": "Session resources",
+    "cue": "Arrival and resource screen",
+    "core": false
   },
   {
     "number": 2,
-    "title": "A Quick Pulse",
+    "title": "Trust, Transparency, and AI",
+    "cue": "Welcome \u00b7 1 minute",
     "core": true
   },
   {
     "number": 3,
-    "title": "Our 60-Minute Route",
+    "title": "Your first judgment",
+    "cue": "Activity 1 \u00b7 2 minutes \u00b7 Individual vote, then pairs",
     "core": true
   },
   {
     "number": 4,
-    "title": "The Balancing Act",
+    "title": "AI authority in the review process",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 5,
-    "title": "Two Sides of One Application",
+    "title": "Task sorting with a safeguard",
+    "cue": "Activity 2 \u00b7 3 minutes \u00b7 Pairs",
     "core": true
   },
   {
     "number": 6,
-    "title": "Assist, Check, or Reserve for People",
+    "title": "Two gates before an upload",
+    "cue": "Discuss \u00b7 3 minutes",
     "core": true
   },
   {
     "number": 7,
-    "title": "Build a Prompt That Can Be Checked",
-    "core": true
+    "title": "Session resources",
+    "cue": "Resource reminder",
+    "core": false
   },
   {
     "number": 8,
-    "title": "From a Vague Request to a Review Prompt",
+    "title": "A prompt reviewers can check",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 9,
-    "title": "Rubrics Come Before Model Output",
+    "title": "A prompt repair lab",
+    "cue": "Activity 3 \u00b7 4 minutes \u00b7 Pairs",
     "core": true
   },
   {
     "number": 10,
-    "title": "Try It \u2014 Repair the Weak Prompt",
+    "title": "A shared scoring anchor",
+    "cue": "Introduce the rubric \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 11,
-    "title": "A Review Workflow You Can Explain",
+    "title": "An evidence audit",
+    "cue": "Activity 4 \u00b7 5 minutes \u00b7 Pairs",
     "core": true
   },
   {
     "number": 12,
-    "title": "Demo 1 \u2014 Administrative Review",
+    "title": "A reviewable handoff",
+    "cue": "Debrief \u00b7 3 minutes",
     "core": true
   },
   {
     "number": 13,
-    "title": "Demo 2 \u2014 Map Rubric Evidence",
+    "title": "A fairness calibration",
+    "cue": "Activity 5 \u00b7 4 minutes \u00b7 Individual, then pairs",
     "core": true
   },
   {
     "number": 14,
-    "title": "Demo 3 \u2014 Prepare a Reviewer Handoff",
+    "title": "The review path and its owners",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 15,
-    "title": "Keep a Person in the Loop",
+    "title": "Applicant use boundary sort",
+    "cue": "Activity 6 \u00b7 4 minutes \u00b7 Small groups",
     "core": true
   },
   {
     "number": 16,
-    "title": "Protect Information Before the Prompt",
+    "title": "What an AI detector can get wrong",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 17,
-    "title": "Security Starts Before the Upload",
+    "title": "A flagged essay case conference",
+    "cue": "Activity 7 \u00b7 4 minutes \u00b7 Groups of three",
     "core": true
   },
   {
     "number": 18,
-    "title": "Consistency Does Not Guarantee Fairness",
+    "title": "A documented response to a concern",
+    "cue": "Debrief \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 19,
-    "title": "Applicants Use AI, Too",
+    "title": "Policy language people can use",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 20,
-    "title": "Assess Substance, Not the Writing Style",
+    "title": "A policy drafting lab",
+    "cue": "Activity 8 \u00b7 6 minutes \u00b7 Small groups",
     "core": true
   },
   {
     "number": 21,
-    "title": "AI Detection Is Not Proof of Authorship",
+    "title": "Sample response for applicants",
+    "cue": "Activity 8 sample \u00b7 Within the policy discussion",
     "core": true
   },
   {
     "number": 22,
-    "title": "A Flagged Essay \u2014 What Would You Do?",
+    "title": "Sample response for reviewers",
+    "cue": "Activity 8 sample \u00b7 Within the policy discussion",
     "core": true
   },
   {
     "number": 23,
-    "title": "A Fair Response to an AI Concern",
+    "title": "Sample response for concerns",
+    "cue": "Activity 8 sample \u00b7 Within the policy discussion",
     "core": true
   },
   {
     "number": 24,
-    "title": "Make the Applicant Policy Readable",
+    "title": "A four-week pilot",
+    "cue": "Discuss \u00b7 2 minutes",
     "core": true
   },
   {
     "number": 25,
-    "title": "Compare Policy Language",
+    "title": "Your next review-cycle decision",
+    "cue": "Activity 9 \u00b7 2 minutes \u00b7 Individual, then pairs",
     "core": true
   },
   {
     "number": 26,
-    "title": "Write Staff-Facing Rules, Too",
-    "core": true
-  },
-  {
-    "number": 27,
-    "title": "Workshop \u2014 Decide Your Local Rules",
-    "core": true
-  },
-  {
-    "number": 28,
-    "title": "Bring It Into Your Next Review Cycle",
-    "core": true
-  },
-  {
-    "number": 29,
-    "title": "What Will You Change First?",
-    "core": true
-  },
-  {
-    "number": 30,
-    "title": "Backup \u2014 Reusable Reviewer Prompt",
+    "title": "Take-home review prompt",
+    "cue": "Take-home reference",
     "core": false
   },
   {
-    "number": 31,
-    "title": "Backup \u2014 Sources and Further Reading",
+    "number": 27,
+    "title": "Resources for your team",
+    "cue": "Take-home reference",
+    "core": false
+  },
+  {
+    "number": 28,
+    "title": "Session resources",
+    "cue": "Closing resource screen",
     "core": false
   }
 ]

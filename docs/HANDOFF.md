@@ -4,6 +4,18 @@ Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` uncha
 
 # NSPA project handoff
 
+## October 20 revised presentation and adaptive speaking guide — current
+
+This section supersedes earlier slide counts, activity sequences, presenter downloads, and success-criteria text. Source: the user's `/home/mg/Downloads/NSPA26 Slides.pptx`, retained privately as `supplemental-resources/NSPA26 Slides.pptx`. The current deck has **28 slides**, including resource screens at positions 1, 7, and 28, nine activities, three policy sample responses, and take-home references at positions 26–27. Use physical slide positions for workbook and guide references; the source's printed footer numbers skip and repeat. Preserve all supplied slide artwork and five native tables.
+
+Current delivery: **28-page participant presentation PDF, 11-page workbook, nine companion activities, two-page takeaways, updated presenter PowerPoint notes, image-based webdeck with readable HTML equivalents, adaptive facilitator guide, and 14-page landscape guide PDF with two thumbnails per page and 14-point speaking text**. `revised_content.py` is the common first-person script and activity source. The guide HTML adapts to Samsung phones/tablets and saves adjustable text size. The PowerPoint differs from the supplied file only in the 28 note XML parts; all visual parts are byte-identical. Do not restore the October 18 script.
+
+The presenter hub offers only the webdeck, PowerPoint, adaptive guide, and guide PDF. The old timing table, route, editable-guide download, and full-transcript link are removed. Retired guide DOCX, route PDF, and presenter transcript are excluded from staging. No ZIP packages are published. Original resource collections and the seven-infographic PowerPoint remain available.
+
+The supplied QR code (`2026/images/nspa26-qr-code.png`) resolves to the workshop resource blog post, not directly to the handout hub. The hub labels this accurately and provides the direct handout address alongside it. The revised success-criteria PNG/WebP keeps the original illustration style, with eight criteria matching the new activities. Its full text equivalent is in alt text; the separate text section is intentionally removed. Exact built-in imagegen prompt: `docs/SUCCESS-CRITERIA-20261020-PROMPT.json`.
+
+Builders: `current_edition.py` now routes to `revised_edition.py`; `webdeck.py` rebuilds only the current webdeck. See the first section of `WORKSHOP.md` for export and notes preparation. QA: `docs/REVISED-20261020-QA.json`. User explicitly requested commit, push, and deployment, then checking a missing QR code in the blog entry after NSPA is complete.
+
 ## October 18 success-criteria infographic restored
 
 The participant hub now shows the updated `2026/images/success-criteria.png` infographic (optimized WebP preview), with three learning-intention questions and six criteria aligned to the current 31-slide deck. It preserves the earlier illustration style while using the current five-part prompt structure and next-review-cycle pilot. `experience.py:learning_intentions()` supplies the matching accessible text and image download; `supplied_edition.py:build_pages()` includes it after the participant downloads. The user-requested “Session route and discussion time” section is removed from the participant hub; presenter timing remains in presenter materials. Original learning-intentions artwork is preserved. Exact built-in imagegen prompt: `docs/SUCCESS-CRITERIA-PROMPT.json`.

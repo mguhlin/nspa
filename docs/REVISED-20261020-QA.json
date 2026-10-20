@@ -1,0 +1,290 @@
+{
+  "edition": "October 20 revised 28-slide workshop",
+  "pdfPages": {
+    "2026/slides/nspa-trust-transparency-ai.pdf": 28,
+    "2026/handouts/participant-workbook.pdf": 11,
+    "2026/handouts/session-takeaways.pdf": 2,
+    "2026/p/facilitator-guide.pdf": 14
+  },
+  "guideLayout": "Two thumbnails and first-person scripts per landscape page; 14-point script",
+  "adaptiveGuide": "Phone/tablet reflow; 18\u201336px adjustable text; persisted preference; anchor headings clear sticky controls",
+  "sourceSlidePreservation": "Every non-notes file byte-identical; five native tables retained",
+  "updatedNoteBodies": 28,
+  "webdeckArtwork": "All 28 lossless WebP images pixel-identical to numbered PNGs",
+  "webdeckPrintPages": 28,
+  "takeawayTemplate": "Only word/document.xml changed",
+  "visualReview": {
+    "slides": 28,
+    "workbookPages": 11,
+    "takeawayPages": 2,
+    "guidePages": 14
+  },
+  "browser": {
+    "count": 28,
+    "allSlideImages": true,
+    "allSlideNotes": true,
+    "presenterSync": true,
+    "notesSizingButtons": [
+      "A\u2212",
+      "A+"
+    ],
+    "overflow": [],
+    "errors": [],
+    "adaptiveSizePersistence": true,
+    "companionDraftsAndExport": true,
+    "noJavaScriptActivities": 9,
+    "successCriteriaAlt": true
+  },
+  "presentationValidation": {
+    "schemaVersion": "presentation-finalization.v1",
+    "finalSha256": "eb62506721cd141a4f87f87a011da20e12854fb71d84c876f945e4356c6396ce",
+    "byteCount": 16576707,
+    "packageIntegrity": {
+      "chart_count": 0,
+      "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+      "finding_count": 0,
+      "findings": [],
+      "notes_parts_skipped": 28,
+      "relationship_part_count": 66,
+      "slide_count": 28,
+      "status": "pass",
+      "exitCode": 0,
+      "findingCount": 0,
+      "warnings": []
+    },
+    "presentationLayout": {
+      "finding_count": 0,
+      "findings": [],
+      "slide_count": 28,
+      "slide_size_in": [
+        13.3333,
+        7.5
+      ],
+      "warning_count": 9,
+      "warnings": [
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 1,
+          "slide": 21
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 2,
+          "slide": 21
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 3,
+          "slide": 21
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 1,
+          "slide": 22
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 2,
+          "slide": 22
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 3,
+          "slide": 22
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 1,
+          "slide": 23
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 2,
+          "slide": 23
+        },
+        {
+          "actual_emu": {
+            "indent": -18,
+            "marL": 20
+          },
+          "emu_per_point": 12700,
+          "kind": "malformed_native_bullet_geometry",
+          "object_id": "8",
+          "paragraph_index": 3,
+          "slide": 23
+        }
+      ],
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    "fontSelection": {
+      "basis": "unspecified",
+      "approvedFamilies": [],
+      "scriptFonts": {},
+      "referenceSha256": null,
+      "referenceFontsVerifiedInEncodedText": false
+    },
+    "firstPartyImport": {
+      "performed": true,
+      "passed": true,
+      "slideCount": 28,
+      "sha256": "eb62506721cd141a4f87f87a011da20e12854fb71d84c876f945e4356c6396ce",
+      "runtimeNodeModules": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "nodeExecutable": "/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    },
+    "nativeTableArithmetic": {
+      "performed": true,
+      "checked_column_count": 0,
+      "checks": [],
+      "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+      "eligible_table_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "native_table_count": 5,
+      "passed": true,
+      "schema_version": "presentation-native-table-arithmetic.v1",
+      "skipped_tables": [
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 5,
+          "table": 1
+        },
+        {
+          "reason": "no_unambiguous_bottom_total",
+          "slide": 10,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 12,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 15,
+          "table": 1
+        },
+        {
+          "reason": "no_numeric_amounts",
+          "slide": 20,
+          "table": 1
+        }
+      ],
+      "slide_count": 28,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "nativeChartTitles": {
+      "performed": true,
+      "checks": [],
+      "finding_count": 0,
+      "findings": [],
+      "native_chart_count": 0,
+      "native_powerpoint_verified": false,
+      "passed": true,
+      "presentation_sha256": "eb62506721cd141a4f87f87a011da20e12854fb71d84c876f945e4356c6396ce",
+      "schema_version": "presentation-native-chart-titles.v1",
+      "slide_count": 28,
+      "source_text_emitted": false,
+      "unresolved_linked_title_count": 0
+    },
+    "sourceDerivedPolicyFlags": [
+      "--expected-slide-size-emu",
+      "12192000,6858000",
+      "--validate-bullet-geometry",
+      "--validate-heading-fit",
+      "--cover-role",
+      "none",
+      "--require-native-table-slide",
+      "5",
+      "--require-native-table-slide",
+      "10",
+      "--require-native-table-slide",
+      "12",
+      "--require-native-table-slide",
+      "15",
+      "--require-native-table-slide",
+      "20",
+      "--expected-slide-count",
+      "28"
+    ],
+    "nativeChartValidation": {
+      "detectedOwnerSlides": [],
+      "detectedChartCount": 0,
+      "targetApplication": null,
+      "sourceChartOwnersExplicitlyDeclared": false,
+      "validatorRan": false,
+      "passed": true
+    }
+  },
+  "qrDestination": "https://mguhlin.org/blog/nspa-2026-conference-session-materials-and-infographics/",
+  "successCriteria": "Revised illustrated image; complete text in alt; no separate text section",
+  "stagedLinks": "All staged HTML targets resolve",
+  "retiredPresenterDownloads": "Guide DOCX, route PDF, and presenter transcript excluded; no ZIPs published",
+  "sha256": {
+    "2026/slides/nspa-trust-transparency-ai.pdf": "0fe109f41b792acf0afaf04469deb7bbdbd1e82c170cf7bbaced6389d90840cb",
+    "2026/handouts/participant-workbook.pdf": "8d9318567cb3e12b5b72f75ce7307906b86cf86d9d916d698676c6785918448a",
+    "2026/handouts/session-takeaways.pdf": "bdd105a644b04148e77cd583303baf01abfb327fad7cbb06e09c74c31aea50b2",
+    "2026/p/facilitator-guide.pdf": "be09a28496330f9e70a0bb8a741b130c9deec7669db8455f232ba021a5419479",
+    "2026/index.html": "935b99505a61ca68ecfc4abc44a2415eefa8a5b9e3e4d461a1e4268a68b49220",
+    "index.html": "a773dabeb48bfc778d0823aa5834dd000ca884b1737c324205489facc1672f26",
+    "2026/conversation.html": "6eee714704bfc8f2cf99656759fd9c4e249e7786092a41b79859ca4a4496b3bc",
+    "2026/p/index.html": "5a31213ba0787445590c1262e4a100e4bd3fa5a36777b5e6376be55e2f236e90",
+    "2026/p/facilitator-guide.html": "77a1e6909f0c9e293800751c60c0e00ce6ea563b734abb2643c244d55379826d",
+    "2026/p/facilitator-guide.css": "b1a21b5e9adbe701fd23f425b255b144c78b7cae5b8337ae5905a72f1d608024",
+    "2026/p/facilitator-guide.js": "661b284f1c15eca3db9e95899b99abb2cd9753dfd27920d7cff5cba34c9f36fa",
+    "2026/p/webdeck.html": "26ecd2081059fbb20f254df9110014b7dc7036fb348f08a3ea07eae1bb076c9c",
+    "2026/p/slides/nspa-trust-transparency-ai.pptx": "eb62506721cd141a4f87f87a011da20e12854fb71d84c876f945e4356c6396ce",
+    "2026/images/success-criteria.png": "4fbbbf73086f220ed688510116ffa865585a067de9b6896cc422ec01180f605e",
+    "2026/images/success-criteria.webp": "5afe2208c88eb1f5449959ff1efffe2063d37dcd09cc62f9291a4e78389d5d06",
+    "2026/images/nspa26-qr-code.png": "bc5324165966755fe108b7e19872147d1145c85a6ac565447c34374a61b5dd88"
+  }
+}
