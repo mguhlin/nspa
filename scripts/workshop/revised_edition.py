@@ -20,7 +20,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle, Image, KeepTogether
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from revised_content import TITLES, CUES, SAY, POLICY_SAMPLES, PROMPT, NOTE_SOURCES, activities
+from revised_content import TITLES, CUES, SAY, POLICY_SAMPLES, PROMPT, NOTE_SOURCES, ACTIVITY_SLIDES, activities
 from supplied_edition import shell, cards
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -102,16 +102,23 @@ def build_pages(slides):
     qr='<section class="return-handouts" aria-labelledby="return-title"><div><h2 id="return-title">Return to these handouts</h2><p>Scan for the workshop resource post, or save this direct handout address for later.</p><p><a href="https://mguhlin.github.io/nspa/2026/">mguhlin.github.io/nspa/2026/</a></p><p><a href="images/nspa26-qr-code.png" download>Save the QR code</a></p></div><a href="https://mguhlin.org/blog/nspa-2026-conference-session-materials-and-infographics/"><img src="images/nspa26-qr-code.png" width="256" height="256" alt="QR code for the NSPA workshop resource post on mguhlin.org, with links to handouts. Use the adjacent direct workshop link to open the handouts."></a></section>'
     (W/'index.html').write_text(shell(TITLE,intro+'<section id="downloads"><h2>Keep the participant materials</h2>'+cards(downloads)+'</section>'+qr+success_criteria()))
     sections=activities()
-    body='<p class="eyebrow">My session companion</p><h1>Evidence, human checks, and clear expectations</h1><p class="lead">Nine activities follow the revised presentation. All cases, rubric anchors, and sample outputs are fictional teaching examples. Each activity includes the information I need.</p><p>No AI account is required. My notes save in this browser; I can export them below. <a href="handouts/participant-workbook.pdf">Download the matching 11-page workbook</a>.</p><noscript><p>All activities appear below. Use the workbook to keep notes without JavaScript.</p></noscript><nav class="jump-links activity-nav" aria-label="Session activities" data-step-nav data-step-label="Activity">'+''.join(f'<a href="#{id}" data-step-link>{i}. {E(name)}</a>' for i,(id,name,*_) in enumerate(sections,1))+'</nav>'
+    body='<p class="eyebrow">My session companion</p><h1>Evidence, human checks, and clear expectations</h1><p class="lead">Explore nine activities for responsible scholarship review. All cases, rubric anchors, and sample outputs are fictional teaching examples. Each activity provides directions and space for my notes.</p><p>No AI account is required. My notes save in this browser; I can export them below. <a href="handouts/participant-workbook.pdf">Download the participant workbook</a>.</p><noscript><p>All activities appear below. Use the workbook to keep notes without JavaScript.</p></noscript><nav class="jump-links activity-nav" aria-label="Session activities" data-step-nav data-step-label="Activity">'+''.join(f'<a href="#{id}" data-step-link>{i}. {E(name)}</a>' for i,(id,name,*_) in enumerate(sections,1))+'</nav>'
     for i,(id,name,ref,content,prompt) in enumerate(sections,1):
         if id=='policy':
             content+='<details class="workshop-details"><summary>Compare the three sample responses after drafting</summary>'+''.join('<h3>'+E(a)+'</h3><p>'+E(b)+'</p>' for a,b in POLICY_SAMPLES)+'<p>Local choices: disclosure method and timing; approved service and assigned reviewer; reconsideration contact, steps, and timeline.</p></details>'
-        body+=f'<section id="{id}" data-step><h2 tabindex="-1">{i}. {E(name)}</h2><p class="activity-meta">{ref} · Workbook page {i+1}</p>{content}<div class="draft-field"><label for="draft-{id}">{E(prompt)}</label><textarea id="draft-{id}" data-draft="{id}" rows="6" maxlength="15000"></textarea></div></section>'
+        number=ACTIVITY_SLIDES[id]
+        image=f'images/nspa-trust-transparency-ai/{number:02}'
+        with PILImage.open(W/(image+'.png')) as preview:
+            preview.thumbnail((900,507))
+            width,height=preview.size
+            preview.save(W/(image+'-preview.webp'),format='WEBP',quality=88,method=6)
+        thumbnail=f'<aside class="companion-activity-slide" aria-label="Matching presentation slide"><figure><a href="{image}.png" target="_blank" rel="noopener" aria-label="Open full-size slide {number}: {E(TITLES[number-1])}"><img src="{image}-preview.webp" width="{width}" height="{height}" loading="lazy" decoding="async" alt="Slide {number}: {E(TITLES[number-1])}. The activity directions are provided alongside this slide."></a><figcaption>Slide {number} · {E(TITLES[number-1])}<br><a href="{image}.png" target="_blank" rel="noopener">View full-size slide</a></figcaption></figure></aside>'
+        body+=f'<section id="{id}" data-step><div class="companion-activity-layout"><header class="companion-activity-heading"><h2 tabindex="-1">{i}. {E(name)}</h2><p class="activity-meta">{ref} · Workbook page {i+1}</p></header>{thumbnail}<div class="companion-activity-directions">{content}</div><div class="draft-field"><label for="draft-{id}">{E(prompt)}</label><textarea id="draft-{id}" data-draft="{id}" rows="6" maxlength="15000"></textarea></div></div></section>'
     body+='<div class="step-pager" data-step-pager hidden><button class="button secondary" data-step-prev type="button">Previous</button><p data-step-status role="status"></p><button class="button" data-step-next type="button">Next</button></div><section class="draft-actions"><h2>My notes to keep</h2><button class="button" id="export-drafts" type="button">Export all my notes</button> <button class="button secondary" id="print-drafts" type="button">Print activities and notes</button><p id="draft-status" role="status" aria-live="polite"></p><p class="copy-status" role="status" aria-live="polite"></p></section><script src="practice.js" defer></script><script src="workshop-flow.js" defer></script>'
     (W/'conversation.html').write_text(shell('Session companion',body))
-    body='<p class="eyebrow">Presenter materials</p><h1>Your workshop presentation</h1><p>October 21 · 3:30–5:00 PM CT. The revised presentation includes 28 slides, nine activities, policy examples, and take-home references.</p>'+cards([
-        ('Open the webdeck','webdeck.html','Original slide images with the updated speaking script and synchronized presenter view','WEB'),
-        ('PowerPoint with speaker notes','slides/nspa-trust-transparency-ai.pptx','Revised presentation with the updated speaking script in editable notes','PPTX'),
+    body='<p class="eyebrow">Presenter materials</p><h1>Your workshop presentation</h1><p>October 21 · 3:30–5:00 PM CT. The presentation includes 28 slides, nine activities, policy examples, and take-home references.</p>'+cards([
+        ('Open the webdeck','webdeck.html','Presentation slides with speaking notes and synchronized presenter view','WEB'),
+        ('PowerPoint with speaker notes','slides/nspa-trust-transparency-ai.pptx','Presentation slides with editable speaker notes','PPTX'),
         ('Adaptive facilitator guide','facilitator-guide.html','Slide thumbnails and speaking text that fit your phone or tablet, with adjustable text size','WEB'),
         ('Facilitator guide PDF','facilitator-guide.pdf','Two slide thumbnails per page with readable speaking text','PDF')])+'<p><a href="../conversation.html">Open the participant companion</a></p>'
     (W/'p/index.html').write_text(shell('Presenter materials',body,True))
@@ -190,7 +197,7 @@ def build_pdfs():
                 result+=[t,Spacer(1,8)]
             else:result.append(p(el.text_content()))
         return result
-    story=[p('My participant workbook','h1'),p(TITLE,'h2'),p('Responsible scholarship review'),p(SCHEDULE),p('Nine activities for the revised presentation')]
+    story=[p('My participant workbook','h1'),p(TITLE,'h2'),p('Responsible scholarship review'),p(SCHEDULE),p('Nine activities for responsible scholarship review')]
     art=W/'images/conversation/workbook-cover.png'
     if not art.exists(): art=W/'images/conversation/evidence.png'
     if art.exists():story+=[Spacer(1,10),Image(str(art),width=430,height=270,kind='proportional'),Spacer(1,12)]

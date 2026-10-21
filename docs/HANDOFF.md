@@ -4,6 +4,14 @@ Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` uncha
 
 # NSPA project handoff
 
+## October 20 companion thumbnails and Resources navigation
+
+Each of the nine Session Companion activities now pairs its heading and directions at left with the matching presentation slide at right. On narrower screens, the slide appears between the heading and directions. The optimized WebP previews link to the existing full-size PNGs. `ACTIVITY_SLIDES` in `scripts/workshop/revised_content.py` maps activities to physical slide positions 3, 5, 9, 11, 13, 15, 17, 20, and 25; `revised_edition.py:build_pages()` generates previews and markup. Notes, export, printing, and access without JavaScript remain available.
+
+All existing Resources dropdowns now begin with the NSPA 2026 blog materials entry and include the infographic collection, resource library, Session Archive, AI Fluency, Marketing Readiness, and The Prompt Library. The shared list lives in `scripts/workshop/resource_navigation.py`; the workshop shell and `scripts/update_resource_navigation.py` use it. Public staging synchronizes static menus automatically. Browser QA covered all nine activities at 360, 412, 800, 1024, and 1280 pixels, notes persistence/export, printing, and access without JavaScript.
+
+The user requested participant-facing wording without revision history. Companion introduction, presenter cards, and workbook cover now describe the materials directly. Activity 2 defines ASSIST, CHECK, and HUMAN, plus the safeguard and owner, in both the companion and workbook. The workbook remains 11 pages; PDF page content outside its cover and activity 2 is unchanged. Updated pages were rendered and visually checked.
+
 ## October 20 revised presentation and adaptive speaking guide — current
 
 This section supersedes earlier slide counts, activity sequences, presenter downloads, and success-criteria text. Source: the user's `/home/mg/Downloads/NSPA26 Slides.pptx`, retained privately as `supplemental-resources/NSPA26 Slides.pptx`. The current deck has **28 slides**, including resource screens at positions 1, 7, and 28, nine activities, three policy sample responses, and take-home references at positions 26–27. Use physical slide positions for workbook and guide references; the source's printed footer numbers skip and repeat. Preserve all supplied slide artwork and five native tables.

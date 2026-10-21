@@ -1,0 +1,118 @@
+{
+  "companion": {
+    "activities": [
+      {
+        "id": "judgment",
+        "slide": 3,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "sorting",
+        "slide": 5,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "prompt",
+        "slide": 9,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "audit",
+        "slide": 11,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "calibration",
+        "slide": 13,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "boundaries",
+        "slide": 15,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "conference",
+        "slide": 17,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "policy",
+        "slide": 20,
+        "preview": true,
+        "fullSize": true
+      },
+      {
+        "id": "commitment",
+        "slide": 25,
+        "preview": true,
+        "fullSize": true
+      }
+    ],
+    "viewportWidths": [
+      360,
+      412,
+      800,
+      1024,
+      1280
+    ],
+    "desktopDirectionsLeftThumbnailsRight": true,
+    "mobileOrder": "heading, thumbnail, directions, notes",
+    "draftsPersistAndExport": true,
+    "printActivities": 9,
+    "noJavaScriptActivities": 9,
+    "errors": []
+  },
+  "resourcesMenu": {
+    "pages": 10,
+    "links": [
+      "NSPA 2026 Session Materials",
+      "Infographic collection",
+      "Resource library",
+      "Session Archive",
+      "AI Fluency",
+      "Marketing Readiness",
+      "The Prompt Library"
+    ],
+    "widths": [
+      360,
+      412,
+      800,
+      1280
+    ],
+    "destinationsRespond": true,
+    "escapeAndOutsideClose": true,
+    "noJavaScript": true
+  },
+  "copy": {
+    "revisionReferencesRemoved": [
+      "companion introduction",
+      "presenter cards",
+      "workbook cover"
+    ],
+    "activity2Definitions": [
+      "ASSIST",
+      "CHECK",
+      "HUMAN",
+      "safeguard",
+      "owner"
+    ]
+  },
+  "workbook": {
+    "pages": 11,
+    "changedPages": [
+      1,
+      3
+    ],
+    "otherPageContentUnchanged": true,
+    "changedPagesRenderedAndInspected": true
+  },
+  "siteLinkCheck": "passed"
+}

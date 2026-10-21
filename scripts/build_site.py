@@ -1,7 +1,9 @@
 """Stage only public website content for GitHub Pages."""
 from pathlib import Path
 import shutil
+from update_resource_navigation import update_menus
 ROOT = Path(__file__).resolve().parents[1]
+update_menus()
 out = ROOT/'_site'
 if out.exists(): shutil.rmtree(out)
 out.mkdir()

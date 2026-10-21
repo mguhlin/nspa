@@ -20,6 +20,13 @@ TITLES = [
     'Resources for your team', 'Session resources',
 ]
 
+# The activity slide itself, rather than a later debrief or sample answer.
+ACTIVITY_SLIDES = {
+    'judgment': 3, 'sorting': 5, 'prompt': 9, 'audit': 11,
+    'calibration': 13, 'boundaries': 15, 'conference': 17,
+    'policy': 20, 'commitment': 25,
+}
+
 CUES = [
     'Arrival and resource screen', 'Welcome · 1 minute',
     'Activity 1 · 2 minutes · Individual vote, then pairs',
@@ -107,7 +114,7 @@ def activities():
        para('Which task gives AI the most influence over who receives an award?')+table(['Choice','Task'], [('A','Flag a missing transcript'),('B','Summarize evidence of leadership'),('C','Rank the finalists')])+para('Choose A, B, or C. Tell a partner what could go wrong and what a person would need to check.'),
        'My choice, the risk I see, and the evidence I would check'),
       ('sorting', 'Task sorting with a safeguard', 'Slides 4–6 · Activity 2 · 3 minutes · Pairs',
-       para('Assign ASSIST, CHECK, or HUMAN to each task. Add a specific safeguard and the person responsible.')+table(['Fictional task','My category','Safeguard and owner'], [(t,'','') for t in ['List applications missing a reference','Link an essay quote to a rubric criterion','Decide whether to waive a deadline','Select the scholarship recipients']])+para('Before an upload, both gates must be satisfied: approved use (tool, access, retention, reuse, and response plan) and only needed data (code, excerpt, criterion, and source pointer).'),
+       para('Assign ASSIST, CHECK, or HUMAN to each task. Add a specific safeguard and the person responsible.')+para('ASSIST: AI helps organize routine information. A person confirms requirements and exceptions before acting on the result.')+para('CHECK: AI suggests an evidence match or interpretation. A reviewer verifies each quotation, source location, and rubric match before using it.')+para('HUMAN: A person makes the judgment or decision, including awards, exceptions, and appeals. AI does not make that decision.')+para('A safeguard is a concrete check or limit. The owner is the person who carries it out. For example: the program coordinator checks a missing-document flag against the application requirements before contacting the applicant.')+table(['Fictional task','My category','Safeguard and owner'], [(t,'','') for t in ['List applications missing a reference','Link an essay quote to a rubric criterion','Decide whether to waive a deadline','Select the scholarship recipients']])+para('Before an upload, both gates must be satisfied: approved use (tool, access, retention, reuse, and response plan) and only needed data (code, excerpt, criterion, and source pointer).'),
        'One classification we debated and the safeguard we chose'),
       ('prompt', 'A prompt repair lab', 'Slides 8–10 · Activity 3 · 4 minutes · Pairs',
        quote('Review all applications and choose the strongest students.')+para('Replace this weak request. Name one criterion and its source. Ask for a quote, its location, and a gap. Limit what AI may decide. Exchange prompts and check whether each requested output can be verified.')+rubric()+para('Practice input: fictional A17, paragraph 2. '+EXCERPT),
