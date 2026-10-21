@@ -26,7 +26,7 @@ await fs.writeFile(path.join(workspaceDir,'template-inspection.ndjson'),(await r
 }
 const pres=Presentation.create({slideSize:{width:1280,height:720}});
 const colors={ink:'#2e4f66',teal:'#007681',aqua:'#e4f4f4',orange:'#ff7233'};
-async function image(slide,file,x,y,w,h,alt){const b=await fs.readFile(file);slide.images.add({blob:b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),contentType:'image/png',alt,fit:'contain',position:{left:x,top:y,width:w,height:h}});}
+async function image(slide,file,x,y,w,h,alt){const b=await fs.readFile(file);slide.images.add({blob:b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),contentType:file.endsWith('.webp')?'image/webp':'image/png',alt,fit:'contain',position:{left:x,top:y,width:w,height:h}});}
 function text(slide,value,x,y,w,h,size=27,bold=false,color=colors.ink,name='Text'){
  const box=slide.shapes.add({geometry:'textbox',name,position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});
  box.text=value;box.text.style={typeface:'Poppins',fontSize:size,bold,color};
@@ -39,14 +39,14 @@ for(const s of data.slides){
  text(slide,'NSPA 2026 · Scholarship review practice',64,cover?75:43,1100,30,18,true,colors.teal,'Session label');
  text(slide,s.title,64,cover?145:90,cover?930:1150,cover?155:100,cover?64:44,true,colors.ink,'Slide heading');
  let y=cover?325:190;
- text(slide,s.lead,64,y,1100,52,27,false);y+=65;
+ const leadLines=Math.ceil(s.lead.length/78);const leadHeight=Math.max(52,leadLines*36);text(slide,s.lead,64,y,1100,leadHeight,27,false);y+=leadHeight+13;
  if(s.table){
   tableOwners.push(n);const values=s.table;const rows=values.length;const maxChars=Math.max(...values.flat().map(t=>t.length));
-  const rowHeight=n===24?96:n===8?65:rows>=6?54:maxChars>65?78:70;
+  const rowHeight=values[0].length===3?82:rows>=6?54:72;
   const height=Math.min(330,rows*rowHeight);
   const table=slide.tables.add({rows,columns:values[0].length,left:64,top:y,width:1152,height,values});
   table.styleOptions={headerRow:true,bandedRows:false};
-  table.cells.block({row:0,column:0,rowCount:rows,columnCount:values[0].length}).assign({textStyle:{typeface:'Poppins',fontSize:n===24?25:24,color:colors.ink},margins:{left:14,right:14,top:9,bottom:9},anchor:'top'});
+  table.cells.block({row:0,column:0,rowCount:rows,columnCount:values[0].length}).assign({textStyle:{typeface:'Poppins',fontSize:24,color:colors.ink},margins:{left:14,right:14,top:9,bottom:9},anchor:'top'});
   for(let r=0;r<rows;r++){
    table.rows[r].height=height/rows;
    for(let c=0;c<values[0].length;c++){
@@ -55,10 +55,8 @@ for(const s of data.slides){
    }
   }
   table.borders.assign({style:'solid',fill:'#b6d4d6',width:1});
-  if(n===24){table.columns.get(0).width=210;table.columns.get(1).width=942;}
-  else if(values[0].length===2){table.columns.get(0).width=n===19?200:240;table.columns.get(1).width=n===19?952:912;}
-  else if(n===11){table.columns.get(0).width=310;table.columns.get(1).width=390;table.columns.get(2).width=452;}
-  else {table.columns.get(0).width=210;table.columns.get(1).width=450;table.columns.get(2).width=492;}
+  const widths=values[0].length===2?[270,882]:n===25?[140,740,272]:n===20?[130,570,452]:[260,450,442];
+  widths.forEach((width,c)=>{table.columns.get(c).width=width;});
   y+=height+18;
  }
  if(s.quote){
@@ -68,13 +66,14 @@ for(const s of data.slides){
  if(s.items.length){
   const lineHeight=cover?48:49;
   for(const value of s.items){
-   const width=n===26?820:1120;
-   const lines=Math.max(1,Math.ceil(value.length/(width/14)));
+   const width=s.image?555:s.qr?820:1120;
+   const lines=Math.max(1,Math.ceil(value.length/(width/14.8)));
    const h=lines*35+12;
    text(slide,value,64,y,width,h,cover?28:27,false,colors.ink,'Supporting text');y+=Math.max(lineHeight,h);
   }
  }
- if(n===26)await image(slide,path.join(root,'2026/images/nspa26-qr-code.png'),970,300,210,210,'QR code for NSPA workshop resource post');
+ if(s.image)await image(slide,path.join(root,`2026/prompting/assets/concepts/${s.image}.webp`),655,300,570,330,s.alt);
+ if(s.qr)await image(slide,path.join(root,'2026/images/nspa26-qr-code.png'),970,300,210,210,'QR code for NSPA workshop resource post');
  if(s.link){
   const href=new URL(s.link[0], 'https://mguhlin.github.io/nspa/2026/prompting/').href;
   const linkBox=text(slide,s.link[1],64,Math.min(Math.max(y+8,540),600),1120,38,23,true,colors.teal,'Resource link');
@@ -82,7 +81,7 @@ for(const s of data.slides){
   // Full, clickable URL in speaker notes and readable deck. PPTX keeps the prompt text editable.
   s.notes+='\n\nResource: '+href;
  }
- text(slide,cover?'01 / 26':`Miguel Guhlin     ${String(n).padStart(2,'0')} / 26`,cover?850:230,679,cover?300:500,27,16,false,cover?'#ffffff':colors.ink,'Footer');
+ text(slide,cover?`01 / ${data.slides.length}`:`Miguel Guhlin     ${String(n).padStart(2,'0')} / ${data.slides.length}`,cover?850:230,679,cover?300:500,27,16,false,cover?'#ffffff':colors.ink,'Footer');
  slide.speakerNotes.text=s.notes+'\n\n'+s.sources.map(k=>`Source: ${data.sources[k][0]}\n${data.sources[k][1]}`).join('\n\n');
  const png=await pres.export({slide,format:'png',scale:1});
  await fs.writeFile(path.join(workspaceDir,'renders',`${String(n).padStart(2,'0')}.png`),new Uint8Array(await png.arrayBuffer()));

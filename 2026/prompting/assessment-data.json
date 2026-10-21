@@ -1,114 +1,121 @@
 [
   {
     "id": "task",
-    "domain": "Prompting and evidence",
-    "q": "A colleague asks AI to \u201cpick the best applicants.\u201d Which revision creates a task a reviewer can check?",
+    "domain": "Clear requests and fact-checking",
+    "q": "A colleague asks AI to \u201cpick the best applicants.\u201d What would be a better request?",
     "options": [
-      "Compare exact excerpts with the supplied rubric and return quotes, source locations, gaps, and a human check.",
-      "Rank applicants by leadership potential and writing quality.",
-      "Use a longer prompt and ask the model to be fair."
+      "Find quotes that match our scoring guide, show where each quote came from, and leave the decision to staff.",
+      "Rank applicants by how impressive they sound.",
+      "Use a longer request and tell AI to be fair."
     ],
     "answer": 0,
-    "why": "A limited evidence task gives a reviewer something to verify. Length and fairness instructions alone do not define the evidence or decision boundary.",
-    "practice": "Try the rubric evidence demo.",
-    "href": "prompting/demos.html#rubric"
+    "why": "Ask AI for something you can check. You can look up a quote in the original application. Staff still decide what it means and how to score it.",
+    "practice": "See the scoring example.",
+    "href": "prompting/demos.html#rubric",
+    "picture": "check-original"
   },
   {
     "id": "upload",
-    "domain": "Privacy and oversight",
-    "q": "You remove names from applications. Can you now upload them to your personal AI account?",
+    "domain": "Protecting people\u2019s information",
+    "q": "You remove names from applications. Is it now OK to upload them to your personal AI account?",
     "options": [
-      "Yes, removing names makes every application anonymous.",
-      "First confirm the service, account, purpose, permissions, and data handling are approved. Minimize the inputs too.",
-      "Yes, if you delete the chat after the review."
+      "Yes. Removing names hides who everyone is.",
+      "Ask your organization which AI account and information you are allowed to use.",
+      "Yes, as long as you delete the chat afterward."
     ],
     "answer": 1,
-    "why": "Narratives and other fields can still identify people. Removing names or deleting a chat does not establish organizational authorization or appropriate handling.",
-    "practice": "Review the Project setup checklist.",
-    "href": "prompting/demos.html#setup"
+    "why": "A story, school name, or other detail may still identify someone. Check your organization\u2019s rules before uploading anything. For this workshop, use the made-up practice files.",
+    "practice": "See how to start safely.",
+    "href": "prompting/demos.html#setup",
+    "picture": "codes"
   },
   {
     "id": "manifest",
-    "domain": "Prompting and evidence",
-    "q": "The manifest lists A17-transcript.pdf, but the model has only the manifest. What can it report?",
+    "domain": "Clear requests and fact-checking",
+    "q": "A17 is a made-up applicant code used instead of a name. A file list (called a manifest) includes A17-transcript.pdf. AI can see only the list, not the document. What can AI tell you?",
     "options": [
-      "The transcript meets the program requirements.",
-      "A17 is eligible.",
-      "The file name is listed. Staff must open and verify the document."
+      "The transcript meets the requirements.",
+      "The applicant qualifies for the scholarship.",
+      "The file name is on the list. A person must open the document to check it."
     ],
     "answer": 2,
-    "why": "Metadata supports an inventory claim. It cannot establish what an unavailable document contains or whether it satisfies a requirement.",
-    "practice": "Run the application organization demo.",
-    "href": "prompting/demos.html#organize"
+    "why": "Seeing a file name is like seeing a book title in a catalog. It does not mean you have read the book. A17-transcript.pdf means the transcript file for the applicant called A17.",
+    "practice": "See the file-list example.",
+    "href": "prompting/demos.html#organize",
+    "picture": "file-list"
   },
   {
     "id": "quote",
-    "domain": "Trust and transparency",
-    "q": "An AI summary says an applicant improved grades by 20%, but the excerpt mentions only twelve tutoring sessions. What should happen?",
+    "domain": "Fair and explainable decisions",
+    "q": "An application says \u201cI ran 12 tutoring sessions.\u201d AI adds \u201cGrades improved by 20%.\u201d The application never says that. What should you do?",
     "options": [
-      "Keep the detail because the result sounds plausible.",
-      "Remove the unsupported claim, verify the source, and record the correction.",
-      "Ask the model for a confidence percentage and keep it if high."
+      "Keep the extra detail because it sounds believable.",
+      "Remove the extra claim and check the rest against the application.",
+      "Keep it if AI says it is very confident."
     ],
     "answer": 1,
-    "why": "Plausibility and model confidence do not supply missing evidence. An auditable handoff preserves the quote, source location, and correction.",
-    "practice": "Compare the prepared rubric findings with the source.",
-    "href": "prompting/demos.html#rubric"
+    "why": "AI added a fact that the application does not support. Remove it. Check the other details too, even if the answer sounds confident.",
+    "practice": "Practice checking an answer.",
+    "href": "prompting/demos.html#rubric",
+    "picture": "check-original"
   },
   {
     "id": "calibrate",
-    "domain": "Trust and transparency",
-    "q": "Two excerpts describe the same contribution. One uses polished language. How should reviewers apply the contribution rubric?",
+    "domain": "Fair and explainable decisions",
+    "q": "Two applicants describe doing the same work. One writes more smoothly. If you are scoring their community work, what should you do?",
     "options": [
-      "Apply the same evidence anchor and examine any scoring difference.",
-      "Give the polished version a higher contribution score.",
-      "Average the scores without checking why they differ."
+      "Give the same score for the same work, using the scoring guide.",
+      "Give more points to the smoother writer.",
+      "Average the two scores without checking them."
     ],
     "answer": 0,
-    "why": "This criterion evaluates contribution evidence. Reviewers should examine differences caused by style when the relevant facts are equivalent.",
-    "practice": "Compare A17 and A18 in the demo packet.",
+    "why": "Score what this part of the guide asks about: the work they did. Better writing alone does not show a greater community contribution.",
+    "practice": "Compare the two practice statements. A17 and A18 are made-up applicant codes.",
     "href": "prompting/demos.html#rubric"
   },
   {
     "id": "detector",
-    "domain": "Trust and transparency",
-    "q": "A detector flags a statement as AI-written. What is the fairest next step?",
+    "domain": "Fair and explainable decisions",
+    "q": "A tool says an applicant\u2019s essay may have been written by AI. What is the fairest next step?",
     "options": [
-      "Reject it automatically to protect integrity.",
-      "Treat an unflagged statement as proof of human authorship.",
-      "Review evidence under the published policy, allow clarification, and retain a human decision and reconsideration path."
+      "Reject the application right away.",
+      "Assume essays the tool does not flag were written without AI.",
+      "Have staff check the concern under the published rules and give the applicant a chance to explain."
     ],
     "answer": 2,
-    "why": "Detectors can misclassify writing. A flag does not prove authorship or a policy violation, and no flag does not prove authorship either.",
-    "practice": "Read the applicant-use policy examples.",
-    "href": "prompting/demos.html#policy"
+    "why": "These tools can be wrong. A flag is a reason to look more closely, not proof of cheating. Staff should follow the rules applicants received and explain how someone can ask for another review.",
+    "practice": "Read the applicant-use examples.",
+    "href": "prompting/demos.html#policy",
+    "picture": "human-decision"
   },
   {
     "id": "exception",
-    "domain": "Privacy and oversight",
-    "q": "A19 submitted after the fictional deadline and requested an exception. What belongs with a person?",
+    "domain": "Protecting people\u2019s information",
+    "q": "A19 is a made-up applicant code used instead of a name. This applicant applied late and asked for extra time. Who should decide whether to allow it?",
     "options": [
-      "Only checking whether the output uses a table.",
-      "Applying the exception policy and documenting the decision.",
-      "Nothing, if AI quotes the date correctly."
+      "AI, as long as its answer is in a table.",
+      "A staff member, using the organization\u2019s rules and keeping a record of the reason.",
+      "AI, as long as it reads the date correctly."
     ],
     "answer": 1,
-    "why": "The tool can surface the recorded date and request. An authorized staff member applies the policy, checks records, and owns the decision.",
-    "practice": "Try the administrative review demo.",
-    "href": "prompting/demos.html#completeness"
+    "why": "AI can point out the late date and the request for extra time. A person must check the situation and decide what the rules allow.",
+    "practice": "See the late-application example.",
+    "href": "prompting/demos.html#completeness",
+    "picture": "human-decision"
   },
   {
     "id": "skill",
-    "domain": "Prompting and evidence",
-    "q": "You save a reusable review skill. What should you do before relying on it?",
+    "domain": "Clear requests and fact-checking",
+    "q": "You save a set of instructions for AI to reuse. This is often called a skill. What should you do before trusting it?",
     "options": [
-      "Assume a reusable skill will produce the same correct output every time.",
-      "Add more instructions until it looks complete.",
-      "Test known cases, missing evidence, and embedded instructions, then check outputs and version the skill."
+      "Assume saved instructions always give correct answers.",
+      "Keep adding instructions without trying them.",
+      "Try it on made-up examples where you know the answer, then check and fix mistakes."
     ],
     "answer": 2,
-    "why": "A skill packages a procedure. It does not prove correctness. Small test cases expose omissions, unsupported claims, and changes after edits.",
-    "practice": "Use the reusable skill and its evaluation cases.",
-    "href": "prompting/demos.html#skill"
+    "why": "Saving instructions does not make them reliable. Try an easy example, one with missing information, and one with a misleading request inside it. Check what AI does before using the instructions again.",
+    "practice": "See how to try a reusable skill.",
+    "href": "prompting/demos.html#skill",
+    "picture": "prompt-conversation"
   }
 ]

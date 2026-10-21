@@ -1,6 +1,9 @@
 FICTIONAL SCHOLARSHIP REVIEW PRACTICE
-All application data, rules, rubric anchors, and prepared outputs are fictional teaching examples.
-The manifest lists pretend filenames. Those PDFs are not included. Do not treat a listing as verified content.
+Every application, rule, scoring guide, and sample answer here is made up for practice.
+A17, A18, and A19 are made-up applicant codes used instead of names. Each code refers to the same applicant across the files. For example, A17-transcript.pdf is the pretend transcript filename for applicant A17.
+A manifest is a file list. This list names pretend PDF files; those PDFs are not included. A listed name does not tell us what is inside a document. In real applications, replacing names with codes does not remove every detail that could identify someone.
+
+Words used in the prompts: a rubric is a scoring guide. A criterion is one part being judged. An anchor describes what earns a score. A provisional score is a suggestion for a person to check. A source pointer tells you where to find the original information.
 
 1. Open ChatGPT. Create a practice Project if available, or start a fresh chat.
 2. Add project-instructions.txt as Project instructions, or paste it into the chat.

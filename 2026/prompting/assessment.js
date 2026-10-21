@@ -5,7 +5,7 @@
   const script = document.currentScript;
   let questions;
   try {
-    const response = await fetch(new URL('assessment-data.json', script.src));
+    const response = await fetch(new URL('assessment-data.json?v=20261021-simple-1', script.src));
     if (!response.ok) throw new Error('Assessment data unavailable');
     questions = await response.json();
   } catch {
@@ -19,22 +19,24 @@
   let answers = [];
   let currentPhase = null;
   const phases = [
-    {number: 1, title: 'Build a foundation', focus: 'Practice one bounded task with fictional material and learn to connect every finding to its source.', next: 'To move toward Phase 2, work through a demonstration and aim for at least four recommended choices when you revisit the scenarios.', actions: [
-      ['Practice the parts of a useful prompt', 'prompting/demos.html#rubric', 'Name the task, sources, rubric, output, and limits.'],
-      ['Check the application inventory', 'prompting/demos.html#organize', 'Separate a listed filename from verified document content.'],
-      ['Review the human decision boundary', 'prompting/demos.html#completeness', 'Flag a gap or exception for staff without accepting or rejecting an applicant.']
+    {number: 1, title: 'Getting started', focus: 'You are learning what AI can help with and what a person needs to check.', next: 'Try this small task first. Then read the answer and check that the date stayed the same.', picture: 'prompt-conversation', example: 'Type this into ChatGPT: “Using this note only, write a friendly one-sentence reminder: Applications close October 1.”', actions: [
+      ['Try one practice example', 'prompting/demos.html#first-prompt', 'A short request and made-up information are enough to begin.']
     ]},
-    {number: 2, title: 'Strengthen your checks', focus: 'Make evidence verification, approved data use, and fair human review consistent across your workflow.', next: 'To move toward Phase 3, aim for seven or eight recommended choices, including the approved-data, exception-decision, and detector-response scenarios.', actions: [
-      ['Audit rubric evidence', 'prompting/demos.html#rubric', 'Verify exact quotations, source locations, and the difference between a contribution and a supported result.'],
-      ['Check the Project setup', 'prompting/demos.html#setup', 'Confirm the service and purpose are approved before supplying real applicant information.'],
-      ['Clarify applicant and reviewer rules', 'prompting/demos.html#policy', 'Keep concern responses and exceptions with an authorized person.']
+    {number: 2, title: 'Checking AI’s answers', focus: 'You know some of the basics. Your next step is to check whether AI’s answer matches the original information.', next: 'Your job: remove “improved grades by 20%.” The original never says that. Keep the 12 sessions and check the other details the same way.', picture: 'check-original', example: 'Original: “I ran 12 tutoring sessions.” AI’s answer: “The applicant ran 12 sessions and improved grades by 20%.”', actions: [
+      ['Practice checking one answer', 'prompting/demos.html#rubric', 'Look at the original words beside AI’s answer. Remove anything the original does not support.']
     ]},
-    {number: 3, title: 'Develop a repeatable workflow', focus: 'Your choices support trying a small, documented practice workflow with explicit human checks.', next: 'Deepen this phase by testing the procedure on varied fictional cases, logging corrections, and asking a colleague to review the handoff before considering an approved pilot.', actions: [
-      ['Set up a practice Project', 'prompting/demos.html#setup', 'Keep the sources and standing instructions together, then verify each response.'],
-      ['Adapt the reusable evidence review skill', 'prompting/demos.html#skill', 'Run the missing-evidence, equivalent-wording, and embedded-instruction evaluation cases.'],
-      ['Keep a correction log', 'prompting/files/review-log.csv', 'Record the version, expected finding, error, correction, owner, and stop condition.']
+    {number: 3, title: 'Practicing with a colleague', focus: 'You handled most of these situations well. Your next step is to see whether another person can check your work easily.', next: 'Use made-up information. Ask a colleague to compare the AI answer with the original and tell you what needs fixing.', picture: 'human-decision', example: 'Choose one practice application. Ask AI to make a checklist of its files. Show a colleague the file list and the checklist.', actions: [
+      ['Try the file-list example together', 'prompting/demos.html#organize', 'Can both of you find every listed file? A person still checks the actual documents.']
     ]}
   ];
+  const pictureDescriptions = {
+    'prompt-conversation': 'A person sends a request and receives an AI draft to read.',
+    'check-original': 'The original says 12 sessions. The AI draft adds 20% better grades; that unsupported claim is crossed out.',
+    'human-decision': 'AI supplies a checklist. A staff member checks it and makes the decision.',
+    'codes': 'A made-up applicant’s name is replaced by the code A17 on their documents.',
+    'file-list': 'A file list names A17-transcript.pdf. The document itself still needs to be opened.',
+    'same-work': 'Two applicants report the same tutoring work in different words and receive the same contribution score.'
+  };
   const el = (tag, text) => { const node = document.createElement(tag); node.textContent = text; return node; };
   form.addEventListener('submit', event => {
     event.preventDefault();
@@ -48,39 +50,37 @@
       const domain = domains.get(q.domain) || {correct: 0, total: 0};
       domain.total++; if (correct) domain.correct++; domains.set(q.domain, domain);
       const feedback = document.getElementById(`feedback-${q.id}`);
-      feedback.replaceChildren(el('h3', correct ? 'My choice matches the recommended step' : 'A step to reconsider'), el('p', `Recommended: ${q.options[q.answer]}`), el('p', q.why));
+      feedback.replaceChildren(el('h3', correct ? 'That’s the recommended choice' : 'Here’s what to try instead'), el('p', `Recommended: ${q.options[q.answer]}`), el('p', q.why));
       const link = el('a', q.practice); link.href = q.href; feedback.append(link); feedback.hidden = false;
+      if (q.picture) { const figure = el('figure', ''); figure.className = 'concept-picture'; const img = document.createElement('img'); img.src = `prompting/assets/concepts/${q.picture}.webp`; img.alt = pictureDescriptions[q.picture]; img.loading = 'lazy'; img.width = 900; img.height = 600; figure.append(img); feedback.append(figure); }
       return {q, selected, confidence, correct};
     });
     const correct = answers.filter(a => a.correct).length;
     const summary = document.getElementById('results-summary');
-    summary.replaceChildren(el('p', `${correct} of ${questions.length} choices match the recommended steps in these scenarios. The explanations matter more than the total.`));
+    summary.replaceChildren(el('p', `${correct} of ${questions.length} answers match the recommended choices. Use the explanations to decide what to practice.`));
     const readinessIds = ['upload', 'exception', 'detector'];
     const readinessMet = readinessIds.every(id => answers.find(a => a.q.id === id)?.correct);
     const phaseNumber = correct <= 3 ? 1 : correct >= 7 && readinessMet ? 3 : 2;
     currentPhase = phases[phaseNumber - 1];
     const phase = el('section', ''); phase.className = 'learning-phase'; phase.id = 'learning-phase';
-    phase.append(el('h3', `Phase ${phaseNumber} · ${currentPhase.title}`), el('p', `Your answers place you in Phase ${phaseNumber} of this learning pathway. ${currentPhase.focus}`));
-    const pathway = el('ol', ''); pathway.className = 'phase-pathway'; pathway.setAttribute('aria-label', 'Learning phases');
-    phases.forEach(item => { const step = el('li', `Phase ${item.number}: ${item.title}`); if (item.number === phaseNumber) step.setAttribute('aria-current', 'step'); pathway.append(step); });
-    phase.append(pathway, el('h4', 'What I can do next'));
-    const actions = el('ol', ''); actions.className = 'phase-actions';
-    currentPhase.actions.forEach(([title, href, description]) => { const item = el('li', ''); const link = el('a', title); link.href = href; item.append(link, el('p', description)); actions.append(item); });
-    phase.append(actions, el('p', currentPhase.next));
-    const method = el('details', ''); method.append(el('summary', 'How this learning phase is chosen'), el('p', 'Phase 1: zero to three choices match the recommended steps. Phase 2: four to six matches, or seven to eight with a readiness check to revisit. Phase 3: seven to eight matches plus the recommended choices for approved data use, human exception decisions, and fair detector responses. Confidence choices inform reflection and do not change the phase. These are workshop learning rules, not validated expertise levels.'));
+    phase.append(el('h3', `Phase ${phaseNumber} · ${currentPhase.title}`), el('p', `${currentPhase.focus}`));
+    const figure = el('figure', ''); figure.className = 'phase-picture'; const image = document.createElement('img'); image.src = `prompting/assets/concepts/${currentPhase.picture}.webp`; image.alt = pictureDescriptions[currentPhase.picture]; image.width = 900; image.height = 600; figure.append(image);
+    phase.append(figure, el('h4', 'One thing to try now'), el('p', currentPhase.example), el('p', currentPhase.next));
+    const actions = el('p', ''); actions.className = 'phase-actions';
+    currentPhase.actions.forEach(([title, href]) => { const link = el('a', title); link.href = href; actions.append(link); });
+    phase.append(actions);
+    const method = el('details', ''); method.append(el('summary', 'What do the phases mean?'), el('p', 'Phase 1: getting started. Phase 2: checking AI’s answers. Phase 3: practicing with a colleague. They suggest where to practice next; they do not measure professional expertise.'), el('p', 'How your answers are used: 0–3 recommended answers suggests Phase 1. Four to six suggests Phase 2. Seven or eight suggests Phase 3 if you also chose to check permission before uploading, let staff decide exceptions, and review detector flags fairly. Otherwise, Phase 2 offers more checking practice. How sure you feel does not change your phase.'));
     phase.append(method); summary.append(phase);
-    const chart = el('section', ''); chart.className = 'domain-chart'; chart.append(el('h3', 'My scenario results by topic'), el('p', 'The bars show choices matching the recommended steps. Topics have different numbers of questions.'));
+    const chart = el('section', ''); chart.className = 'domain-chart'; chart.append(el('h3', 'My answers by topic'), el('p', 'Each bar shows how many recommended answers you chose in that topic.'));
     for (const [name, score] of domains) {
       const row = el('div', ''); row.className = 'domain-result';
-      const label = el('p', `${name}: ${score.correct} of ${score.total} scenarios.`);
+      const label = el('p', `${name}: ${score.correct} of ${score.total} questions.`);
       const track = el('div', ''); track.className = 'domain-track'; track.setAttribute('aria-hidden', 'true');
       const fill = el('span', ''); fill.style.width = `${score.correct / score.total * 100}%`; track.append(fill); row.append(label, track); chart.append(row);
     }
     summary.append(chart);
     const reconsider = answers.filter(a => !a.correct && a.confidence === 'Very confident');
-    if (reconsider.length) summary.append(el('p', 'I felt very confident about a choice that differed from the recommended step. I can use that explanation as a starting point for discussion.'));
-    const practice = answers.find(a => !a.correct) || answers.find(a => a.confidence === 'Unsure') || answers[0];
-    const next = el('p', 'My next practice step: '); const link = el('a', practice.q.practice); link.href = practice.q.href; next.append(link); summary.append(next);
+    if (reconsider.length) summary.append(el('p', 'You felt very confident about an answer worth another look. Read its short explanation above.'));
     results.hidden = false; results.focus();
   });
   form.addEventListener('reset', () => {
@@ -88,17 +88,17 @@
     results.hidden = true; document.getElementById('reflection').value = ''; document.getElementById('assessment-status').textContent = ''; answers = []; currentPhase = null;
   });
   document.getElementById('export-reflection').addEventListener('click', () => {
-    const lines = ['MY TRUST, TRANSPARENCY, AND AI REFLECTION', 'Informal learning exercise. Answers are not submitted.', ''];
+    const lines = ['MY TRUST, TRANSPARENCY, AND AI REFLECTION', 'Practice activity. Answers are not sent to anyone.', ''];
     if (currentPhase) {
-      lines.push(`Phase ${currentPhase.number}: ${currentPhase.title}`, currentPhase.focus, '', 'What I can do next:');
+      lines.push(`Phase ${currentPhase.number}: ${currentPhase.title}`, currentPhase.focus, '', 'One thing to try now:', currentPhase.example, currentPhase.next);
       currentPhase.actions.forEach(([title, href, description]) => lines.push(title, description, new URL(href, location.href).href, ''));
-      lines.push(currentPhase.next, '', 'Scenario results by topic:', document.querySelector('.domain-chart')?.innerText || '', '');
+      lines.push('', 'My answers by topic:', document.querySelector('.domain-chart')?.innerText || '', '');
     }
     answers.forEach((a, i) => lines.push(`${i+1}. ${a.q.q}`, `My choice: ${a.q.options[a.selected]}`, `Confidence: ${a.confidence}`, `Recommended: ${a.q.options[a.q.answer]}`, a.q.why, ''));
-    lines.push('One change I will make:', document.getElementById('reflection').value);
+    lines.push('One thing I will try next:', document.getElementById('reflection').value);
     const url = URL.createObjectURL(new Blob([lines.join('\n')], {type: 'text/plain;charset=utf-8'}));
     const link = document.createElement('a'); link.href = url; link.download = 'my-ai-review-reflection.txt'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-    document.getElementById('assessment-status').textContent = 'Reflection exported to a text file.';
+    document.getElementById('assessment-status').textContent = 'Your results were saved to a text file.';
   });
   window.addEventListener('beforeprint', () => {
     let text = document.getElementById('reflection-print');

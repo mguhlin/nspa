@@ -4,11 +4,13 @@ Public hub: https://mguhlin.github.io/nspa/2026/prompting/
 
 Participant materials contain the slide PDF and practice packet. The webdeck and PowerPoint with notes appear only on the unlisted presenter hub at `2026/p/`. The old participant-side webdeck, PowerPoint, and speaking-content JSON are removed from deployment. This is link separation on a public GitHub Pages site, not authentication.
 
-This collection has its own 26-slide presentation and practice packet. Keep the original workshop slides, workbook, takeaways, and guide unchanged when rebuilding it.
+This collection has its own 31-slide presentation and practice packet. Keep the original workshop slides, workbook, takeaways, and guide unchanged when rebuilding it.
 
-- `content.py`: slide copy and first-person notes, exact supplied session description, assessment scenarios, fictional examples, source links.
+- `content.py`: exact session description, plain-language assessment scenarios, fictional examples, source links, and the shared slide data.
+- `beginner_deck.py`: introductory sequence and first-person notes, including vocabulary before use and optional Projects/skills after the demonstrations.
 - `build.py`: overview, self-check, practice hub, demonstrations, source files and ZIPs, standalone webdeck, a non-published slide-content JSON in `scripts/prompting/`.
 - `build_presentation.mjs`: Artifact Tool authoring and private finalization, followed by a byte-preserving copy into `2026/p/slides/`. Requires the bundled Node runtime, Artifact Tool, and installed Poppins fonts. Font files and OFL license are in the public assets folder. The private NSPA template is optional during subsequent builds because its supplied background artwork is already included. If present, the builder inspects and renders it and verifies the typography against it.
+- `check_beginner.cjs`: self-contained applicant-code definitions, a single Phase 2 practice action, illustrated results, slide bounds, pictures, phone layout, and word guide.
 - `check_assessment_phases.cjs`: seven phase-boundary cases, readiness rules, chart rows, phase export, hero loading, and biplane/boat routing at phone and desktop widths.
 - `check_interactions.cjs`: Playwright checks of feedback, confidence choices, export/reset, clipboard prompts, phone/tablet layouts, slide navigation, presenter navigation/sync, and note resizing/persistence.
 

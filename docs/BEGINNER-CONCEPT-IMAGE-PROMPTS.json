@@ -1,0 +1,26 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "purpose": "Concept pictures for beginner slides and plain-language assessment feedback",
+  "assets": [
+    {
+      "path": "2026/prompting/assets/concepts/prompt-conversation.webp",
+      "prompt": "Create a clean educational editorial illustration, landscape 3:2, for adult beginners learning AI prompting at a scholarship workshop. White background, navy #2e4f66 thin outlines, teal #007681 and pale aqua #e4f4f4 flat accents, small warm orange accents. A person at left types a short question into a laptop; a large speech bubble flows toward a simple screen at right that returns a draft document. Make the human request and returned draft visually obvious, use only short legible labels \"My request\" and \"AI draft\". No robots, brains, magic, circuitry, gradients, tiny text, decorative stars, extra objects or logos. Restrained friendly instructional picture, clear at phone size."
+    },
+    {
+      "path": "2026/prompting/assets/concepts/check-original.webp",
+      "prompt": "Create one clean educational illustration, landscape 3:2, for adult beginners learning to check AI answers. White background, navy #2e4f66 outlines, teal #007681 and pale aqua #e4f4f4 flat areas, small orange highlights. Show a person carefully comparing two pages side by side on a desk. Left page labeled \"Original\" has a large simple \"12 sessions\". Right page labeled \"AI draft\" has the same \"12 sessions\" plus an orange \"20% better grades\" with a clear orange line crossing out that unsupported extra claim. The person points from the original to the corrected draft. Very few details, lots of clear space, readable labels. No robots, brains, locks, gradients or extra text. An explanatory picture, no slide title or footer."
+    },
+    {
+      "path": "2026/prompting/assets/concepts/human-decision.webp",
+      "prompt": "Create one simple instructional editorial illustration, landscape 3:2, white background, navy #2e4f66 outlines, teal #007681 and pale aqua #e4f4f4 accents with a little orange. Adult scholarship office staff member seated at a desk checks a one-page AI checklist on a laptop, then holds a pen over a paper marked \"Staff decision\". Laptop label \"AI checklist\". The human is clearly making the decision, computer supplies a checklist. Friendly restrained flat illustration with large simple objects, no logos, robots, brains, gradients, awards, crowns, extra labels or tiny text. Clear explanatory composition for adults on phone screens."
+    },
+    {
+      "path": "2026/prompting/assets/concepts/codes.webp",
+      "prompt": "Create one simple adult instructional illustration, landscape 3:2, white background, navy #2e4f66 outline and pale aqua with teal #007681 accents, small orange. At left one plain fictional application sheet with a generic person silhouette and label \"Applicant\". At center a clear right-pointing arrow. At right the same applicant sheet uses a large readable \"A17\" instead of a name, with two small matching document sheets also marked \"A17\". Bottom short legible caption \"A code replaces a name\". This explains a code links the same person\u2019s documents. No real names, no lock icon or anonymity promise, no robots, no brains, no tiny text or extra ornament. Friendly, extremely clear teaching picture for beginners."
+    },
+    {
+      "path": "2026/prompting/assets/concepts/file-list.webp",
+      "prompt": "Create one simple adult teaching picture, landscape 3:2, white background with navy #2e4f66 outlines, pale aqua, teal #007681 accents, small orange. Left is a sheet labeled \"File list\" with the exact large filename \"A17-transcript.pdf\". Right is a closed document folder with a large question mark and label \"Document\". Between them a staff hand reaches toward the folder to open it. Bottom simple readable caption \"Listed does not mean checked\". The picture teaches that seeing a filename is not reading the actual document. Use only the specified labels. No checkmarks on document, no robot or brain, no extra decorative objects, restrained flat editorial illustration clear on phone screens."
+    }
+  ]
+}
