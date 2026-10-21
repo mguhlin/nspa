@@ -21,7 +21,7 @@
     {
       "number": 2,
       "title": "My starting point",
-      "lead": "Eight short situations and one next step",
+      "lead": "Eight short situations, a score, and a graph",
       "items": [
         "What would I do in each situation?",
         "Which idea would I like to practice?"
@@ -32,8 +32,29 @@
         "../assessment.html",
         "Open my awareness self-check"
       ],
-      "notes": "I invite you to take the awareness self-check before we begin. It uses eight everyday situations, including checking an AI answer and deciding what information we may upload. The result suggests a place to practice and one small next step. It also shows a chart of your answers by topic. This is a workshop activity, not a test of your qualifications. Your answers stay on the page and are not sent to anyone. If you want to keep them, use Save my results. You can return after the demonstrations and see which choices make more sense.",
-      "sources": []
+      "notes": "I invite you to take the awareness self-check before we begin. It uses eight everyday situations, including checking an AI answer and deciding what information we may upload. The result shows a score out of eight, a graph of your answers by topic, and short suggestions for improvement. The guided ChatGPT activities are separate. This is a workshop activity, not a test of your qualifications. Your answers stay on the page and are not sent to anyone. The score is easy to note for later reference. You can return after the demonstrations and see which choices make more sense.",
+      "sources": [
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/awareness-path.webp",
+        "panels": [
+          [
+            "Choose an answer",
+            "Eight everyday situations about using AI carefully."
+          ],
+          [
+            "Score and graph",
+            "Find out which topics need more attention."
+          ],
+          [
+            "Read your suggestions",
+            "Get clear ways to improve based on your answers."
+          ]
+        ],
+        "alt": "A three-stop learning path: a hand chooses one of three large unlettered answer circles beside a question sheet; a person studies a sheet and magnifying glass; a person tries one small task with a laptop. Clear connecting arrows. No score, no expertise badge.",
+        "layout": "panels"
+      }
     },
     {
       "number": 3,
@@ -48,10 +69,29 @@
       "link": null,
       "notes": "Generative AI is software that creates something, such as text or an image, from a request. In this workshop, I will use ChatGPT to work with text and files. Think of the answer as a draft that needs your attention. A useful draft may save us time, but fluent writing does not tell us whether every detail is correct. We need to look at the information we supplied and compare it with the answer. I am going to keep our first example small enough that everyone can do that comparison without opening a complicated packet.",
       "sources": [
-        "prompting"
+        "prompting",
+        "infographics"
       ],
-      "image": "prompt-conversation",
-      "alt": "A person sends a request and receives an AI draft."
+      "alt": "A person sends a request and receives an AI draft.",
+      "infographic": {
+        "asset": "assets/infographics/request-to-draft.webp",
+        "panels": [
+          [
+            "Your request",
+            "Say what you want AI to help you do."
+          ],
+          [
+            "Useful information",
+            "Add the facts or files the task needs."
+          ],
+          [
+            "A draft to check",
+            "Compare the answer with the original."
+          ]
+        ],
+        "alt": "A speech bubble containing a pencil request at left, an open source notebook and table sheet in the middle, a computer showing a draft page at right with a human hand and magnifying glass checking it. Arrows connect the request and source information to the draft. Not a robot. Do not imply every request requires files.",
+        "layout": "panels"
+      }
     },
     {
       "number": 4,
@@ -104,8 +144,28 @@
       "notes": "I will open a fresh ChatGPT chat and type this request. The note is made up for practice. We want a friendly reminder, one sentence long, and we want the deadline to stay October 1. I will pause before sending so you can see the whole request. After the answer appears, I will read it with you. Did it keep the date? Did it stay within one sentence? Did it add any new rule or promise? If the live tool is unavailable, the practice page has a clearly labeled prepared example we can inspect together.",
       "sources": [
         "prompting",
-        "reference"
-      ]
+        "reference",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/first-reminder.webp",
+        "panels": [
+          [
+            "The supplied note",
+            "\u201cApplications close October 1.\u201d"
+          ],
+          [
+            "The request",
+            "\u201cWrite a friendly one-sentence reminder.\u201d"
+          ],
+          [
+            "Your check",
+            "Keep October 1. Add no new rules or promises."
+          ]
+        ],
+        "alt": "At left a large paper note and calendar showing a blank deadline square, center a writing hand drafts a single-line reminder on a sheet beside a friendly person, right a magnifying glass checks the calendar and a short one-line reminder. Connected arrows. No real applicant data, dates, letters or numbers.",
+        "layout": "panels"
+      }
     },
     {
       "number": 6,
@@ -155,8 +215,28 @@
       "notes": "This request still does one small job. I have added who the message is for, the information it may use, and the form I want. Format means the shape of the answer. Here that shape is one sentence; later it will be a table. I have also named what must remain unchanged. I will compare this answer with the first one. The longer request is useful only if those added details improve what we need. A short request can work well. We should judge the answer by the task, rather than assume more words always produce a better result.",
       "sources": [
         "prompting",
-        "reference"
-      ]
+        "reference",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/prompt-recipe.webp",
+        "panels": [
+          [
+            "Job and audience",
+            "Write a friendly reminder for scholarship applicants."
+          ],
+          [
+            "Facts to use",
+            "Use only: \u201cApplications close October 1.\u201d"
+          ],
+          [
+            "Format and limits",
+            "One sentence. No extra links or promises."
+          ]
+        ],
+        "alt": "Three large stations connected by arrows: a writing hand with a task note and audience silhouette; an open source notebook with a calendar; a short answer sheet beside a boundary marker. Show job and audience, original facts, answer format and limits.",
+        "layout": "panels"
+      }
     },
     {
       "number": 8,
@@ -173,8 +253,28 @@
       "notes": "Evaluation criteria is a formal phrase for the checks we use to judge an answer. In this example, we have only three: keep the date, use one sentence, and avoid adding information. The answer on this slide is a prepared teaching example, not a captured response from a live model. Your actual response may use different wording. That is fine if it passes the checks. I will ask a participant to inspect the date and someone else to look for an added promise. When we later use a scoring guide, we will make those checks just as visible.",
       "sources": [
         "prompting",
-        "reference"
-      ]
+        "reference",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/answer-checks.webp",
+        "panels": [
+          [
+            "Correct date",
+            "October 1 stays unchanged."
+          ],
+          [
+            "Right format",
+            "The answer is one sentence."
+          ],
+          [
+            "No added facts",
+            "No extra rules, links, or promises."
+          ]
+        ],
+        "alt": "Three large checks side by side: a magnifying glass compares a calendar on two matching documents; a single short line of writing in an outlined one-sentence frame; a shield beside a document with extra lines visibly crossed out. Large clear checkmark with each. No text.",
+        "layout": "panels"
+      }
     },
     {
       "number": 9,
@@ -226,8 +326,28 @@
       "notes": "You can talk to the tool again after the first answer. This follow-up asks for a warmer tone while preserving the date and length. An example can also help: I might show one reminder in the style I like and ask for another with the supplied facts. You may hear zero-shot for no example, one-shot for one example, and few-shot for a few examples. Those names are optional vocabulary. The useful idea is showing what you mean. Prompt chaining means dividing work into connected requests. We can draft a reminder, check its facts, and then adjust its tone.",
       "sources": [
         "prompting",
-        "reference"
-      ]
+        "reference",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/followup-cycle.webp",
+        "panels": [
+          [
+            "Show an example",
+            "An example makes the style you want clearer."
+          ],
+          [
+            "Ask for a change",
+            "\u201cMake it warmer. Keep one sentence.\u201d"
+          ],
+          [
+            "Keep the facts",
+            "\u201cKeep October 1 unchanged.\u201d"
+          ]
+        ],
+        "alt": "An example sheet and small writing pen at left; two speech bubbles exchanging a short follow-up request in the middle; a revised document at right with a calendar symbol carried forward unchanged. A clear horizontal progression with an improvement loop from revised document toward the conversation. No text.",
+        "layout": "panels"
+      }
     },
     {
       "number": 11,
@@ -244,10 +364,29 @@
       "notes": "This picture shows a mistake we can check without special expertise. The original says the applicant ran twelve tutoring sessions. The AI draft adds an improvement in grades, but the original never says that. I would remove the extra claim and check the rest of the answer. People sometimes call an invented AI detail a hallucination. My earlier deck uses that term on page 59. The practical response is to compare it with the original information. Asking AI to say how confident it feels does not supply the missing evidence. Asking it to review its own answer can help find problems, but a person still needs to check the facts.",
       "sources": [
         "reference",
-        "prompting"
+        "prompting",
+        "infographics"
       ],
-      "image": "check-original",
-      "alt": "A person compares the original 12 sessions with an AI draft and crosses out an unsupported claim about grades."
+      "alt": "A person compares the original 12 sessions with an AI draft and crosses out an unsupported claim about grades.",
+      "infographic": {
+        "asset": "assets/infographics/unsupported-detail.webp",
+        "panels": [
+          [
+            "Original statement",
+            "\u201cI ran 12 tutoring sessions.\u201d"
+          ],
+          [
+            "AI added a claim",
+            "\u201cGrades improved by 20%.\u201d"
+          ],
+          [
+            "Your correction",
+            "Remove the added claim. Check the other details."
+          ]
+        ],
+        "alt": "Left a source page and tutoring-book icon; middle an AI draft page with an extra bright coral line and a magnifying glass calling attention to it; right a person crosses out the extra coral line while keeping the original teal lines. Clear source-to-draft-to-correction arrows. No numerical chart or improvement illustration that suggests the false claim is true.",
+        "layout": "panels"
+      }
     },
     {
       "number": 12,
@@ -298,10 +437,29 @@
       "link": null,
       "notes": "Before I supply real applicant information, I need to know which account, tool, and task my organization allows. Removing names is not enough, because stories, schools, or other details may identify a person. I will use made-up information for every demonstration today. AI can help prepare a list of questions or point out a late date. A staff member checks the actual records and applies the organization\u2019s rules. Staff also own final scores and award decisions. The picture shows the relationship I want: the computer supplies a checklist, and the person checks it before making a decision.",
       "sources": [
-        "workshop"
+        "workshop",
+        "infographics"
       ],
-      "image": "human-decision",
-      "alt": "An AI checklist sits beside a staff member who checks it and records the decision."
+      "alt": "An AI checklist sits beside a staff member who checks it and records the decision.",
+      "infographic": {
+        "asset": "assets/infographics/human-responsibility.webp",
+        "panels": [
+          [
+            "Check permission",
+            "Use the account and information your organization allows."
+          ],
+          [
+            "Share less information",
+            "Removing names may leave identifying details."
+          ],
+          [
+            "Staff decide",
+            "Staff check the records, scores, and final decisions."
+          ]
+        ],
+        "alt": "Left an organization-approved account shown as a work laptop with a permission key; middle a hand selects only a small needed part from a source file while other pages remain outside the upload area; right a staff member with a pen checks an AI checklist and records the decision. Clear process arrows. No promise of perfect security, no robot decision maker.",
+        "layout": "panels"
+      }
     },
     {
       "number": 14,
@@ -316,9 +474,29 @@
       "quote": null,
       "link": null,
       "notes": "I want to explain these labels before we use the packet. A17 is a made-up applicant code, not a person you are expected to recognize. A18 and A19 represent two other made-up applicants. The same code appears across the files so we can connect each person\u2019s records without using a name. For example, A17-transcript dot pdf means the transcript file associated with applicant A17. Using a code can reduce direct identification, but it does not remove every identifying detail in a real application. Our workshop files contain made-up information, so no actual applicant is involved.",
-      "sources": [],
-      "image": "codes",
-      "alt": "One applicant has the code A17 on each of their matching documents."
+      "sources": [
+        "infographics"
+      ],
+      "alt": "One applicant has the code A17 on each of their matching documents.",
+      "infographic": {
+        "asset": "assets/infographics/applicant-codes.webp",
+        "panels": [
+          [
+            "A code replaces a name",
+            "A17, A18, and A19 are made-up applicant labels."
+          ],
+          [
+            "The code connects files",
+            "A17-transcript.pdf belongs to applicant A17."
+          ],
+          [
+            "Protect other details",
+            "A code alone does not make real data anonymous."
+          ]
+        ],
+        "alt": "Left one generic applicant silhouette on an application; center a large blank code tag replaces the name field; right matching blank code tags connect that applicant's record, transcript sheet, and reference sheet. One consistent tag shape links the same person, distinct from other applicants in the background. No text, no lock or anonymity promise.",
+        "layout": "panels"
+      }
     },
     {
       "number": 15,
@@ -333,9 +511,29 @@
       "quote": null,
       "link": null,
       "notes": "Manifest is another word that can sound more complicated than it is. Here it means a file list. Our manifest lists pretend filenames for each applicant. Seeing A17-transcript dot pdf on the list tells us that the name appears there. It does not tell us what grades are in that transcript or whether the transcript meets a requirement. In fact, those pretend PDFs are not included. We are practicing how to organize a list and identify questions for staff. I will stop any answer that claims to have read one of those unavailable documents.",
-      "sources": [],
-      "image": "file-list",
-      "alt": "A file list names A17-transcript.pdf beside a document that still needs to be opened."
+      "sources": [
+        "infographics"
+      ],
+      "alt": "A file list names A17-transcript.pdf beside a document that still needs to be opened.",
+      "infographic": {
+        "asset": "assets/infographics/list-versus-content.webp",
+        "panels": [
+          [
+            "The file list",
+            "Our list names pretend PDF files."
+          ],
+          [
+            "The actual document",
+            "Those pretend PDFs are not included."
+          ],
+          [
+            "Staff check the file",
+            "Check the contents before relying on them."
+          ]
+        ],
+        "alt": "Left a catalog sheet lists generic file icons; middle a closed document folder with a large question mark; right a person opens and inspects the actual document with a magnifying glass. Show that a listing and the document contents are separate. No automatic checkmark on the closed folder.",
+        "layout": "panels"
+      }
     },
     {
       "number": 16,
@@ -423,8 +621,28 @@
       "notes": "I will download and unzip the practice packet first. For a basic run, I can open a fresh ChatGPT chat, paste the shared instructions, and add only the files named for that demonstration. Then I copy the task prompt and send it. If the account offers Projects, I can keep the same instructions and files together in a practice Project; I will explain that after the demonstrations. A Project is optional for getting started. The important part is making the named sources available and checking the answer against them. I will never upload real applicant information in this workshop.",
       "sources": [
         "projects",
-        "prompting"
-      ]
+        "prompting",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/chat-practice.webp",
+        "panels": [
+          [
+            "Start a fresh chat",
+            "A Project is optional for getting started."
+          ],
+          [
+            "Add the task materials",
+            "Add the instructions and only the named files."
+          ],
+          [
+            "Run and check",
+            "Paste the prompt. Compare the answer with the files."
+          ]
+        ],
+        "alt": "Three stations: a person opens a blank chat on a laptop; a hand adds a small bundle of fictional source pages and a rules clipboard to the chat; the person compares the returned draft with the original pages using a magnifying glass. A clear left-to-right beginner setup. No account-specific buttons or UI labels.",
+        "layout": "panels"
+      }
     },
     {
       "number": 19,
@@ -441,7 +659,28 @@
         "Open and copy the full organization prompt"
       ],
       "notes": "This slide gives the plain-language task. The practice page has the full prompt, including the fields and limits. I will attach manifest dot csv and applications dot csv, then copy that full prompt. We expect one row for each of the three applicant codes. We also expect every one of the twelve entries on the file list to remain accounted for. AI may point out a missing listing, but it cannot tell us that an unavailable document meets the rules. I will ask participants to count the applicant codes and check one row against the original list.",
-      "sources": []
+      "sources": [
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/organize-files.webp",
+        "panels": [
+          [
+            "Use two source tables",
+            "manifest.csv and applications.csv"
+          ],
+          [
+            "Group by applicant code",
+            "Keep A17, A18, A19, and all 12 listed entries."
+          ],
+          [
+            "Check the inventory",
+            "Staff verify the actual documents and any gaps."
+          ]
+        ],
+        "alt": "A loose pile of application documents at left is grouped into three distinct applicant folders in the middle; at right all three folders align beside a source-linked checklist and a person inspecting the list. Use three consistently colored folders but no names or numbers. Include a small question marker for a gap, not an eligibility ranking.",
+        "layout": "panels"
+      }
     },
     {
       "number": 20,
@@ -490,7 +729,28 @@
         "Open and copy the full administrative prompt"
       ],
       "notes": "For the second demonstration, I will add the program rules as well as the file list and application records. The made-up deadline is October 1, 2026. The rules require a statement, a transcript, and at least one reference. The task is to compare the records with those rules and flag questions. It is not to accept or reject applications. I will look for the exact rule and the row supporting each concern. If the tool cannot read a file, it needs to identify that problem rather than continue as if it had seen the contents.",
-      "sources": []
+      "sources": [
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/office-record-check.webp",
+        "panels": [
+          [
+            "Read the rules",
+            "Fictional deadline: October 1, 2026."
+          ],
+          [
+            "Compare with rules",
+            "Flag a missing listing or a late recorded date."
+          ],
+          [
+            "Ask staff to review",
+            "A person decides exceptions and next steps."
+          ]
+        ],
+        "alt": "Left program rules on a clipboard with a calendar and required-document symbols; middle a person compares an application date and file list with the rules using a magnifying glass; right a missing page symbol and a clock beside a human staff review tray, not a rejection bin. Clear sequence from rules to comparison to staff follow-up.",
+        "layout": "panels"
+      }
     },
     {
       "number": 22,
@@ -569,7 +829,28 @@
         "Open and copy the full scoring prompt"
       ],
       "notes": "I will supply the statements and the complete rubric, then copy the full prompt from the practice page. We are comparing A17 and A18, which are our made-up applicant codes. I want the original quotation, its section, the suggested score, and an explanation using the guide. I also want to know what evidence is missing for the next score. The prompt calls the score provisional, which means a person must check it. We should not infer character or rank the applicants from these excerpts. I will verify each quoted word before discussing the suggested score.",
-      "sources": []
+      "sources": [
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/rubric-evidence.webp",
+        "panels": [
+          [
+            "Find the original words",
+            "Quote the statement and show where to find it."
+          ],
+          [
+            "Use the scoring guide",
+            "Suggest a score using the supplied descriptions."
+          ],
+          [
+            "Staff check the match",
+            "Explain missing information. Staff own the score."
+          ]
+        ],
+        "alt": "Left a magnifying glass highlights a short line on an applicant statement; center a scoring-guide sheet has four simple unnumbered rows and a pointer matching one row; right a human reviewer with a pen checks the quote and guide beside a question marker for missing evidence. No medal, award ranking, personality inference, numerical chart, or automatic final score.",
+        "layout": "panels"
+      }
     },
     {
       "number": 25,
@@ -630,8 +911,15 @@
       "link": null,
       "notes": "A Project is a way to keep related work together. Instead of providing the same practice files and standing instructions in every new chat, I can put them in a practice Project when the account supports that feature. Each task can still have its own chat. The Project does not guarantee that the answer is correct, and it does not give us permission to upload applicant data. I will use the fictional packet and name the sources needed for each task. If Projects are unavailable, the fresh-chat method we already used remains a useful way to practice.",
       "sources": [
-        "projects"
-      ]
+        "projects",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/project-workspace.webp",
+        "panels": null,
+        "alt": "Three stations connected by continuous teal lines inside one large open folder: overlapping empty speech bubbles for related chats; a bundle of source documents including a table page; a pinned instructions checklist. One enclosing folder keeps chats, files, and instructions together. No product logo, no automatic truth verification.",
+        "layout": "table"
+      }
     },
     {
       "number": 27,
@@ -650,8 +938,28 @@
       "notes": "Instructions are rules for how the work should happen. This short example explains the most important ideas in the complete practice instructions. A prompt tells the tool what I need on this occasion. Project instructions keep relevant rules with the ongoing practice work. Personal custom instructions can express preferences across chats, but private program details should stay with the appropriate task or Project. I will inspect every answer even when instructions are saved. If a source document contains a request to ignore our rules, that is part of the source text to examine, not permission to change the review process.",
       "sources": [
         "prompting",
-        "projects"
-      ]
+        "projects",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/standing-instructions.webp",
+        "panels": [
+          [
+            "Use the supplied files",
+            "Do not invent missing information."
+          ],
+          [
+            "Show the evidence",
+            "Quote the original and say where to find it."
+          ],
+          [
+            "Staff decide",
+            "Saved instructions still need human checks."
+          ]
+        ],
+        "alt": "Three clear stations: a small stack of supplied source files within a marked boundary; a magnifying glass connects an answer's quote to the original document; a human staff member holds the final-decision pen while an AI checklist sits nearby. A connected ribbon suggests the same standing rules persist across tasks. No text.",
+        "layout": "panels"
+      }
     },
     {
       "number": 28,
@@ -706,8 +1014,28 @@
       "notes": "Our review process also needs clear expectations for applicants. We should publish what kinds of help are allowed and how applicants should disclose that help. If a detection tool flags an essay, the flag does not prove who wrote it or that a rule was broken. An unflagged essay is not proof either. Staff should examine the concern under the published policy, give the applicant a fair chance to explain, and record the decision. The practice page includes sample language for local discussion. Each organization still needs to decide its own rules and how someone can request another review.",
       "sources": [
         "detection",
-        "workshop"
-      ]
+        "workshop",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/fair-applicant-rules.webp",
+        "panels": [
+          [
+            "Publish clear rules",
+            "Say what help is allowed and what to disclose."
+          ],
+          [
+            "A flag needs a check",
+            "An \u201cAI-written\u201d flag can be wrong."
+          ],
+          [
+            "Review fairly",
+            "Staff follow the rules and let the applicant explain."
+          ]
+        ],
+        "alt": "Left published applicant rules on a document handed to a person before they start writing; middle a detector-like magnifying glass with a question mark beside an essay, clearly uncertain rather than a guilty stamp; right two people have a respectful clarification conversation beside a human review record. No automatic rejection, cheating symbol, or accusation.",
+        "layout": "panels"
+      }
     },
     {
       "number": 30,
@@ -728,8 +1056,28 @@
       "notes": "I invite you to choose one small task to try after the session. You can use the reminder example, the file-list demonstration, or one statement and the scoring guide. Write down the result you want and what you will check before you send the request. After the answer appears, compare it with the original. Keep a note of anything you changed, including a false detail, a missing item, or an unclear instruction. Then try again with that improvement. You can revisit the self-check and choose one next step. There is no need to master every feature before practicing one useful task.",
       "sources": [
         "reference",
-        "prompting"
-      ]
+        "prompting",
+        "infographics"
+      ],
+      "infographic": {
+        "asset": "assets/infographics/small-practice.webp",
+        "panels": [
+          [
+            "Choose one small task",
+            "Use a made-up note or one practice file."
+          ],
+          [
+            "Try it and check",
+            "Decide what must stay accurate."
+          ],
+          [
+            "Save what you learn",
+            "Keep the useful request and note what you fixed."
+          ]
+        ],
+        "alt": "Left a person chooses one small fictional note and writes a brief request; middle they compare an AI draft with the source using a magnifying glass; right they save the useful request and a small correction note in a folder. Clear circular arrow suggests trying again after checking. No trophy, expertise badge, or guarantee of correctness.",
+        "layout": "panels"
+      }
     },
     {
       "number": 31,
@@ -756,6 +1104,10 @@
     }
   ],
   "sources": {
+    "infographics": [
+      "Infographics and Frameworks \u2014 Miguel Guhlin",
+      "https://mguhlin.org/resources/infographics/"
+    ],
     "prompting": [
       "ChatGPT prompting guide",
       "https://learn.chatgpt.com/docs/prompting"

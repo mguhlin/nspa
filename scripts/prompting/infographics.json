@@ -1,0 +1,354 @@
+{
+  "generation_tool": "Built-in image_gen.imagegen",
+  "inspiration": "https://mguhlin.org/resources/infographics/",
+  "base_prompt": "Use case: infographic-diagram. Create a very wide panoramic educational infographic illustration, exactly 4:1 aspect ratio (2400 pixels wide by 600 tall), for adult beginners learning AI prompting for scholarship-office work. Style inspired by Miguel Guhlin's scholarship infographic collection: bold navy outlines, very large clear illustrated objects, teal and warm coral and golden-yellow accents, pale aqua and pale peach backgrounds, clear arrows and relationships, polished dimensional flat illustration, rich but easy to understand. Three equally spaced illustrated zones spanning the whole width, connected where the concept calls for it. All objects large and centered vertically. Keep a 5% outer safety margin; include the complete objects with no cutoff. NO WORDS, NO LETTERS, NO NUMBERS, NO HEADLINE, NO LOGOS, NO TINY TEXT anywhere; real editable headings and captions will be placed below this picture on the slide. Avoid generic brains, robot heads, decorative filler, mountains, unrelated objects, and meaningless charts. The illustration must explain precisely this relationship: ",
+  "slides": [
+    {
+      "slide": 2,
+      "key": "awareness-path",
+      "scene": "A three-stop learning path: a hand chooses one of three large unlettered answer circles beside a question sheet; a person studies a sheet and magnifying glass; a person tries one small task with a laptop. Clear connecting arrows. No score, no expertise badge.",
+      "panels": [
+        [
+          "Choose an answer",
+          "Eight everyday situations about using AI carefully."
+        ],
+        [
+          "Read the feedback",
+          "Find out why a choice helps or causes a problem."
+        ],
+        [
+          "Try one next step",
+          "Use your result to choose a small practice task."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/awareness-path.webp"
+    },
+    {
+      "slide": 3,
+      "key": "request-to-draft",
+      "scene": "A speech bubble containing a pencil request at left, an open source notebook and table sheet in the middle, a computer showing a draft page at right with a human hand and magnifying glass checking it. Arrows connect the request and source information to the draft. Not a robot. Do not imply every request requires files.",
+      "panels": [
+        [
+          "Your request",
+          "Say what you want AI to help you do."
+        ],
+        [
+          "Useful information",
+          "Add the facts or files the task needs."
+        ],
+        [
+          "A draft to check",
+          "Compare the answer with the original."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/request-to-draft.webp"
+    },
+    {
+      "slide": 5,
+      "key": "first-reminder",
+      "scene": "At left a large paper note and calendar showing a blank deadline square, center a writing hand drafts a single-line reminder on a sheet beside a friendly person, right a magnifying glass checks the calendar and a short one-line reminder. Connected arrows. No real applicant data, dates, letters or numbers.",
+      "panels": [
+        [
+          "The supplied note",
+          "\u201cApplications close October 1.\u201d"
+        ],
+        [
+          "The request",
+          "\u201cWrite a friendly one-sentence reminder.\u201d"
+        ],
+        [
+          "Your check",
+          "Keep October 1. Add no new rules or promises."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/first-reminder.webp"
+    },
+    {
+      "slide": 7,
+      "key": "prompt-recipe",
+      "scene": "Three large stations connected by arrows: a writing hand with a task note and audience silhouette; an open source notebook with a calendar; a short answer sheet beside a boundary marker. Show job and audience, original facts, answer format and limits.",
+      "panels": [
+        [
+          "Job and audience",
+          "Write a friendly reminder for scholarship applicants."
+        ],
+        [
+          "Facts to use",
+          "Use only: \u201cApplications close October 1.\u201d"
+        ],
+        [
+          "Format and limits",
+          "One sentence. No extra links or promises."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/prompt-recipe.webp"
+    },
+    {
+      "slide": 8,
+      "key": "answer-checks",
+      "scene": "Three large checks side by side: a magnifying glass compares a calendar on two matching documents; a single short line of writing in an outlined one-sentence frame; a shield beside a document with extra lines visibly crossed out. Large clear checkmark with each. No text.",
+      "panels": [
+        [
+          "Correct date",
+          "October 1 stays unchanged."
+        ],
+        [
+          "Right format",
+          "The answer is one sentence."
+        ],
+        [
+          "No added facts",
+          "No extra rules, links, or promises."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/answer-checks.webp"
+    },
+    {
+      "slide": 10,
+      "key": "followup-cycle",
+      "scene": "An example sheet and small writing pen at left; two speech bubbles exchanging a short follow-up request in the middle; a revised document at right with a calendar symbol carried forward unchanged. A clear horizontal progression with an improvement loop from revised document toward the conversation. No text.",
+      "panels": [
+        [
+          "Show an example",
+          "An example makes the style you want clearer."
+        ],
+        [
+          "Ask for a change",
+          "\u201cMake it warmer. Keep one sentence.\u201d"
+        ],
+        [
+          "Keep the facts",
+          "\u201cKeep October 1 unchanged.\u201d"
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/followup-cycle.webp"
+    },
+    {
+      "slide": 11,
+      "key": "unsupported-detail",
+      "scene": "Left a source page and tutoring-book icon; middle an AI draft page with an extra bright coral line and a magnifying glass calling attention to it; right a person crosses out the extra coral line while keeping the original teal lines. Clear source-to-draft-to-correction arrows. No numerical chart or improvement illustration that suggests the false claim is true.",
+      "panels": [
+        [
+          "Original statement",
+          "\u201cI ran 12 tutoring sessions.\u201d"
+        ],
+        [
+          "AI added a claim",
+          "\u201cGrades improved by 20%.\u201d"
+        ],
+        [
+          "Your correction",
+          "Remove the added claim. Check the other details."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/unsupported-detail.webp"
+    },
+    {
+      "slide": 13,
+      "key": "human-responsibility",
+      "scene": "Left an organization-approved account shown as a work laptop with a permission key; middle a hand selects only a small needed part from a source file while other pages remain outside the upload area; right a staff member with a pen checks an AI checklist and records the decision. Clear process arrows. No promise of perfect security, no robot decision maker.",
+      "panels": [
+        [
+          "Check permission",
+          "Use the account and information your organization allows."
+        ],
+        [
+          "Share less information",
+          "Removing names may leave identifying details."
+        ],
+        [
+          "Staff decide",
+          "Staff check the records, scores, and final decisions."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/human-responsibility.webp"
+    },
+    {
+      "slide": 14,
+      "key": "applicant-codes",
+      "scene": "Left one generic applicant silhouette on an application; center a large blank code tag replaces the name field; right matching blank code tags connect that applicant's record, transcript sheet, and reference sheet. One consistent tag shape links the same person, distinct from other applicants in the background. No text, no lock or anonymity promise.",
+      "panels": [
+        [
+          "A code replaces a name",
+          "A17, A18, and A19 are made-up applicant labels."
+        ],
+        [
+          "The code connects files",
+          "A17-transcript.pdf belongs to applicant A17."
+        ],
+        [
+          "Protect other details",
+          "A code alone does not make real data anonymous."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/applicant-codes.webp"
+    },
+    {
+      "slide": 15,
+      "key": "list-versus-content",
+      "scene": "Left a catalog sheet lists generic file icons; middle a closed document folder with a large question mark; right a person opens and inspects the actual document with a magnifying glass. Show that a listing and the document contents are separate. No automatic checkmark on the closed folder.",
+      "panels": [
+        [
+          "The file list",
+          "Our list names pretend PDF files."
+        ],
+        [
+          "The actual document",
+          "Those pretend PDFs are not included."
+        ],
+        [
+          "Staff check the file",
+          "Check the contents before relying on them."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/list-versus-content.webp"
+    },
+    {
+      "slide": 18,
+      "key": "chat-practice",
+      "scene": "Three stations: a person opens a blank chat on a laptop; a hand adds a small bundle of fictional source pages and a rules clipboard to the chat; the person compares the returned draft with the original pages using a magnifying glass. A clear left-to-right beginner setup. No account-specific buttons or UI labels.",
+      "panels": [
+        [
+          "Start a fresh chat",
+          "A Project is optional for getting started."
+        ],
+        [
+          "Add the task materials",
+          "Add the instructions and only the named files."
+        ],
+        [
+          "Run and check",
+          "Paste the prompt. Compare the answer with the files."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/chat-practice.webp"
+    },
+    {
+      "slide": 19,
+      "key": "organize-files",
+      "scene": "A loose pile of application documents at left is grouped into three distinct applicant folders in the middle; at right all three folders align beside a source-linked checklist and a person inspecting the list. Use three consistently colored folders but no names or numbers. Include a small question marker for a gap, not an eligibility ranking.",
+      "panels": [
+        [
+          "Use two source tables",
+          "manifest.csv and applications.csv"
+        ],
+        [
+          "Group by applicant code",
+          "Keep A17, A18, A19, and all 12 listed entries."
+        ],
+        [
+          "Check the inventory",
+          "Staff verify the actual documents and any gaps."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/organize-files.webp"
+    },
+    {
+      "slide": 21,
+      "key": "office-record-check",
+      "scene": "Left program rules on a clipboard with a calendar and required-document symbols; middle a person compares an application date and file list with the rules using a magnifying glass; right a missing page symbol and a clock beside a human staff review tray, not a rejection bin. Clear sequence from rules to comparison to staff follow-up.",
+      "panels": [
+        [
+          "Read the rules",
+          "Fictional deadline: October 1, 2026."
+        ],
+        [
+          "Compare with rules",
+          "Flag a missing listing or a late recorded date."
+        ],
+        [
+          "Ask staff to review",
+          "A person decides exceptions and next steps."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/office-record-check.webp"
+    },
+    {
+      "slide": 24,
+      "key": "rubric-evidence",
+      "scene": "Left a magnifying glass highlights a short line on an applicant statement; center a scoring-guide sheet has four simple unnumbered rows and a pointer matching one row; right a human reviewer with a pen checks the quote and guide beside a question marker for missing evidence. No medal, award ranking, personality inference, numerical chart, or automatic final score.",
+      "panels": [
+        [
+          "Find the original words",
+          "Quote the statement and show where to find it."
+        ],
+        [
+          "Use the scoring guide",
+          "Suggest a score using the supplied descriptions."
+        ],
+        [
+          "Staff check the match",
+          "Explain missing information. Staff own the score."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/rubric-evidence.webp"
+    },
+    {
+      "slide": 26,
+      "key": "project-workspace",
+      "scene": "Three stations connected by continuous teal lines inside one large open folder: overlapping empty speech bubbles for related chats; a bundle of source documents including a table page; a pinned instructions checklist. One enclosing folder keeps chats, files, and instructions together. No product logo, no automatic truth verification.",
+      "panels": null,
+      "asset": "2026/prompting/assets/infographics/project-workspace.webp"
+    },
+    {
+      "slide": 27,
+      "key": "standing-instructions",
+      "scene": "Three clear stations: a small stack of supplied source files within a marked boundary; a magnifying glass connects an answer's quote to the original document; a human staff member holds the final-decision pen while an AI checklist sits nearby. A connected ribbon suggests the same standing rules persist across tasks. No text.",
+      "panels": [
+        [
+          "Use the supplied files",
+          "Do not invent missing information."
+        ],
+        [
+          "Show the evidence",
+          "Quote the original and say where to find it."
+        ],
+        [
+          "Staff decide",
+          "Saved instructions still need human checks."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/standing-instructions.webp"
+    },
+    {
+      "slide": 29,
+      "key": "fair-applicant-rules",
+      "scene": "Left published applicant rules on a document handed to a person before they start writing; middle a detector-like magnifying glass with a question mark beside an essay, clearly uncertain rather than a guilty stamp; right two people have a respectful clarification conversation beside a human review record. No automatic rejection, cheating symbol, or accusation.",
+      "panels": [
+        [
+          "Publish clear rules",
+          "Say what help is allowed and what to disclose."
+        ],
+        [
+          "A flag needs a check",
+          "An \u201cAI-written\u201d flag can be wrong."
+        ],
+        [
+          "Review fairly",
+          "Staff follow the rules and let the applicant explain."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/fair-applicant-rules.webp"
+    },
+    {
+      "slide": 30,
+      "key": "small-practice",
+      "scene": "Left a person chooses one small fictional note and writes a brief request; middle they compare an AI draft with the source using a magnifying glass; right they save the useful request and a small correction note in a folder. Clear circular arrow suggests trying again after checking. No trophy, expertise badge, or guarantee of correctness.",
+      "panels": [
+        [
+          "Choose one small task",
+          "Use a made-up note or one practice file."
+        ],
+        [
+          "Try it and check",
+          "Decide what must stay accurate."
+        ],
+        [
+          "Save what you learn",
+          "Keep the useful request and note what you fixed."
+        ]
+      ],
+      "asset": "2026/prompting/assets/infographics/small-practice.webp"
+    }
+  ]
+}

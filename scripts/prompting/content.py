@@ -12,6 +12,7 @@ TAKEAWAYS = [
  'Evaluate applicant use of generative AI with a balanced understanding of AI detection limitations and develop fair, transparent organizational policies for authentic application assessment.'
 ]
 SOURCES = {
+ 'infographics':('Infographics and Frameworks — Miguel Guhlin','https://mguhlin.org/resources/infographics/'),
  'prompting':('ChatGPT prompting guide','https://learn.chatgpt.com/docs/prompting'),
  'reference':('Creating with Generative AI — Miguel Guhlin','https://drive.google.com/file/d/1xQLXylvdtJVG775282uvm2uYgJnO609z/view'),
  'projects':('ChatGPT Projects','https://learn.chatgpt.com/docs/projects?surface=app'),
@@ -56,3 +57,6 @@ def slide(title,lead,items=None,table=None,quote=None,link=None,notes='',sources
  SLIDES.append(dict(number=len(SLIDES)+1,title=title,lead=lead,items=items or [],table=table,quote=quote,link=link,notes=notes,sources=sources or [],**layout))
 from beginner_deck import build
 build(slide, DEMOS, RUBRIC)
+
+from infographic_content import apply
+apply(SLIDES)

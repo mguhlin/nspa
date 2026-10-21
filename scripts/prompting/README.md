@@ -10,9 +10,9 @@ This collection has its own 31-slide presentation and practice packet. Keep the 
 - `beginner_deck.py`: introductory sequence and first-person notes, including vocabulary before use and optional Projects/skills after the demonstrations.
 - `build.py`: overview, self-check, practice hub, demonstrations, source files and ZIPs, standalone webdeck, a non-published slide-content JSON in `scripts/prompting/`.
 - `build_presentation.mjs`: Artifact Tool authoring and private finalization, followed by a byte-preserving copy into `2026/p/slides/`. Requires the bundled Node runtime, Artifact Tool, and installed Poppins fonts. Font files and OFL license are in the public assets folder. The private NSPA template is optional during subsequent builds because its supplied background artwork is already included. If present, the builder inspects and renders it and verifies the typography against it.
-- `check_beginner.cjs`: self-contained applicant-code definitions, a single Phase 2 practice action, illustrated results, slide bounds, pictures, phone layout, and word guide.
-- `check_assessment_phases.cjs`: seven phase-boundary cases, readiness rules, chart rows, phase export, hero loading, and biplane/boat routing at phone and desktop widths.
-- `check_interactions.cjs`: Playwright checks of feedback, confidence choices, export/reset, clipboard prompts, phone/tablet layouts, slide navigation, presenter navigation/sync, and note resizing/persistence.
+- `check_beginner.cjs`: self-contained applicant-code definitions, a standalone score/graph results and 18 illustrated slide compositions, slide bounds, pictures, phone layout, and word guide.
+- `check_assessment_phases.cjs`: every score from zero to eight, simple phase ranges, topic graph, targeted suggestions, no activity links or extra result tasks, reset, and four widths.
+- `check_interactions.cjs`: Playwright checks of feedback, score/reset, guided activity directions, clipboard prompts, phone/tablet layouts, slide navigation, presenter navigation/sync, and note resizing/persistence.
 
 Run from the repository root:
 
@@ -35,4 +35,8 @@ Set `NSPA_TEST_BASE` to a deployed `.../2026/` address to run the same browser c
 
 Prepared outputs are authored teaching examples. The supplied skill evaluations are test specifications, not claims of model performance. Run prompts and evaluations in the actual chosen AI tool and record corrections. Both packet ZIPs are explicitly allowlisted by `scripts/build_site.py`; other ZIP archives remain excluded.
 
-The self-check suggests three workshop learning phases. It uses scenario choices and explicit readiness checks, not a validated expertise scale. Confidence supports reflection without changing the phase. The phase rules are visible in the result. Domain bars report matching choices with denominators, and the text export includes the phase, guidance, and topic results. The generated illustration is `2026/prompting/assets/awareness-hero.webp`; its exact built-in image-generation prompt is in `docs/AWARENESS-HERO-PROMPT.json`.
+The self-check ends with a score out of eight, percentage, three topic bars, and up to three suggestions based on missed answers. Phase labels use simple ranges: 0–3 getting started, 4–6 checking AI answers, 7–8 keeping good habits. Confidence ratings, reflection/export tasks, and demonstration links are removed. Questions are embedded in the HTML so direct file:// use works. The separate guided activity page supplies four steps for each demonstration. Core copyable prompts and practice data remain unchanged.
+
+`infographics.json` records the built-in image-generation base prompt, each scene, asset path, slide mapping, and editable captions. `infographic_content.py` attaches 18 original teaching visuals to the 31-slide sequence. All 12 native tables remain editable. The webdeck retains readable HTML equivalents and phone reflow.
+
+USB packaging is separate from public deployment. After `python3 scripts/build_site.py`, run `python3 scripts/build_usb.py --output /media/mg/USB-DATA/nspa`. It creates facilitator/, participant/, and web/, plus a START-HERE.html and checksum manifest. Direct file links replace directory routes and same-site online URLs. The local awareness check needs no fetch or server. ChatGPT/live AI and external sites require internet. Test with `node scripts/check_usb.cjs /media/mg/USB-DATA/nspa` (browser network disabled).

@@ -14,3 +14,5 @@
 .concept-picture{max-width:340px;margin:18px 0 0}.concept-picture img,.phase-picture img{display:block;width:100%;height:auto}.phase-picture{float:right;width:40%;max-width:330px;margin:0 0 18px 26px}.learning-phase::after{content:"";display:block;clear:both}.phase-actions a{font-weight:bold}.first-prompt{border-left:4px solid #ff7233;padding-left:22px}.vocabulary-list dt{font-weight:bold;margin-top:20px}.vocabulary-list dd{margin:6px 0 18px;max-width:70ch}
 @media(max-width:650px){.phase-picture{float:none;width:100%;max-width:280px;margin:16px 0}.concept-picture{max-width:280px}}
 @media print{.concept-picture{max-width:180px}.phase-picture{width:28%;max-width:220px}.learning-phase details{display:block}}
+
+.assessment-score{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:bold;color:#007681;margin-top:0}.guided-activity{border-left:4px solid #007681;padding:4px 22px;margin:24px 0;background:#f0f8f8}.guided-activity li{margin:14px 0}#improvement-suggestions li{margin:16px 0}
