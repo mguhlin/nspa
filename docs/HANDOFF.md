@@ -4,6 +4,10 @@ Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` uncha
 
 # NSPA project handoff
 
+## October 21 homepage sailboat entrance
+
+The homepage workshop link now sits on a navy sailboat hull with white sails and a gold pennant, using native SVG that matches the existing conference illustration. The conference background, event mark, flowers, description, and destinations remain. `assets/home.css` scopes the responsive placement to the homepage: the boat uses the open space on the right at desktop widths and sits below the introduction on smaller screens. The two route cards now fill the row. Keyboard navigation, overlap, and horizontal overflow were checked across 360–1600 px widths. This change does not rebuild workshop artifacts.
+
 ## October 20 companion thumbnails and Resources navigation
 
 Each of the nine Session Companion activities now pairs its heading and directions at left with the matching presentation slide at right. On narrower screens, the slide appears between the heading and directions. The optimized WebP previews link to the existing full-size PNGs. `ACTIVITY_SLIDES` in `scripts/workshop/revised_content.py` maps activities to physical slide positions 3, 5, 9, 11, 13, 15, 17, 20, and 25; `revised_edition.py:build_pages()` generates previews and markup. Notes, export, printing, and access without JavaScript remain available.

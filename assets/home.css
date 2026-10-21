@@ -1,0 +1,118 @@
+/* The workshop entrance becomes part of the existing conference seascape. */
+.hero--sailing .hero-copy {
+  max-width: 61%;
+  padding-bottom: 110px;
+}
+
+.sailing-link {
+  position: absolute;
+  right: 14%;
+  bottom: clamp(48px, calc(10.4vw - 44px), 110px);
+  display: block;
+  width: clamp(220px, 20vw, 260px);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: transform .18s ease;
+}
+
+.sailing-link svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sailing-link-label {
+  position: absolute;
+  inset-inline: 20px;
+  bottom: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.sailing-link:hover {
+  color: white;
+  transform: translateY(-4px);
+}
+
+.sailing-link:hover .sailing-link-label {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.sailing-link:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 8px;
+  box-shadow: 0 0 0 8px white;
+}
+
+.workshop-choices--home {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 851px) and (max-width: 1050px) {
+  .hero--sailing {
+    background-size: 100% auto;
+  }
+
+  .hero--sailing h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero--sailing {
+    min-height: 580px;
+    background-size: auto 100%;
+    background-position: center bottom;
+  }
+
+  .hero--sailing .hero-copy {
+    max-width: 100%;
+    height: auto;
+    padding: 32px 24px 290px;
+    background: none;
+  }
+
+  .hero--sailing h1 {
+    font-size: 44px;
+  }
+
+  .hero--sailing .hero-description {
+    max-width: 440px;
+  }
+
+  .sailing-link {
+    right: 50%;
+    bottom: 86px;
+    width: 236px;
+    margin-right: -118px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero--sailing h1 {
+    font-size: 42px;
+  }
+
+  .workshop-choices--home {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sailing-link {
+    transition: none;
+  }
+
+  .sailing-link:hover {
+    transform: none;
+  }
+}
