@@ -1,3 +1,13 @@
+## October 21 — assessment learning phases, hero, and biplane entrance
+
+Added a compact generated hero illustration at right of the assessment heading; it stacks below the introduction on phones. Asset: `2026/prompting/assets/awareness-hero.webp` (1200×900). Exact built-in tool prompt: `docs/AWARENESS-HERO-PROMPT.json`.
+
+The self-check now gives a three-phase learning pathway with specific linked practice and progression guidance, plus horizontal topic-result bars. Phase 1 = 0–3 recommended choices. Phase 2 = 4–6, or 7–8 with a readiness check missed. Phase 3 = 7–8 plus approved data use, human exception decisions, and fair detector response. Confidence does not change the phase. These transparent workshop rules are explicitly distinct from a validated expertise measure. Export includes the phase, actions, topic results, responses, and reflection. Existing answer feedback and privacy behavior remain.
+
+A native SVG biplane with a trailing Self-Assessment banner links to the self-check from the homepage. The plane and banner are one keyboard-accessible link above the boats; narrow layouts place it between the introduction and boats. Home CSS, assessment script, and practice CSS URLs are versioned so cached earlier layouts do not hide new features.
+
+Validation: `scripts/prompting/check_assessment_phases.cjs` exercises seven score/readiness boundaries, phase export, charts, hero, phone and desktop layouts, and biplane keyboard routing. Existing assessment/presenter checks also pass. No workshop PDFs or PowerPoints changed.
+
 ## October 21 — sailboat cache and depth correction
 
 Reproduced the reported single-boat view by serving the old pre-fleet home stylesheet with the current two-link HTML: both anchors received identical absolute coordinates. The home stylesheet URL now carries a new version query so a browser does not reuse that layout. Fleet child positioning is explicit. The yellow-flag Trust and AI boat is smaller and 18 pixels behind the larger orange-flag AI prompting boat, with separate labels and destinations. Checked the reproduction, versioned stylesheet request, non-overlapping boat bounds, relative depth, keyboard links, and eight responsive widths. No workshop documents changed.
