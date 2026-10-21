@@ -22,6 +22,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from revised_content import TITLES, CUES, SAY, POLICY_SAMPLES, PROMPT, NOTE_SOURCES, ACTIVITY_SLIDES, activities
 from supplied_edition import shell, cards
+from resource_navigation import prompting_presenter_section
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
@@ -100,7 +101,7 @@ def build_pages(slides):
                ('Session takeaways','handouts/session-takeaways.pdf','Two-page reference for evidence checks, clear rules, and a four-week pilot','PDF'),
                ('Responsible scholarship review infographics','handouts/nspa-responsible-scholarship-review-infographics.pptx','7 infographics for scholarship review teams','PPTX')]
     qr='<section class="return-handouts" aria-labelledby="return-title"><div><h2 id="return-title">Return to these handouts</h2><p>Scan for the workshop resource post, or save this direct handout address for later.</p><p><a href="https://mguhlin.github.io/nspa/2026/">mguhlin.github.io/nspa/2026/</a></p><p><a href="images/nspa26-qr-code.png" download>Save the QR code</a></p></div><a href="https://mguhlin.org/blog/nspa-2026-conference-session-materials-and-infographics/"><img src="images/nspa26-qr-code.png" width="256" height="256" alt="QR code for the NSPA workshop resource post on mguhlin.org, with links to handouts. Use the adjacent direct workshop link to open the handouts."></a></section>'
-    (W/'index.html').write_text(shell(TITLE,intro+'<section id="downloads"><h2>Keep the participant materials</h2>'+cards(downloads)+'</section>'+qr+success_criteria()))
+    (W/'index.html').write_text(shell(TITLE,intro+'<section class="session-actions" aria-label="Session activities"><p><a class="button" href="assessment.html">Awareness self-check</a> <a class="button secondary" href="overview.html">Session overview</a></p></section><section id="downloads"><h2>Keep the participant materials</h2>'+cards(downloads)+'</section>'+qr+success_criteria()))
     sections=activities()
     body='<p class="eyebrow">My session companion</p><h1>Evidence, human checks, and clear expectations</h1><p class="lead">Explore nine activities for responsible scholarship review. All cases, rubric anchors, and sample outputs are fictional teaching examples. Each activity provides directions and space for my notes.</p><p>No AI account is required. My notes save in this browser; I can export them below. <a href="handouts/participant-workbook.pdf">Download the participant workbook</a>.</p><noscript><p>All activities appear below. Use the workbook to keep notes without JavaScript.</p></noscript><nav class="jump-links activity-nav" aria-label="Session activities" data-step-nav data-step-label="Activity">'+''.join(f'<a href="#{id}" data-step-link>{i}. {E(name)}</a>' for i,(id,name,*_) in enumerate(sections,1))+'</nav>'
     for i,(id,name,ref,content,prompt) in enumerate(sections,1):
@@ -121,7 +122,7 @@ def build_pages(slides):
         ('PowerPoint with speaker notes','slides/nspa-trust-transparency-ai.pptx','Presentation slides with editable speaker notes','PPTX'),
         ('Adaptive facilitator guide','facilitator-guide.html','Slide thumbnails and speaking text that fit your phone or tablet, with adjustable text size','WEB'),
         ('Facilitator guide PDF','facilitator-guide.pdf','Two slide thumbnails per page with readable speaking text','PDF')])+'<p><a href="../conversation.html">Open the participant companion</a></p>'
-    (W/'p/index.html').write_text(shell('Presenter materials',body,True))
+    (W/'p/index.html').write_text(shell('Presenter materials',body+prompting_presenter_section(),True))
     # Keep direct transcript addresses current for old bookmarks, without adding
     # them back to the simplified participant or presenter menus.
     for presenter in [False,True]:

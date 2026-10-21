@@ -11,7 +11,7 @@ const require=createRequire(path.join(runtime,'nspa-prompting-loader.cjs'));
 const {Presentation,PresentationFile,FileBlob}=await import(pathToFileURL(require.resolve('@oai/artifact-tool')).href);
 const SKILL='/home/mg/.codex/plugins/cache/openai-primary-runtime/presentations/26.1015.12040/skills/presentations';
 const workspaceDir=process.env.NSPA_PROMPTING_BUILD||'/tmp/nspa-prompting-build';
-const data=JSON.parse(await fs.readFile(path.join(root,'2026/prompting/assets/presentation-content.json'),'utf8'));
+const data=JSON.parse(await fs.readFile(path.join(root,'scripts/prompting/presentation-content.json'),'utf8'));
 await fs.mkdir(path.join(workspaceDir,'renders'),{recursive:true});
 await fs.mkdir(path.join(workspaceDir,'output'),{recursive:true});
 const template=path.join(root,'supplemental-resources/2026_NSPA_PPT_Template.pptx');
@@ -95,4 +95,4 @@ const {finalizePresentation}=await import(pathToFileURL(path.join(SKILL,'contain
 const finalPath=path.join(workspaceDir,`output/ai-prompting-scholarship-review-${Date.now()}.pptx`);
 const result=await finalizePresentation({workspaceDir,candidatePath:candidate,finalPath,pythonExecutable:'/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python',integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...tableOwners.flatMap(n=>['--require-native-table-slide',String(n)])],requiredNativeTableOwnerSlides:tableOwners,fontPolicy:hasTemplate?{basis:'reference',families:['Poppins'],referencePath:template,referenceSha256:crypto.createHash('sha256').update(await fs.readFile(template)).digest('hex')}:{basis:'design',families:['Poppins']},verifyArtifactToolImport:true,receiptPath:path.join(workspaceDir,`validation-${Date.now()}.json`)});
 console.log(JSON.stringify(result));
-await fs.copyFile(finalPath,path.join(root,'2026/prompting/slides/ai-prompting-scholarship-review.pptx'));
+await fs.copyFile(finalPath,path.join(root,'2026/p/slides/ai-prompting-scholarship-review.pptx'));

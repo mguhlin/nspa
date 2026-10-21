@@ -1,3 +1,11 @@
+## October 21 — presenter resource separation and two session entrances
+
+The user requested the prompting PPTX with notes and webdeck only on `2026/p/`. They now live at `2026/p/slides/ai-prompting-scholarship-review.pptx` and `2026/p/ai-prompting-webdeck.html`; the presenter hub contains a separate AI Prompting section alongside the original presentation. The participant prompting hub offers only the slides PDF and practice materials. The former participant-side PowerPoint, webdeck, and `assets/presentation-content.json` are removed. The notes JSON now builds under `scripts/prompting/`, outside staged website content. The PPTX and participant PDF bytes are unchanged. The presenter area is unlisted/noindex, not authenticated.
+
+The home page now has two matching sailboats leading directly to Trust, Transparency, and AI and AI Prompting Practice. All workshop tab rows contain exactly those two session names. Self-check, session overview, participant companion, and handouts remain accessible from page content and Resources. Shared `session_tabs()` and the navigation sync script enforce the two destinations. Active-tab detection follows the session rather than individual subpages. `prompting_presenter_section()` keeps both page builders consistent.
+
+Checked staging for removed participant note files and links, presenter downloads, the two-tab labels, keyboard boat navigation, desktop/phone boat layouts, and relocated webdeck resource destinations. The existing assessment and presenter interaction suite passes at the new deck address.
+
 ## October 21, 2026 — prompting practice and awareness self-check
 
 Added a separate public collection titled **AI Prompting for Scholarship Review** at `2026/prompting/`. The existing workshop presentation, participant workbook, takeaways, and facilitator guide remain byte-identical. Public navigation calls the collection AI prompting practice, with no editorial labels about presentation versions.

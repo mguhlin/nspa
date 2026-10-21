@@ -11,8 +11,10 @@ function revealLinkedSection() {
 window.addEventListener('hashchange', revealLinkedSection);
 revealLinkedSection();
 
-const currentWorkshopPath = location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
+const sessionPath = location.pathname;
+const promptingSession = sessionPath.includes('/prompting/') || sessionPath.endsWith('/p/ai-prompting-webdeck.html');
 document.querySelectorAll('.workshop-nav a').forEach(link => {
-  const path = link.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
-  if (!link.hash && path === currentWorkshopPath) link.setAttribute('aria-current', 'page');
+  const promptingTab = link.pathname.includes('/prompting/');
+  if (promptingTab === promptingSession) link.setAttribute('aria-current', 'page');
+  else link.removeAttribute('aria-current');
 });

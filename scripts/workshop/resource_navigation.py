@@ -21,3 +21,13 @@ def resource_links(root_prefix):
         f'<a href="{escape(path if path.startswith("https://") else root_prefix+path, quote=True)}">{escape(title)}</a>'
         for title,path in RESOURCE_LINKS
     )
+
+
+def session_tabs(root_prefix):
+    """Only the two session destinations belong in the shared tab row."""
+    return (f'<a href="{escape(root_prefix+"2026/", quote=True)}">Trust, Transparency, and AI</a>'
+            f'<a href="{escape(root_prefix+"2026/prompting/", quote=True)}">AI Prompting Practice</a>')
+
+
+def prompting_presenter_section():
+    return '''<section id="prompting-presenter"><h2>AI Prompting for Scholarship Review</h2><p>26 slides covering prompts, Projects, instructions, reusable skills, and ChatGPT demonstrations.</p><div class="download-grid"><a class="download" href="ai-prompting-webdeck.html"><span class="filetype">WEB</span><span><strong>Open the prompting webdeck</strong><small>Presentation with speaking notes and synchronized presenter view</small></span></a><a class="download" href="slides/ai-prompting-scholarship-review.pptx"><span class="filetype">PPTX</span><span><strong>Prompting PowerPoint with speaker notes</strong><small>Editable slides, tables, and speaking notes</small></span></a></div><p><a href="../prompting/">Open the participant prompting materials</a></p></section>'''

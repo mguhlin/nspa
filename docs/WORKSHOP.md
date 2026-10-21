@@ -1,6 +1,6 @@
 ## AI prompting practice collection
 
-The user requested a separate presentation focused on prompts, ChatGPT Projects, instructions, skills, administrative organization, and rubric evidence. Maintain it at `2026/prompting/` using `scripts/prompting/`. See that folder’s README for building and checks. Do not rebuild the original presentation or its workbook/guide when updating this collection. Session overview and awareness self-check are shared participant reference tabs. Keep `scripts/workshop/supplied_edition.py` navigation and the static workshop pages consistent.
+The user requested a separate presentation focused on prompts, ChatGPT Projects, instructions, skills, administrative organization, and rubric evidence. Maintain it at `2026/prompting/` using `scripts/prompting/`. See that folder’s README for building and checks. Do not rebuild the original presentation or its workbook/guide when updating this collection. The shared tab row contains only Trust, Transparency, and AI and AI Prompting Practice. Session overview and awareness self-check are linked from page content. Prompting presenter files belong only under `2026/p/`; its participant hub offers the slide PDF and practice materials. Keep `scripts/workshop/supplied_edition.py` navigation and the static workshop pages consistent.
 
 # 2026 workshop production and alignment
 
