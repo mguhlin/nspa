@@ -3,6 +3,8 @@ from html import escape
 
 RESOURCE_LINKS = [
     ('NSPA 2026 Session Materials', 'https://mguhlin.org/blog/nspa-2026-conference-session-materials-and-infographics/'),
+    ('AI Prompting for Scholarship Review', '2026/prompting/'),
+    ('Awareness self-check', '2026/assessment.html'),
     ('Infographic collection', 'resources/infographics.html'),
     ('Resource library', 'resources/library.html'),
     ('The Ethics of AI Use in Scholarships and Data Protection', 'resources/index.html#session1'),

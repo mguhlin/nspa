@@ -1,0 +1,114 @@
+[
+  {
+    "id": "task",
+    "domain": "Prompting and evidence",
+    "q": "A colleague asks AI to \u201cpick the best applicants.\u201d Which revision creates a task a reviewer can check?",
+    "options": [
+      "Compare exact excerpts with the supplied rubric and return quotes, source locations, gaps, and a human check.",
+      "Rank applicants by leadership potential and writing quality.",
+      "Use a longer prompt and ask the model to be fair."
+    ],
+    "answer": 0,
+    "why": "A limited evidence task gives a reviewer something to verify. Length and fairness instructions alone do not define the evidence or decision boundary.",
+    "practice": "Try the rubric evidence demo.",
+    "href": "prompting/demos.html#rubric"
+  },
+  {
+    "id": "upload",
+    "domain": "Privacy and oversight",
+    "q": "You remove names from applications. Can you now upload them to your personal AI account?",
+    "options": [
+      "Yes, removing names makes every application anonymous.",
+      "First confirm the service, account, purpose, permissions, and data handling are approved. Minimize the inputs too.",
+      "Yes, if you delete the chat after the review."
+    ],
+    "answer": 1,
+    "why": "Narratives and other fields can still identify people. Removing names or deleting a chat does not establish organizational authorization or appropriate handling.",
+    "practice": "Review the Project setup checklist.",
+    "href": "prompting/demos.html#setup"
+  },
+  {
+    "id": "manifest",
+    "domain": "Prompting and evidence",
+    "q": "The manifest lists A17-transcript.pdf, but the model has only the manifest. What can it report?",
+    "options": [
+      "The transcript meets the program requirements.",
+      "A17 is eligible.",
+      "The file name is listed. Staff must open and verify the document."
+    ],
+    "answer": 2,
+    "why": "Metadata supports an inventory claim. It cannot establish what an unavailable document contains or whether it satisfies a requirement.",
+    "practice": "Run the application organization demo.",
+    "href": "prompting/demos.html#organize"
+  },
+  {
+    "id": "quote",
+    "domain": "Trust and transparency",
+    "q": "An AI summary says an applicant improved grades by 20%, but the excerpt mentions only twelve tutoring sessions. What should happen?",
+    "options": [
+      "Keep the detail because the result sounds plausible.",
+      "Remove the unsupported claim, verify the source, and record the correction.",
+      "Ask the model for a confidence percentage and keep it if high."
+    ],
+    "answer": 1,
+    "why": "Plausibility and model confidence do not supply missing evidence. An auditable handoff preserves the quote, source location, and correction.",
+    "practice": "Compare the prepared rubric findings with the source.",
+    "href": "prompting/demos.html#rubric"
+  },
+  {
+    "id": "calibrate",
+    "domain": "Trust and transparency",
+    "q": "Two excerpts describe the same contribution. One uses polished language. How should reviewers apply the contribution rubric?",
+    "options": [
+      "Apply the same evidence anchor and examine any scoring difference.",
+      "Give the polished version a higher contribution score.",
+      "Average the scores without checking why they differ."
+    ],
+    "answer": 0,
+    "why": "This criterion evaluates contribution evidence. Reviewers should examine differences caused by style when the relevant facts are equivalent.",
+    "practice": "Compare A17 and A18 in the demo packet.",
+    "href": "prompting/demos.html#rubric"
+  },
+  {
+    "id": "detector",
+    "domain": "Trust and transparency",
+    "q": "A detector flags a statement as AI-written. What is the fairest next step?",
+    "options": [
+      "Reject it automatically to protect integrity.",
+      "Treat an unflagged statement as proof of human authorship.",
+      "Review evidence under the published policy, allow clarification, and retain a human decision and reconsideration path."
+    ],
+    "answer": 2,
+    "why": "Detectors can misclassify writing. A flag does not prove authorship or a policy violation, and no flag does not prove authorship either.",
+    "practice": "Read the applicant-use policy examples.",
+    "href": "prompting/demos.html#policy"
+  },
+  {
+    "id": "exception",
+    "domain": "Privacy and oversight",
+    "q": "A19 submitted after the fictional deadline and requested an exception. What belongs with a person?",
+    "options": [
+      "Only checking whether the output uses a table.",
+      "Applying the exception policy and documenting the decision.",
+      "Nothing, if AI quotes the date correctly."
+    ],
+    "answer": 1,
+    "why": "The tool can surface the recorded date and request. An authorized staff member applies the policy, checks records, and owns the decision.",
+    "practice": "Try the administrative review demo.",
+    "href": "prompting/demos.html#completeness"
+  },
+  {
+    "id": "skill",
+    "domain": "Prompting and evidence",
+    "q": "You save a reusable review skill. What should you do before relying on it?",
+    "options": [
+      "Assume a reusable skill will produce the same correct output every time.",
+      "Add more instructions until it looks complete.",
+      "Test known cases, missing evidence, and embedded instructions, then check outputs and version the skill."
+    ],
+    "answer": 2,
+    "why": "A skill packages a procedure. It does not prove correctness. Small test cases expose omissions, unsupported claims, and changes after edits.",
+    "practice": "Use the reusable skill and its evaluation cases.",
+    "href": "prompting/demos.html#skill"
+  }
+]

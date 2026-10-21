@@ -1,3 +1,17 @@
+## October 21, 2026 — prompting practice and awareness self-check
+
+Added a separate public collection titled **AI Prompting for Scholarship Review** at `2026/prompting/`. The existing workshop presentation, participant workbook, takeaways, and facilitator guide remain byte-identical. Public navigation calls the collection AI prompting practice, with no editorial labels about presentation versions.
+
+- New 26-slide self-contained webdeck, editable PPTX with first-person speaker notes and eleven native tables, and matching participant PDF.
+- ChatGPT practice Project setup, copyable instructions and three prompts, fictional application manifest/records/rules/statements/rubric, prepared teaching examples with source pointers, and a correction log. Prepared examples are clearly distinguished from captured live model output. No live AI account or API call was used during website tests.
+- Reusable scholarship evidence review skill, manual-use guidance for ChatGPT/Claude, and six evaluation specifications. Skill structure validates. Product installation and feature availability remain tool/account dependent.
+- Eight-scenario awareness self-check with confidence choices, per-question explanations, topic totals, suggested practice, text export, print reflection, and reset. Answers stay in memory and are not submitted or automatically stored. This is explicitly informal learning, not a validated measure or certification.
+- `2026/overview.html` preserves the exact user-supplied description and three takeaways. Overview, self-check, and prompting links appear in workshop navigation; practice and self-check also appear in Resources. The blog resource post remains the first Resources item.
+- Source and build instructions: `scripts/prompting/README.md`. `content.py` supplies both deck formats and shared notes. Packet ZIPs have a narrow staging allowlist, preserving retired ZIP exclusions.
+- Poppins and NSPA template artwork carry the conference identity. Poppins OFL is included. Shared presenter preview ID correction was synchronized to the canonical webdecks repo, its spec, and standalone instructions. Existing NSPA original webdeck already contained that correction.
+
+Validation: local link/migration checks, staging, ZIP integrity, exact session-description and PPTX script/title matches, native table/font/package/import checks, slide/PDF visual inspection, 360/412/800/1280px layouts, assessment unanswered/correct/incorrect/confidence/export/reset paths, clipboard prompts, keyboard deck navigation, presenter sync, and A-/A+ note size persistence. Original artifact hashes checked against a pre-work snapshot. Live verification follows deployment.
+
 # October 19 participant infographic collection
 
 Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` unchanged as `2026/handouts/nspa-responsible-scholarship-review-infographics.pptx`. It is linked from the participant hub, infographic collection, and resource library. The hub download is also maintained in `scripts/workshop/supplied_edition.py`.
