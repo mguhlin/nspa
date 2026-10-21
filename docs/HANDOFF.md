@@ -1,3 +1,7 @@
+## October 21 — sailboat cache and depth correction
+
+Reproduced the reported single-boat view by serving the old pre-fleet home stylesheet with the current two-link HTML: both anchors received identical absolute coordinates. The home stylesheet URL now carries a new version query so a browser does not reuse that layout. Fleet child positioning is explicit. The yellow-flag Trust and AI boat is smaller and 18 pixels behind the larger orange-flag AI prompting boat, with separate labels and destinations. Checked the reproduction, versioned stylesheet request, non-overlapping boat bounds, relative depth, keyboard links, and eight responsive widths. No workshop documents changed.
+
 ## October 21 — presenter resource separation and two session entrances
 
 The user requested the prompting PPTX with notes and webdeck only on `2026/p/`. They now live at `2026/p/slides/ai-prompting-scholarship-review.pptx` and `2026/p/ai-prompting-webdeck.html`; the presenter hub contains a separate AI Prompting section alongside the original presentation. The participant prompting hub offers only the slides PDF and practice materials. The former participant-side PowerPoint, webdeck, and `assets/presentation-content.json` are removed. The notes JSON now builds under `scripts/prompting/`, outside staged website content. The PPTX and participant PDF bytes are unchanged. The presenter area is unlisted/noindex, not authenticated.
