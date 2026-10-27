@@ -1,0 +1,17 @@
+Security maintenance — 2026-10-27
+
+Scope: known npm advisories in tracked lockfiles, GitHub Actions references and
+permissions, dependency maintenance controls, and the checks listed below.
+This is a scoped maintenance review, not a full penetration test or assurance
+against unknown vulnerabilities. Historical release archives, external CDNs,
+cloud/account configuration, and separately installed self-hosted instances are
+not covered by a zero-advisory lockfile result. A package advisory count can
+include development-only dependencies and repeat across projects.
+
+Pinned publication workflow actions to official commit hashes and disabled
+persisted checkout credentials. Added weekly GitHub Actions Dependabot coverage.
+No workshop, slide, or deck content was changed.
+
+Checks: local links/assets/migration destinations passed; public website staging
+passed with supplemental inputs excluded. Workflow YAML parsed and immutable
+action references checked.
