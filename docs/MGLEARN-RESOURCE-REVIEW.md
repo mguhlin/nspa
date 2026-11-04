@@ -1,6 +1,6 @@
 # mglearn resource review
 
-Reviewed September 24, 2026. Inventoried the public repository list and recursive trees, then searched indexed code for NSPA, scholarship, and ethics. Most NSPA hits were shared navigation/footer references, not separate NSPA teaching materials.
+Inventoried the public repository list and recursive trees, then searched indexed code for NSPA, scholarship, and ethics. Most NSPA hits were shared navigation/footer references, not separate NSPA teaching materials.
 
 ## Included and consolidated
 

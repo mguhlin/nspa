@@ -1,4 +1,6 @@
-## October 21 — illustrated prompting slides, standalone results, and USB package
+<a id="october-21-illustrated-prompting-slides-standalone-results-and-usb-package"></a><a id="october-21--illustrated-prompting-slides-standalone-results-and-usb-package"></a>
+
+## illustrated prompting slides, standalone results, and USB package
 
 The 31-slide AI Prompting presentation now has **18 generated infographic compositions**, inspired by the user’s mguhlin.org infographic collection. Bold navy, teal, coral, and gold process pictures illustrate each sparse teaching slide; captions remain editable Poppins text and all 12 native tables remain. PPTX, standalone webdeck, and 31-page participant PDF share the content. Speaker notes remain under `2026/p/`. Source mapping and exact built-in image prompts: `scripts/prompting/infographics.json`; application: `infographic_content.py`. Core demo prompts, fictional source data, original workshop resources, and homepage are unchanged.
 
@@ -8,7 +10,9 @@ The user explicitly requested a local USB copy, overriding the earlier cancellat
 
 Validation: Artifact Tool finalization (31 slides, 12 native tables, Poppins, zero layout findings/warnings), matching notes and slide-only PDF checks, every native slide visually inspected, all-slide web bounds, phone reflow, presenter controls, all nine assessment score cases and targeted advice. `check_usb.cjs` runs with browser networking disabled and checks file:// navigation, assessment, guided activities, clipboard fallback, presenter sync/notes sizing, guide images, three widths, and participant/presenter separation. Private build/evidence: `/tmp/nspa-infographic-build/` and `/tmp/nspa-usb-stage/nspa/`. Publication and final USB copy follow the checks.
 
-## October 21 — beginner prompting materials and plain-language self-check
+<a id="october-21-beginner-prompting-materials-and-plain-language-self-check"></a><a id="october-21--beginner-prompting-materials-and-plain-language-self-check"></a>
+
+## beginner prompting materials and plain-language self-check
 
 The prompting collection now has **31 slides**. `scripts/prompting/beginner_deck.py` supplies an introductory path: AI/request/answer, context and everyday examples, simple answer checks, follow-up requests, file formats, privacy, applicant codes, file lists, and scoring-guide vocabulary before the three existing ChatGPT demonstrations. Projects, saved instructions, and skills follow the demonstrations as optional ways to reuse work. The user’s 85-page Creating with Generative AI PDF supplied concepts (four-step prompt builder, examples, file types, checking answers, reusable instructions); it is referenced in relevant notes and not republished. Shared slide content still builds both formats and first-person speaking notes.
 
@@ -20,7 +24,9 @@ Each result phase gives one next step and one practice link. Phase 1 = Getting s
 
 Participant download: `2026/prompting/slides/ai-prompting-scholarship-review.pdf` (31 pages). Presenter PowerPoint and self-contained webdeck remain only under `2026/p/`. Two session tabs remain. Verification: `check_beginner.cjs`, `check_assessment_phases.cjs`, `check_interactions.cjs`, link/staging checks, Artifact Tool finalization (31 slides, 12 native tables, Poppins, no layout findings/warnings), PDF slide-title/notes separation checks, and visual review. Private evidence: `/tmp/nspa-intro-build/`. A final authoring process exited with a native cleanup fault after completing finalization and copying the output; the published file exactly matches its validated final SHA, imports successfully, and exports/renders through LibreOffice. Live deployment verification follows publication.
 
-## October 21 — assessment learning phases, hero, and biplane entrance
+<a id="october-21-assessment-learning-phases-hero-and-biplane-entrance"></a><a id="october-21--assessment-learning-phases-hero-and-biplane-entrance"></a>
+
+## assessment learning phases, hero, and biplane entrance
 
 Added a compact generated hero illustration at right of the assessment heading; it stacks below the introduction on phones. Asset: `2026/prompting/assets/awareness-hero.webp` (1200×900). Exact built-in tool prompt: `docs/AWARENESS-HERO-PROMPT.json`.
 
@@ -30,11 +36,15 @@ A native SVG biplane with a trailing Self-Assessment banner links to the self-ch
 
 Validation: `scripts/prompting/check_assessment_phases.cjs` exercises seven score/readiness boundaries, phase export, charts, hero, phone and desktop layouts, and biplane keyboard routing. Existing assessment/presenter checks also pass. No workshop PDFs or PowerPoints changed.
 
-## October 21 — sailboat cache and depth correction
+<a id="october-21-sailboat-cache-and-depth-correction"></a><a id="october-21--sailboat-cache-and-depth-correction"></a>
+
+## sailboat cache and depth correction
 
 Reproduced the reported single-boat view by serving the old pre-fleet home stylesheet with the current two-link HTML: both anchors received identical absolute coordinates. The home stylesheet URL now carries a new version query so a browser does not reuse that layout. Fleet child positioning is explicit. The yellow-flag Trust and AI boat is smaller and 18 pixels behind the larger orange-flag AI prompting boat, with separate labels and destinations. Checked the reproduction, versioned stylesheet request, non-overlapping boat bounds, relative depth, keyboard links, and eight responsive widths. No workshop documents changed.
 
-## October 21 — presenter resource separation and two session entrances
+<a id="october-21-presenter-resource-separation-and-two-session-entrances"></a><a id="october-21--presenter-resource-separation-and-two-session-entrances"></a>
+
+## presenter resource separation and two session entrances
 
 The user requested the prompting PPTX with notes and webdeck only on `2026/p/`. They now live at `2026/p/slides/ai-prompting-scholarship-review.pptx` and `2026/p/ai-prompting-webdeck.html`; the presenter hub contains a separate AI Prompting section alongside the original presentation. The participant prompting hub offers only the slides PDF and practice materials. The former participant-side PowerPoint, webdeck, and `assets/presentation-content.json` are removed. The notes JSON now builds under `scripts/prompting/`, outside staged website content. The PPTX and participant PDF bytes are unchanged. The presenter area is unlisted/noindex, not authenticated.
 
@@ -42,7 +52,9 @@ The home page now has two matching sailboats leading directly to Trust, Transpar
 
 Checked staging for removed participant note files and links, presenter downloads, the two-tab labels, keyboard boat navigation, desktop/phone boat layouts, and relocated webdeck resource destinations. The existing assessment and presenter interaction suite passes at the new deck address.
 
-## October 21, 2026 — prompting practice and awareness self-check
+<a id="october-21-2026-prompting-practice-and-awareness-self-check"></a><a id="october-21-2026--prompting-practice-and-awareness-self-check"></a>
+
+## prompting practice and awareness self-check
 
 Added a separate public collection titled **AI Prompting for Scholarship Review** at `2026/prompting/`. The existing workshop presentation, participant workbook, takeaways, and facilitator guide remain byte-identical. Public navigation calls the collection AI prompting practice, with no editorial labels about presentation versions.
 
@@ -56,17 +68,23 @@ Added a separate public collection titled **AI Prompting for Scholarship Review*
 
 Validation: local link/migration checks, staging, ZIP integrity, exact session-description and PPTX script/title matches, native table/font/package/import checks, slide/PDF visual inspection, 360/412/800/1280px layouts, assessment unanswered/correct/incorrect/confidence/export/reset paths, clipboard prompts, keyboard deck navigation, presenter sync, and A-/A+ note size persistence. Original artifact hashes checked against a pre-work snapshot. Live verification follows deployment.
 
-# October 19 participant infographic collection
+<a id="october-19-participant-infographic-collection"></a>
+
+# participant infographic collection
 
 Added the supplied `NSPA_Responsible_Scholarship_Review_Infographics.pptx` unchanged as `2026/handouts/nspa-responsible-scholarship-review-infographics.pptx`. It is linked from the participant hub, infographic collection, and resource library. The hub download is also maintained in `scripts/workshop/supplied_edition.py`.
 
 # NSPA project handoff
 
-## October 21 homepage sailboat entrance
+<a id="october-21-homepage-sailboat-entrance"></a>
+
+## homepage sailboat entrance
 
 The homepage workshop link now sits on a navy sailboat hull with white sails and a gold pennant, using native SVG that matches the existing conference illustration. The conference background, event mark, flowers, description, and destinations remain. `assets/home.css` scopes the responsive placement to the homepage: the boat uses the open space on the right at desktop widths and sits below the introduction on smaller screens. The two route cards now fill the row. Keyboard navigation, overlap, and horizontal overflow were checked across 360–1600 px widths. This change does not rebuild workshop artifacts.
 
-## October 20 companion thumbnails and Resources navigation
+<a id="october-20-companion-thumbnails-and-resources-navigation"></a>
+
+## companion thumbnails and Resources navigation
 
 Each of the nine Session Companion activities now pairs its heading and directions at left with the matching presentation slide at right. On narrower screens, the slide appears between the heading and directions. The optimized WebP previews link to the existing full-size PNGs. `ACTIVITY_SLIDES` in `scripts/workshop/revised_content.py` maps activities to physical slide positions 3, 5, 9, 11, 13, 15, 17, 20, and 25; `revised_edition.py:build_pages()` generates previews and markup. Notes, export, printing, and access without JavaScript remain available.
 
@@ -74,7 +92,9 @@ All existing Resources dropdowns now begin with the NSPA 2026 blog materials ent
 
 The user requested participant-facing wording without revision history. Companion introduction, presenter cards, and workbook cover now describe the materials directly. Activity 2 defines ASSIST, CHECK, and HUMAN, plus the safeguard and owner, in both the companion and workbook. The workbook remains 11 pages; PDF page content outside its cover and activity 2 is unchanged. Updated pages were rendered and visually checked.
 
-## October 20 revised presentation and adaptive speaking guide — current
+<a id="october-20-revised-presentation-and-adaptive-speaking-guide-current"></a><a id="october-20-revised-presentation-and-adaptive-speaking-guide--current"></a>
+
+## revised presentation and adaptive speaking guide — current
 
 This section supersedes earlier slide counts, activity sequences, presenter downloads, and success-criteria text. Source: the user's `/home/mg/Downloads/NSPA26 Slides.pptx`, retained privately as `supplemental-resources/NSPA26 Slides.pptx`. The current deck has **28 slides**, including resource screens at positions 1, 7, and 28, nine activities, three policy sample responses, and take-home references at positions 26–27. Use physical slide positions for workbook and guide references; the source's printed footer numbers skip and repeat. Preserve all supplied slide artwork and five native tables.
 
@@ -86,21 +106,28 @@ The supplied QR code (`2026/images/nspa26-qr-code.png`) resolves to the workshop
 
 Builders: `current_edition.py` now routes to `revised_edition.py`; `webdeck.py` rebuilds only the current webdeck. See the first section of `WORKSHOP.md` for export and notes preparation. QA: `docs/REVISED-20261020-QA.json`. User explicitly requested commit, push, and deployment, then checking a missing QR code in the blog entry after NSPA is complete.
 
-## October 18 success-criteria infographic restored
+<a id="october-18-success-criteria-infographic-restored"></a>
+
+## success-criteria infographic restored
 
 The participant hub now shows the updated `2026/images/success-criteria.png` infographic (optimized WebP preview), with three learning-intention questions and six criteria aligned to the current 31-slide deck. It preserves the earlier illustration style while using the current five-part prompt structure and next-review-cycle pilot. `experience.py:learning_intentions()` supplies the matching accessible text and image download; `supplied_edition.py:build_pages()` includes it after the participant downloads. The user-requested “Session route and discussion time” section is removed from the participant hub; presenter timing remains in presenter materials. Original learning-intentions artwork is preserved. Exact built-in imagegen prompt: `docs/SUCCESS-CRITERIA-PROMPT.json`.
 
-## October 18 original webdeck infographics restored
+<a id="october-18-original-webdeck-infographics-restored"></a>
+
+## original webdeck infographics restored
 
 The user flagged the missing infographics in the native-text webdeck. The current webdeck now embeds all 31 original slide images as lossless WebP, preserving the supplied PowerPoint design, diagrams, logos, and existing artwork. Images come from the committed numbered PNG gallery. Do not replace the visuals with text cards. HTML equivalents remain for screen readers and are visible below each graphic on phones. The supplied speaking notes, presenter previews/synchronization, notes sizing, print, and source hyperlinks remain. The infographic slide image includes its original footer; the semantic sibling footer is hidden to avoid duplication. Only the webdeck is rebuilt with `webdeck.py`; participant documents and prior hub simplifications remain unchanged. Evidence: `docs/WEBDECK-ARTWORK-QA.json`.
 
-## October 18 workshop resources page removed
+<a id="october-18-workshop-resources-page-removed"></a>
+
+## workshop resources page removed
 
 The user requested removal of `2026/resources.html`. The page and its navigation links are removed; it is no longer generated or published. The original resource library and infographic collection remain available. The old URL returns 404. The hub also omits the supporting-resources link and the two introductory explanation paragraphs and describes the presentation download as “31 slides for viewing and sharing,” per the user’s follow-up edits.
 
-Updated October 18, 2026.
 
-## October 18 evening replacement presentation — current
+<a id="october-18-evening-replacement-presentation-current"></a><a id="october-18-evening-replacement-presentation--current"></a>
+
+## evening replacement presentation — current
 
 This section supersedes the expanded-activity edition below. The user supplied `/home/mg/Downloads/NSPA26_TT_AI_SR.pptx` and `/media/mg/data/nspa/NSPA_Facilitator_Guide_Embedded_Images.docx`, then explicitly requested commit, push, and production deployment. The user confirmed the conference slot remains **October 21, 3:30–5:00 PM CT (90 minutes)**: **60-minute core plus 30 minutes for discussion and practice**.
 
@@ -114,7 +141,9 @@ The examples now use A17/B24/C09 document inventory, the tutoring excerpt and pr
 
 Rebuild and validation details are in the current WORKSHOP.md section. Evidence: `docs/SUPPLIED-31-SLIDE-QA.json`. The presenter next-slide preview ID collision is corrected in the project framework and its spec snapshot `docs/webdeck_spec_v5.md`. Publication remains authorized.
 
-## October 18 expanded activities and visual revision — current
+<a id="october-18-expanded-activities-and-visual-revision-current"></a><a id="october-18-expanded-activities-and-visual-revision--current"></a>
+
+## expanded activities and visual revision — current
 
 This section supersedes earlier counts, source-preservation requirements and offline packaging instructions. The 90-minute session is still October 21, 3:30–5:00 PM CT. Its integrated route includes eight complete activities (60 minutes of participant work) and 30 minutes for explanations and transitions, with 24 core slides and four optional backups.
 
@@ -126,11 +155,15 @@ Participant downloads are **only the workbook, slide-only presentation PDF, and 
 
 Rebuild: run the main builder with the bundled Python (python-pptx, reportlab and lxml required); export the PPTX as slide-only PDF with both notes export options false; render numbered gallery PNGs; stage with `scripts/build_site.py`. Do not invoke legacy slide renderers or assemblers. Verify the 28 slides, all workbook/guide pages, desktop/phone interactions, presenter synchronization, draft persistence/export, no-JavaScript fallback and staged links. Publication remains authorized. Evidence: `EXPANDED-ACTIVITIES-QA.json`.
 
-## October 18 takeaway attribution correction
+<a id="october-18-takeaway-attribution-correction"></a>
+
+## takeaway attribution correction
 
 The takeaway attribution is now a separate centered line after the six takeaway groups. The final bullet ends at “pause condition.” Both pages of the DOCX/PDF were rendered and inspected; all template parts other than `word/document.xml` are unchanged. Both offline archives and their manifests include the corrected files.
 
-## October 18 supplied presentation replaces the core workshop
+<a id="october-18-supplied-presentation-replaces-the-core-workshop"></a>
+
+## supplied presentation replaces the core workshop
 
 This section supersedes all earlier slide counts, core activities, workbook lengths, and rebuild instructions below. The session remains **90 minutes, October 21, 3:30–5:00 PM CT**. The user confirmed that they will expand resources to use the time. The supplied deck has **24 core slides plus four backups**. Its original core cues total about 60 minutes; 30 minutes remain flexible for discussion and resource practice.
 
@@ -149,9 +182,11 @@ Verification: all 28 slides and every changed handout page inspected; online des
 Canonical new builder: `scripts/workshop/current_edition.py`. It uses the private supplied webdeck when available, otherwise the committed current webdeck, to generate current pages, workbook, route, guide, transcript and private script. `site.py` runs it after the preserved reference/lab builders. `webdeck.py` detects and preserves the current supplied edition. `pdfs.py` rebuilds the legacy references before replacing core participant/presenter PDFs with the current edition. Do not run `render_slides.py`, `capture.cjs`, `assemble.mjs`, `sync_notes.py`, or `presentation_script.py` for this edition; those remain legacy production tools. Read the October 18 section in WORKSHOP.md for the current export/package order.
 
 
-Updated October 7, 2026. The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
+The workshop experience has been simplified for the October 21 presentation. Do not restart completed artwork or add PDFsplat (the user explicitly canceled that request).
 
-## October 7 ten-page participant packet and Desktop script
+<a id="october-7-ten-page-participant-packet-and-desktop-script"></a>
+
+## ten-page participant packet and Desktop script
 
 The participant workbook is now exactly ten pages: an illustrated cover, the original six activity pages on pages 2-7, and three illustrated visual references on pages 8-10. The references cover evidence before interpretation, named human checkpoints, and a fair applicant response. Reused original artwork remains intact; PDF labels and examples are real text. All activity writing lines were preserved (6, 3, 6, 9, 7, 8 by activity page).
 
@@ -161,7 +196,9 @@ Both archives were rebuilt and their manifests checked: participant kit 12 files
 
 The full first-person script is `docs/presentation-script.md`, generated by `scripts/workshop/presentation_script.py`. It includes spoken wording for all 12 timed core slides, six optional reference scripts, the prepared flawed draft, transitions, silence/timing cues, and responses when a conversation needs help. A verified matching copy is saved as `/home/mg/Desktop/NSPA2026-Presentation-Script.md`. The script remains outside the public website.
 
-## October 7 participant simplification: current navigation
+<a id="october-7-participant-simplification-current-navigation"></a>
+
+## participant simplification: current navigation
 
 This section supersedes the public presenter paths and offline packaging described below. The participant landing page now shows only the conversation companion, workbook, slide PDF without notes, two-page takeaways, and a small session kit. Optional references, slide-image downloads, agenda, and sources are on `2026/resources.html`.
 
@@ -173,7 +210,9 @@ Only one complete offline ZIP appears on the presenter side: `2026/p/nspa-2026-p
 
 Build `site.py` and `webdeck.py`, then the selected PDFs, `offline.py`, and `scripts/package_offline.py`. The package builder emits two different manifests. Update and validate the offline PowerPoint after link changes before packaging. Verification evidence is in `PARTICIPANT-SIMPLIFICATION-QA.json`; it includes preservation checks, both archive hashes, and the offline presentation finalizer receipt. Repeat link checks, desktop/phone navigation, no-JavaScript Resources access, and extracted local-file kit checks before publishing.
 
-## October 7 conversation redesign: current edition
+<a id="october-7-conversation-redesign-current-edition"></a>
+
+## conversation redesign: current edition
 
 This section supersedes the older slide counts, route, and deliverables below. The user's approved direction is social learning through structured conversation, different perspectives, reflection, and silence. Preserve every library resource and infographic.
 
@@ -191,12 +230,16 @@ Final QA: all 18 slide layouts and every changed PDF page inspected; PPTX finali
 
 Published content commit: `952347579e6eee49c62af04e5cf03a32a0a03e14`. Pages deployment [37672960807](https://github.com/mguhlin/nspa/actions/runs/37672960807) succeeded. Normal live URLs for 13 pages/downloads matched the local bytes, including PowerPoint, PDF, all three updated handouts, the PNG ZIP, and the offline ZIP. The downloaded archive passed every manifest checksum. Live desktop/phone browser checks verified all 18 slides, seven conversations, response guidance, presenter synchronization, separate online/offline storage, all ten infographic cards, and zero script errors. Documentation-only publication records follow this content commit; check Actions for the latest HEAD.
 
-## October 6 front-page infographic additions
+<a id="october-6-front-page-infographic-additions"></a>
+
+## front-page infographic additions
 
 - Five supplied scholarship-team infographics are featured on the homepage with full-resolution PNG downloads, optimized WebP previews, textual descriptions, and related guides. Assets live in `assets/infographics/`; the main navigation links directly to the section. The original artwork is unchanged. A duplicate 2/2/2 source was published once. Matching entries are in the public mguhlin.org infographic collection.
 - This update affects the public resource homepage only; existing workshop, presentation, and offline materials remain unchanged.
 
-## October 6 readability and presentation update
+<a id="october-6-readability-and-presentation-update"></a>
+
+## readability and presentation update
 
 - The homepage leads directly to the October workshop. Three routes distinguish following the workshop, getting handouts, and exploring resources afterward. Earlier sessions and assessments remain available in an expandable group.
 - The hub initially offers the workbook and two-page takeaways. Other references, presenter formats, and the complete offline download are grouped separately.
@@ -220,7 +263,7 @@ Published content commit: `952347579e6eee49c62af04e5cf03a32a0a03e14`. Pages depl
 
 ## Session and preferences
 
-Trust, Transparency, and AI: Building Responsible Scholarship Review Practices. October 21, 2026, 3:30–5:00 PM CT; 90 minutes.
+Trust, Transparency, and AI: Building Responsible Scholarship Review Practices., 3:30–5:00 PM CT; 90 minutes.
 
 The three outcomes are a clearer review prompt, a protected workflow with human decision ownership, and a fair approach to applicant AI use. Use fictional data. Detector signals are not proof of misconduct. Preserve qualified source interpretations already documented in the materials.
 
@@ -269,6 +312,8 @@ Completed QA: 386 offline references resolved; local-file browser tests with net
 
 Temporary QA/build files live in `/tmp/nspa-offline-review` and `/tmp/nspa-workshop`; do not depend on their persistence. Start a future turn by reading this file and `WORKSHOP.md`, checking Git status/log, and asking what the user wants to review next if no new task is supplied. Recheck time-sensitive guidance before the conference if revising it.
 
-## October 7 prompting infographic additions
+<a id="october-7-prompting-infographic-additions"></a>
+
+## prompting infographic additions
 
 Five supplied prompting infographics were renamed descriptively before publication and added to the homepage and matching blog collection. Original PNGs are preserved with optimized WebP previews, descriptions, download links, and related workflow guides. The homepage now features ten supplied visual guides.

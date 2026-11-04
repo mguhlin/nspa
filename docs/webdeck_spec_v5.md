@@ -75,7 +75,7 @@ Single-file skeleton:
 # Web Deck Instructions — v5 (canonical, project-neutral)
 
 *The single source of truth for the self-contained HTML slide-deck system used across `~/Documents/vibecoding` projects.*
-*Canonical location: `~/Documents/vibecoding/webdeck/`. Last revised 2026-10-09.*
+*Canonical location: `~/Documents/vibecoding/webdeck/`. *
 
 Any agent (Claude Code, ChatGPT/Codex, or a human) that is asked to **build or edit a web deck / slide deck** in any vibecoding project should follow this file. It is intentionally self-contained and tool-neutral: nothing here depends on a particular assistant. The reference framework lives beside it at `webdeck/assets/deck-framework.css` and `webdeck/assets/deck-framework.js`.
 

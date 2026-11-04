@@ -1,6 +1,6 @@
 # Trust, Transparency, and AI
 
-October 20 revised edition. First-person speaking text shared by the PowerPoint, webdeck, and facilitator guides. Slide numbers are positions in the supplied 28-slide file.
+revised edition. First-person speaking text shared by the PowerPoint, webdeck, and facilitator guides. Slide numbers are positions in the supplied 28-slide file.
 
 ## Slide 01 Session resources
 

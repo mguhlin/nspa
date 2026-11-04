@@ -4,7 +4,9 @@ The user requested a separate presentation focused on prompts, ChatGPT Projects,
 
 # 2026 workshop production and alignment
 
-## October 20 revised edition — current
+<a id="october-20-revised-edition-current"></a><a id="october-20-revised-edition--current"></a>
+
+## revised edition — current
 
 Read the first section of HANDOFF.md. It supersedes the earlier builders, slide counts, and presenter downloads. The user's `NSPA26 Slides.pptx` has **28 slides and nine activities**. All source slide visuals, relationships, media, and five native tables stay unchanged. Only speaker-note XML bodies receive the shared first-person speaking text. Current PDFs: presentation 28 pages, workbook 11 pages, takeaways two pages, facilitator speaking guide 14 landscape pages with two slides per page and 14-point text.
 
@@ -18,19 +20,27 @@ Use bundled runtimes under `/home/mg/.cache/codex-runtimes/codex-primary-runtime
 6. Success criteria: preserve the current illustration style, use the exact new eight-criterion text in `SUCCESS_TEXT`, and keep its text equivalent only in image alt text. The supplied QR image points to the workshop blog resource post. Link it accurately and keep a direct link to the handouts alongside it. New companion drafts use `nspa-review-20261020`, preserving previous-edition storage.
 7. Verify all slide images, guide/workbook/takeaway pages, shared notes, 28-page webdeck printing, presenter previews/synchronization and note resizing, phone/tablet reflow and guide text-size persistence, all nine companion activities and draft export, no-JavaScript activities, and local/staged links. Run `check_site.py`, `build_site.py`, and `git diff --check`. Staging excludes retired presenter guide DOCX, route PDF, and presenter transcript, and all ZIPs. Commit, push, monitor GitHub Pages, and compare hashes of the live downloads and imagery.
 
-## October 18 success-criteria infographic restored
+<a id="october-18-success-criteria-infographic-restored"></a>
+
+## success-criteria infographic restored
 
 The participant hub now shows the updated `2026/images/success-criteria.png` infographic (optimized WebP preview), with three learning-intention questions and six criteria aligned to the current 31-slide deck. It preserves the earlier illustration style while using the current five-part prompt structure and next-review-cycle pilot. `experience.py:learning_intentions()` supplies the matching accessible text and image download; `supplied_edition.py:build_pages()` includes it after the participant downloads. The user-requested “Session route and discussion time” section is removed from the participant hub; presenter timing remains in presenter materials. Original learning-intentions artwork is preserved. Exact built-in imagegen prompt: `docs/SUCCESS-CRITERIA-PROMPT.json`.
 
-## October 18 original webdeck infographics restored
+<a id="october-18-original-webdeck-infographics-restored"></a>
+
+## original webdeck infographics restored
 
 The user flagged the missing infographics in the native-text webdeck. The current webdeck now embeds all 31 original slide images as lossless WebP, preserving the supplied PowerPoint design, diagrams, logos, and existing artwork. Images come from the committed numbered PNG gallery. Do not replace the visuals with text cards. HTML equivalents remain for screen readers and are visible below each graphic on phones. The supplied speaking notes, presenter previews/synchronization, notes sizing, print, and source hyperlinks remain. The infographic slide image includes its original footer; the semantic sibling footer is hidden to avoid duplication. Only the webdeck is rebuilt with `webdeck.py`; participant documents and prior hub simplifications remain unchanged. Evidence: `docs/WEBDECK-ARTWORK-QA.json`.
 
-## October 18 workshop resources page removed
+<a id="october-18-workshop-resources-page-removed"></a>
+
+## workshop resources page removed
 
 The user requested removal of `2026/resources.html`. The page and its navigation links are removed; it is no longer generated or published. The original resource library and infographic collection remain available. The old URL returns 404. The hub also omits the supporting-resources link and the two introductory explanation paragraphs and describes the presentation download as “31 slides for viewing and sharing,” per the user’s follow-up edits.
 
-## October 18 evening supplied 31-slide edition — current
+<a id="october-18-evening-supplied-31-slide-edition-current"></a><a id="october-18-evening-supplied-31-slide-edition--current"></a>
+
+## evening supplied 31-slide edition — current
 
 Read the first current section of HANDOFF.md. This supersedes all earlier core counts and activity sources. The user confirmed **90 minutes (3:30–5:00 PM CT)**, using the new **60-minute core plus 30-minute discussion reserve**. Current formats: 31 slides, 10-page workbook, eight companion activities, two-page takeaways, 32-page supplied illustrated guide, one-page route. Slides 30–31 are backups.
 
@@ -54,7 +64,9 @@ Rebuild order:
 
 Current workbook pages: cover; balancing act; prompt repair; inventory; evidence and handoff; human checks/data protection; flagged essay; local rules; next-cycle commitments; reusable prompt. The companion matches pages 2–9, with a separate draft storage key for this edition. Required inputs are complete; there is no longer essay to locate. All example data and prepared drafts are fictional.
 
-## October 18 expanded visual and activity edition — current
+<a id="october-18-expanded-visual-and-activity-edition-current"></a><a id="october-18-expanded-visual-and-activity-edition--current"></a>
+
+## expanded visual and activity edition — current
 
 Read the current section in HANDOFF.md first. It supersedes the supplied-deck preservation and kit instructions below. Current delivery: **28 slides (24 core + 4 backups), 16-page illustrated-cover workbook, eight complete first-person companion activities, two-page takeaways, 29-page guide, one-page route**. The participant hub offers only workbook, presentation PDF without notes, and takeaways. Kit and ZIP publication is canceled.
 
@@ -71,7 +83,9 @@ Current rebuild order:
 
 The earlier production history follows for provenance.
 
-## October 18 supplied-deck edition — superseded
+<a id="october-18-supplied-deck-edition-superseded"></a><a id="october-18-supplied-deck-edition--superseded"></a>
+
+## supplied-deck edition — superseded
 
 Session: **Trust, Transparency, and AI: Building Responsible Scholarship Review Practices**. October 21, 2026, **3:30–5:00 PM CT, 90 minutes**. The user explicitly confirmed the session length and plans to expand resource use. Preserve the supplied presentation and allow flexible discussion alongside its core cues.
 
@@ -98,7 +112,9 @@ The earlier production history below is retained for optional materials and prov
 
 Session: **Trust, Transparency, and AI: Building Responsible Scholarship Review Practices**. October 21, 2026, 3:30-5:00 PM CT, 90 minutes. Audience: scholarship providers and review teams.
 
-## October 7 conversation edition
+<a id="october-7-conversation-edition"></a>
+
+## conversation edition
 
 The experience starts with trust, explores one fictional application from different perspectives, and ends with one change to try with a colleague. Independent thinking, equal partner turns, small-group challenges, quiet reflection, and revision make the learning visible. A complete prompt, policy, and readiness assessment are optional extensions rather than additional required outputs.
 
@@ -152,7 +168,7 @@ Production dependencies: installed Codex primary runtime 26.905.11957, Artifact 
 
 ## Sources and teaching boundaries
 
-Guidance reviewed October 7, 2026. Sources include NIST's 2024 GenAI Profile, Turnitin's AI-writing detection FAQ, Liang et al. (2023), and Al Ali, Helcl & Libovický (2026). The hub and relevant notes preserve source links and qualified interpretations. Language, writing samples, and detectors differ between studies; do not imply a universal error rate or treat a detector flag as proof of misconduct.
+Sources include NIST's 2024 GenAI Profile, Turnitin's AI-writing detection FAQ, Liang et al. (2023), and Al Ali, Helcl & Libovický (2026). The hub and relevant notes preserve source links and qualified interpretations. Language, writing samples, and detectors differ between studies; do not imply a universal error rate or treat a detector flag as proof of misconduct.
 
 C-101 is entirely fictional. The flawed summary is an authored teaching example, not a claimed model run. The case, rubric, practice rule, policy starter, and checklist are teaching tools, not validated instruments or official NSPA policy. In the fair-response conversation, the published practice rule allows translation assistance and imposes no translation disclosure requirement. No evidence of invented facts is supplied. Participants may find no misconduct concern and instead follow up on the ordinary missing enrollment document.
 
@@ -170,4 +186,4 @@ The original two-page template-based takeaway DOCX/PDF remains unchanged. When i
 
 Run `python3 scripts/check_site.py`, `python3 scripts/check_offline.py`, `python3 scripts/build_site.py`, and `git diff --check`. CI repeats the link checks and stages only public files, excluding scripts, docs, and private inputs.
 
-October 7 verification covers all 18 slide layouts, native PPTX/PDF links and notes, every changed handout page, desktop and phone pages, direct conversation links, saved notes and export, print and no-JavaScript paths, presenter synchronization, and local-file offline operation with no remote requests. Confirm archive integrity and test the extracted edition at a different path. Verify live Pages content and download hashes after publication.
+verification covers all 18 slide layouts, native PPTX/PDF links and notes, every changed handout page, desktop and phone pages, direct conversation links, saved notes and export, print and no-JavaScript paths, presenter synchronization, and local-file offline operation with no remote requests. Confirm archive integrity and test the extracted edition at a different path. Verify live Pages content and download hashes after publication.
