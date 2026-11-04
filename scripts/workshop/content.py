@@ -5,7 +5,7 @@ TITLE='Trust, Transparency, and AI: Building Responsible Scholarship Review Prac
 URL='https://mguhlin.github.io/nspa/2026/'
 SOURCES=[
 ('NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf','Gen AI can produce confident falsehoods; evaluate performance in the intended setting, verify sources, and document oversight.'),
-('Turnitin detection FAQ (reviewed October 7, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs','The indicator estimates the share of qualifying prose flagged by the model. It is not a probability of misconduct or a determination of misconduct; Turnitin advises against using it alone for adverse action.'),
+('Turnitin detection FAQ','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs','The indicator estimates the share of qualifying prose flagged by the model. It is not a probability of misconduct or a determination of misconduct; Turnitin advises against using it alone for adverse action.'),
 ('Liang et al., Patterns (2023)','https://arxiv.org/abs/2304.02819','This study found false-positive disparities for the non-native English writing and detectors it tested. It does not establish error rates for all current tools.'),
 ('Al Ali, Helcl & Libovicky, EACL SRW (2026)','https://arxiv.org/abs/2602.05769','A later study centered on Czech writing found no systematic non-native-speaker bias across its tested detector families. Context, language, and detector matter.')]
 from route import RUN_OF_SHOW, CONVERSATIONS

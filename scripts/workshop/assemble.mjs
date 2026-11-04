@@ -5,7 +5,7 @@ import {finalizePresentation} from '/home/mg/.codex/plugins/cache/openai-primary
 process.env.RUNTIME_NODE_MODULES ??= '/home/mg/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
 const root=process.env.NSPA_ROOT || '/home/mg/Documents/vibecoding/mguhlin/nspa';
 const data=JSON.parse(await fs.readFile(root+'/docs/workshop-slide-map.json','utf8'));
-const sources=[['NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'],['Turnitin AI detection FAQ (reviewed October 7, 2026)','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs'],['Liang et al. (2023)','https://arxiv.org/abs/2304.02819'],['Al Ali, Helcl & Libovicky (2026)','https://arxiv.org/abs/2602.05769']];
+const sources=[['NIST Gen AI Profile (2024)','https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'],['Turnitin AI detection FAQ','https://guides.turnitin.com/hc/en-us/articles/28477544839821-Turnitin-s-AI-writing-detection-capabilities-FAQs'],['Liang et al. (2023)','https://arxiv.org/abs/2304.02819'],['Al Ali, Helcl & Libovicky (2026)','https://arxiv.org/abs/2602.05769']];
 const presentation=Presentation.create({slideSize:{width:1280,height:720}});
 for(let i=0;i<data.length;i++){
  const s=presentation.slides.add();const id=String(i+1).padStart(2,'0');

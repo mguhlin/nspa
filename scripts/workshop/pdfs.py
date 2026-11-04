@@ -118,7 +118,7 @@ for number,section in enumerate(SECTIONS,1):
 story += [PageBreak()]+title('Optional references, when a question calls for one','Slides 13-18 are outside the timed route. Keep the core conversation intact.')
 for number,sld in enumerate(SLIDES[CORE_COUNT:],CORE_COUNT+1):
  story += [text(f'{number}. '+sld['title'],'h2'),text(' '.join(h+': '+t for h,t in sld['blocks']),'small')]
-story += [text('Sources and scope','h2'),source_line([0,1,2,3]),text('Guidance reviewed October 7, 2026. Study findings depend on the tested writing, language, and detector. The cases, rubric, policy starter, and checklist are workshop teaching tools, not validated instruments or official NSPA policy. Recheck source guidance and local rules before real use.','small')]
+story += [text('Sources and scope','h2'),source_line([0,1,2,3]),text('Study findings depend on the tested writing, language, and detector. The cases, rubric, policy starter, and checklist are workshop teaching tools, not validated instruments or official NSPA policy. Recheck source guidance and local rules before real use.','small')]
 story += [PageBreak()]+title('Your links during the workshop','The same destinations appear on the slides and in the companion.')
 from resources import RESOURCES, BASE
 for key in ['conversation','workbook','tension','case','checkpoints','fair','change','hub','prompt','rubric','workflow','policyref','matrix','library']:
