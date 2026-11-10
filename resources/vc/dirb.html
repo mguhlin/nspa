@@ -42,9 +42,9 @@
   }
 
   .builder-header .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: normal;
+    text-transform: none;
     color: var(--gold);
     font-weight: 600;
     margin-bottom: 8px;
@@ -584,6 +584,8 @@
     .report-header, .report-body { padding: 28px 28px; }
     .org-row { grid-template-columns: 1fr; }
   }
+
+.field{min-width:0}.field input,.field textarea{min-width:0;width:100%}@media(max-width:620px){.fields,.stats-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 <link rel="stylesheet" href="../../assets/resource-theme.css" data-creations-theme>
 </head>
