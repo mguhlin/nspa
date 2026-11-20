@@ -1,3 +1,7 @@
+## Scholarship Decision Lab
+
+The independent Trust Under Pressure game is at `lab/`. It does not rebuild or replace workshop slides or handouts. See `lab/README.md` for its thirty-mission content schema, five-slide introduction deck, build commands, and checks. Run `npm run build --prefix lab` before public staging. Public staging publishes `lab/dist` at `/lab/` alongside the existing resources.
+
 ## AI prompting practice collection
 
 The user requested a separate presentation focused on prompts, ChatGPT Projects, instructions, skills, administrative organization, and rubric evidence. Maintain it at `2026/prompting/` using `scripts/prompting/`. Its 31-slide beginner sequence and plain-language word guide lead into the unchanged three demonstration prompts. The self-check explains applicant codes and gives one simple next step per phase. See that folder’s README for building and checks. Do not rebuild the original presentation or its workbook/guide when updating this collection. The shared tab row contains only Trust, Transparency, and AI and AI Prompting Practice. Session overview and awareness self-check are linked from page content. Prompting presenter files belong only under `2026/p/`; its participant hub offers the slide PDF and practice materials. Keep `scripts/workshop/supplied_edition.py` navigation and the static workshop pages consistent.

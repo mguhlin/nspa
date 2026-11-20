@@ -23,4 +23,8 @@ for suffix in ['pdf','docx']:
     source=ROOT/f'2026/handouts/session-takeaways.{suffix}'
     if source.exists():shutil.copy2(source,legacy/source.name)
 (out/'.nojekyll').touch()
+lab = ROOT/'lab/dist'
+if not (lab/'index.html').is_file():
+    raise SystemExit('Build the decision lab first: npm ci --prefix lab && npm run build --prefix lab')
+shutil.copytree(lab, out/'lab')
 print('Staged public website in _site; supplemental inputs excluded.')

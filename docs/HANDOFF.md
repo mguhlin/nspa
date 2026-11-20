@@ -1,3 +1,11 @@
+# Trust Under Pressure decision lab
+
+The standalone Vite/TypeScript learning game lives in `lab/`, published at `/nspa/lab/`. It contains all thirty fully authored missions in six collections, seven rounds each, separate Red and Blue Team screens, six concealed clues per mission, staged debriefs, optional discussion timing, local decision records, and a deliberately opened separate presenter window. No responses leave the tab. All thirty fictional generated photographs and responsive variants are hosted locally; complete prompts are in `lab/docs/image-prompts.md`.
+
+The user also requested a short introduction deck. `lab/public/decks/introduction.html` is a self-contained five-slide Web Deck v5 introduction with generated photos, teleprompter notes, presenter sync and notes sizing, phone reflow, and print/PDF. Its source is `lab/scripts/build-intro.py`; retained framework copies live in `lab/public/assets/`. The canonical framework checkout is actually `/home/mg/Documents/vibecoding/webdecks/` (plural), despite the older skill path.
+
+Build: `npm ci --prefix lab`, `npm run build --prefix lab`, then `python3 scripts/build_site.py`. The staging script requires a current lab build and copies only its dist directory. The Pages workflow installs dependencies, validates content, runs unit/browser/accessibility tests, builds, verifies relative assets, and deploys the existing site plus lab. See `lab/README.md` for editing, privacy, facilitation, and verification. Existing workshop artifacts remain unchanged.
+
 <a id="october-21-illustrated-prompting-slides-standalone-results-and-usb-package"></a><a id="october-21--illustrated-prompting-slides-standalone-results-and-usb-package"></a>
 
 ## illustrated prompting slides, standalone results, and USB package

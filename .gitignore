@@ -3,3 +3,7 @@ supplemental-resources/*
 _site/
 __pycache__/
 .DS_Store
+lab/node_modules/
+lab/dist/
+lab/test-results/
+lab/playwright-report/
