@@ -7,5 +7,5 @@
   "frontend:build": "",
   "frontend:dev:watcher": "",
   "author": { "name": "Miguel Guhlin" },
-  "info": { "companyName": "NSPA Resources", "productName": "Scholarship Security Audit Toolkit", "productVersion": "1.1.4", "comments": "Offline audit workspace. No account or internet connection required." }
+  "info": { "companyName": "NSPA Resources", "productName": "Scholarship Security Audit Toolkit", "productVersion": "1.1.5", "comments": "Offline audit workspace. No account or internet connection required." }
 }

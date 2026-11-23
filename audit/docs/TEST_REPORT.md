@@ -21,7 +21,7 @@ Evidence gates: task/design PASS for the tested browser and Linux synthetic path
 
 ## Debian installer verification
 
-The preferred Linux download is now `ssat-desktop-linux-amd64.deb` (Debian package `ssat-desktop`, version `1.1.4-1`), alongside the original portable archive. The executable is byte-identical to the published 1.1.4 Linux executable.
+The preferred Linux download is now `ssat-desktop-linux-amd64.deb` (Debian package `ssat-desktop`, version `1.1.5-1`), alongside the original portable archive. The Debian package and portable archive use the same 1.1.5 Linux executable; encrypted audit format remains unchanged.
 
 - PASS: `dpkg-deb --info`, inventory inspection, executable SHA-256 comparison, and `desktop-file-validate`.
 - PASS: package-manager dependency simulation on the Debian 13 host, including the GTK/GLib t64 alternatives; no host installation was performed.
@@ -29,6 +29,16 @@ The preferred Linux download is now `ssat-desktop-linux-amd64.deb` (Debian packa
 - PASS: installed `ssat` launcher, ordinary-user synthetic roadmap/question/encrypted save/reopen/report task under Xvfb with networking disabled.
 - PASS: package removal deleted the launcher and desktop entry while retaining the synthetic user's saved audit and document.
 - Not claimed: clean offline provisioning of missing OS libraries, every Ubuntu/Debian release, or screen-reader/real picker gestures. Installation can require internet when declared libraries are absent; audit work remains offline after installation.
+
+## Desktop quit regression
+
+The Linux 1.1.4 quit guard compared a custom dialog label with GTK's stock response strings, blocking accepted closes. Version 1.1.5 replaces the native message dialog with one in-app confirmation shared by the header Quit button and window close hook, and leaves browser beforeunload warnings only in the web edition. File operations still block quit until they finish; accepted quit blocks subsequent file operations.
+
+- PASS: Go close-policy tests cover clean/unsaved sessions, cancellation, active file operations, accepted quit, late unsaved notifications, and rejected late file operations.
+- PASS: browser regression covers Keep working, Escape, Close anyway, preserved form input, and no second desktop beforeunload blocker.
+- PASS: `test-native-quit.py` drives actual X11 pointer/keyboard events and WM_DELETE_WINDOW against the normal Linux executable, without `--smoke-test`, and requires exit code 0 after confirmation.
+- PASS (expected regression failure): the 1.1.4 released binary fails the same native test with “process remained running after Close anyway”; 1.1.5 exits normally.
+- PASS: isolated, network-disabled Debian installation upgraded 1.1.4-1 to 1.1.5-1, preserved an existing synthetic encrypted audit byte for byte, ran the normal installed app as an ordinary user through both close paths, and completed the encrypted save/reopen/report task.
 
 ## Environment
 

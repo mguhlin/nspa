@@ -1,4 +1,8 @@
-SSAT 1.1.4 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
+SSAT 1.1.5 fixes the Linux Quit app button and window-close confirmation. A single in-app dialog now owns the desktop quit decision: Keep working and Escape preserve the session, and Close anyway exits normally. The desktop no longer displays a second browser-style unload warning. Active file operations finish before quitting; new file operations cannot start after a confirmed quit.
+
+The Linux regression drives the normal installed application window, without the smoke-test bypass, and verifies actual process exit for both the Quit button and the window-manager close request. Browser checks also verify that cancelling preserves form edits. Saved audits and the .ssat file format are unchanged.
+
+SSAT 1.1.5 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
 
 The new Go desktop edition opens in its own Wails application window, with bundled assets and native open/save dialogs. No user browser, internet connection, account, or cloud service is needed for the audit. Existing .ssat v1 files remain compatible. Printable reports export to HTML for an external browser/viewer to print or save as PDF.
 
@@ -14,4 +18,4 @@ Redistribution notices are collected as UTF-8 on every build platform, including
 
 Mac packages use the SSAT.app bundle name and declare macOS 13 as their minimum runtime, matching the Go toolchain. Bundle metadata, CPU architecture, and extracted executable are verified during packaging.
 
-The Debian/Ubuntu package adds an applications-menu launcher and declares its OS-library dependencies. Install with `sudo apt install ./ssat-desktop-linux-amd64.deb`. Missing libraries may require internet during installation; audit work then runs offline. This package reuses the original 1.1.4 Linux executable unchanged.
+The Debian/Ubuntu package adds an applications-menu launcher and declares its OS-library dependencies. Install with `sudo apt install ./ssat-desktop-linux-amd64.deb`. Missing libraries may require internet during installation; audit work then runs offline. The .deb and portable archive include the same 1.1.5 Linux executable.

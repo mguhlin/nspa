@@ -21,15 +21,16 @@ import (
 	wruntime "github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-const version = "1.1.4"
+const version = "1.1.5"
 
 type Desktop struct {
-	ctx         context.Context
-	mu          sync.Mutex
-	dirty       bool
-	busy        bool
-	smokeDir    string
-	smokeFailed bool
+	ctx          context.Context
+	mu           sync.Mutex
+	dirty        bool
+	busy         bool
+	quitAccepted bool
+	smokeDir     string
+	smokeFailed  bool
 }
 
 func (d *Desktop) startup(ctx context.Context) { d.ctx = ctx }
@@ -37,20 +38,56 @@ func (d *Desktop) Info() map[string]string {
 	return map[string]string{"mode": "go-local", "version": version, "csrf_token": "native-desktop", "default_dir": "Native file picker"}
 }
 func (d *Desktop) SetUnsaved(dirty bool) { d.mu.Lock(); d.dirty = dirty; d.mu.Unlock() }
-func (d *Desktop) beforeClose(ctx context.Context) bool {
+
+// Native close and the Quit app button share one confirmation in the app UI.
+// GTK's standard message dialog does not preserve custom button labels.
+func (d *Desktop) closeDecision() (prevent bool, requestConfirmation bool) {
 	d.mu.Lock()
-	dirty, busy := d.dirty, d.busy
+	defer d.mu.Unlock()
+	if d.busy {
+		return true, false
+	}
+	if d.quitAccepted || !d.dirty {
+		return false, false
+	}
+	return true, true
+}
+func (d *Desktop) beforeClose(ctx context.Context) bool {
+	prevent, requestConfirmation := d.closeDecision()
+	if requestConfirmation {
+		wruntime.EventsEmit(ctx, "ssat:close-requested")
+	}
+	return prevent
+}
+func (d *Desktop) Quit() error {
+	d.mu.Lock()
+	busy := d.busy
 	d.mu.Unlock()
 	if busy {
-		return true
+		return fmt.Errorf("finish the current file operation before closing")
 	}
-	if !dirty || d.smokeDir != "" {
-		return false
-	}
-	answer, err := wruntime.MessageDialog(ctx, wruntime.MessageDialogOptions{Type: wruntime.QuestionDialog, Title: "Unsaved audit", Message: "Your latest changes have not been saved to an audit file. Close and discard those changes?", Buttons: []string{"Keep working", "Discard changes"}, DefaultButton: "Keep working", CancelButton: "Keep working"})
-	return err != nil || answer != "Discard changes"
+	wruntime.Quit(d.ctx)
+	return nil
 }
-func (d *Desktop) Quit() { wruntime.Quit(d.ctx) }
+func (d *Desktop) acceptQuit() error {
+	d.mu.Lock()
+	defer d.mu.Unlock()
+	if d.busy {
+		return fmt.Errorf("finish the current file operation before closing")
+	}
+	d.quitAccepted = true
+	return nil
+}
+
+// ConfirmQuit is called only after the app's Close anyway confirmation.
+// Busy file operations must finish before the application can exit.
+func (d *Desktop) ConfirmQuit() error {
+	if err := d.acceptQuit(); err != nil {
+		return err
+	}
+	wruntime.Quit(d.ctx)
+	return nil
+}
 
 // Test hooks require an explicit launch flag. They never accept renderer paths.
 func (d *Desktop) SmokeEnabled() bool { return d.smokeDir != "" }

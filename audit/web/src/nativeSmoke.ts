@@ -23,6 +23,7 @@ export async function runNativeSmoke(store: Store): Promise<void> {
     if (!opened) throw new Error('Native file open failed');
     const decoded = await decryptSsatToAudit(opened.encrypted_ssat, pass);
     if (JSON.stringify(decoded.document) !== JSON.stringify(doc)) throw new Error('Reopened audit differs');
+    store.markFileSaved(opened.path);
     checks.push('Real WebKit encryption, Go disk save/read, browser decryption round trip');
     let rejected = false;
     try { await bridge.SaveAudit('plaintext.ssat', JSON.stringify(doc)); } catch { rejected = true; }

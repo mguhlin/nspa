@@ -119,15 +119,15 @@ export function renderWelcome(store: Store): string {
                  <p class="muted">Open SSAT in its own app window. The questions, examples, encryption, and reports are included. No browser window, account, or internet connection is needed to do your audit.</p>
                </div>
                <div class="btn-row">
-                 <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.4" target="_blank" rel="noopener noreferrer">Downloads and setup instructions</a>
+                 <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.5" target="_blank" rel="noopener noreferrer">Downloads and setup instructions</a>
                </div>
              </div>
              <div class="go-dl-grid">
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.4/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (64-bit)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.4/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">Mac (Apple Silicon)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.4/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">Mac (Intel)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.4/ssat-desktop-linux-amd64.deb" rel="noopener noreferrer">Linux (.deb, 64-bit)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.4/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (64-bit)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">Mac (Apple Silicon)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">Mac (Intel)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-linux-amd64.deb" rel="noopener noreferrer">Linux (.deb, 64-bit)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
              </div>
              <p class="muted" style="margin-top:10px;font-size:0.84rem">
                <strong>Unsigned prerelease notice:</strong> Verify the file hash against <code>SHA256SUMS.txt</code> before running. Windows SmartScreen or macOS Gatekeeper may show an unknown-publisher prompt for unsigned executables; never disable system security protections globally. Windows includes Microsoft’s offline WebView2 installer for computers that need it. Linux requires GTK 3 and WebKitGTK 4.1 to be installed before disconnecting. These are unsigned preview builds; Mac and Windows device testing is still pending.

@@ -199,3 +199,39 @@ test('Native dialog cancellation and disk errors keep the audit and never claim 
   await page.getByRole('button', { name: 'My roadmap', exact: true }).click();
   await expect(page.locator('#main h1')).toHaveText('Fictional Native Cancellation');
 });
+
+test('Desktop has one quit confirmation; keep working preserves edits and close anyway calls native exit', async ({ page }) => {
+  await page.addInitScript(() => {
+    const test = window as unknown as { go: unknown; runtime: unknown; quitConfirmations: number; emitClose: () => void };
+    let closeHandler = () => {};
+    test.quitConfirmations = 0;
+    test.emitClose = () => closeHandler();
+    test.runtime = { EventsOn: (_event: string, callback: () => void) => { closeHandler = callback; } };
+    test.go = { main: { Desktop: {
+      Info: async () => ({ mode: 'go-local', version: '1.1.5', csrf_token: 'native-desktop', default_dir: '' }),
+      SetUnsaved: async () => undefined, SmokeEnabled: async () => false,
+      Quit: async () => closeHandler(), ConfirmQuit: async () => { test.quitConfirmations++; }
+    } } };
+  });
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Start New Audit' }).click();
+  await page.locator('[name=display_name]').fill('Fictional unsaved edits');
+  await page.getByRole('button', { name: 'Quit app', exact: true }).click();
+  await expect(page.locator('#dlg-quit')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Keep working', exact: true })).toBeFocused();
+  await page.getByRole('button', { name: 'Keep working', exact: true }).click();
+  await expect(page.locator('#dlg-quit')).not.toBeVisible();
+  await expect(page.locator('[name=display_name]')).toHaveValue('Fictional unsaved edits');
+  await page.evaluate(() => (window as unknown as { emitClose(): void }).emitClose());
+  await expect(page.locator('#dlg-quit')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#dlg-quit')).not.toBeVisible();
+  await page.getByRole('button', { name: 'Quit app', exact: true }).click();
+  await page.getByRole('button', { name: 'Close anyway', exact: true }).click();
+  expect(await page.evaluate(() => (window as unknown as { quitConfirmations: number }).quitConfirmations)).toBe(1);
+  expect(await page.evaluate(() => {
+    const event = new Event('beforeunload', { cancelable: true });
+    window.dispatchEvent(event);
+    return event.defaultPrevented;
+  })).toBe(false);
+});

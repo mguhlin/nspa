@@ -17,6 +17,9 @@ func (d *Desktop) begin() error {
 	if d.busy {
 		return errors.New("finish the current file operation first")
 	}
+	if d.quitAccepted {
+		return errors.New("the app is closing; no new file operation can start")
+	}
 	d.busy = true
 	return nil
 }

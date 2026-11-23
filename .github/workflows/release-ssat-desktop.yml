@@ -37,7 +37,7 @@ jobs:
           cache-dependency-path: audit/go/desktop/go.sum
       - name: Install Linux build and display libraries
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev build-essential pkg-config xvfb xauth dbus-x11
+        run: sudo apt-get update && sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev build-essential pkg-config xvfb xauth dbus-x11 xdotool
       - name: Build shared UI and test file compatibility
         shell: bash
         run: |
@@ -95,6 +95,7 @@ jobs:
           dpkg-deb --info release/ssat-desktop-linux-amd64.deb
           sudo dpkg -i release/ssat-desktop-linux-amd64.deb
           ssat --version
+          WEBKIT_DISABLE_DMABUF_RENDERER=1 xvfb-run -a -s '-screen 0 1440x1000x24' dbus-run-session -- python3 audit/go/scripts/test-native-quit.py /usr/lib/ssat-desktop/SSAT --evidence /tmp/ssat-quit-check
           sudo apt-get remove -y ssat-desktop
       - name: Package macOS application
         if: runner.os == 'macOS'

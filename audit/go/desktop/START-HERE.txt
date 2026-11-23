@@ -48,7 +48,10 @@ Reports are ordinary unencrypted exports. Review them before sharing. To print
 or make a PDF, save the printable HTML report and open it in a browser or
 compatible viewer. This is the one desktop task that uses an external viewer.
 
-Close warnings protect unsaved work; there is no automatic recovery file.
+Quit app or the window close button shows one confirmation when work is
+unsaved. Keep working (or Escape) leaves the app open; Close anyway exits
+and discards unsaved changes. Save audit first to keep those changes.
+There is no automatic recovery file.
 Native file picker cancellation leaves your session unchanged. Successful
 writes are staged next to your chosen destination; replacement and durability
 guarantees depend on your OS and filesystem. Downloads, exports, OS caches,

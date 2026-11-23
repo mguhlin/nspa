@@ -1,4 +1,4 @@
-import { desktopBridge } from './storage/desktop';
+import { desktopBridge, onDesktopCloseRequest } from './storage/desktop';
 import './style.css';
 import { Store, saveTruthLabel } from './audit/state';
 import type { ScreenId } from './types';
@@ -223,6 +223,15 @@ function renderShell(): void {
       </p>
     </footer>
 
+    <dialog id="dlg-quit" aria-labelledby="dlg-quit-title">
+      <h2 id="dlg-quit-title">Close without saving?</h2>
+      <p>Your latest changes have not been saved to an audit file. Choose Keep working to save them, or Close anyway to discard them.</p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-primary" id="btn-keep-working" autofocus>Keep working</button>
+        <button type="button" class="btn btn-outline" id="btn-confirm-quit">Close anyway</button>
+      </div>
+    </dialog>
+
     <dialog id="dlg-save" aria-labelledby="dlg-save-title">
       <form method="dialog" id="form-save-ssat">
         <div class="dlg-head">
@@ -326,6 +335,13 @@ function renderShell(): void {
   });
   root.querySelector('#dismiss-status')?.addEventListener('click', () => store.setStatus(''));
   root.querySelector('#btn-stop-go')?.addEventListener('click', handleStopGoServer);
+  root.querySelector('#btn-keep-working')?.addEventListener('click', () => root.querySelector<HTMLDialogElement>('#dlg-quit')?.close());
+  root.querySelector('#btn-confirm-quit')?.addEventListener('click', async () => {
+    const native = desktopBridge();
+    if (!native) return;
+    try { await native.ConfirmQuit(); }
+    catch (err) { store.setStatus(err instanceof Error ? err.message : 'Unable to close the app.', 'warn'); }
+  });
 
   // Dialog close buttons
   root.querySelectorAll<HTMLButtonElement>('[data-close-dlg]').forEach((btn) => {
@@ -576,7 +592,11 @@ function renderShell(): void {
 async function handleStopGoServer(): Promise<void> {
   const st = store.get();
   if (!st.goServerMode || !st.goCsrfToken) return;
-  if (desktopBridge()) { await desktopBridge()!.Quit(); return; }
+  if (desktopBridge()) {
+    try { await desktopBridge()!.Quit(); }
+    catch (err) { store.setStatus(err instanceof Error ? err.message : 'Unable to close the app.', 'warn'); }
+    return;
+  }
   if (!window.confirm('Stop the local SSAT Go server? Make sure you have saved your encrypted .ssat file first.')) {
     return;
   }
@@ -596,6 +616,8 @@ store.subscribe(() => {
 });
 
 window.addEventListener('beforeunload', (event) => {
+  // Desktop has one close owner: the Go hook and the explicit app dialog.
+  if (desktopBridge()) return;
   const st = store.get();
   if (st.doc && st.dirty && st.saveTruth !== 'file_saved') {
     event.preventDefault();
@@ -607,6 +629,16 @@ window.addEventListener('beforeunload', (event) => {
 async function bootstrap(): Promise<void> {
   renderShell();
   if (desktopBridge()) {
+    onDesktopCloseRequest(() => {
+      const current = store.get();
+      // A save notification may reach Go after the close request. Check live state.
+      if (!current.doc || (!current.dirty && current.lastSavedPath)) {
+        void desktopBridge()!.ConfirmQuit().catch(err => store.setStatus(String(err), 'warn'));
+        return;
+      }
+      const dialog = document.querySelector<HTMLDialogElement>('#dlg-quit');
+      if (dialog && !dialog.open) dialog.showModal();
+    });
     document.addEventListener('click', event => {
       const link = (event.target as Element).closest<HTMLAnchorElement>('a[href]');
       if (link && !link.getAttribute('href')?.startsWith('#')) {
