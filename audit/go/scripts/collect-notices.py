@@ -16,10 +16,10 @@ while out.strip():
     directory = Path(module_dir)
     for item in sorted(directory.iterdir()):
         if item.is_file() and item.name.lower() in {'license', 'license.md', 'license.txt', 'copying', 'copying.txt', 'notice', 'notice.md', 'notice.txt'}:
-            parts.append(f"\n{'='*72}\n{obj['Path']} {obj.get('Version', '')} / {item.name}\n{'='*72}\n{item.read_text(errors='replace')}")
+            parts.append(f"\n{'='*72}\n{obj['Path']} {obj.get('Version', '')} / {item.name}\n{'='*72}\n{item.read_text(encoding='utf-8', errors='replace')}")
 root = Path(__file__).resolve().parents[2]
 noble = root / 'web/node_modules/@noble/hashes/LICENSE'
-parts.append('\n@noble/hashes (MIT)\n' + noble.read_text())
+parts.append('\n@noble/hashes (MIT)\n' + noble.read_text(encoding='utf-8'))
 go_root = Path(subprocess.check_output(['go', 'env', 'GOROOT'], text=True).strip())
-parts.append('\nGo toolchain (BSD-3-Clause)\n' + (go_root / 'LICENSE').read_text())
-Path('THIRD-PARTY-LICENSES.txt').write_text('\n'.join(parts))
+parts.append('\nGo toolchain (BSD-3-Clause)\n' + (go_root / 'LICENSE').read_text(encoding='utf-8'))
+Path('THIRD-PARTY-LICENSES.txt').write_text('\n'.join(parts), encoding='utf-8')

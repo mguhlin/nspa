@@ -1,4 +1,4 @@
-SSAT 1.1.1 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
+SSAT 1.1.2 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
 
 The new Go desktop edition opens in its own Wails application window, with bundled assets and native open/save dialogs. No user browser, internet connection, account, or cloud service is needed for the audit. Existing .ssat v1 files remain compatible. Printable reports export to HTML for an external browser/viewer to print or save as PDF.
 
@@ -9,3 +9,5 @@ Native Linux WebKit testing with networking disabled covers roadmap/questions re
 Check the included SHA256SUMS.txt before running. The earlier browser-launching Go 1.0 edition remains a separate legacy release.
 
 The legacy Go module now uses the same current crypto dependency as the desktop module. Release inputs enforce LF line endings for CSV templates so Windows builds retain template parity.
+
+Redistribution notices are collected as UTF-8 on every build platform, including Windows.
