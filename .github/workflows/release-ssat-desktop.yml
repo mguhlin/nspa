@@ -100,7 +100,9 @@ jobs:
           plutil -lint package/SSAT.app/Contents/Info.plist
           test "$(/usr/libexec/PlistBuddy -c 'Print :LSMinimumSystemVersion' package/SSAT.app/Contents/Info.plist)" = '13.0'
           ssat_arch='${{ matrix.platform }}'
-          lipo -verify_arch "${ssat_arch#*/}" package/SSAT.app/Contents/MacOS/SSAT
+          ssat_arch="${ssat_arch#*/}"
+          if [ "$ssat_arch" = amd64 ]; then ssat_arch=x86_64; fi
+          lipo package/SSAT.app/Contents/MacOS/SSAT -verify_arch "$ssat_arch"
           cp audit/go/desktop/START-HERE.txt audit/go/desktop/THIRD-PARTY-NOTICES.md audit/go/desktop/build-info.txt audit/go/desktop/modules.txt audit/go/desktop/THIRD-PARTY-LICENSES.txt package/
           ditto -c -k --sequesterRsrc --keepParent package release/ssat-desktop-${{ matrix.name }}.zip
           unzip -q release/ssat-desktop-${{ matrix.name }}.zip -d extracted

@@ -1,4 +1,4 @@
-SSAT 1.1.3 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
+SSAT 1.1.4 starts with a six-step roadmap and five everyday security questions. Known gaps can become editable tasks with owners and deadlines. The full 30-question review, evidence notes, inventory, exercises, and reports remain available under All tools. The palette matches the navy, blue, and gold hero illustration.
 
 The new Go desktop edition opens in its own Wails application window, with bundled assets and native open/save dialogs. No user browser, internet connection, account, or cloud service is needed for the audit. Existing .ssat v1 files remain compatible. Printable reports export to HTML for an external browser/viewer to print or save as PDF.
 
