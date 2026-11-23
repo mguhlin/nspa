@@ -10,7 +10,7 @@ test('all 30 missions traverse all rounds; clues and answers are concealed and d
  for(const s of data){
   await page.goto(go(s.id));await expect(page.locator('#stage-title')).toHaveText(s.title);
   await expect(page.locator('.briefing img')).toBeVisible();
-  expect(await page.locator('.briefing img').evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBeTruthy();
+  await expect.poll(()=>page.locator('.briefing img').evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);
   await page.getByRole('button',{name:'Begin investigation'}).click();await expect(page.locator('.panel')).toContainText(s.facts[0]);await expect(page.getByText(s.unknowns[0],{exact:true})).toHaveCount(0);
   await page.getByRole('button',{name:'Show unknowns',exact:true}).click();await expect(page.locator('.panel')).toContainText(s.unknowns[0]);
   await page.keyboard.press('ArrowRight');await expect(page.locator('#stage-title')).toHaveText('What could go wrong?');
