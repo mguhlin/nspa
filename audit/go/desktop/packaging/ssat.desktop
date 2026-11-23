@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=SSAT Security Audit
+GenericName=Scholarship Security Audit Toolkit
+Comment=Plan and review scholarship security safeguards offline
+Exec=ssat
+TryExec=ssat
+Icon=ssat
+Terminal=false
+Categories=Office;
+Keywords=scholarship;security;audit;roadmap;
+StartupNotify=false
+StartupWMClass=ssat

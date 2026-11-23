@@ -1,7 +1,8 @@
 SSAT — Scholarship Security Audit Toolkit
 
-1. Extract the whole download into a folder on your computer.
-2. Open SSAT (Windows: SSAT.exe; Mac: SSAT.app; Linux: ./SSAT).
+1. Linux: install the .deb package; Windows/Mac: extract the download.
+2. Open SSAT Security Audit from your applications menu on Linux,
+   SSAT.exe on Windows, or SSAT.app on Mac.
 3. Choose Start New Audit, enter an audit name and your role, and follow My roadmap.
 4. Start with the five questions. Not sure is a useful answer and stays an unknown.
 5. Save audit creates a password-protected .ssat file. Remember the passphrase;
@@ -24,12 +25,20 @@ The app is an unsigned/unnotarized preview; organization or Gatekeeper policies
 may prevent launch. No signing/notarization or physical Mac qualification is
 claimed. Do not disable your computer's security protections.
 
-LINUX (x64): Debian 12 / Ubuntu 22.04 or newer with GTK 3 and WebKitGTK 4.1.
-Install these OS libraries before disconnecting if they are absent:
-  sudo apt-get install libgtk-3-0 libwebkit2gtk-4.1-0
-Requires an ordinary graphical desktop session. This tarball contains the app,
-not the Linux runtime libraries. Network-disabled native WebKit testing covers
-the synthetic essential task; it is not universal Linux qualification.
+LINUX (x64): Debian 12 / Ubuntu 22.04 or newer.
+Preferred installer: ssat-desktop-linux-amd64.deb
+Open it with your system's package installer, or run from its download folder:
+  sudo apt install ./ssat-desktop-linux-amd64.deb
+Then open SSAT Security Audit from your applications menu, or run: ssat
+Remove the app with: sudo apt remove ssat-desktop
+Removing the package leaves your saved audit files alone.
+
+The package declares GTK 3, WebKitGTK 4.1, and the other required system
+libraries. Your package manager may need internet to obtain missing libraries
+during installation. Once installed, audit work is offline. This installer
+does not bundle the entire Linux system-library dependency closure.
+The portable tar.gz remains available for manual extraction and ./SSAT use.
+An ordinary graphical desktop session is required.
 
 The program is a self-assessment assistant, not certification or legal advice.
 Record roles, types of information, and safe references, not applicant records,

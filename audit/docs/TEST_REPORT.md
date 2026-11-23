@@ -19,6 +19,17 @@ The current interface uses a six-step roadmap, five starting questions, editable
 
 Evidence gates: task/design PASS for the tested browser and Linux synthetic paths, with screen-reader gaps; privacy PASS for the observed network-disabled synthetic task; security PASS for the bounded bridge tests, not an independent security audit; delivery CONDITIONAL for unsigned preview packages with documented runtime and physical-device limits. Neither source nor build success constitutes regulatory certification.
 
+## Debian installer verification
+
+The preferred Linux download is now `ssat-desktop-linux-amd64.deb` (Debian package `ssat-desktop`, version `1.1.4-1`), alongside the original portable archive. The executable is byte-identical to the published 1.1.4 Linux executable.
+
+- PASS: `dpkg-deb --info`, inventory inspection, executable SHA-256 comparison, and `desktop-file-validate`.
+- PASS: package-manager dependency simulation on the Debian 13 host, including the GTK/GLib t64 alternatives; no host installation was performed.
+- PASS: actual APT installation in an isolated Debian 12 container with networking disabled and runtime libraries already present.
+- PASS: installed `ssat` launcher, ordinary-user synthetic roadmap/question/encrypted save/reopen/report task under Xvfb with networking disabled.
+- PASS: package removal deleted the launcher and desktop entry while retaining the synthetic user's saved audit and document.
+- Not claimed: clean offline provisioning of missing OS libraries, every Ubuntu/Debian release, or screen-reader/real picker gestures. Installation can require internet when declared libraries are absent; audit work remains offline after installation.
+
 ## Environment
 
 - **OS:** Linux x86_64
