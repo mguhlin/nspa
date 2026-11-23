@@ -126,7 +126,7 @@ export function renderWelcome(store: Store): string {
                <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (64-bit)</a>
                <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">Mac (Apple Silicon)</a>
                <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">Mac (Intel)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-linux-amd64.deb" rel="noopener noreferrer">Linux (.deb, 64-bit)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop_1.1.5-1_amd64.deb" rel="noopener noreferrer">Linux (.deb, 64-bit)</a>
                <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
              </div>
              <p class="muted" style="margin-top:10px;font-size:0.84rem">

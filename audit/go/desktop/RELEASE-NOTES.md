@@ -18,4 +18,4 @@ Redistribution notices are collected as UTF-8 on every build platform, including
 
 Mac packages use the SSAT.app bundle name and declare macOS 13 as their minimum runtime, matching the Go toolchain. Bundle metadata, CPU architecture, and extracted executable are verified during packaging.
 
-The Debian/Ubuntu package adds an applications-menu launcher and declares its OS-library dependencies. Install with `sudo apt install ./ssat-desktop-linux-amd64.deb`. Missing libraries may require internet during installation; audit work then runs offline. The .deb and portable archive include the same 1.1.5 Linux executable.
+The Debian/Ubuntu package adds an applications-menu launcher and declares its OS-library dependencies. Install with `sudo apt install ./ssat-desktop_1.1.5-1_amd64.deb`. Missing libraries may require internet during installation; audit work then runs offline. The .deb and portable archive include the same 1.1.5 Linux executable.

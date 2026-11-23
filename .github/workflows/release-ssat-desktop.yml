@@ -92,6 +92,8 @@ jobs:
           cp audit/go/desktop/START-HERE.txt audit/go/desktop/THIRD-PARTY-NOTICES.md package/SSAT/
           tar -czf release/ssat-desktop-${{ matrix.name }}.tar.gz -C package SSAT
           python3 audit/go/scripts/build-deb.py --binary audit/go/desktop/build/bin/SSAT --support-dir audit/go/desktop --output release/ssat-desktop-linux-amd64.deb
+          deb_version=$(dpkg-deb -f release/ssat-desktop-linux-amd64.deb Version)
+          cp release/ssat-desktop-linux-amd64.deb "release/ssat-desktop_${deb_version}_amd64.deb"
           dpkg-deb --info release/ssat-desktop-linux-amd64.deb
           sudo dpkg -i release/ssat-desktop-linux-amd64.deb
           ssat --version

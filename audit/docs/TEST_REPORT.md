@@ -9,7 +9,7 @@ The current interface uses a six-step roadmap, five starting questions, editable
 | Scope | Method | Result and limits |
 |---|---|---|
 | Shared scoring, evidence proof rule, crypto, redaction, CSV, XSS, migration | `npm test --prefix audit/web` | PASS: eight unit groups; synthetic fixtures only |
-| Web UI, beginner unknowns/progress, action creation/editing, offline encrypted save/reopen, mobile reflow, axe scans | `npm run test:browser --prefix audit/web` | PASS: four Playwright tests, including simulated native save/open cancellation and disk errors |
+| Web UI, beginner unknowns/progress, action creation/editing, offline encrypted save/reopen, mobile reflow, axe scans | `npm run test:browser --prefix audit/web` | PASS: five Playwright tests, including simulated native save/open cancellation and disk errors |
 | Legacy Go catalog/crypto/server behavior | `go test ./...` in `audit/go` | PASS; existing browser-to-Go fixture compatibility retained after upgrading the legacy module to golang.org/x/crypto v0.57.0 |
 | Native file boundaries | `go test -tags webkit2_41 ./...` in `audit/go/desktop`, Linux build container | PASS: two tests; encrypted round trip, plaintext/executable/oversize rejection, basename confinement, busy guard, failed write preservation |
 | Real native offline essential task | Built Wails 2.17.1 executable in `docker run --network none` with GTK 3.24.38 / WebKitGTK 2.50.6, Xvfb and D-Bus | PASS: shared roadmap/questions, WebKit encryption, Go disk save/read, JS decryption, plaintext rejection, redacted HTML export. Explicit `--smoke-test` auto-selects only a synthetic output directory; this does not test user picker gestures. |
@@ -21,7 +21,7 @@ Evidence gates: task/design PASS for the tested browser and Linux synthetic path
 
 ## Debian installer verification
 
-The preferred Linux download is now `ssat-desktop-linux-amd64.deb` (Debian package `ssat-desktop`, version `1.1.5-1`), alongside the original portable archive. The Debian package and portable archive use the same 1.1.5 Linux executable; encrypted audit format remains unchanged.
+The preferred Linux download is now `ssat-desktop_1.1.5-1_amd64.deb` (Debian package `ssat-desktop`, version `1.1.5-1`), alongside the original portable archive. The Debian package and portable archive use the same 1.1.5 Linux executable; encrypted audit format remains unchanged.
 
 - PASS: `dpkg-deb --info`, inventory inspection, executable SHA-256 comparison, and `desktop-file-validate`.
 - PASS: package-manager dependency simulation on the Debian 13 host, including the GTK/GLib t64 alternatives; no host installation was performed.

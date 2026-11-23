@@ -26,9 +26,9 @@ may prevent launch. No signing/notarization or physical Mac qualification is
 claimed. Do not disable your computer's security protections.
 
 LINUX (x64): Debian 12 / Ubuntu 22.04 or newer.
-Preferred installer: ssat-desktop-linux-amd64.deb
+Preferred installer: ssat-desktop_1.1.5-1_amd64.deb
 Open it with your system's package installer, or run from its download folder:
-  sudo apt install ./ssat-desktop-linux-amd64.deb
+  sudo apt install ./ssat-desktop_1.1.5-1_amd64.deb
 Then open SSAT Security Audit from your applications menu, or run: ssat
 Remove the app with: sudo apt remove ssat-desktop
 Removing the package leaves your saved audit files alone.

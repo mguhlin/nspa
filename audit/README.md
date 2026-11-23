@@ -26,22 +26,22 @@ The full 30-question review, risk dashboard, evidence notes, information invento
 ## Web and offline desktop editions
 
 - **Web:** [Open SSAT](https://mguhlin.github.io/nspa/audit/). Static, browser-local processing; the first visit requires internet. Audit contents stay in memory unless explicitly saved. The web host receives normal HTTP request metadata.
-- **Desktop:** [Download SSAT 1.1](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.5). `go/desktop/` opens the same embedded interface in its own Wails window, with native file dialogs and no external browser or internet needed for audit work. Windows x64 includes Microsoft's full offline WebView2 installer. Mac uses system WKWebView; Linux x64 now has a [.deb installer](https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop-linux-amd64.deb) with an application-menu entry and declared GTK 3/WebKitGTK 4.1 dependencies; the portable tar.gz is also available. See [desktop setup and limits](go/desktop/START-HERE.txt). These are unsigned preview packages; physical Windows/Mac, clean-install, screen-reader, signing, and notarization qualification remain outstanding.
+- **Desktop:** [Download SSAT 1.1](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.5). `go/desktop/` opens the same embedded interface in its own Wails window, with native file dialogs and no external browser or internet needed for audit work. Windows x64 includes Microsoft's full offline WebView2 installer. Mac uses system WKWebView; Linux x64 now has a [.deb installer](https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.5/ssat-desktop_1.1.5-1_amd64.deb) with an application-menu entry and declared GTK 3/WebKitGTK 4.1 dependencies; the portable tar.gz is also available. See [desktop setup and limits](go/desktop/START-HERE.txt). These are unsigned preview packages; physical Windows/Mac, clean-install, screen-reader, signing, and notarization qualification remain outstanding.
 - **Legacy local browser app:** `go/cmd/ssat/` and the [1.0 release](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0) remain available for environments that prefer the original loopback browser edition. They are distinct from the desktop app.
 
 All editions share the catalog and `.ssat` v1 format. Desktop reports save as HTML/CSV/Markdown/JSON using native dialogs. Print/PDF uses the exported HTML in an external viewer; the embedded desktop window does not promise native PDF printing.
 
 ## Install on Debian or Ubuntu
 
-Download `ssat-desktop-linux-amd64.deb`, then open it in your package installer or run from its download folder:
+Download `ssat-desktop_1.1.5-1_amd64.deb`, then open it in your package installer or run from its download folder:
 
 ```sh
-sudo apt install ./ssat-desktop-linux-amd64.deb
+sudo apt install ./ssat-desktop_1.1.5-1_amd64.deb
 ```
 
 Open **SSAT Security Audit** from the applications menu, or run `ssat`. The installer may need internet to obtain missing system libraries; audit work runs offline after installation. Removing the app with `sudo apt remove ssat-desktop` keeps saved audit files. The package uses the original release executable without changing its bytes.
 
-Build a Debian package from an already-built Linux executable with `python3 audit/go/scripts/build-deb.py --binary /path/to/SSAT --support-dir /path/to/release-support-files --output /path/to/ssat-desktop-linux-amd64.deb`. The support directory contains `build-info.txt`, `modules.txt`, and `THIRD-PARTY-LICENSES.txt`. `START-HERE.txt`, the desktop launcher, icon, and other notices come from the source tree. Future release builds include both `.deb` and `.tar.gz`.
+Build a Debian package from an already-built Linux executable with `python3 audit/go/scripts/build-deb.py --binary /path/to/SSAT --support-dir /path/to/release-support-files --output /path/to/ssat-desktop_1.1.5-1_amd64.deb`. The support directory contains `build-info.txt`, `modules.txt`, and `THIRD-PARTY-LICENSES.txt`. `START-HERE.txt`, the desktop launcher, icon, and other notices come from the source tree. Future release builds include both `.deb` and `.tar.gz`.
 
 ## Develop, test, and build
 
