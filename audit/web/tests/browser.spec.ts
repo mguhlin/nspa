@@ -21,6 +21,17 @@ test.describe('SSAT Browser E2E, Privacy, XSS & Accessibility Checks', () => {
     let axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
     expect(axe.violations, `Welcome axe violations: ${JSON.stringify(axe.violations, null, 2)}`).toEqual([]);
 
+    // Verify EVERY top nav button is enabled immediately on load and Settings & About is not clipped
+    const disabledNavCount = await page.locator('.nav-tab[disabled]').count();
+    expect(disabledNavCount).toBe(0);
+    const settingsBtnBox = await page.getByRole('button', { name: /Settings & About/i }).boundingBox();
+    expect(settingsBtnBox && settingsBtnBox.x + settingsBtnBox.width <= 1280).toBeTruthy();
+
+    // Clicking Dashboard immediately from cold load auto-starts an audit and opens Dashboard
+    await page.getByRole('button', { name: /^Dashboard$/i }).click();
+    await expect(page.getByRole('heading', { name: /Scholarship Security Audit Dashboard/i })).toBeVisible();
+    await page.getByRole('button', { name: /^Welcome$/i }).click();
+
     // Load Fictional Practice Audit
     await page.getByRole('button', { name: /Try Fictional Practice Audit/i }).click();
     await expect(page.getByRole('heading', { name: /Example Scholarship Foundation \(FICTIONAL\)/i })).toBeVisible();
@@ -37,7 +48,7 @@ test.describe('SSAT Browser E2E, Privacy, XSS & Accessibility Checks', () => {
     expect(axe.violations, `Dashboard axe violations: ${JSON.stringify(axe.violations, null, 2)}`).toEqual([]);
 
     // Open Guided Audit & verify Proof Rule blocks Score 2 on unverified control DATA-03
-    await page.getByRole('button', { name: /Guided Audit \(30\)/i }).click();
+    await page.getByRole('button', { name: /Audit \(30\)/i }).click();
     await page.getByRole('button', { name: /DATA-03/i }).click();
     await page.locator('input[name="score_choice"][value="2"]').check();
     await page.getByRole('button', { name: /Save Control Assessment/i }).click();

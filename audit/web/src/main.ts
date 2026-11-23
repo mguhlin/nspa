@@ -42,11 +42,11 @@ const NAV_ITEMS: ReadonlyArray<{ id: ScreenId; label: string; requiresDoc: boole
   { id: 'welcome', label: 'Welcome', requiresDoc: false },
   { id: 'profile', label: 'Profile & Scope', requiresDoc: true },
   { id: 'dashboard', label: 'Dashboard', requiresDoc: true },
-  { id: 'audit', label: 'Guided Audit (30)', requiresDoc: true },
-  { id: 'evidence', label: 'Evidence Library', requiresDoc: true },
-  { id: 'inventory', label: 'Data Inventory', requiresDoc: true },
+  { id: 'audit', label: 'Audit (30)', requiresDoc: true },
+  { id: 'evidence', label: 'Evidence', requiresDoc: true },
+  { id: 'inventory', label: 'Inventory', requiresDoc: true },
   { id: 'simulations', label: '5 Simulations', requiresDoc: true },
-  { id: 'findings', label: 'Findings & Actions', requiresDoc: true },
+  { id: 'findings', label: 'Findings', requiresDoc: true },
   { id: 'reports', label: 'Reports', requiresDoc: true },
   { id: 'history', label: 'History', requiresDoc: true },
   { id: 'settings', label: 'Settings & About', requiresDoc: false }
@@ -163,9 +163,8 @@ function renderShell(): void {
   const screenChanged = lastRenderedScreen !== st.screen;
 
   const navHtml = NAV_ITEMS.map((item) => {
-    const disabled = item.requiresDoc && !st.doc;
     const active = st.screen === item.id;
-    return `<button type="button" class="nav-tab ${active ? 'active' : ''}" data-screen="${item.id}" ${disabled ? 'disabled' : ''} ${active ? 'aria-current="page"' : ''}>${esc(item.label)}</button>`;
+    return `<button type="button" class="nav-tab ${active ? 'active' : ''}" data-screen="${item.id}" data-needs-doc="${item.requiresDoc ? '1' : '0'}" ${active ? 'aria-current="page"' : ''}>${esc(item.label)}</button>`;
   }).join('');
 
   root.innerHTML = `
@@ -302,7 +301,12 @@ function renderShell(): void {
   root.querySelectorAll<HTMLButtonElement>('[data-screen]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.screen as ScreenId;
-      store.navigate(target);
+      const needsDoc = btn.dataset.needsDoc === '1';
+      if (needsDoc) {
+        store.ensureActiveAuditAndNavigate(target);
+      } else {
+        store.navigate(target);
+      }
     });
   });
 

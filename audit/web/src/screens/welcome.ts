@@ -132,6 +132,34 @@ export function renderWelcome(store: Store): string {
       </div>
     </section>
 
+    ${
+      !state.goServerMode
+        ? `<section class="section-block card go-download-band" aria-labelledby="go-download-heading">
+             <div class="section-header-row">
+               <div>
+                 <p class="eyebrow">Standalone Offline Desktop Executable · No Cloud Dependency</p>
+                 <h2 id="go-download-heading">Download the Standalone Go Edition</h2>
+                 <p class="muted">Prefer a single local executable that runs offline on <code>127.0.0.1</code> and saves encrypted <code>.ssat</code> files atomically to your computer? Download portable binaries and SHA-256 checksums from GitHub Releases.</p>
+               </div>
+               <div class="btn-row">
+                 <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0" target="_blank" rel="noopener noreferrer">Open GitHub Release (ssat-v1.0.0)</a>
+               </div>
+             </div>
+             <div class="go-dl-grid">
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-windows-amd64.exe" rel="noopener noreferrer">Windows (64-bit .exe)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-arm64" rel="noopener noreferrer">macOS Apple Silicon (arm64)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-amd64" rel="noopener noreferrer">macOS Intel (amd64)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-amd64" rel="noopener noreferrer">Linux (x64)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-arm64" rel="noopener noreferrer">Linux (arm64)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+             </div>
+             <p class="muted" style="margin-top:10px;font-size:0.84rem">
+               <strong>Unsigned prerelease notice:</strong> Verify the file hash against <code>SHA256SUMS.txt</code> before running. Windows SmartScreen or macOS Gatekeeper may show an unknown-publisher prompt for unsigned executables; never disable system security protections globally. Source code and reproducible build steps live in <code>audit/go/</code>.
+             </p>
+           </section>`
+        : ''
+    }
+
     <section class="section-block" aria-labelledby="minicourse-heading">
       <div class="section-header-row">
         <div>

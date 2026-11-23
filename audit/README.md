@@ -19,8 +19,8 @@ An interactive, evidence-first technology and security audit assistant for indep
 
 ## Two delivery modes from one shared codebase
 
-1. **GitHub Pages (static browser edition):** Hosted at `/nspa/audit/`. Runs completely client-side with zero external CDN assets, analytics, or server storage.
-2. **Standalone Go edition (`go/`):** Single local executable embedding the exact built web UI and versioned catalog via `//go:embed`. Serves strictly on `127.0.0.1` with random loopback port, Host/Origin/CSRF protections, atomic encrypted saves, and no plaintext temporary files.
+1. **GitHub Pages (static browser edition):** Hosted at `https://mguhlin.github.io/nspa/audit/`. Runs completely client-side with zero external CDN assets, analytics, or server storage.
+2. **Standalone Go edition (`go/`):** Single local executable embedding the exact built web UI and versioned catalog via `//go:embed`. Serves strictly on `127.0.0.1` with random loopback port, Host/Origin/CSRF protections, atomic encrypted saves, and no plaintext temporary files. Portable binaries and `SHA256SUMS.txt` are published on [GitHub Releases (`ssat-v1.0.0`)](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0).
 
 ## Develop, test, and build
 

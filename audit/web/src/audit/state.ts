@@ -90,6 +90,29 @@ export class Store {
     this.emit();
   }
 
+  ensureActiveAuditAndNavigate(screen: ScreenId): void {
+    if (this.state.doc) {
+      this.navigate(screen);
+      return;
+    }
+    const doc = createEmptyAudit('');
+    this.state = {
+      ...this.state,
+      doc,
+      locked: false,
+      dirty: false,
+      saveTruth: 'memory_only',
+      lastSavedAt: null,
+      lastSavedPath: null,
+      undoStack: [],
+      screen,
+      statusMessage:
+        'Started a new local audit in browser memory. Open Welcome anytime to load the Fictional Practice Audit or unlock a .ssat file.',
+      statusTone: 'info'
+    };
+    this.emit();
+  }
+
   startNewAudit(orgName = ''): void {
     const doc = createEmptyAudit(orgName);
     this.state = {

@@ -80,6 +80,20 @@ export function renderSettingsAbout(store: Store): string {
     </div>
 
     <section class="card" style="margin-top:16px">
+      <h2>Standalone Go Edition Downloads</h2>
+      <p>Both the browser edition and standalone Go edition embed the identical 30-control catalog and open the exact same Argon2id + AES-256-GCM <code>.ssat</code> encrypted files. The Go executable serves strictly on <code>127.0.0.1</code> with atomic encrypted disk saves.</p>
+      <div class="btn-row" style="margin-top:10px">
+        <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0" target="_blank" rel="noopener noreferrer">All Downloads &amp; Release Notes (ssat-v1.0.0)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-windows-amd64.exe" rel="noopener noreferrer">Windows (.exe)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-arm64" rel="noopener noreferrer">macOS (arm64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-amd64" rel="noopener noreferrer">macOS (Intel)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-amd64" rel="noopener noreferrer">Linux (x64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+      </div>
+      <p class="muted" style="margin-top:8px;font-size:0.84rem">Binaries are currently unsigned prereleases; check <code>SHA256SUMS.txt</code> before running or compile from source in <code>audit/go/</code>.</p>
+    </section>
+
+    <section class="card" style="margin-top:16px">
       <h2>Privacy, Security &amp; Legal Boundary Statement</h2>
       <ul>
         <li><strong>No telemetry or cloud accounts:</strong> SSAT makes zero outbound calls to external analytics, font CDNs, tracking scripts, or third-party AI APIs.</li>
