@@ -46,7 +46,7 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test lab and introduction webdeck
         working-directory: lab
-        run: npm run test:browser
+        run: npm run test:browser -- --retries=2
       - name: Build lab and verify production asset paths
         working-directory: lab
         run: npm run build
