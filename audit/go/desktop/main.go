@@ -21,7 +21,7 @@ import (
 	wruntime "github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-const version = "1.1.0"
+const version = "1.1.1"
 
 type Desktop struct {
 	ctx         context.Context

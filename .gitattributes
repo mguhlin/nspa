@@ -4,3 +4,6 @@
 *.zip binary
 *.png binary
 *.webp binary
+
+# Audit templates have identical line endings in browser and native build inputs.
+audit/catalog/evidence_templates/*.csv text eol=lf

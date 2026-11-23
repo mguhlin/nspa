@@ -10,7 +10,7 @@ The current interface uses a six-step roadmap, five starting questions, editable
 |---|---|---|
 | Shared scoring, evidence proof rule, crypto, redaction, CSV, XSS, migration | `npm test --prefix audit/web` | PASS: eight unit groups; synthetic fixtures only |
 | Web UI, beginner unknowns/progress, action creation/editing, offline encrypted save/reopen, mobile reflow, axe scans | `npm run test:browser --prefix audit/web` | PASS: four Playwright tests, including simulated native save/open cancellation and disk errors |
-| Legacy Go catalog/crypto/server behavior | `go test ./...` in `audit/go` | PASS; existing browser-to-Go fixture compatibility retained |
+| Legacy Go catalog/crypto/server behavior | `go test ./...` in `audit/go` | PASS; existing browser-to-Go fixture compatibility retained after upgrading the legacy module to golang.org/x/crypto v0.57.0 |
 | Native file boundaries | `go test -tags webkit2_41 ./...` in `audit/go/desktop`, Linux build container | PASS: two tests; encrypted round trip, plaintext/executable/oversize rejection, basename confinement, busy guard, failed write preservation |
 | Real native offline essential task | Built Wails 2.17.1 executable in `docker run --network none` with GTK 3.24.38 / WebKitGTK 2.50.6, Xvfb and D-Bus | PASS: shared roadmap/questions, WebKit encryption, Go disk save/read, JS decryption, plaintext rejection, redacted HTML export. Explicit `--smoke-test` auto-selects only a synthetic output directory; this does not test user picker gestures. |
 | Visual inspection | Chromium screenshots at 1360px and 390px | PASS for welcome, roadmap, starting question; no page overflow at 390px. Automated screenshots do not qualify screen readers. |

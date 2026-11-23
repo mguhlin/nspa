@@ -18,7 +18,7 @@ jobs:
           cache-dependency-path: audit/web/package-lock.json
       - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
-          go-version: '1.24.x'
+          go-version: '1.27.4'
           cache-dependency-path: audit/go/go.sum
       - name: Build and test shared web UI
         working-directory: audit/web

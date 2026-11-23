@@ -84,12 +84,12 @@ export function renderSettingsAbout(store: Store): string {
       <h2>Offline desktop downloads</h2>
       <p>The desktop app opens in its own window and works without internet. It includes the same questions and opens the same encrypted .ssat files as this web edition. Native file pickers let you choose where to save or open your files.</p>
       <div class="btn-row" style="margin-top:10px">
-        <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.0" target="_blank" rel="noopener noreferrer">All Downloads &amp; Release Notes (ssat-v1.1.0)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (.exe)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">macOS (arm64)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">macOS (Intel)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-linux-amd64.tar.gz" rel="noopener noreferrer">Linux (x64)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+        <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.1" target="_blank" rel="noopener noreferrer">All Downloads &amp; Release Notes (ssat-v1.1.1)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.1/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (.exe)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.1/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">macOS (arm64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.1/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">macOS (Intel)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.1/ssat-desktop-linux-amd64.tar.gz" rel="noopener noreferrer">Linux (x64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.1/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
       </div>
       <p class="muted" style="margin-top:8px;font-size:0.84rem">Binaries are currently unsigned prereleases; check <code>SHA256SUMS.txt</code> before running or compile from source in <code>audit/go/</code>.</p>
     </section>
