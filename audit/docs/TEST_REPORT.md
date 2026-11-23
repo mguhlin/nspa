@@ -2,6 +2,23 @@
 
 This report records the verification commands actually executed against the Scholarship Security Audit Toolkit (`nspa/audit/`), using **synthetic data only** (`Example Scholarship Foundation (FICTIONAL)`). Automated test passes do **not** constitute regulatory compliance, legal approval, or an independent cryptographic audit.
 
+## Roadmap and native desktop verification
+
+The current interface uses a six-step roadmap, five starting questions, editable suggested actions, and the hero navy/blue/gold palette. The full catalog and `.ssat` format remain unchanged. The tables below retain prior legacy-adapter evidence; cross-compilation of the old loopback binary is not native desktop qualification.
+
+| Scope | Method | Result and limits |
+|---|---|---|
+| Shared scoring, evidence proof rule, crypto, redaction, CSV, XSS, migration | `npm test --prefix audit/web` | PASS: eight unit groups; synthetic fixtures only |
+| Web UI, beginner unknowns/progress, action creation/editing, offline encrypted save/reopen, mobile reflow, axe scans | `npm run test:browser --prefix audit/web` | PASS: four Playwright tests, including simulated native save/open cancellation and disk errors |
+| Legacy Go catalog/crypto/server behavior | `go test ./...` in `audit/go` | PASS; existing browser-to-Go fixture compatibility retained |
+| Native file boundaries | `go test -tags webkit2_41 ./...` in `audit/go/desktop`, Linux build container | PASS: two tests; encrypted round trip, plaintext/executable/oversize rejection, basename confinement, busy guard, failed write preservation |
+| Real native offline essential task | Built Wails 2.17.1 executable in `docker run --network none` with GTK 3.24.38 / WebKitGTK 2.50.6, Xvfb and D-Bus | PASS: shared roadmap/questions, WebKit encryption, Go disk save/read, JS decryption, plaintext rejection, redacted HTML export. Explicit `--smoke-test` auto-selects only a synthetic output directory; this does not test user picker gestures. |
+| Visual inspection | Chromium screenshots at 1360px and 390px | PASS for welcome, roadmap, starting question; no page overflow at 390px. Automated screenshots do not qualify screen readers. |
+| Site links and public staging | `python3 scripts/check_site.py`, `python3 scripts/build_site.py`, `git diff --check` | PASS locally; live deployment is verified separately after publication |
+| Windows/Mac native artifacts | Native OS release matrix | Build and archive verification only; physical device execution, clean offline runtime installation, picker gestures and assistive technology NOT_RUN locally |
+
+Evidence gates: task/design PASS for the tested browser and Linux synthetic paths, with screen-reader gaps; privacy PASS for the observed network-disabled synthetic task; security PASS for the bounded bridge tests, not an independent security audit; delivery CONDITIONAL for unsigned preview packages with documented runtime and physical-device limits. Neither source nor build success constitutes regulatory certification.
+
 ## Environment
 
 - **OS:** Linux x86_64
@@ -26,7 +43,7 @@ This report records the verification commands actually executed against the Scho
 | **T-11** | Go loopback server (`127.0.0.1:0`, Host DNS-rebinding, Origin/Sec-Fetch-Site, single-claim HttpOnly cookie, CSRF header, path traversal) | `go test -v ./internal/localserver` | **PASS** — Spoofed Host (403), cross-site (403), unauthenticated API (401), missing CSRF (403), traversal `../escape.ssat` (400), and plaintext save (400) all rejected; authorized save/open passed |
 | **T-12** | Accessibility (axe-core WCAG 2.1/2.2 AA rules), hero image loading, interactive Risk Matrix & mobile 390px reflow | `npm run test:browser` across Welcome, Dashboard (incl. 3×3 Risk Matrix), Guided Audit, Reports at 1280px & 390px | **PASS** — Zero axe violations (including WCAG 2.5.3 label-content-name match on Risk Matrix cells); hero graphic loads cleanly; zero horizontal overflow at 390px |
 | **T-14** | Cross-version migration (`1.0.0-draft` -> `1.0.0`) & unsupported version rejection | `npm test` | **PASS** — Legacy draft migrated with preserved scores; unsupported `9.9.9` rejected explicitly |
-| **T-15** | Clean build, Go cross-compilation, NSPA site link check & staging | `npm run build`, `go build` (`linux/amd64`, `darwin/arm64`, `windows/amd64`), `python3 scripts/check_site.py`, `python3 scripts/build_site.py` | **PASS** — Web bundle built (83.85 kB gzipped), all 3 Go binaries compiled with `CGO_ENABLED=0`, NSPA site staged cleanly |
+| **T-15** | Clean build, Go cross-compilation, NSPA site link check & staging | `npm run build`, `go build` (`linux/amd64`, `darwin/arm64`, `windows/amd64`), `python3 scripts/check_site.py`, `python3 scripts/build_site.py` | **PASS** — Legacy web bundle built, all 3 Go binaries compiled with `CGO_ENABLED=0`, NSPA site staged cleanly |
 | **T-16** | Atomic save preserving prior valid `.ssat` file on rejected/corrupt write | `go test -v ./internal/localserver` | **PASS** — Original valid `.ssat` bytes preserved after rejected overwrite attempts |
 | **T-17** | End-to-end fictional audit flow | `npm run test:browser` | **PASS** — Practice audit loaded, Critical gaps verified above score, Proof Rule verified, Reports & Landscape Rubric rendered |
 

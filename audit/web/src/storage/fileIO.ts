@@ -1,3 +1,4 @@
+import { desktopBridge } from './desktop';
 import type { AuditDocument } from '../types';
 import { decryptSsatToAudit, encryptAuditToSsat } from '../crypto/ssat';
 import { triggerDownload } from '../a11y/helpers';
@@ -10,6 +11,9 @@ export interface GoSessionInfo {
 }
 
 export async function detectGoServer(): Promise<GoSessionInfo | null> {
+  const native = desktopBridge();
+  if (native) return native.Info();
+  if (!['127.0.0.1', 'localhost'].includes(location.hostname)) return null;
   try {
     const res = await fetch('./api/session', {
       method: 'GET',
@@ -42,7 +46,7 @@ export async function saveAuditBrowser(doc: AuditDocument, passphrase: string): 
     .replace(/^-|-$/g, '')
     .slice(0, 48) || 'scholarship-audit';
   const filename = `${safeSlug}.ssat`;
-  triggerDownload(filename, encrypted, 'application/octet-stream');
+  await triggerDownload(filename, encrypted, 'application/octet-stream');
   return filename;
 }
 
@@ -53,6 +57,12 @@ export async function saveAuditGoLocal(
   csrfToken: string
 ): Promise<string> {
   const encrypted = await encryptAuditToSsat(doc, passphrase);
+  const native = desktopBridge();
+  if (native) {
+    const path = await native.SaveAudit(filename, encrypted);
+    if (!path) throw new Error('Save cancelled. Your work is still in this session.');
+    return path;
+  }
   const res = await fetch('./api/save', {
     method: 'POST',
     credentials: 'same-origin',
@@ -95,6 +105,7 @@ export async function openAuditGoLocal(
 }
 
 export async function listGoAuditFiles(csrfToken: string): Promise<string[]> {
+  if (desktopBridge()) return [];
   const res = await fetch('./api/files', {
     method: 'GET',
     credentials: 'same-origin',
@@ -106,6 +117,8 @@ export async function listGoAuditFiles(csrfToken: string): Promise<string[]> {
 }
 
 export async function shutdownGoServer(csrfToken: string): Promise<void> {
+  const native = desktopBridge();
+  if (native) { await native.Quit(); return; }
   const res = await fetch('./api/shutdown', {
     method: 'POST',
     credentials: 'same-origin',

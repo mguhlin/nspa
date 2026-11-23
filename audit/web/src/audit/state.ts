@@ -1,4 +1,5 @@
 import type { AuditDocument, AuditSnapshot, SaveTruthState, ScreenId } from '../types';
+import { STARTER_CHECKS } from './journey';
 import { createEmptyAudit } from './validation';
 import { loadDemoAudit } from './demo';
 import { computeMetrics, isEvidenceStale } from './scoring';
@@ -84,7 +85,7 @@ export class Store {
     this.state = {
       ...this.state,
       screen,
-      selectedControlId: opts?.controlId ?? this.state.selectedControlId,
+      selectedControlId: opts?.controlId ?? (screen === 'quick' ? STARTER_CHECKS.find(c => !this.state.doc?.assessments[c.id] || this.state.doc.assessments[c.id].status === 'not_assessed')?.id || STARTER_CHECKS[0].id : this.state.selectedControlId),
       selectedDomainId: opts?.domainId ?? this.state.selectedDomainId
     };
     this.emit();
@@ -106,8 +107,9 @@ export class Store {
       lastSavedPath: null,
       undoStack: [],
       screen,
+      selectedControlId: screen === 'quick' ? STARTER_CHECKS[0].id : this.state.selectedControlId,
       statusMessage:
-        'Started a new local audit in browser memory. Open Welcome anytime to load the Fictional Practice Audit or unlock a .ssat file.',
+        'Your work stays on this device. Use Save audit to keep an encrypted copy.',
       statusTone: 'info'
     };
     this.emit();
@@ -125,7 +127,7 @@ export class Store {
       lastSavedPath: null,
       undoStack: [],
       screen: 'profile',
-      statusMessage: 'Started a new audit in browser memory. Export an encrypted .ssat file to keep your work.',
+      statusMessage: 'Your audit is ready. Start with a name and your role, then return to the roadmap. Save an encrypted file to keep your work.',
       statusTone: 'info'
     };
     this.emit();
@@ -142,7 +144,7 @@ export class Store {
       lastSavedAt: null,
       lastSavedPath: null,
       undoStack: [],
-      screen: 'dashboard',
+      screen: 'roadmap',
       statusMessage: 'Loaded fictional Practice Audit (Example Scholarship Foundation — FICTIONAL).',
       statusTone: 'info'
     };
@@ -160,7 +162,7 @@ export class Store {
       lastSavedAt: nowISO(),
       lastSavedPath: pathLabel,
       undoStack: [],
-      screen: 'dashboard',
+      screen: 'roadmap',
       statusMessage: `Unlocked encrypted audit for "${doc.organization_profile.display_name || doc.audit_id}".${warnText}`,
       statusTone: warnings.length > 0 ? 'warn' : 'ok'
     };
@@ -342,7 +344,7 @@ export function saveTruthLabel(state: AppState): { text: string; tone: 'neutral'
     return { text: 'Encrypted local copy updated · Export .ssat for backup', tone: 'ok' };
   }
   if (state.dirty) {
-    return { text: 'In memory only — Export encrypted .ssat now', tone: 'warn' };
+    return { text: 'Unsaved changes — save audit', tone: 'warn' };
   }
-  return { text: 'Saved in memory only (not on disk)', tone: 'neutral' };
+  return { text: 'Not saved to a file yet', tone: 'neutral' };
 }

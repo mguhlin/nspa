@@ -2,7 +2,7 @@ import type { Store } from '../audit/state';
 import type { Sensitivity } from '../types';
 import { getTemplateByKey } from '../audit/catalog';
 import { exportInventoryToCsv, previewInventoryCsv, type CsvInventoryPreview } from '../storage/csv';
-import { esc, nextId, todayISO, triggerDownload } from '../a11y/helpers';
+import { esc, nextId, todayISO, downloadForUser } from '../a11y/helpers';
 
 export function detectInventoryGaps(store: Store): string[] {
   const doc = store.get().doc;
@@ -193,14 +193,12 @@ export function bindDataInventoryEvents(
 
   container.querySelector('[data-action="dl-inv-tpl"]')?.addEventListener('click', () => {
     const tpl = getTemplateByKey('data_inventory');
-    triggerDownload(tpl.filename, tpl.content, 'text/csv;charset=utf-8');
-    store.setStatus(`Downloaded ${tpl.filename}.`, 'ok');
+    downloadForUser(store, tpl.filename, tpl.content, 'text/csv;charset=utf-8');
   });
 
   container.querySelector('[data-action="export-inv-csv"]')?.addEventListener('click', () => {
     const csv = exportInventoryToCsv(doc.inventory);
-    triggerDownload('ssat-data-inventory.csv', csv, 'text/csv;charset=utf-8');
-    store.setStatus('Exported formula-safe Data Inventory CSV.', 'ok');
+    downloadForUser(store, 'ssat-data-inventory.csv', csv, 'text/csv;charset=utf-8');
   });
 
   const fileInput = container.querySelector<HTMLInputElement>('#inv-csv-file');

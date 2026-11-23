@@ -1,3 +1,4 @@
+import { desktopBridge } from './storage/desktop';
 import './style.css';
 import { Store, saveTruthLabel } from './audit/state';
 import type { ScreenId } from './types';
@@ -29,6 +30,9 @@ import { bindReportsEvents, renderReportsView, type ReportsUiState } from './scr
 import { bindHistoryEvents, renderHistoryView } from './screens/historyView';
 import { bindSettingsEvents, renderSettingsAbout } from './screens/settingsAbout';
 
+import { bindRoadmapEvents, renderRoadmap } from './screens/roadmap';
+import { bindQuickCheckEvents, renderQuickCheck } from './screens/quickCheck';
+
 const store = new Store();
 
 let dashFilter: DashboardFilterState = { domain: '', priority: '', status: 'needs_work', nist: '', matrixCell: '' };
@@ -40,16 +44,16 @@ let autosaveTimer: number | null = null;
 
 const NAV_ITEMS: ReadonlyArray<{ id: ScreenId; label: string; requiresDoc: boolean }> = [
   { id: 'welcome', label: 'Welcome', requiresDoc: false },
-  { id: 'profile', label: 'Profile & Scope', requiresDoc: true },
-  { id: 'dashboard', label: 'Dashboard', requiresDoc: true },
-  { id: 'audit', label: 'Audit (30)', requiresDoc: true },
-  { id: 'evidence', label: 'Evidence', requiresDoc: true },
-  { id: 'inventory', label: 'Inventory', requiresDoc: true },
-  { id: 'simulations', label: '5 Simulations', requiresDoc: true },
-  { id: 'findings', label: 'Findings', requiresDoc: true },
-  { id: 'reports', label: 'Reports', requiresDoc: true },
-  { id: 'history', label: 'History', requiresDoc: true },
-  { id: 'settings', label: 'Settings & About', requiresDoc: false }
+  { id: 'roadmap', label: 'My roadmap', requiresDoc: true },
+  { id: 'quick', label: 'Five starting questions', requiresDoc: true },
+  { id: 'findings', label: 'Action plan', requiresDoc: true },
+  { id: 'reports', label: 'Reports', requiresDoc: true }
+];
+const TOOLS: ReadonlyArray<{ id: ScreenId; label: string }> = [
+  { id: 'profile', label: 'Audit details' }, { id: 'audit', label: 'Full review (30 questions)' },
+  { id: 'dashboard', label: 'Risk dashboard' }, { id: 'evidence', label: 'Evidence notes' },
+  { id: 'inventory', label: 'Information inventory' }, { id: 'simulations', label: 'Practice exercises' },
+  { id: 'history', label: 'Audit history' }, { id: 'settings', label: 'Settings & About' }
 ];
 
 function scheduleEncryptedAutosave(): void {
@@ -79,7 +83,7 @@ function openSaveDialog(): void {
   const form = dlg.querySelector<HTMLFormElement>('form');
   form?.reset();
   if (errEl) errEl.hidden = true;
-  if (goWrap) goWrap.hidden = !st.goServerMode;
+  if (goWrap) goWrap.hidden = !st.goServerMode || Boolean(desktopBridge());
   if (fnInput) {
     const defaultName =
       st.lastSavedPath?.split(/[\\/]/).pop() ||
@@ -103,7 +107,7 @@ async function openLoadDialog(): Promise<void> {
   const form = dlg.querySelector<HTMLFormElement>('form');
   form?.reset();
   if (errEl) errEl.hidden = true;
-  if (goBox) goBox.hidden = !st.goServerMode;
+  if (goBox) goBox.hidden = !st.goServerMode || Boolean(desktopBridge());
 
   if (st.goServerMode && st.goCsrfToken && goSelect) {
     const files = await listGoAuditFiles(st.goCsrfToken);
@@ -130,6 +134,8 @@ function openUnlockLocalDialog(): void {
 function renderActiveScreen(): string {
   const st = store.get();
   switch (st.screen) {
+    case 'roadmap': return renderRoadmap(store);
+    case 'quick': return renderQuickCheck(store);
     case 'welcome':
       return renderWelcome(store);
     case 'profile':
@@ -176,20 +182,20 @@ function renderShell(): void {
         </a>
         <div class="brand-caption">
           <strong>Scholarship Security Audit Toolkit</strong>
-          <span>${st.goServerMode ? 'Standalone Local Go Edition · 127.0.0.1' : 'NSPA Local-First Audit Assistant'}</span>
+          <span>${desktopBridge() ? 'Offline desktop edition · No internet needed' : st.goServerMode ? 'Local browser edition' : 'A practical security roadmap for scholarship teams'}</span>
         </div>
       </div>
       <div class="header-actions">
         <span class="save-pill save-pill-${truth.tone}" id="save-state-pill">${esc(truth.text)}</span>
         <button type="button" class="btn btn-sm btn-outline" id="btn-undo" ${st.undoStack.length === 0 ? 'disabled' : ''} title="Undo last change">Undo (${st.undoStack.length})</button>
-        <button type="button" class="btn btn-sm btn-primary" id="btn-save-ssat" ${!st.doc ? 'disabled' : ''}>Save .ssat</button>
+        <button type="button" class="btn btn-sm btn-primary" id="btn-save-ssat" ${!st.doc ? 'disabled' : ''}>Save audit</button>
         <button type="button" class="btn btn-sm btn-outline" id="btn-lock" ${!st.doc ? 'disabled' : ''}>Lock</button>
-        ${!st.goServerMode ? '<a class="back-link" href="../">← NSPA Home</a>' : '<button type="button" class="btn btn-sm btn-danger" id="btn-stop-go">Stop Server</button>'}
+        ${!st.goServerMode ? '<a class="back-link" href="../">NSPA Home</a>' : `<button type="button" class="btn btn-sm btn-outline" id="btn-stop-go">${desktopBridge() ? 'Quit app' : 'Stop server'}</button>`}
       </div>
     </header>
 
     <nav class="workspace-nav no-print" aria-label="Audit sections">
-      <div class="wrap workspace-nav-inner">${navHtml}</div>
+      <div class="wrap workspace-nav-inner">${navHtml}<details class="tools-menu" ${TOOLS.some(t => t.id === st.screen) ? 'open' : ''}><summary>All tools</summary><div class="tools-panel">${TOOLS.map(t => `<button class="nav-tab ${st.screen === t.id ? 'active' : ''}" data-screen="${t.id}" data-needs-doc="${t.id === 'settings' ? '0' : '1'}" ${st.screen === t.id ? 'aria-current="page"' : ''}>${t.label}</button>`).join('')}</div></details></div>
     </nav>
 
     ${
@@ -220,10 +226,10 @@ function renderShell(): void {
     <dialog id="dlg-save" aria-labelledby="dlg-save-title">
       <form method="dialog" id="form-save-ssat">
         <div class="dlg-head">
-          <h2 id="dlg-save-title">Save Encrypted Audit (.ssat v1)</h2>
+          <h2 id="dlg-save-title">Save your audit safely</h2>
           <button type="button" class="btn btn-sm btn-outline" data-close-dlg="dlg-save">Close</button>
         </div>
-        <p class="muted">Encrypts your audit with Argon2id + AES-256-GCM. Passphrases are never saved or logged — store yours securely in a password manager.</p>
+        <p class="muted">Creates a password-protected .ssat file on your device. You will need the same passphrase to reopen it. There is no password reset.</p>
         <div id="save-go-filename-wrap" hidden>
           <label>
             <span>Local filename inside SSAT folder (.ssat)</span>
@@ -240,7 +246,7 @@ function renderShell(): void {
         </label>
         <div class="dlg-error callout callout-danger" hidden role="alert" style="margin-top:10px"></div>
         <div class="btn-row" style="margin-top:14px">
-          <button type="submit" class="btn btn-primary" id="btn-confirm-save">Encrypt &amp; Save .ssat</button>
+          <button type="submit" class="btn btn-primary" id="btn-confirm-save">Encrypt &amp; Save audit</button>
           <button type="button" class="btn btn-outline" data-close-dlg="dlg-save">Cancel</button>
         </div>
       </form>
@@ -249,7 +255,7 @@ function renderShell(): void {
     <dialog id="dlg-open" aria-labelledby="dlg-open-title">
       <form method="dialog" id="form-open-ssat">
         <div class="dlg-head">
-          <h2 id="dlg-open-title">Open Encrypted Audit (.ssat v1)</h2>
+          <h2 id="dlg-open-title">Open a saved audit</h2>
           <button type="button" class="btn btn-sm btn-outline" data-close-dlg="dlg-open">Close</button>
         </div>
         <p class="muted">Select an encrypted <code>.ssat</code> bundle created by either the browser or standalone Go edition.</p>
@@ -261,7 +267,7 @@ function renderShell(): void {
         </div>
         <label>
           <span>Choose .ssat file from device</span>
-          <input type="file" name="ssat_file" accept=".ssat,application/json,application/octet-stream" />
+          ${desktopBridge() ? '<span>Use Open to choose a saved audit in the system file picker.</span>' : '<input type="file" name="ssat_file" accept=".ssat,application/json,application/octet-stream" />'}
         </label>
         <label style="margin-top:10px">
           <span>Passphrase *</span>
@@ -314,7 +320,10 @@ function renderShell(): void {
     store.undo();
   });
   root.querySelector('#btn-save-ssat')?.addEventListener('click', () => openSaveDialog());
-  root.querySelector('#btn-lock')?.addEventListener('click', () => store.lockSession());
+  root.querySelector('#btn-lock')?.addEventListener('click', () => {
+    if (store.get().dirty && !window.confirm('Lock and discard unsaved changes? Save audit first to keep them.')) return;
+    store.lockSession();
+  });
   root.querySelector('#dismiss-status')?.addEventListener('click', () => store.setStatus(''));
   root.querySelector('#btn-stop-go')?.addEventListener('click', handleStopGoServer);
 
@@ -364,11 +373,13 @@ function renderShell(): void {
         const fn = String(fd.get('go_filename') || 'scholarship-audit.ssat').trim();
         const savedPath = await saveAuditGoLocal(cur.doc, p1, fn, cur.goCsrfToken);
         dlg?.close();
-        store.markFileSaved(savedPath);
+        if (store.get().doc === cur.doc) store.markFileSaved(savedPath);
+        else store.setStatus('Saved the earlier version. Save again to include your latest changes.', 'warn');
       } else {
         const filename = await saveAuditBrowser(cur.doc, p1);
         dlg?.close();
-        store.markFileSaved(filename);
+        if (store.get().doc === cur.doc) store.markFileSaved(filename);
+        else store.setStatus('Exported the earlier version. Save again to include your latest changes.', 'warn');
       }
     } catch (err) {
       if (errEl) {
@@ -378,7 +389,7 @@ function renderShell(): void {
     } finally {
       if (btn) {
         btn.disabled = false;
-        btn.textContent = 'Encrypt & Save .ssat';
+        btn.textContent = 'Encrypt & Save audit';
       }
     }
   });
@@ -404,7 +415,15 @@ function renderShell(): void {
         btn.textContent = 'Decrypting…';
       }
 
-      if (pickedFile) {
+      const native = desktopBridge();
+      if (native) {
+        const picked = await native.OpenAudit();
+        if (!picked) throw new Error('Open cancelled. Your current audit is unchanged.');
+        const res = await decryptSsatToAudit(picked.encrypted_ssat, pass);
+        if (store.get().doc !== cur.doc) throw new Error('The current audit changed. Open the file again when ready.');
+        dlg?.close();
+        store.openLoadedAudit(res.document, picked.path, res.warnings);
+      } else if (pickedFile) {
         const text = await pickedFile.text();
         const res = await decryptSsatToAudit(text, pass);
         dlg?.close();
@@ -454,6 +473,8 @@ function renderShell(): void {
   const mainEl = root.querySelector<HTMLElement>('#main');
   if (mainEl) {
     switch (st.screen) {
+      case 'roadmap': bindRoadmapEvents(mainEl, store); break;
+      case 'quick': bindQuickCheckEvents(mainEl, store); break;
       case 'welcome':
         bindWelcomeEvents(mainEl, store, {
           onOpenSsatModal: () => void openLoadDialog(),
@@ -555,6 +576,7 @@ function renderShell(): void {
 async function handleStopGoServer(): Promise<void> {
   const st = store.get();
   if (!st.goServerMode || !st.goCsrfToken) return;
+  if (desktopBridge()) { await desktopBridge()!.Quit(); return; }
   if (!window.confirm('Stop the local SSAT Go server? Make sure you have saved your encrypted .ssat file first.')) {
     return;
   }
@@ -570,6 +592,7 @@ async function handleStopGoServer(): Promise<void> {
 store.subscribe(() => {
   renderShell();
   scheduleEncryptedAutosave();
+  void desktopBridge()?.SetUnsaved(Boolean(store.get().doc && (store.get().dirty || !store.get().lastSavedPath)));
 });
 
 window.addEventListener('beforeunload', (event) => {
@@ -583,9 +606,22 @@ window.addEventListener('beforeunload', (event) => {
 // Initialize: detect standalone Go local server, register optional app-shell SW on static hosting
 async function bootstrap(): Promise<void> {
   renderShell();
+  if (desktopBridge()) {
+    document.addEventListener('click', event => {
+      const link = (event.target as Element).closest<HTMLAnchorElement>('a[href]');
+      if (link && !link.getAttribute('href')?.startsWith('#')) {
+        event.preventDefault();
+        store.setStatus('This desktop app works offline. Website links are available in the web edition.', 'info');
+      }
+    });
+  }
   const goInfo = await detectGoServer();
   if (goInfo) {
     store.setGoRuntime(true, goInfo.csrf_token, goInfo.version);
+    if (await desktopBridge()?.SmokeEnabled()) {
+      const { runNativeSmoke } = await import('./nativeSmoke');
+      await runNativeSmoke(store);
+    }
   } else if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
     navigator.serviceWorker.register('./sw.js').catch(() => undefined);
   }

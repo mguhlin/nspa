@@ -1,3 +1,4 @@
+import { desktopBridge } from '../storage/desktop';
 export function esc(value: unknown): string {
   const s = value === null || value === undefined ? '' : String(value);
   return s
@@ -66,7 +67,14 @@ export function focusMainHeading(): void {
   }
 }
 
-export function triggerDownload(filename: string, content: string | Uint8Array, mimeType: string): void {
+export async function triggerDownload(filename: string, content: string | Uint8Array, mimeType: string): Promise<void> {
+  const native = desktopBridge();
+  if (native) {
+    const text = typeof content === 'string' ? content : new TextDecoder().decode(content);
+    const path = await native.ExportFile(filename, text);
+    if (!path) throw new Error('Save cancelled. Your work is unchanged.');
+    return;
+  }
   const blobPart: BlobPart =
     typeof content === 'string'
       ? content
@@ -81,4 +89,8 @@ export function triggerDownload(filename: string, content: string | Uint8Array, 
   a.click();
   a.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+export function downloadForUser(store: { setStatus(message: string, tone: 'ok' | 'warn'): void }, filename: string, content: string | Uint8Array, mimeType: string): void {
+  void triggerDownload(filename, content, mimeType).then(() => store.setStatus(`Saved ${filename}. Review reports before sharing.`, 'ok')).catch(err => store.setStatus(err instanceof Error ? err.message : 'File could not be saved. Try again.', 'warn'));
 }

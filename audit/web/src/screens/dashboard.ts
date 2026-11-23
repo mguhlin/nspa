@@ -8,7 +8,7 @@ import {
   type MatrixLevel
 } from '../audit/riskMatrix';
 import { exportEvidenceTrackerCsv, exportFindingsCsv } from '../reports/generator';
-import { esc, formatLocalDate, triggerDownload } from '../a11y/helpers';
+import { esc, formatLocalDate, downloadForUser } from '../a11y/helpers';
 
 export interface DashboardFilterState {
   domain: string;
@@ -386,11 +386,9 @@ export function bindDashboardEvents(
       if (!doc) return;
       const act = b.dataset.quickExport;
       if (act === 'findings-csv') {
-        triggerDownload('ssat-findings-redacted.csv', exportFindingsCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
-        store.setStatus('Exported formula-safe Redacted Findings CSV.', 'ok');
+        downloadForUser(store, 'ssat-findings-redacted.csv', exportFindingsCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
       } else if (act === 'evidence-csv') {
-        triggerDownload('ssat-evidence-tracker-redacted.csv', exportEvidenceTrackerCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
-        store.setStatus('Exported formula-safe Redacted Evidence Tracker CSV.', 'ok');
+        downloadForUser(store, 'ssat-evidence-tracker-redacted.csv', exportEvidenceTrackerCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
       } else if (act === 'save-ssat') {
         quickActions.onSaveSsat();
       }

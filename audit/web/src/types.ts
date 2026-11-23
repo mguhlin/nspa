@@ -316,6 +316,8 @@ export type SaveTruthState =
   | 'file_saved';
 
 export type ScreenId =
+  | 'roadmap'
+  | 'quick'
   | 'welcome'
   | 'profile'
   | 'dashboard'

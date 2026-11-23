@@ -2,7 +2,7 @@ import type { Store } from '../audit/state';
 import type { EvidenceOrigin, EvidenceResult, EvidenceReviewStatus, EvidenceSensitivity, RedactionStatus, ReviewMethod } from '../types';
 import { CATALOG, EVIDENCE_TEMPLATES, getTemplateByKey } from '../audit/catalog';
 import { isEvidenceStale } from '../audit/scoring';
-import { esc, nextId, todayISO, triggerDownload } from '../a11y/helpers';
+import { esc, nextId, todayISO, downloadForUser } from '../a11y/helpers';
 
 export function renderEvidenceLibrary(store: Store): string {
   const doc = store.get().doc;
@@ -175,8 +175,7 @@ export function bindEvidenceLibraryEvents(container: HTMLElement, store: Store):
   container.querySelectorAll<HTMLButtonElement>('[data-dl-tpl]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const tpl = getTemplateByKey(btn.dataset.dlTpl || 'data_inventory');
-      triggerDownload(tpl.filename, tpl.content, 'text/csv;charset=utf-8');
-      store.setStatus(`Downloaded ${tpl.filename}.`, 'ok');
+      downloadForUser(store, tpl.filename, tpl.content, 'text/csv;charset=utf-8');
     });
   });
 

@@ -62,13 +62,13 @@ export function renderProfileScope(store: Store): string {
   return `
     <div class="page-head">
       <div>
-        <p class="eyebrow">Step 1 &amp; 2 · Context and Audit Boundaries</p>
-        <h1>Organization Profile &amp; Audit Scope</h1>
-        <p class="muted">Define context without entering unnecessary personal data. Choosing “Unknown” is encouraged wherever facts still need verification.</p>
+        <p class="eyebrow">Step 1 · Set the scene</p>
+        <h1>Name your audit</h1>
+        <p class="muted">Start with an audit name and your role. Everything else can wait. Use role names and descriptions, not applicant records.</p>
       </div>
       <div class="btn-row">
-        <button type="button" class="btn btn-primary" data-go="dashboard">Go to Dashboard</button>
-        <button type="button" class="btn btn-outline" data-go="audit">Start Guided 30-Control Audit</button>
+        <button type="button" class="btn btn-primary" data-go="roadmap">Back to roadmap</button>
+        <button type="button" class="btn btn-outline" data-go="quick">Open five starting questions</button>
       </div>
     </div>
 
@@ -79,6 +79,11 @@ export function renderProfileScope(store: Store): string {
           <span>Organization display label (optional; avoid real names if practicing)</span>
           <input type="text" name="display_name" value="${esc(p.display_name)}" placeholder="e.g., Community Scholarship Foundation" maxlength="200" />
         </label>
+        <label>
+          <span>Your role</span>
+          <input type="text" name="auditor_role" value="${esc(p.auditor_role)}" placeholder="e.g., Program Director & IT Lead" maxlength="120" />
+        </label>
+      </div><details class="section-block"><summary>Optional: organization details</summary><div class="form-grid">
         <label>
           <span>Organization / mission type</span>
           <select name="organization_type">
@@ -103,12 +108,9 @@ export function renderProfileScope(store: Store): string {
           <span>Geography / operating region</span>
           <input type="text" name="geography" value="${esc(p.geography)}" placeholder="e.g., Texas / Multi-state U.S." maxlength="120" />
         </label>
-        <label>
-          <span>Lead auditor role (role name preferred over personal name)</span>
-          <input type="text" name="auditor_role" value="${esc(p.auditor_role)}" placeholder="e.g., Program Director & IT Lead" maxlength="120" />
-        </label>
+
       </div>
-      <div class="callout callout-warn" style="margin-top:16px">
+      </details><details class="section-block"><summary>Optional: scope, policy, and contract details</summary><div class="callout callout-warn" style="margin-top:16px">
         <label>
           <span><strong>Legal &amp; contractual review flag</strong> (SSAT does not issue legal compliance verdicts)</span>
           <input type="text" name="legal_context_flag" value="${esc(p.legal_context_flag || 'Requires Counsel / Authorized Review')}" maxlength="200" />
@@ -146,8 +148,8 @@ export function renderProfileScope(store: Store): string {
           <textarea name="unknowns" rows="3" maxlength="2000">${esc(s.unknowns)}</textarea>
         </label>
       </div>
-      <div class="btn-row" style="margin-top:16px">
-        <button type="submit" class="btn btn-primary">Save Profile &amp; Scope</button>
+      </details><div class="btn-row" style="margin-top:16px">
+        <button type="submit" class="btn btn-primary">Keep details and view roadmap</button>
       </div>
     </form>
 
@@ -205,7 +207,7 @@ export function renderProfileScope(store: Store): string {
 export function bindProfileScopeEvents(container: HTMLElement, store: Store): void {
   container.querySelectorAll<HTMLButtonElement>('[data-go]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const target = btn.dataset.go as 'dashboard' | 'audit';
+      const target = btn.dataset.go as 'roadmap' | 'quick';
       store.navigate(target);
     });
   });
@@ -241,7 +243,8 @@ export function bindProfileScopeEvents(container: HTMLElement, store: Store): vo
         unknowns: String(fd.get('unknowns') || '').trim()
       };
       if (doc.assessment_status === 'draft') doc.assessment_status = 'in_progress';
-    }, 'Organization profile and audit scope updated.');
+    }, 'Audit details kept. Save audit to keep a file.');
+    store.navigate('roadmap');
   });
 
   const sysForm = container.querySelector<HTMLFormElement>('#add-system-form');

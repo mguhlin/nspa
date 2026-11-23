@@ -1,3 +1,4 @@
+import { desktopBridge } from '../storage/desktop';
 import type { Store } from '../audit/state';
 import {
   buildRedactedJsonExport,
@@ -69,7 +70,7 @@ export function renderReportsView(store: Store, ui: ReportsUiState): string {
         </fieldset>
 
         <div class="btn-row">
-          <button type="button" class="btn btn-primary" data-export="print">Print / Save as PDF</button>
+          <button type="button" class="btn btn-primary" data-export="print">${desktopBridge() ? 'Save printable report (HTML)' : 'Print / Save as PDF'}</button>
           <button type="button" class="btn btn-secondary" data-export="html">Download Self-Contained HTML</button>
           <button type="button" class="btn btn-outline" data-export="md">Download Markdown (.md)</button>
           <button type="button" class="btn btn-outline" data-export="csv-findings">Findings CSV (Safe)</button>
@@ -110,37 +111,52 @@ export function bindReportsEvents(
   const org = doc.organization_profile.display_name || 'ssat-audit';
   const slug = `ssat-${ui.reportType}-${ui.privacyMode}`;
 
-  container.querySelector('[data-export="print"]')?.addEventListener('click', () => {
+  container.querySelector('[data-export="print"]')?.addEventListener('click', async () => {
+    if (desktopBridge()) {
+      try { await triggerDownload(`${slug}.html`, wrapStandaloneHtmlReport(report, org), 'text/html;charset=utf-8'); store.setStatus('Printable HTML saved. Open it in a browser or document viewer to print or save a PDF.', 'ok'); }
+      catch (err) { store.setStatus(String(err), 'warn'); }
+      return;
+    }
     document.body.classList.toggle('print-landscape', report.isLandscape);
     window.print();
   });
 
-  container.querySelector('[data-export="html"]')?.addEventListener('click', () => {
+  container.querySelector('[data-export="html"]')?.addEventListener('click', async () => {
+    try {
     const html = wrapStandaloneHtmlReport(report, org);
-    triggerDownload(`${slug}.html`, html, 'text/html;charset=utf-8');
+    await triggerDownload(`${slug}.html`, html, 'text/html;charset=utf-8');
     store.setStatus(`Exported standalone HTML report (${slug}.html). Review before sharing.`, 'ok');
+    } catch (err) { store.setStatus(String(err), 'warn'); }
   });
 
-  container.querySelector('[data-export="md"]')?.addEventListener('click', () => {
-    triggerDownload(`${slug}.md`, report.markdown, 'text/markdown;charset=utf-8');
+  container.querySelector('[data-export="md"]')?.addEventListener('click', async () => {
+    try {
+    await triggerDownload(`${slug}.md`, report.markdown, 'text/markdown;charset=utf-8');
     store.setStatus(`Exported Markdown report (${slug}.md).`, 'ok');
+    } catch (err) { store.setStatus(String(err), 'warn'); }
   });
 
-  container.querySelector('[data-export="csv-findings"]')?.addEventListener('click', () => {
+  container.querySelector('[data-export="csv-findings"]')?.addEventListener('click', async () => {
+    try {
     const csv = exportFindingsCsv(doc, ui.privacyMode);
-    triggerDownload(`ssat-findings-${ui.privacyMode}.csv`, csv, 'text/csv;charset=utf-8');
+    await triggerDownload(`ssat-findings-${ui.privacyMode}.csv`, csv, 'text/csv;charset=utf-8');
     store.setStatus('Exported formula-safe Findings & Remediation CSV.', 'ok');
+    } catch (err) { store.setStatus(String(err), 'warn'); }
   });
 
-  container.querySelector('[data-export="csv-evidence"]')?.addEventListener('click', () => {
+  container.querySelector('[data-export="csv-evidence"]')?.addEventListener('click', async () => {
+    try {
     const csv = exportEvidenceTrackerCsv(doc, ui.privacyMode);
-    triggerDownload(`ssat-evidence-tracker-${ui.privacyMode}.csv`, csv, 'text/csv;charset=utf-8');
+    await triggerDownload(`ssat-evidence-tracker-${ui.privacyMode}.csv`, csv, 'text/csv;charset=utf-8');
     store.setStatus('Exported formula-safe Evidence Request Tracker CSV.', 'ok');
+    } catch (err) { store.setStatus(String(err), 'warn'); }
   });
 
-  container.querySelector('[data-export="json"]')?.addEventListener('click', () => {
+  container.querySelector('[data-export="json"]')?.addEventListener('click', async () => {
+    try {
     const payload = buildRedactedJsonExport(doc, ui.privacyMode);
-    triggerDownload(`${slug}-report.json`, JSON.stringify(payload, null, 2), 'application/json;charset=utf-8');
+    await triggerDownload(`${slug}-report.json`, JSON.stringify(payload, null, 2), 'application/json;charset=utf-8');
     store.setStatus('Exported structured report JSON (not an encrypted .ssat backup).', 'ok');
+    } catch (err) { store.setStatus(String(err), 'warn'); }
   });
 }

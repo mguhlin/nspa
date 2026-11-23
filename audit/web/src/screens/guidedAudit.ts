@@ -8,7 +8,7 @@ import {
   scoreShortBadge,
   validateNotApplicable
 } from '../audit/scoring';
-import { esc, nextId, todayISO, triggerDownload } from '../a11y/helpers';
+import { esc, nextId, todayISO, downloadForUser } from '../a11y/helpers';
 
 export function renderGuidedAudit(store: Store): string {
   const state = store.get();
@@ -115,7 +115,7 @@ export function renderGuidedAudit(store: Store): string {
         <h1 id="ctrl-heading">${esc(control.control_id)} — ${esc(control.title)}</h1>
         <p class="audit-question">${esc(control.plain_language_question)}</p>
 
-        <div class="teaching-grid">
+        <details class="section-block"><summary>Why this matters, an example, and a test to try</summary><div class="teaching-grid">
           <div class="teaching-panel">
             <h3>Why this matters</h3>
             <p>${esc(control.why_it_matters)}</p>
@@ -131,7 +131,7 @@ export function renderGuidedAudit(store: Store): string {
           </div>
         </div>
 
-        <form id="control-assessment-form" class="assessment-form">
+        </details><form id="control-assessment-form" class="assessment-form">
           <h2>Record Evaluation &amp; Score</h2>
 
           <fieldset class="score-fieldset">
@@ -225,7 +225,7 @@ export function renderGuidedAudit(store: Store): string {
             <textarea name="assessment_notes" rows="4" maxlength="4000">${esc(assessment.assessment_notes)}</textarea>
           </label>
 
-          <fieldset class="na-box" id="na-fields">
+          <fieldset class="na-box" id="na-fields" ${assessment.status !== 'not_applicable' ? 'hidden' : ''}>
             <legend>Not Applicable (N/A) documentation — required only if marking N/A</legend>
             ${
               assessment.status === 'not_applicable' && !naCheck.valid
@@ -258,8 +258,8 @@ export function renderGuidedAudit(store: Store): string {
             <button type="submit" class="btn btn-primary">Save Control Assessment</button>
             <button type="button" class="btn btn-secondary" data-action="create-finding">Save This as a Finding</button>
             <div class="spacer"></div>
-            ${prevCtrl ? `<button type="button" class="btn btn-outline" data-select-control="${esc(prevCtrl.control_id)}">← ${esc(prevCtrl.control_id)}</button>` : ''}
-            ${nextCtrl ? `<button type="button" class="btn btn-outline" data-select-control="${esc(nextCtrl.control_id)}">${esc(nextCtrl.control_id)} →</button>` : ''}
+            ${prevCtrl ? `<button type="button" class="btn btn-outline" data-select-control="${esc(prevCtrl.control_id)}">Previous question</button>` : ''}
+            ${nextCtrl ? `<button type="button" class="btn btn-outline" data-select-control="${esc(nextCtrl.control_id)}">Next question</button>` : ''}
           </div>
         </form>
       </section>
@@ -273,11 +273,11 @@ export function renderGuidedAudit(store: Store): string {
             <button type="button" class="btn btn-sm btn-outline" data-download-template="${esc(template.key)}">Download Blank ${esc(template.label)} CSV</button>
           </div>
           <div class="compare-stack" style="margin-top:12px">
-            <details class="compare-card compare-good" open>
+            <details class="compare-card compare-good">
               <summary><strong>Show a good example (Score 2)</strong></summary>
               <p>${esc(control.acceptable_evidence)}</p>
             </details>
-            <details class="compare-card compare-weak" open>
+            <details class="compare-card compare-weak">
               <summary><strong>Show insufficient evidence</strong></summary>
               <p>${esc(control.insufficient_evidence)}</p>
             </details>
@@ -351,12 +351,15 @@ export function bindGuidedAuditEvents(container: HTMLElement, store: Store): voi
   container.querySelectorAll<HTMLButtonElement>('[data-download-template]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const tpl = getTemplateByKey(btn.dataset.downloadTemplate || 'data_inventory');
-      triggerDownload(tpl.filename, tpl.content, 'text/csv;charset=utf-8');
-      store.setStatus(`Downloaded blank template ${tpl.filename}.`, 'ok');
+      downloadForUser(store, tpl.filename, tpl.content, 'text/csv;charset=utf-8');
     });
   });
 
   const form = container.querySelector<HTMLFormElement>('#control-assessment-form');
+  form?.querySelectorAll<HTMLInputElement>('[name=score_choice]').forEach(radio => radio.addEventListener('change', () => {
+    const na = form.querySelector<HTMLElement>('#na-fields');
+    if (na) na.hidden = radio.value !== 'not_applicable';
+  }));
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const errBox = container.querySelector<HTMLElement>('#ctrl-form-error');

@@ -1,7 +1,7 @@
 import type { Store } from '../audit/state';
 import type { CostEffortBand, FindingSeverity, FindingStatus, PlanHorizon } from '../types';
 import { CATALOG } from '../audit/catalog';
-import { effectivePriority } from '../audit/scoring';
+import { createSuggestedActions } from '../audit/journey';
 import { esc, nextId } from '../a11y/helpers';
 
 export interface FindingsFilter {
@@ -76,7 +76,7 @@ export function renderFindingsActions(store: Store, filter: FindingsFilter): str
             <small>${esc(f.proposed_action)}</small><br>
             <small class="muted"><strong>Verify:</strong> ${esc(f.verification_steps || 'Define verification test')}</small>
           </td>
-          <td>${esc(f.owner_role || 'Unassigned')}<br><small class="muted">Due: ${esc(f.target_date || 'TBD')} · Effort: ${esc(f.cost_effort_band)}</small></td>
+          <td>${esc(f.owner_role || 'Choose an owner')}<br><small class="muted">Due: ${esc(f.target_date || 'Choose a date')}</small><details class="action-editor"><summary>Edit this task</summary><form data-edit-action="${esc(f.finding_id)}"><label><span>What to do</span><textarea name="action" maxlength="4000">${esc(f.proposed_action)}</textarea></label><label><span>Owner role</span><input name="owner" type="text" maxlength="120" value="${esc(f.owner_role)}"></label><label><span>Target date</span><input name="target" type="date" value="${esc(f.target_date)}"></label><label><span>When to work on this</span><select name="horizon">${horizons.map(h => `<option ${h === f.horizon ? 'selected' : ''}>${h}</option>`).join('')}</select></label><button class="btn btn-sm btn-primary" type="submit">Keep task changes</button></form></details></td>
           <td>
             <select class="select-sm" data-f-status="${esc(f.finding_id)}" aria-label="Status for ${esc(f.finding_id)}">
               ${FINDING_STATUSES.map((st) => `<option value="${esc(st)}" ${f.status === st ? 'selected' : ''}>${esc(st)}</option>`).join('')}
@@ -95,12 +95,12 @@ export function renderFindingsActions(store: Store, filter: FindingsFilter): str
   return `
     <div class="page-head">
       <div>
-        <p class="eyebrow">Step 5 &amp; 6 · Risk Register &amp; 30 / 60 / 90-Day Roadmap</p>
-        <h1>Findings &amp; Remediation Actions (${doc.findings.length})</h1>
+        <p class="eyebrow">Step 5 · Choose what to fix</p>
+        <h1>Your action plan (${doc.findings.length})</h1>
         <p class="muted">A low control score indicates a gap to remediate, not automatically an active breach. Escalate suspected active exposures to your incident/legal lead.</p>
       </div>
       <div class="btn-row">
-        <button type="button" class="btn btn-primary" data-action="generate-plan">Generate Actions from Unresolved Controls</button>
+        <button type="button" class="btn btn-primary" data-action="generate-plan">Create suggested actions</button>
       </div>
     </div>
 
@@ -110,7 +110,7 @@ export function renderFindingsActions(store: Store, filter: FindingsFilter): str
 
     <section class="card" style="margin-top:16px" aria-labelledby="findings-table-heading">
       <div class="section-header-row">
-        <h2 id="findings-table-heading">Risk Register (${filtered.length} shown)</h2>
+        <h2 id="findings-table-heading">Tasks to follow up (${filtered.length} shown)</h2>
         <div class="filter-bar">
           <label><span>Severity</span>
             <select id="f-sev">
@@ -142,7 +142,7 @@ export function renderFindingsActions(store: Store, filter: FindingsFilter): str
       </div>
     </section>
 
-    <form id="add-finding-form" class="card form-section" style="margin-top:16px">
+    <details class="section-block"><summary>Add a task manually</summary><form id="add-finding-form" class="card form-section" style="margin-top:16px">
       <h2>Add Risk Finding &amp; Remediation Action</h2>
       <div class="form-grid">
         <label><span>Control ID *</span>
@@ -188,7 +188,7 @@ export function renderFindingsActions(store: Store, filter: FindingsFilter): str
       <div class="btn-row" style="margin-top:14px">
         <button type="submit" class="btn btn-primary">Add Finding to Register</button>
       </div>
-    </form>
+    </form></details>
   `;
 }
 
@@ -206,62 +206,20 @@ export function bindFindingsActionsEvents(
   bindSel('#f-horizon', 'horizon');
   bindSel('#f-status', 'status');
 
-  container.querySelector('[data-action="generate-plan"]')?.addEventListener('click', () => {
-    let added = 0;
-    store.updateDoc((draft) => {
-      const existingControls = new Set(
-        draft.findings
-          .filter((f) => f.status !== 'Verified Closed' && f.status !== 'Accepted by Authorized Owner')
-          .map((f) => f.control_id)
-      );
-      for (const ctrl of CATALOG.controls) {
-        const a = draft.assessments[ctrl.control_id];
-        if (!a || a.status !== 'assessed' || (a.score !== 0 && a.score !== 1)) continue;
-        if (existingControls.has(ctrl.control_id)) continue;
-        const pri = effectivePriority(ctrl, a);
-        const sev: FindingSeverity =
-          pri === 'Critical' && a.score === 0
-            ? 'Immediate / Critical'
-            : pri === 'Critical'
-              ? 'High'
-              : a.score === 0
-                ? 'High'
-                : 'Medium';
-        const horizon: PlanHorizon =
-          sev === 'Immediate / Critical' ? 'Immediate' : sev === 'High' ? '30-Day' : '60-Day';
-        const fid = nextId('F', draft.findings.map((x) => x.finding_id));
-        draft.findings.push({
-          finding_id: fid,
-          control_id: ctrl.control_id,
-          affected_process_system: ctrl.domain_id,
-          title: `${ctrl.control_id} (Score ${a.score}): ${ctrl.title}`,
-          description: a.assessment_notes || ctrl.plain_language_question,
-          evidence_observation: a.evidence_ids.length
-            ? `Linked evidence: ${a.evidence_ids.join(', ')}`
-            : 'No verified evidence linked.',
-          evidence_ids: [...a.evidence_ids],
-          impact: ctrl.why_it_matters,
-          likelihood_rationale: `Assessed at Score ${a.score} (${pri} control).`,
-          severity: sev,
-          severity_override_rationale: '',
-          existing_mitigations: '',
-          proposed_action: ctrl.what_to_do_next,
-          owner_role: ctrl.suggested_owner,
-          target_date: '',
-          horizon,
-          dependencies: '',
-          cost_effort_band: 'Low',
-          verification_steps: ctrl.verification_steps,
-          residual_risk: 'Open pending verification',
-          approval_signoff: '',
-          status: 'Open',
-          acceptance_rationale: '',
-          acceptance_review_date: ''
-        });
-        added += 1;
-      }
-    }, added > 0 ? `Generated ${added} prioritized remediation finding(s) from unresolved controls.` : 'All assessed Score 0/1 controls already have open findings.');
-  });
+  container.querySelector('[data-action="generate-plan"]')?.addEventListener('click', () => createSuggestedActions(store));
+
+  container.querySelectorAll<HTMLFormElement>('[data-edit-action]').forEach(form => form.addEventListener('submit', e => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    store.updateDoc(draft => {
+      const f = draft.findings.find(f => f.finding_id === form.dataset.editAction);
+      if (!f) return;
+      f.proposed_action = String(fd.get('action') || '').trim();
+      f.owner_role = String(fd.get('owner') || '').trim();
+      f.target_date = String(fd.get('target') || '');
+      f.horizon = String(fd.get('horizon') || '30-Day') as PlanHorizon;
+    }, 'Task changes kept. Save audit to keep a file.');
+  }));
 
   container.querySelectorAll<HTMLSelectElement>('[data-f-status]').forEach((sel) => {
     sel.addEventListener('change', () => {

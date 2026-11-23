@@ -1,6 +1,6 @@
 ## Scholarship Security Audit Toolkit
 
-The local-first audit assistant lives at `audit/` (`audit/web/` static TypeScript UI + `audit/go/` standalone `//go:embed` loopback executable). Both share `audit/catalog/controls.v1.json` and interoperable `.ssat` v1 Argon2id + AES-256-GCM encrypted bundles. Run `npm run build --prefix audit/web` before public staging. Public staging publishes `audit/web/dist` at `/audit/` alongside `/lab/` and existing workshop materials.
+The local-first audit assistant lives at `audit/`: shared TypeScript UI in `audit/web/`, native Wails offline desktop module in `audit/go/desktop/`, and retained legacy loopback executable in `audit/go/cmd/ssat/`. The default experience is a six-step roadmap and five plain-language starting questions, with advanced tools disclosed only when needed. Match the hero navy/blue/gold palette. See the first HANDOFF section and `audit/README.md` for desktop packaging and test limits. Both share `audit/catalog/controls.v1.json` and interoperable `.ssat` v1 Argon2id + AES-256-GCM encrypted bundles. Run `npm run build --prefix audit/web` before public staging. Public staging publishes `audit/web/dist` at `/audit/` alongside `/lab/` and existing workshop materials.
 
 ## Scholarship Decision Lab
 

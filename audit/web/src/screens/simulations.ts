@@ -1,7 +1,7 @@
 import type { Store } from '../audit/state';
 import type { SimulationOutcome } from '../types';
 import { CATALOG } from '../audit/catalog';
-import { esc, nextId, todayISO, triggerDownload } from '../a11y/helpers';
+import { esc, nextId, todayISO, downloadForUser } from '../a11y/helpers';
 
 export function renderSimulations(store: Store): string {
   const doc = store.get().doc;
@@ -215,8 +215,7 @@ export function bindSimulationsEvents(container: HTMLElement, store: Store): voi
         '',
         '> Self-assessment test record using synthetic data only. Not a regulatory certification.'
       ].join('\n');
-      triggerDownload(`${run.test_id.toLowerCase()}-verification-record.md`, md, 'text/markdown;charset=utf-8');
-      store.setStatus(`Downloaded verification record ${run.test_id}.`, 'ok');
+      downloadForUser(store, `${run.test_id.toLowerCase()}-verification-record.md`, md, 'text/markdown;charset=utf-8');
     });
   });
 }

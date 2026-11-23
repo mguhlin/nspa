@@ -4,17 +4,21 @@
 
 SSAT is a **local-first audit assistant** for scholarship providers. It is **not** a vulnerability scanner, penetration-testing tool, compliance certification platform, or cloud database.
 
-- **No backend or cloud accounts:** The GitHub Pages edition runs strictly in the user's browser. The Go edition runs strictly on loopback (`127.0.0.1`) with an OS-assigned ephemeral port.
+- **No backend or cloud accounts:** The GitHub Pages edition runs strictly in the user's browser. The desktop edition uses its own OS webview and a narrow native file bridge. The legacy Go browser edition runs on loopback (`127.0.0.1`) with an OS-assigned ephemeral port.
 - **No external network calls:** All scripts, styles, icons, and the 30-control catalog are bundled locally. No external fonts, CDN scripts, analytics, or AI APIs are loaded.
 - **Authenticated encrypted saves (`.ssat` v1):** Audit files are encrypted using **Argon2id** key derivation and **AES-256-GCM** authenticated encryption with a fresh 96-bit random nonce per save and canonical JSON header metadata bound as Additional Authenticated Data (AAD).
 - **Evidence references by default:** SSAT stores safe metadata references to evidence rather than embedding raw SSNs, transcripts, bank numbers, donor lists, or live credentials.
-- **Loopback server hardening (Go edition):**
+- **Loopback server hardening (legacy Go browser edition):**
   - Binds exclusively to `127.0.0.1:0` (never `0.0.0.0`).
   - Rejects non-matching `Host` headers (DNS-rebinding defense) and cross-origin `Origin` / `Sec-Fetch-Site` requests.
   - Keeps authentication tokens out of URLs; uses single-claim `HttpOnly; SameSite=Strict` session cookies paired with an explicit `X-SSAT-CSRF` header for mutations.
   - Enforces strict size limits, path-traversal prevention, `0600` file permissions, and atomic temp-file writes.
   - Never writes unencrypted plaintext audit files to disk by default.
 - **Safe rendering & exports:** All user-entered and imported fields are rendered via safe text escaping (never unescaped `innerHTML`). CSV exports neutralize spreadsheet formula prefixes (`=`, `+`, `-`, `@`, tab, carriage return). Executive reports default to **Redacted** mode, omitting local paths, evidence URLs, and personal names.
+
+## Native desktop boundaries
+
+`go/desktop/` has no generic path or command-execution bridge. Normal saves and opens use OS-selected paths in native pickers; supplied names are reduced to basenames. File drop is disabled. Audit writes accept only bounded valid encrypted envelopes; report exports are separate, bounded, and limited to HTML/Markdown/CSV/JSON/text. A busy guard prevents overlapping file operations and window close during writes. A native close dialog protects unsaved work. CSP constrains application loads/connections; the interface blocks website navigation. The synthetic smoke hook auto-selects only a CLI-authorized test directory when explicitly launched with `--smoke-test`.
 
 ## Known limitations
 

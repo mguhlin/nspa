@@ -54,15 +54,16 @@ export function renderWelcome(store: Store): string {
           <p class="eyebrow">NSPA Scholarship Providers · Protect Data · Protect Decisions · Protect Operations</p>
           <h1 id="welcome-heading">Scholarship Security Audit Toolkit</h1>
           <p class="lead">
-            Build an evidence-based assessment, inspect a live Likelihood × Impact Risk Matrix, track remediation ownership, and export redacted reports — without needing an enterprise security team.
+            Start with five everyday questions. Find your biggest gaps, make a clear action plan, and save a summary to share with your team.
           </p>
           <div class="cta-row">
             <button type="button" class="btn btn-primary" data-action="start-new">Start New Audit</button>
-            <button type="button" class="btn btn-secondary" data-action="open-ssat">Open Encrypted .ssat Audit</button>
-            <button type="button" class="btn btn-accent" data-action="start-demo">Try Fictional Practice Audit</button>
+            <button type="button" class="btn btn-secondary" data-action="open-ssat">Open saved audit</button>
+            <button type="button" class="btn btn-accent" data-action="start-demo">Try a fictional example</button>
+            ${!state.goServerMode ? '<a class="btn btn-outline" href="#go-download-heading">Get the offline app</a>' : ''}
             ${
               state.doc
-                ? '<button type="button" class="btn btn-outline" data-action="resume-active">Return to Current Audit</button>'
+                ? '<button type="button" class="btn btn-outline" data-action="resume-active">Return to my roadmap</button>'
                 : ''
             }
           </div>
@@ -95,38 +96,17 @@ export function renderWelcome(store: Store): string {
         <div><strong>Not a certification:</strong> Never certifies NIST, FERPA, PCI DSS, or legal compliance.</div>
         <div><strong>Local-first:</strong> ${
           state.goServerMode
-            ? 'Runs on 127.0.0.1 only; zero cloud calls.'
+            ? 'All audit processing stays on your computer.'
             : 'Processed in browser memory; static host sees ordinary HTTP metadata only.'
         }</div>
         <div><strong>References only:</strong> Never paste raw SSNs, essays, bank numbers, or passwords.</div>
-        <div><strong>Accessible:</strong> Keyboard-only, screen-reader, 200%/400% zoom, and grayscale print ready.</div>
+        <div><strong>Keep your work:</strong> Save an encrypted audit file before closing. Keep its passphrase somewhere safe.</div>
       </aside>
     </section>
 
-    <section class="section-block" aria-labelledby="pillars-heading">
-      <h2 id="pillars-heading">Four Core Pillars of Scholarship Resilience</h2>
-      <div class="step-grid">
-        <article class="card pillar-card">
-          <span class="step-num">01</span>
-          <h3>Data Protection</h3>
-          <p>Secure applicant, awardee, and donor information across portals, CRMs, shared drives, and backups.</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="step-num">02</span>
-          <h3>Decision Integrity</h3>
-          <p>Support fair, consistent, conflict-checked, and auditable eligibility, scoring, and disbursement decisions.</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="step-num">03</span>
-          <h3>Governance &amp; Obligations</h3>
-          <p>Collect verifiable facts for privacy, donor, and contract duties (legal applicability always flagged for counsel review).</p>
-        </article>
-        <article class="card pillar-card">
-          <span class="step-num">04</span>
-          <h3>Continuity Planning</h3>
-          <p>Keep scholarship intake, notifications, and payments operating through deadline-day outages and incidents.</p>
-        </article>
-      </div>
+    <section class="section-block welcome-route" aria-labelledby="route-heading">
+      <div><h2 id="route-heading">A small start. A useful plan.</h2><p>You can stop after the first five questions with a short list of things to fix, or work through all 30 questions with your team.</p></div>
+      <ol><li><strong>Answer five questions</strong><span>Use what you know. Leave unknowns open.</span></li><li><strong>Choose what to fix</strong><span>Give each task an owner and a deadline.</span></li><li><strong>Check and share</strong><span>Keep proof, share a summary, and save your audit.</span></li></ol>
     </section>
 
     ${
@@ -134,30 +114,29 @@ export function renderWelcome(store: Store): string {
         ? `<section class="section-block card go-download-band" aria-labelledby="go-download-heading">
              <div class="section-header-row">
                <div>
-                 <p class="eyebrow">Standalone Offline Desktop Executable · No Cloud Dependency</p>
-                 <h2 id="go-download-heading">Download the Standalone Go Edition</h2>
-                 <p class="muted">Prefer a single local executable that runs offline on <code>127.0.0.1</code> and saves encrypted <code>.ssat</code> files atomically to your computer? Download portable binaries and SHA-256 checksums from GitHub Releases.</p>
+                 <p class="eyebrow">Work without internet</p>
+                 <h2 id="go-download-heading">Download the offline desktop app</h2>
+                 <p class="muted">Open SSAT in its own app window. The questions, examples, encryption, and reports are included. No browser window, account, or internet connection is needed to do your audit.</p>
                </div>
                <div class="btn-row">
-                 <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0" target="_blank" rel="noopener noreferrer">Open GitHub Release (ssat-v1.0.0)</a>
+                 <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.0" target="_blank" rel="noopener noreferrer">Downloads and setup instructions</a>
                </div>
              </div>
              <div class="go-dl-grid">
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-windows-amd64.exe" rel="noopener noreferrer">Windows (64-bit .exe)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-arm64" rel="noopener noreferrer">macOS Apple Silicon (arm64)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-amd64" rel="noopener noreferrer">macOS Intel (amd64)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-amd64" rel="noopener noreferrer">Linux (x64)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-arm64" rel="noopener noreferrer">Linux (arm64)</a>
-               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (64-bit)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">Mac (Apple Silicon)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">Mac (Intel)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-linux-amd64.tar.gz" rel="noopener noreferrer">Linux (x64)</a>
+               <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
              </div>
              <p class="muted" style="margin-top:10px;font-size:0.84rem">
-               <strong>Unsigned prerelease notice:</strong> Verify the file hash against <code>SHA256SUMS.txt</code> before running. Windows SmartScreen or macOS Gatekeeper may show an unknown-publisher prompt for unsigned executables; never disable system security protections globally. Source code and reproducible build steps live in <code>audit/go/</code>.
+               <strong>Unsigned prerelease notice:</strong> Verify the file hash against <code>SHA256SUMS.txt</code> before running. Windows SmartScreen or macOS Gatekeeper may show an unknown-publisher prompt for unsigned executables; never disable system security protections globally. Windows includes Microsoft’s offline WebView2 installer for computers that need it. Linux requires GTK 3 and WebKitGTK 4.1 to be installed before disconnecting. These are unsigned preview builds; Mac and Windows device testing is still pending.
              </p>
            </section>`
         : ''
     }
 
-    <section class="section-block" aria-labelledby="minicourse-heading">
+    <details class="section-block card"><summary>Optional learning: what good evidence looks like</summary><section aria-labelledby="minicourse-heading">
       <div class="section-header-row">
         <div>
           <p class="eyebrow">Onboarding Mini-Course · 10 Fictional Examples</p>
@@ -168,22 +147,24 @@ export function renderWelcome(store: Store): string {
       <div class="lessons-list">
         ${lessonsHtml}
       </div>
-    </section>
+    </section></details>
   `;
 }
 
 export function bindWelcomeEvents(container: HTMLElement, store: Store, actions: WelcomeActions): void {
   container.querySelector('[data-action="start-new"]')?.addEventListener('click', () => {
+    if (store.get().doc && store.get().dirty && !window.confirm('Start over and discard unsaved changes? Save audit first if you want to keep them.')) return;
     store.startNewAudit('');
   });
   container.querySelector('[data-action="open-ssat"]')?.addEventListener('click', () => {
     actions.onOpenSsatModal();
   });
   container.querySelector('[data-action="start-demo"]')?.addEventListener('click', () => {
+    if (store.get().doc && store.get().dirty && !window.confirm('Replace your unsaved audit with a fictional example?')) return;
     store.startDemoAudit();
   });
   container.querySelector('[data-action="resume-active"]')?.addEventListener('click', () => {
-    store.navigate('dashboard');
+    store.navigate('roadmap');
   });
   container.querySelector('[data-action="unlock-local"]')?.addEventListener('click', () => {
     actions.onUnlockLocalCopy();

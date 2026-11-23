@@ -28,3 +28,7 @@
 - **Managed runtime memory:** JavaScript and Go garbage collectors do not guarantee immediate cryptographic erasure of decrypted strings from RAM.
 - **Exported artifacts:** Once saved as PDF, HTML, CSV, or Markdown outside SSAT, protection depends on the organization's own file controls.
 - **Static hosting metadata:** GitHub Pages logs ordinary HTTP access metadata (IP address, path, user-agent) when serving the static web app files.
+
+## Native desktop adapter boundary
+
+The Wails desktop module uses the same untrusted imported-document and report-rendering boundaries as the browser UI. Its bridge adds picker-selected local files; it does not accept renderer-supplied paths, shell commands, or native drop paths. It validates envelope sizes and structure before saving audits, bounds reads from selected regular files, and stages outputs beside OS-selected destinations. Direct export attempts for executable extensions or plaintext `.ssat` files are rejected. OS/filesystem replacement guarantees and app-private report staging are documented. A renderer compromise could request a visible picker or export misleading content; it has no silent arbitrary-path file API. Full renderer isolation, OS compromise, other local users, runtime servicing, backups, and forensic erasure are not claimed to be solved. Real picker provenance/gestures, platform assistive technology, and Windows/Mac physical installation remain manual qualification gates.

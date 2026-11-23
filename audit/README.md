@@ -4,6 +4,12 @@ An interactive, evidence-first technology and security audit assistant for indep
 
 > **Important boundary:** SSAT is an **audit assistant**, not a vulnerability scanner, penetration-testing tool, legal opinion, or compliance certification. Completing this assessment does not certify an organization as NIST compliant, FERPA compliant, PCI DSS compliant, or secure.
 
+## Start small
+
+Choose **Start New Audit**, enter an audit name and your role, and follow **My roadmap**. Begin with five everyday questions about account protection, backup recovery, payment changes, applicant information, and emergency contacts. Missing and partial safeguards can become editable tasks with owners and deadlines. “Not sure yet” remains unknown. Save audit creates a password-protected `.ssat` file; the passphrase cannot be reset.
+
+The full 30-question review, risk dashboard, evidence notes, information inventory, exercises, and history live under **All tools**. The starter questions use five existing controls; they do not create a second score or replace the full review. A verified score still requires current reviewed evidence, a method, and a date. The navy, blue, and gold palette matches the supplied hero image.
+
 ## What SSAT includes
 
 - **10 evaluation domains and 30 scholarship-specific controls** (`DATA`, `IAM`, `VEND`, `CONT`, `FIN`, `AWARD`, `AI`, `RESP`, `TECH`, `SUST`) mapped to NIST CSF 2.0 functions.
@@ -17,10 +23,13 @@ An interactive, evidence-first technology and security audit assistant for indep
 - **Interoperable encrypted `.ssat` v1 storage:** Browser and standalone Go editions both encrypt and decrypt the same `.ssat` bundle using Argon2id and AES-256-GCM.
 - **Fictional Practice Audit:** Pre-loaded with the synthetic **Example Scholarship Foundation (FICTIONAL)** dataset so teams can explore safely and reset at any time.
 
-## Two delivery modes from one shared codebase
+## Web and offline desktop editions
 
-1. **GitHub Pages (static browser edition):** Hosted at `https://mguhlin.github.io/nspa/audit/`. Runs completely client-side with zero external CDN assets, analytics, or server storage.
-2. **Standalone Go edition (`go/`):** Single local executable embedding the exact built web UI and versioned catalog via `//go:embed`. Serves strictly on `127.0.0.1` with random loopback port, Host/Origin/CSRF protections, atomic encrypted saves, and no plaintext temporary files. Portable binaries and `SHA256SUMS.txt` are published on [GitHub Releases (`ssat-v1.0.0`)](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0).
+- **Web:** [Open SSAT](https://mguhlin.github.io/nspa/audit/). Static, browser-local processing; the first visit requires internet. Audit contents stay in memory unless explicitly saved. The web host receives normal HTTP request metadata.
+- **Desktop:** [Download SSAT 1.1](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.0). `go/desktop/` opens the same embedded interface in its own Wails window, with native file dialogs and no external browser or internet needed for audit work. Windows x64 includes Microsoft's full offline WebView2 installer. Mac uses system WKWebView; Linux x64 requires preinstalled GTK 3/WebKitGTK 4.1. See [desktop setup and limits](go/desktop/START-HERE.txt). These are unsigned preview packages; physical Windows/Mac, clean-install, screen-reader, signing, and notarization qualification remain outstanding.
+- **Legacy local browser app:** `go/cmd/ssat/` and the [1.0 release](https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0) remain available for environments that prefer the original loopback browser edition. They are distinct from the desktop app.
+
+All editions share the catalog and `.ssat` v1 format. Desktop reports save as HTML/CSV/Markdown/JSON using native dialogs. Print/PDF uses the exported HTML in an external viewer; the embedded desktop window does not promise native PDF printing.
 
 ## Develop, test, and build
 
@@ -37,7 +46,7 @@ npm run build
 npm run test:browser
 ```
 
-### Standalone Go edition (`go/`)
+### Legacy loopback Go edition (`go/`)
 
 Requires Go 1.24+.
 
@@ -62,6 +71,21 @@ CGO_ENABLED=0 GOOS=linux   GOARCH=amd64 go build -trimpath -o bin/ssat-linux-amd
 CGO_ENABLED=0 GOOS=darwin  GOARCH=arm64 go build -trimpath -o bin/ssat-darwin-arm64 ./cmd/ssat
 CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -trimpath -o bin/ssat-windows-amd64.exe ./cmd/ssat
 ```
+
+### Native desktop (`go/desktop/`)
+
+Requires Go 1.26+ (release toolchain 1.27.4), Wails 2.17.1, and native platform build libraries. Build the shared UI and run the sync script above first. On Linux, install GTK 3 and WebKitGTK 4.1 development libraries, then:
+
+```sh
+cd go/desktop
+go test -tags webkit2_41 ./...
+go run github.com/wailsapp/wails/v2/cmd/wails@v2.17.1 build -clean -skipbindings -tags webkit2_41
+./build/bin/SSAT
+```
+
+On Windows/macOS omit `-tags webkit2_41`. CI builds each package on its target operating system; native GUI apps are not produced by the legacy `CGO_ENABLED=0` cross-build commands. `.github/workflows/release-ssat-desktop.yml` packages release tags `ssat-v1.1.*`; the legacy workflow covers only `ssat-v1.0.*`.
+
+The explicit `--smoke-test /path/to/synthetic-output` option runs a fictional native workflow and exits with a JSON result. It bypasses user file-picker gestures only in that explicit test mode. Test a built Linux artifact in a network-disabled container with the matching GUI libraries and a virtual display to verify offline runtime behavior. Normal builds never create test outputs without that flag.
 
 ## Documentation
 

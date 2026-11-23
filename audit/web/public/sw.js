@@ -4,7 +4,7 @@
  * NEVER caches API calls, audit contents, passphrases, .ssat bundles, or user exports.
  * Uses network-first for HTML navigations so fresh deployments appear immediately on reload.
  */
-const CACHE_NAME = 'ssat-app-shell-v2';
+const CACHE_NAME = 'ssat-app-shell-v3';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

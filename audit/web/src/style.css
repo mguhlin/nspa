@@ -1,23 +1,17 @@
 @charset "UTF-8";
-/*
- * Scholarship Security Audit Toolkit (SSAT)
- * Styled to match the NSPA conference website palette and editorial hierarchy
- * (assets/site.css + assets/resource-theme.css):
- *   Ink/Navy #2E4F66 · Deep Teal #007681 · Pale Aqua #E4F4F4 · Paper #FFFEFA
- *   NSPA Gold #FFCD34 · NSPA Coral #FF7233 · Risk Red #9E2A2B (paired with text labels)
- */
+/* Navy, blue, and gold drawn from the Scholarship Security Audit hero. */
 :root {
-  --ink: #2e4f66;
-  --ink-strong: #1b3446;
-  --teal: #007681;
-  --teal-dark: #005b64;
-  --aqua: #e4f4f4;
-  --aqua-soft: #f2fafa;
-  --paper: #fffefa;
+  --ink: #102b55;
+  --ink-strong: #0b2145;
+  --teal: #245fb5;
+  --teal-dark: #184888;
+  --aqua: #eaf1fc;
+  --aqua-soft: #f3f6fc;
+  --paper: #f5f7fc;
   --white: #ffffff;
-  --line: #ccdddd;
-  --muted: #4b606e;
-  --gold: #ffcd34;
+  --line: #cdd8e8;
+  --muted: #465975;
+  --gold: #efc778;
   --coral: #ff7233;
   --danger: #9e2a2b;
   --danger-bg: #fdecec;
@@ -536,11 +530,12 @@ summary:focus-visible {
 
 /* Welcome Hero */
 .hero-band {
-  background: linear-gradient(135deg, var(--aqua) 0%, #f4fbfb 100%);
+  background: var(--ink-strong);
+  color: #edf3ff;
   border: 1px solid var(--line);
-  border-top: 5px solid var(--teal);
+  border-top: 5px solid var(--gold);
   border-radius: 8px;
-  padding: 20px 24px;
+  padding: 28px;
 }
 
 .hero-visual-banner {
@@ -1631,6 +1626,77 @@ dialog::backdrop {
   border-top: 1px solid var(--line);
 }
 
+/* A short route through the audit, with the detailed tools close at hand. */
+.hero-band h1 { color: #fff; }
+.hero-band .eyebrow { color: var(--gold); }
+.hero-band .lead { color: #e0eaff; }
+.hero-band .btn-primary { background: var(--gold); color: var(--ink-strong); border-color: var(--gold); }
+.hero-band .btn-primary:hover { background: #ffdb99; }
+.hero-band .btn-secondary { background: #173e78; border-color: #8aaadd; }
+.hero-band .btn-accent { background: transparent; border-color: #a6bcdf; color: #fff; }
+.hero-band .trust-strip { color: var(--ink); background: #fff; border-left-color: var(--gold); }
+.hero-band .hero-visual-banner { border-color: #5278b3; box-shadow: none; }
+.card { box-shadow: none; }
+.eyebrow { font-size: .9rem; }
+.nav-tab, .btn-sm { font-size: .9rem; }
+.tools-menu { position: relative; align-self: center; margin-left: auto; }
+.tools-menu > summary { color: #fff; padding: 8px 12px; cursor: pointer; font-weight: 700; }
+.tools-panel { position: absolute; z-index: 20; right: 0; top: 100%; width: 270px; padding: 8px; background: var(--ink-strong); border: 1px solid #7893bc; box-shadow: 0 8px 18px #0b214530; border-radius: 6px; }
+.tools-panel .nav-tab { display: block; width: 100%; text-align: left; white-space: normal; }
+.welcome-route { padding: 18px 0; }
+.welcome-route ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 24px; padding-left: 24px; }
+.welcome-route li { padding-left: 4px; }
+.welcome-route li::marker { color: var(--teal-dark); font-weight: 700; }
+.welcome-route li span { display: block; color: var(--muted); margin-top: 6px; }
+.next-step { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px; background: var(--ink-strong); color: #edf3ff; border-left: 5px solid var(--gold); border-radius: 6px; }
+.next-step h2 { color: #fff; }
+.next-step .eyebrow { color: var(--gold); }
+.next-step p:last-child { margin: 0; }
+.next-step .btn { flex-shrink: 0; max-width: 100%; }
+.journey-list { list-style: none; padding: 0; margin: 24px 0; }
+.journey-list > li { display: grid; grid-template-columns: 48px 1fr; gap: 20px; border-bottom: 1px solid var(--line); padding: 24px 0; }
+.journey-number { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; font-weight: 700; color: var(--teal-dark); background: #fff; }
+.journey-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.journey-title h2 { font-size: 1.5rem; }
+.journey-status { color: var(--muted); font-size: .9rem; }
+.journey-list p { max-width: 76ch; }
+.starter-list > div { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 12px 0; border-top: 1px solid var(--line); }
+.starter-list > div > strong { flex: 1; min-width: 180px; }
+.starter-list > div > span { color: var(--muted); }
+.quick-mobile-select { display: none; }
+.quick-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; }
+.quick-nav-item { display: flex; align-items: center; text-align: left; gap: 12px; width: 100%; padding: 16px 12px; background: transparent; border: 0; border-left: 3px solid transparent; cursor: pointer; }
+.quick-nav-item span { color: var(--muted); }
+.quick-nav-item.active { background: #fff; border-left-color: var(--teal); font-weight: 700; }
+.quick-nav > p { padding: 16px; font-size: .9rem; }
+.quick-question { max-width: 840px; padding: 30px; }
+.quick-question h2 { font-size: 2rem; }
+.quick-help { border-left: 3px solid var(--gold); padding: 10px 16px; background: var(--aqua-soft); }
+.quick-question .score-option { padding: 14px; }
+.quick-question .score-option:has(input:checked) { background: var(--aqua); border-color: var(--teal); }
+.quick-question input[type=radio] { margin-top: 6px; }
+.quick-question .btn[type=submit] { margin-top: 16px; }
+summary { cursor: pointer; }
+.action-editor { min-width: 230px; margin-top: 10px; }
+.action-editor label { margin: 8px 0; }
+@media (max-width: 760px) {
+  .next-step { align-items: stretch; flex-direction: column; padding: 20px; }
+  .welcome-route ol, .quick-layout { grid-template-columns: 1fr; }
+  .quick-nav { display: none; }
+  .quick-mobile-select { display: grid; margin-bottom: 16px; }
+  .brand-caption span { display: none; }
+  .nspa-logo { width: 68px; }
+  .quick-nav-item { width: auto; padding: 8px; font-size: .9rem; }
+  .quick-nav > p { width: 100%; margin: 0; padding: 8px; }
+  .quick-question { padding: 20px; }
+  .journey-list > li { grid-template-columns: 32px 1fr; gap: 12px; }
+  .journey-number { width: 30px; height: 30px; }
+  .tools-menu { margin-left: 0; }
+  .tools-panel { left: 0; right: auto; }
+  .hero-band { padding: 20px; }
+  .brand { min-width: 0; }
+}
+
 /* Responsive reflow */
 @media (max-width: 1120px) {
   .guided-layout,
@@ -1710,7 +1776,7 @@ dialog::backdrop {
     border-color: #444;
   }
   .data-table th {
-    background: #2e4f66 !important;
+    background: #102b55 !important;
     color: #ffffff !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;

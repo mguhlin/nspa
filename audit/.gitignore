@@ -21,3 +21,9 @@ go/ssat
 go/ssat.exe
 go/internal/ui/assets/*
 !go/internal/ui/assets/.gitkeep
+go/desktop/build/
+go/desktop/wailsjs/
+go/desktop/SSAT
+go/desktop/build-info.txt
+go/desktop/modules.txt
+go/desktop/THIRD-PARTY-LICENSES.txt

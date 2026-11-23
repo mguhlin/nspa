@@ -1,3 +1,4 @@
+import { desktopBridge } from '../storage/desktop';
 import type { Store } from '../audit/state';
 import { CATALOG } from '../audit/catalog';
 import { esc } from '../a11y/helpers';
@@ -44,9 +45,9 @@ export function renderSettingsAbout(store: Store): string {
         ${
           state.goServerMode
             ? `<div class="callout callout-info" style="margin-top:14px">
-                 <strong>Standalone Go Edition active (127.0.0.1 loopback only · v${esc(state.goVersion || '1.0.0')})</strong>
-                 <p style="margin:6px 0">Files save atomically to your local disk with <code>0600</code> permissions. Stop the local server when finished.</p>
-                 <button type="button" class="btn btn-sm btn-danger" data-set="stop-go">Stop Local Go Server</button>
+                 <strong>${desktopBridge() ? 'Offline desktop app' : 'Local browser edition'} · v${esc(state.goVersion || '1.0.0')}</strong>
+                 <p style="margin:6px 0">Save password-protected audit files on your device. Save the latest changes before closing.</p>
+                 <button type="button" class="btn btn-sm btn-danger" data-set="stop-go">${desktopBridge() ? 'Quit app' : 'Stop local server'}</button>
                </div>`
             : ''
         }
@@ -80,15 +81,15 @@ export function renderSettingsAbout(store: Store): string {
     </div>
 
     <section class="card" style="margin-top:16px">
-      <h2>Standalone Go Edition Downloads</h2>
-      <p>Both the browser edition and standalone Go edition embed the identical 30-control catalog and open the exact same Argon2id + AES-256-GCM <code>.ssat</code> encrypted files. The Go executable serves strictly on <code>127.0.0.1</code> with atomic encrypted disk saves.</p>
+      <h2>Offline desktop downloads</h2>
+      <p>The desktop app opens in its own window and works without internet. It includes the same questions and opens the same encrypted .ssat files as this web edition. Native file pickers let you choose where to save or open your files.</p>
       <div class="btn-row" style="margin-top:10px">
-        <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.0.0" target="_blank" rel="noopener noreferrer">All Downloads &amp; Release Notes (ssat-v1.0.0)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-windows-amd64.exe" rel="noopener noreferrer">Windows (.exe)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-arm64" rel="noopener noreferrer">macOS (arm64)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-darwin-amd64" rel="noopener noreferrer">macOS (Intel)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/ssat-linux-amd64" rel="noopener noreferrer">Linux (x64)</a>
-        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.0.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
+        <a class="btn btn-primary" href="https://github.com/mguhlin/nspa/releases/tag/ssat-v1.1.0" target="_blank" rel="noopener noreferrer">All Downloads &amp; Release Notes (ssat-v1.1.0)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-windows-amd64.zip" rel="noopener noreferrer">Windows (.exe)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-arm64.zip" rel="noopener noreferrer">macOS (arm64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-macos-amd64.zip" rel="noopener noreferrer">macOS (Intel)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/ssat-desktop-linux-amd64.tar.gz" rel="noopener noreferrer">Linux (x64)</a>
+        <a class="btn btn-outline" href="https://github.com/mguhlin/nspa/releases/download/ssat-v1.1.0/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>
       </div>
       <p class="muted" style="margin-top:8px;font-size:0.84rem">Binaries are currently unsigned prereleases; check <code>SHA256SUMS.txt</code> before running or compile from source in <code>audit/go/</code>.</p>
     </section>

@@ -1,0 +1,49 @@
+SSAT — Scholarship Security Audit Toolkit
+
+1. Extract the whole download into a folder on your computer.
+2. Open SSAT (Windows: SSAT.exe; Mac: SSAT.app; Linux: ./SSAT).
+3. Choose Start New Audit, enter an audit name and your role, and follow My roadmap.
+4. Start with the five questions. Not sure is a useful answer and stays an unknown.
+5. Save audit creates a password-protected .ssat file. Remember the passphrase;
+   there is no password reset. Reopen it with Open saved audit.
+
+No internet, account, external browser, cloud server, or AI service is required
+for the audit. All app assets and examples are included. Website links are
+blocked inside the desktop app. The app uses the operating system's embedded
+webview to display the shared interface in its own window.
+
+WINDOWS (x64): Requires Windows 10/11 with WebView2 Runtime. If it is missing,
+run the included MicrosoftEdgeWebView2RuntimeInstallerX64.exe first. This is
+Microsoft's full offline installer, not its internet bootstrapper. Normal
+publisher/organization policies still apply. Then open SSAT.exe again.
+The runtime installer is publisher-verified during packaging. It has not been
+qualified here on a clean physical Windows device without the runtime.
+
+MAC: Choose Apple Silicon or Intel to match your Mac. Uses built-in WKWebView.
+The app is an unsigned/unnotarized preview; organization or Gatekeeper policies
+may prevent launch. No signing/notarization or physical Mac qualification is
+claimed. Do not disable your computer's security protections.
+
+LINUX (x64): Debian 12 / Ubuntu 22.04 or newer with GTK 3 and WebKitGTK 4.1.
+Install these OS libraries before disconnecting if they are absent:
+  sudo apt-get install libgtk-3-0 libwebkit2gtk-4.1-0
+Requires an ordinary graphical desktop session. This tarball contains the app,
+not the Linux runtime libraries. Network-disabled native WebKit testing covers
+the synthetic essential task; it is not universal Linux qualification.
+
+The program is a self-assessment assistant, not certification or legal advice.
+Record roles, types of information, and safe references, not applicant records,
+banking details, passwords, or other sensitive source material.
+
+Reports are ordinary unencrypted exports. Review them before sharing. To print
+or make a PDF, save the printable HTML report and open it in a browser or
+compatible viewer. This is the one desktop task that uses an external viewer.
+
+Close warnings protect unsaved work; there is no automatic recovery file.
+Native file picker cancellation leaves your session unchanged. Successful
+writes are staged next to your chosen destination; replacement and durability
+guarantees depend on your OS and filesystem. Downloads, exports, OS caches,
+and backups have their own lifecycles.
+
+Unsigned preview builds. Verify SHA256SUMS.txt from the same GitHub release.
+Source: https://github.com/mguhlin/nspa/tree/main/audit

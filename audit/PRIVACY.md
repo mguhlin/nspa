@@ -12,10 +12,16 @@ SSAT is designed to operate **locally on your device** without requiring an acco
 - **Local storage (opt-in only):** By default, assessment data stays only in browser memory and clears when you close the tab or choose **Clear Session**. If you explicitly turn on **Encrypted Local Autosave**, SSAT stores an Argon2id + AES-256-GCM encrypted copy in your browser's `localStorage`. You can remove it at any time with **Clear Local Encrypted Copy**. Do not use local autosave on shared devices.
 - **Offline cache:** The optional service worker caches only static application code and assets. It never caches audit contents, passphrases, or exported reports.
 
-### Standalone Go edition
+### Offline desktop edition
 
-- **Local execution:** The Go executable serves the identical web interface strictly on `127.0.0.1` (your own computer) and makes no outbound network connections.
-- **Encrypted local files:** Saved `.ssat` files are written atomically to the path you choose using authenticated encryption (Argon2id + AES-256-GCM). Passphrases are never written to disk, URLs, or logs.
+- **Local execution:** The Go/Wails app embeds the shared interface in its own OS webview window, with no external browser, account, or internet required for audit work. App links to websites are blocked. OS runtime installation/updates follow separate Microsoft/Apple/Linux policies; Linux runtime libraries must be installed before disconnecting.
+- **Native file dialogs:** Go reads or writes only the files selected in the system picker. Renderer-supplied paths and native file drops are not accepted. Save/open cancellation leaves the active audit unchanged.
+- **Encrypted local files:** `.ssat` uses Argon2id + AES-256-GCM. Passphrases stay in interface memory and are not written to disk, URLs, or logs. Writes stage private files next to the selected destination, checking write/sync/close errors. Replacement and durability guarantees depend on the operating system and filesystem.
+- **Reports:** HTML, CSV, Markdown, and JSON exports are unencrypted and intentionally saved through a picker. Report staging temporarily contains report text. To print or create a PDF, open the exported HTML in a separate viewer.
+
+### Legacy loopback Go edition
+
+The original `go/cmd/ssat/` executable serves the shared interface on `127.0.0.1` and opens a user browser. This remains distinct from the desktop app. Its encrypted vault uses the existing Host/Origin/session protections; there is no cloud service.
 
 ### User-controlled exports and safe handling
 
