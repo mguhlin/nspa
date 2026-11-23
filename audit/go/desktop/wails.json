@@ -1,11 +1,11 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "ssat-desktop",
+  "name": "SSAT",
   "outputfilename": "SSAT",
   "frontend:dir": ".",
   "frontend:install": "",
   "frontend:build": "",
   "frontend:dev:watcher": "",
   "author": { "name": "Miguel Guhlin" },
-  "info": { "companyName": "NSPA Resources", "productName": "Scholarship Security Audit Toolkit", "productVersion": "1.1.2", "comments": "Offline audit workspace. No account or internet connection required." }
+  "info": { "companyName": "NSPA Resources", "productName": "Scholarship Security Audit Toolkit", "productVersion": "1.1.3", "comments": "Offline audit workspace. No account or internet connection required." }
 }

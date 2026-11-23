@@ -19,7 +19,7 @@ publisher/organization policies still apply. Then open SSAT.exe again.
 The runtime installer is publisher-verified during packaging. It has not been
 qualified here on a clean physical Windows device without the runtime.
 
-MAC: Choose Apple Silicon or Intel to match your Mac. Uses built-in WKWebView.
+MAC (macOS 13 or newer): Choose Apple Silicon or Intel to match your Mac. Uses built-in WKWebView.
 The app is an unsigned/unnotarized preview; organization or Gatekeeper policies
 may prevent launch. No signing/notarization or physical Mac qualification is
 claimed. Do not disable your computer's security protections.

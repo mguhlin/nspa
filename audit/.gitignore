@@ -21,7 +21,10 @@ go/ssat
 go/ssat.exe
 go/internal/ui/assets/*
 !go/internal/ui/assets/.gitkeep
-go/desktop/build/
+go/desktop/build/*
+!go/desktop/build/darwin/
+go/desktop/build/darwin/*
+!go/desktop/build/darwin/Info.plist
 go/desktop/wailsjs/
 go/desktop/SSAT
 go/desktop/build-info.txt

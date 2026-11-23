@@ -51,6 +51,11 @@ jobs:
         shell: bash
         working-directory: audit/go/desktop
         run: |
+          if [ "$RUNNER_OS" = macOS ]; then
+            export MACOSX_DEPLOYMENT_TARGET=13.0
+            export CGO_CFLAGS='-mmacosx-version-min=13.0'
+            export CGO_LDFLAGS='-mmacosx-version-min=13.0'
+          fi
           go install github.com/wailsapp/wails/v2/cmd/wails@v2.17.1
           if [ "$RUNNER_OS" = Linux ]; then
             go test -tags webkit2_41 ./...
@@ -92,6 +97,10 @@ jobs:
         run: |
           mkdir -p package release
           cp -R audit/go/desktop/build/bin/SSAT.app package/
+          plutil -lint package/SSAT.app/Contents/Info.plist
+          test "$(/usr/libexec/PlistBuddy -c 'Print :LSMinimumSystemVersion' package/SSAT.app/Contents/Info.plist)" = '13.0'
+          ssat_arch='${{ matrix.platform }}'
+          lipo -verify_arch "${ssat_arch#*/}" package/SSAT.app/Contents/MacOS/SSAT
           cp audit/go/desktop/START-HERE.txt audit/go/desktop/THIRD-PARTY-NOTICES.md audit/go/desktop/build-info.txt audit/go/desktop/modules.txt audit/go/desktop/THIRD-PARTY-LICENSES.txt package/
           ditto -c -k --sequesterRsrc --keepParent package release/ssat-desktop-${{ matrix.name }}.zip
           unzip -q release/ssat-desktop-${{ matrix.name }}.zip -d extracted
