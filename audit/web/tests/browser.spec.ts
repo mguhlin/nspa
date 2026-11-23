@@ -16,6 +16,10 @@ test.describe('SSAT Browser E2E, Privacy, XSS & Accessibility Checks', () => {
     await expect(page.getByRole('heading', { name: /Scholarship Security Audit Toolkit/i })).toBeVisible();
     const heroLoaded = await page.locator('.hero-figure img').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0);
     expect(heroLoaded).toBe(true);
+    const heroBox = await page.locator('.hero-figure img').boundingBox();
+    const startBtnBox = await page.getByRole('button', { name: /Start New Audit/i }).boundingBox();
+    expect(heroBox && heroBox.y + heroBox.height <= 760).toBeTruthy();
+    expect(startBtnBox && startBtnBox.y + startBtnBox.height <= 760).toBeTruthy();
 
     // Axe check on Welcome screen
     let axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();

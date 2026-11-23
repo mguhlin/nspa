@@ -49,20 +49,8 @@ export function renderWelcome(store: Store): string {
 
   return `
     <section class="hero-band" aria-labelledby="welcome-heading">
-      <div class="hero-visual-banner">
-        <figure class="hero-figure">
-          <img
-            src="./hero-audit.webp"
-            width="1280"
-            height="720"
-            fetchpriority="high"
-            alt="Scholarship Security Audit Toolkit overview showing applicant, award, document, and donor folders alongside a laptop displaying an audit checklist, readiness ring, Likelihood by Impact Risk Matrix, and report export controls."
-          />
-        </figure>
-      </div>
-
-      <div class="hero-grid" style="margin-top:20px">
-        <div>
+      <div class="hero-grid">
+        <div class="hero-copy">
           <p class="eyebrow">NSPA Scholarship Providers · Protect Data · Protect Decisions · Protect Operations</p>
           <h1 id="welcome-heading">Scholarship Security Audit Toolkit</h1>
           <p class="lead">
@@ -80,7 +68,7 @@ export function renderWelcome(store: Store): string {
           </div>
           ${
             hasLocal
-              ? `<div class="callout callout-info" style="margin-top:16px">
+              ? `<div class="callout callout-info" style="margin-top:12px">
                    <strong>Encrypted local copy found in this browser.</strong>
                    <div class="btn-row" style="margin-top:8px">
                      <button type="button" class="btn btn-sm btn-primary" data-action="unlock-local">Unlock Local Copy</button>
@@ -90,20 +78,29 @@ export function renderWelcome(store: Store): string {
               : ''
           }
         </div>
-        <aside class="trust-box" aria-label="Important boundaries and privacy notice">
-          <h2>Before you begin</h2>
-          <ul>
-            <li><strong>Audit assistant, not certification:</strong> Completing this tool never certifies an organization as NIST compliant, FERPA compliant, PCI DSS compliant, or secure.</li>
-            <li><strong>Local-first processing:</strong> ${
-              state.goServerMode
-                ? 'Running on your local computer via the standalone Go server (127.0.0.1 only). No data leaves your device.'
-                : 'Audit contents stay in your browser memory and are not intentionally uploaded. Static web hosting still receives ordinary HTTP request metadata (such as IP address).'
-            }</li>
-            <li><strong>References, not raw secrets:</strong> Do not paste SSNs, bank account numbers, applicant essays, donor financial details, or passwords. Record safe metadata references instead.</li>
-            <li><strong>Accessibility:</strong> Built for keyboard-only navigation, screen readers, 200%/400% zoom, and grayscale-safe printing.</li>
-          </ul>
-        </aside>
+        <div class="hero-visual-banner">
+          <figure class="hero-figure">
+            <img
+              src="./hero-audit.webp"
+              width="1280"
+              height="720"
+              fetchpriority="high"
+              alt="Scholarship Security Audit Toolkit overview showing applicant, award, document, and donor folders alongside a laptop displaying an audit checklist, readiness ring, Likelihood by Impact Risk Matrix, and report export controls."
+            />
+          </figure>
+        </div>
       </div>
+
+      <aside class="trust-strip" aria-label="Important boundaries and privacy notice">
+        <div><strong>Not a certification:</strong> Never certifies NIST, FERPA, PCI DSS, or legal compliance.</div>
+        <div><strong>Local-first:</strong> ${
+          state.goServerMode
+            ? 'Runs on 127.0.0.1 only; zero cloud calls.'
+            : 'Processed in browser memory; static host sees ordinary HTTP metadata only.'
+        }</div>
+        <div><strong>References only:</strong> Never paste raw SSNs, essays, bank numbers, or passwords.</div>
+        <div><strong>Accessible:</strong> Keyboard-only, screen-reader, 200%/400% zoom, and grayscale print ready.</div>
+      </aside>
     </section>
 
     <section class="section-block" aria-labelledby="pillars-heading">

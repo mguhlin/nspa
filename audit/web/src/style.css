@@ -540,7 +540,7 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-top: 5px solid var(--teal);
   border-radius: 8px;
-  padding: 24px;
+  padding: 20px 24px;
 }
 
 .hero-visual-banner {
@@ -548,7 +548,7 @@ summary:focus-visible {
   overflow: hidden;
   border: 1px solid var(--line);
   background: #082759;
-  box-shadow: 0 6px 20px rgba(27, 52, 70, 0.14);
+  box-shadow: 0 6px 18px rgba(27, 52, 70, 0.14);
 }
 
 .hero-figure {
@@ -559,8 +559,9 @@ summary:focus-visible {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 325px;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .pillar-card {
@@ -580,35 +581,36 @@ summary:focus-visible {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.95fr;
-  gap: 24px;
-  align-items: start;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 22px;
+  align-items: center;
 }
 
 .lead {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: var(--ink);
-  max-width: 60ch;
+  max-width: 56ch;
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
-.trust-box {
+.trust-strip {
+  margin-top: 16px;
+  padding: 12px 14px;
   background: var(--white);
   border: 1px solid var(--line);
   border-left: 5px solid var(--coral);
   border-radius: 6px;
-  padding: 18px;
-  font-size: 0.92rem;
-}
-
-.trust-box li + li {
-  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  font-size: 0.84rem;
+  line-height: 1.45;
 }
 
 .section-block {
@@ -1641,7 +1643,8 @@ dialog::backdrop {
   }
   .step-grid,
   .priority-alert-grid,
-  .horizon-grid {
+  .horizon-grid,
+  .trust-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .flow-strip {
@@ -1663,7 +1666,8 @@ dialog::backdrop {
   .report-meta-grid,
   .step-grid,
   .priority-alert-grid,
-  .horizon-grid {
+  .horizon-grid,
+  .trust-strip {
     grid-template-columns: 1fr;
   }
   .flow-strip {
