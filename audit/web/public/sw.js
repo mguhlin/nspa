@@ -7,7 +7,7 @@ const CACHE_NAME = 'ssat-app-shell-v1';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(['./', './index.html', './favicon.svg', './nspa-logo.png']).catch(() => undefined))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(['./', './index.html', './favicon.svg', './nspa-logo.png', './hero-audit.webp']).catch(() => undefined))
   );
   self.skipWaiting();
 });

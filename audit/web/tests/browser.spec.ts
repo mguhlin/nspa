@@ -14,6 +14,8 @@ test.describe('SSAT Browser E2E, Privacy, XSS & Accessibility Checks', () => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('./');
     await expect(page.getByRole('heading', { name: /Scholarship Security Audit Toolkit/i })).toBeVisible();
+    const heroLoaded = await page.locator('.hero-figure img').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0);
+    expect(heroLoaded).toBe(true);
 
     // Axe check on Welcome screen
     let axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
@@ -23,10 +25,12 @@ test.describe('SSAT Browser E2E, Privacy, XSS & Accessibility Checks', () => {
     await page.getByRole('button', { name: /Try Fictional Practice Audit/i }).click();
     await expect(page.getByRole('heading', { name: /Example Scholarship Foundation \(FICTIONAL\)/i })).toBeVisible();
 
-    // Verify Critical gaps appear ABOVE aggregate readiness score
+    // Verify Critical gaps appear ABOVE aggregate readiness score & Risk Matrix works interactively
     const critBox = await page.locator('.priority-alert-grid').boundingBox();
     const summaryBox = await page.locator('.summary-bar').boundingBox();
     expect(critBox && summaryBox && critBox.y < summaryBox.y).toBeTruthy();
+    await page.locator('[data-matrix-cell="High:High"]').click();
+    await expect(page.locator('#main')).toContainText(/Risk Matrix Selection: High Likelihood × High Impact/i);
 
     // Axe check on Dashboard
     axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();

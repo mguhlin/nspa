@@ -31,7 +31,7 @@ import { bindSettingsEvents, renderSettingsAbout } from './screens/settingsAbout
 
 const store = new Store();
 
-let dashFilter: DashboardFilterState = { domain: '', priority: '', status: 'needs_work', nist: '' };
+let dashFilter: DashboardFilterState = { domain: '', priority: '', status: 'needs_work', nist: '', matrixCell: '' };
 let findingsFilter: FindingsFilter = { severity: '', status: '', horizon: '' };
 let reportsUi: ReportsUiState = { reportType: 'executive', privacyMode: 'redacted' };
 let pendingCsvPreview: CsvInventoryPreview | null = null;
@@ -465,10 +465,22 @@ function renderShell(): void {
         bindProfileScopeEvents(mainEl, store);
         break;
       case 'dashboard':
-        bindDashboardEvents(mainEl, store, dashFilter, (next) => {
-          dashFilter = next;
-          renderShell();
-        });
+        bindDashboardEvents(
+          mainEl,
+          store,
+          dashFilter,
+          (next) => {
+            dashFilter = next;
+            renderShell();
+          },
+          {
+            onOpenReport: (reportType) => {
+              reportsUi = { ...reportsUi, reportType };
+              store.navigate('reports');
+            },
+            onSaveSsat: () => openSaveDialog()
+          }
+        );
         break;
       case 'audit':
         bindGuidedAuditEvents(mainEl, store);

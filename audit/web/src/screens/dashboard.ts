@@ -1,13 +1,26 @@
 import type { Store } from '../audit/state';
 import { CATALOG } from '../audit/catalog';
 import { computeMetrics, effectivePriority, scoreShortBadge } from '../audit/scoring';
-import { esc, formatLocalDate } from '../a11y/helpers';
+import {
+  buildRiskMatrix,
+  MATRIX_LEVELS_ASC,
+  MATRIX_LEVELS_DESC,
+  type MatrixLevel
+} from '../audit/riskMatrix';
+import { exportEvidenceTrackerCsv, exportFindingsCsv } from '../reports/generator';
+import { esc, formatLocalDate, triggerDownload } from '../a11y/helpers';
 
 export interface DashboardFilterState {
   domain: string;
   priority: string;
   status: string;
   nist: string;
+  matrixCell: string; // e.g. "High:High" or ""
+}
+
+export interface DashboardQuickActions {
+  onOpenReport: (reportType: 'executive' | 'rubric') => void;
+  onSaveSsat: () => void;
 }
 
 export function renderDashboard(store: Store, filter: DashboardFilterState): string {
@@ -16,10 +29,74 @@ export function renderDashboard(store: Store, filter: DashboardFilterState): str
   if (!doc) return '<p>Start or open an audit to view the dashboard.</p>';
 
   const m = computeMetrics(doc);
-  const readinessDisplay =
-    m.readiness_percent === null
-      ? 'Not yet scored'
-      : `${m.readiness_percent}%`;
+  const matrix = buildRiskMatrix(doc);
+  const readinessDisplay = m.readiness_percent === null ? '—' : `${m.readiness_percent}%`;
+  const ringPct = m.readiness_percent === null ? 0 : Math.max(0, Math.min(100, m.readiness_percent));
+  const ringDash = `${ringPct} ${100 - ringPct}`;
+
+  // Checklist snapshot grouping key scholarship operations (inspired by hero visual)
+  const checklistGroups = [
+    { label: 'Applicant & donor data protection', domains: ['DATA'] },
+    { label: 'Access & permissions control', domains: ['IAM'] },
+    { label: 'Vendors, cloud & technical safeguards', domains: ['VEND', 'TECH'] },
+    { label: 'Decision & financial integrity', domains: ['FIN', 'AWARD'] },
+    { label: 'AI governance & sustainability', domains: ['AI', 'SUST'] },
+    { label: 'Continuity & incident response', domains: ['CONT', 'RESP'] }
+  ].map((g) => {
+    const sub = m.domains.filter((d) => g.domains.includes(d.domain_id));
+    const assessed = sub.reduce((acc, d) => acc + d.assessed_controls, 0);
+    const applicable = sub.reduce((acc, d) => acc + d.applicable_controls, 0);
+    const crits = sub.reduce((acc, d) => acc + d.critical_gaps, 0);
+    const complete = applicable > 0 && assessed === applicable && crits === 0;
+    return { ...g, assessed, applicable, crits, complete, firstDomain: g.domains[0] };
+  });
+
+  // Build interactive 3x3 Risk Matrix grid
+  const matrixRowsHtml = MATRIX_LEVELS_DESC.map((likelihood) => {
+    const cellsHtml = MATRIX_LEVELS_ASC.map((impact) => {
+      const cell = matrix.getCell(likelihood, impact);
+      const key = `${likelihood}:${impact}`;
+      const selected = filter.matrixCell === key;
+      const bandClass = `rm-band-${cell.band.toLowerCase()}`;
+      return `
+        <td>
+          <button
+            type="button"
+            class="rm-cell ${bandClass} ${selected ? 'rm-selected' : ''}"
+            data-matrix-cell="${key}"
+            aria-pressed="${selected}"
+          >
+            <strong class="rm-count">${cell.items.length}</strong>
+            <span class="rm-label">${esc(cell.band)}</span>
+            <span class="sr-only"> (${likelihood} likelihood, ${impact} impact)</span>
+          </button>
+        </td>`;
+    }).join('');
+    return `<tr><th scope="row" class="rm-axis-y">${esc(likelihood)}</th>${cellsHtml}</tr>`;
+  }).join('');
+
+  let selectedMatrixDetailHtml = '';
+  if (filter.matrixCell) {
+    const [selL, selI] = filter.matrixCell.split(':') as [MatrixLevel, MatrixLevel];
+    const cell = matrix.getCell(selL, selI);
+    selectedMatrixDetailHtml = `
+      <div class="callout callout-info" style="margin-top:12px">
+        <div class="section-header-row" style="margin-bottom:6px">
+          <strong>Risk Matrix Selection: ${esc(selL)} Likelihood × ${esc(selI)} Impact (${esc(cell.band)} · ${cell.items.length} item${cell.items.length === 1 ? '' : 's'})</strong>
+          <button type="button" class="btn btn-sm btn-outline" data-matrix-cell="">Clear Selection</button>
+        </div>
+        ${
+          cell.items.length === 0
+            ? '<p class="muted" style="margin:0">No open findings or Score 0/1 controls currently fall in this zone.</p>'
+            : `<ul class="compact-list">${cell.items
+                .map(
+                  (it) =>
+                    `<li><strong>${esc(it.id)}</strong> (${esc(it.control_id)}): ${esc(it.title)} — <small class="muted">Owner: ${esc(it.owner)}</small> <button type="button" class="link-btn" data-open-control="${esc(it.control_id)}">Inspect control</button></li>`
+                )
+                .join('')}</ul>`
+        }
+      </div>`;
+  }
 
   const domainCards = m.domains
     .map((d) => {
@@ -130,22 +207,90 @@ export function renderDashboard(store: Store, filter: DashboardFilterState): str
       </article>
     </section>
 
-    <section class="summary-bar card" aria-label="Coverage and provisional readiness summary">
-      <div class="summary-metric">
-        <span class="kpi-label">Assessment Coverage</span>
-        <strong>${m.coverage_percent}% (${m.assessed_controls} / ${m.applicable_controls} applicable)</strong>
-        <small>${m.na_controls > 0 ? `${m.na_controls} approved N/A control(s)` : 'All 30 controls applicable'}</small>
-      </div>
-      <div class="summary-metric">
-        <span class="kpi-label">Readiness Score ${m.is_provisional ? '(PROVISIONAL)' : ''}</span>
-        <strong>${esc(readinessDisplay)} ${m.is_provisional && m.readiness_percent !== null ? '<span class="badge badge-warn">Provisional</span>' : ''}</strong>
-        <small>Planning aid only — high percentages never hide Critical failures above.</small>
-      </div>
-      <div class="summary-metric">
-        <span class="kpi-label">0 / 1 / 2 Distribution</span>
-        <strong>2: ${m.score_2} · 1: ${m.score_1} · 0: ${m.score_0}</strong>
-        <small>${doc.evidence.length} evidence items · ${doc.simulations.length} simulation logs</small>
-      </div>
+    <section class="visual-ops-grid summary-bar-wrap" aria-label="Audit checklist, readiness ring, interactive Risk Matrix, and quick exports">
+      <article class="card ops-panel">
+        <div class="ops-head">
+          <h2>Audit Checklist</h2>
+          <span class="badge badge-info">${m.assessed_controls} / ${m.applicable_controls} assessed</span>
+        </div>
+        <ul class="checklist-summary">
+          ${checklistGroups
+            .map(
+              (g) => `
+              <li>
+                <button type="button" class="checklist-row-btn" data-open-domain="${esc(g.firstDomain)}">
+                  <span class="chk-mark ${g.complete ? 'chk-done' : g.crits > 0 ? 'chk-risk' : 'chk-open'}" aria-hidden="true">${g.complete ? '✓' : g.crits > 0 ? '!' : '○'}</span>
+                  <span class="chk-text">
+                    <strong>${esc(g.label)}</strong>
+                    <small>${g.assessed}/${g.applicable} assessed${g.crits > 0 ? ` · ${g.crits} Critical gap(s)` : ''}</small>
+                  </span>
+                </button>
+              </li>`
+            )
+            .join('')}
+        </ul>
+      </article>
+
+      <article class="card ops-panel summary-bar">
+        <div class="ops-head">
+          <h2>Readiness &amp; Risk Matrix</h2>
+          ${m.is_provisional ? '<span class="badge badge-warn">Provisional</span>' : '<span class="badge badge-ok">Full coverage</span>'}
+        </div>
+
+        <div class="ring-row">
+          <svg class="score-ring" viewBox="0 0 42 42" width="84" height="84" role="img" aria-label="Readiness ${esc(readinessDisplay)}, Coverage ${m.coverage_percent}%">
+            <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e4f4f4" stroke-width="5"></circle>
+            <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="${m.critical_gaps > 0 ? '#c27b00' : '#007681'}" stroke-width="5" stroke-dasharray="${ringDash}" stroke-dashoffset="25"></circle>
+            <text x="21" y="23.5" text-anchor="middle" font-size="9" font-weight="700" fill="#1b3446">${esc(readinessDisplay)}</text>
+          </svg>
+          <div class="ring-meta">
+            <div><strong>Coverage:</strong> ${m.coverage_percent}% (${m.assessed_controls}/${m.applicable_controls})</div>
+            <div><strong>Scores:</strong> 2: ${m.score_2} · 1: ${m.score_1} · 0: ${m.score_0}${m.na_controls ? ` · N/A: ${m.na_controls}` : ''}</div>
+            <small class="muted">Planning visual only — Critical gaps above take priority.</small>
+          </div>
+        </div>
+
+        <div class="rm-container">
+          <div class="rm-caption">
+            <strong>Risk Matrix (Likelihood × Impact)</strong>
+            <small class="muted">${matrix.totalItems} open item(s) plotted — select any cell to inspect</small>
+          </div>
+          <div class="table-scroll">
+            <table class="rm-table" aria-label="Likelihood by Impact 3 by 3 Risk Matrix">
+              <thead>
+                <tr>
+                  <th scope="col" class="rm-corner">Likelihood ↓ / Impact →</th>
+                  <th scope="col">Low</th>
+                  <th scope="col">Medium</th>
+                  <th scope="col">High</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${matrixRowsHtml}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        ${selectedMatrixDetailHtml}
+      </article>
+
+      <article class="card ops-panel">
+        <div class="ops-head">
+          <h2>Report &amp; Export</h2>
+          <span class="badge badge-neutral">Local only</span>
+        </div>
+        <p class="muted" style="font-size:0.86rem">Executive exports default to Redacted mode. Review before sharing.</p>
+        <div class="export-stack">
+          <button type="button" class="btn btn-primary" data-quick-report="executive">Generate Executive Brief (Print / PDF)</button>
+          <button type="button" class="btn btn-secondary" data-quick-report="rubric">Open Landscape Audit Rubric</button>
+          <button type="button" class="btn btn-outline" data-quick-export="findings-csv">Export Findings CSV (Safe)</button>
+          <button type="button" class="btn btn-outline" data-quick-export="evidence-csv">Export Evidence Tracker CSV</button>
+          <button type="button" class="btn btn-accent" data-quick-export="save-ssat">Save Encrypted .ssat Backup</button>
+        </div>
+        <p class="muted" style="margin-top:10px;font-size:0.82rem">
+          ${doc.evidence.length} evidence references · ${doc.simulations.length} simulation logs · ${doc.snapshots.length} snapshot(s)
+        </p>
+      </article>
     </section>
 
     <section class="section-block" aria-labelledby="domains-heading">
@@ -204,8 +349,10 @@ export function bindDashboardEvents(
   container: HTMLElement,
   store: Store,
   filter: DashboardFilterState,
-  onFilterChange: (next: DashboardFilterState) => void
+  onFilterChange: (next: DashboardFilterState) => void,
+  quickActions: DashboardQuickActions
 ): void {
+  const doc = store.get().doc;
   container.querySelectorAll<HTMLButtonElement>('[data-nav]').forEach((b) => {
     b.addEventListener('click', () => store.navigate(b.dataset.nav as 'audit' | 'reports'));
   });
@@ -221,6 +368,32 @@ export function bindDashboardEvents(
       const cid = b.dataset.openControl || 'DATA-01';
       const ctrl = CATALOG.controls.find((c) => c.control_id === cid);
       store.navigate('audit', { controlId: cid, domainId: ctrl?.domain_id || 'DATA' });
+    });
+  });
+  container.querySelectorAll<HTMLButtonElement>('[data-matrix-cell]').forEach((b) => {
+    b.addEventListener('click', () => {
+      const cellKey = b.dataset.matrixCell || '';
+      onFilterChange({ ...filter, matrixCell: filter.matrixCell === cellKey ? '' : cellKey });
+    });
+  });
+  container.querySelectorAll<HTMLButtonElement>('[data-quick-report]').forEach((b) => {
+    b.addEventListener('click', () => {
+      quickActions.onOpenReport(b.dataset.quickReport as 'executive' | 'rubric');
+    });
+  });
+  container.querySelectorAll<HTMLButtonElement>('[data-quick-export]').forEach((b) => {
+    b.addEventListener('click', () => {
+      if (!doc) return;
+      const act = b.dataset.quickExport;
+      if (act === 'findings-csv') {
+        triggerDownload('ssat-findings-redacted.csv', exportFindingsCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
+        store.setStatus('Exported formula-safe Redacted Findings CSV.', 'ok');
+      } else if (act === 'evidence-csv') {
+        triggerDownload('ssat-evidence-tracker-redacted.csv', exportEvidenceTrackerCsv(doc, 'redacted'), 'text/csv;charset=utf-8');
+        store.setStatus('Exported formula-safe Redacted Evidence Tracker CSV.', 'ok');
+      } else if (act === 'save-ssat') {
+        quickActions.onSaveSsat();
+      }
     });
   });
 

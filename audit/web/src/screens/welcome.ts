@@ -49,12 +49,24 @@ export function renderWelcome(store: Store): string {
 
   return `
     <section class="hero-band" aria-labelledby="welcome-heading">
-      <div class="hero-grid">
+      <div class="hero-visual-banner">
+        <figure class="hero-figure">
+          <img
+            src="./hero-audit.webp"
+            width="1280"
+            height="720"
+            fetchpriority="high"
+            alt="Scholarship Security Audit Toolkit overview showing applicant, award, document, and donor folders alongside a laptop displaying an audit checklist, readiness ring, Likelihood by Impact Risk Matrix, and report export controls."
+          />
+        </figure>
+      </div>
+
+      <div class="hero-grid" style="margin-top:20px">
         <div>
-          <p class="eyebrow">NSPA Scholarship Providers · Evidence-Based Self-Assessment</p>
+          <p class="eyebrow">NSPA Scholarship Providers · Protect Data · Protect Decisions · Protect Operations</p>
           <h1 id="welcome-heading">Scholarship Security Audit Toolkit</h1>
           <p class="lead">
-            Protect student and donor information, preserve award and payment integrity, and keep scholarship cycles running during disruptions — without needing an enterprise security team.
+            Build an evidence-based assessment, inspect a live Likelihood × Impact Risk Matrix, track remediation ownership, and export redacted reports — without needing an enterprise security team.
           </p>
           <div class="cta-row">
             <button type="button" class="btn btn-primary" data-action="start-new">Start New Audit</button>
@@ -94,28 +106,28 @@ export function renderWelcome(store: Store): string {
       </div>
     </section>
 
-    <section class="section-block" aria-labelledby="how-it-works">
-      <h2 id="how-it-works">How this audit works</h2>
+    <section class="section-block" aria-labelledby="pillars-heading">
+      <h2 id="pillars-heading">Four Core Pillars of Scholarship Resilience</h2>
       <div class="step-grid">
-        <article class="card">
+        <article class="card pillar-card">
           <span class="step-num">01</span>
-          <h3>Scope &amp; Map Data</h3>
-          <p>Identify scholarship stages, critical systems, and where copies of student and donor records actually live.</p>
+          <h3>Data Protection</h3>
+          <p>Secure applicant, awardee, and donor information across portals, CRMs, shared drives, and backups.</p>
         </article>
-        <article class="card">
+        <article class="card pillar-card">
           <span class="step-num">02</span>
-          <h3>Verify 30 Controls</h3>
-          <p>Score ten domains honestly. Score 2 (Verified) is locked until reviewed evidence, method, and date are recorded.</p>
+          <h3>Decision Integrity</h3>
+          <p>Support fair, consistent, conflict-checked, and auditable eligibility, scoring, and disbursement decisions.</p>
         </article>
-        <article class="card">
+        <article class="card pillar-card">
           <span class="step-num">03</span>
-          <h3>Run 5 Practical Tests</h3>
-          <p>Trace a synthetic application, check former-reviewer access, rehearse a deadline outage, test payment callbacks, and check AI boundaries.</p>
+          <h3>Governance &amp; Obligations</h3>
+          <p>Collect verifiable facts for privacy, donor, and contract duties (legal applicability always flagged for counsel review).</p>
         </article>
-        <article class="card">
+        <article class="card pillar-card">
           <span class="step-num">04</span>
-          <h3>Plan &amp; Report Safely</h3>
-          <p>Assign role owners on a 30/60/90-day roadmap and export redacted board briefs, printable landscape rubrics, and encrypted <code>.ssat</code> backups.</p>
+          <h3>Continuity Planning</h3>
+          <p>Keep scholarship intake, notifications, and payments operating through deadline-day outages and incidents.</p>
         </article>
       </div>
     </section>

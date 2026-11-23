@@ -1,6 +1,7 @@
 import type { AuditDocument, FindingRecord } from '../types';
 import { CATALOG, CONTROL_MAP } from '../audit/catalog';
 import { computeMetrics, effectivePriority, isEvidenceStale, scoreLabel } from '../audit/scoring';
+import { buildRiskMatrix, MATRIX_LEVELS_ASC, MATRIX_LEVELS_DESC } from '../audit/riskMatrix';
 import { esc } from '../a11y/helpers';
 import { buildSafeCsv } from '../storage/csv';
 
@@ -173,6 +174,15 @@ export function generateReport(
 
   if (type === 'executive') {
     const topFive = sortedFindings.slice(0, 5);
+    const matrix = buildRiskMatrix(doc);
+    const matrixReportRows = MATRIX_LEVELS_DESC.map(
+      (lik) =>
+        `<tr><th scope="row">${esc(lik)} Likelihood</th>${MATRIX_LEVELS_ASC.map((imp) => {
+          const cell = matrix.getCell(lik, imp);
+          return `<td class="rm-print-${cell.band.toLowerCase()}"><strong>${cell.items.length}</strong> (${esc(cell.band)})</td>`;
+        }).join('')}</tr>`
+    ).join('');
+
     const htmlBody = `
       <h2>Executive Risk Brief</h2>
       ${headerHtml}
@@ -183,6 +193,15 @@ export function generateReport(
           <li><strong>Preserve award and payment integrity</strong> — enforce independent bank-change callbacks, financial separation of duties, and traceable score logs.</li>
           <li><strong>Keep scholarship cycles resilient</strong> — prove backups actually restore and practice deadline-day outage decisions.</li>
         </ol>
+      </section>
+      <section class="report-section">
+        <h3>Risk Matrix Summary (Likelihood × Impact — ${matrix.totalItems} Open Item(s))</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>Likelihood ↓ / Impact →</th><th>Low Impact</th><th>Medium Impact</th><th>High Impact</th></tr></thead>
+            <tbody>${matrixReportRows}</tbody>
+          </table>
+        </div>
       </section>
       <section class="report-section">
         <h3>Score Distribution &amp; Evidence Provenance</h3>

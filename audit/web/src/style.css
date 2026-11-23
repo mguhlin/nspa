@@ -540,7 +540,31 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-top: 5px solid var(--teal);
   border-radius: 8px;
-  padding: 28px;
+  padding: 24px;
+}
+
+.hero-visual-banner {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #082759;
+  box-shadow: 0 6px 20px rgba(27, 52, 70, 0.14);
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.pillar-card {
+  border-top: 4px solid var(--teal);
 }
 
 .hero-grid {
@@ -724,14 +748,253 @@ summary:focus-visible {
 
 .summary-bar {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
+  background: var(--white);
+}
+
+/* Visual Operations Overview (Checklist + Readiness Ring & Risk Matrix + Quick Exports) */
+.visual-ops-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.25fr 0.9fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.ops-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.ops-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ops-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.checklist-summary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.checklist-row-btn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checklist-row-btn:hover {
+  border-color: var(--teal);
   background: var(--aqua-soft);
 }
 
-.summary-metric {
+.chk-mark {
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 5px;
   display: grid;
-  gap: 4px;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.chk-done {
+  background: var(--ok-bg);
+  color: var(--ok);
+  border: 1px solid #68b099;
+}
+
+.chk-risk {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid #d68585;
+}
+
+.chk-open {
+  background: var(--aqua);
+  color: var(--teal-dark);
+  border: 1px solid var(--line);
+}
+
+.chk-text {
+  display: grid;
+  gap: 1px;
+  font-size: 0.88rem;
+}
+
+.chk-text small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.ring-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  background: var(--aqua-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.score-ring {
+  flex: none;
+}
+
+.ring-meta {
+  display: grid;
+  gap: 3px;
+  font-size: 0.88rem;
+}
+
+/* Interactive 3x3 Risk Matrix (WCAG AA contrast with text + numeric labels) */
+.rm-container {
+  display: grid;
+  gap: 8px;
+}
+
+.rm-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+}
+
+.rm-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px;
+  font-size: 0.82rem;
+}
+
+.rm-table th {
+  font-weight: 700;
+  color: var(--ink-strong);
+  text-align: center;
+  padding: 4px 6px;
+}
+
+.rm-corner {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-align: left !important;
+}
+
+.rm-axis-y {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.rm-cell {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  padding: 6px 4px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  gap: 1px;
+  text-align: center;
+}
+
+.rm-count {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.05;
+}
+
+.rm-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.rm-band-critical {
+  background: #f9d6d6;
+  color: #7c191a;
+  border-color: #c86465;
+}
+
+.rm-band-high {
+  background: #ffe7c9;
+  color: #7a3b00;
+  border-color: #d9822b;
+}
+
+.rm-band-medium {
+  background: #fff4cc;
+  color: #6b4b00;
+  border-color: #cca129;
+}
+
+.rm-band-low {
+  background: #dff3eb;
+  color: #10553f;
+  border-color: #68b099;
+}
+
+.rm-cell:hover {
+  filter: brightness(0.96);
+  border-color: var(--ink-strong);
+}
+
+.rm-selected {
+  border-color: var(--ink-strong);
+  box-shadow: inset 0 0 0 2px var(--ink-strong);
+}
+
+.export-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.link-btn {
+  background: transparent;
+  border: 0;
+  padding: 0 4px;
+  color: var(--teal-dark);
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rm-print-critical {
+  background: #fdecec;
+  color: #7c191a;
+}
+
+.rm-print-high {
+  background: #fff2e0;
+  color: #7a3b00;
+}
+
+.rm-print-medium {
+  background: #fff8dc;
+  color: #6b4b00;
+}
+
+.rm-print-low {
+  background: #e7f6f0;
+  color: #10553f;
 }
 
 .domain-grid {
@@ -1357,7 +1620,8 @@ dialog::backdrop {
 
 /* Responsive reflow */
 @media (max-width: 1120px) {
-  .guided-layout {
+  .guided-layout,
+  .visual-ops-grid {
     grid-template-columns: 1fr;
   }
   .guided-left {
