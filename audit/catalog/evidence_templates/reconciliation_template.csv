@@ -1,0 +1,2 @@
+batch_id,cycle,approved_award_count,approved_total_usd,disbursed_count,disbursed_total_usd,returned_or_rejected,variance_usd,variance_explanation,preparer_role,independent_reviewer_role,signoff_date
+BATCH-EXAMPLE-01,Fall Example Cycle,0,0.00,0,0.00,0,0.00,Synthetic template row,Finance Officer,Executive Director,YYYY-MM-DD

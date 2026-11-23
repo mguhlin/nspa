@@ -1,3 +1,7 @@
+## Scholarship Security Audit Toolkit
+
+The local-first audit assistant lives at `audit/` (`audit/web/` static TypeScript UI + `audit/go/` standalone `//go:embed` loopback executable). Both share `audit/catalog/controls.v1.json` and interoperable `.ssat` v1 Argon2id + AES-256-GCM encrypted bundles. Run `npm run build --prefix audit/web` before public staging. Public staging publishes `audit/web/dist` at `/audit/` alongside `/lab/` and existing workshop materials.
+
 ## Scholarship Decision Lab
 
 The independent Trust Under Pressure game is at `lab/`. It does not rebuild or replace workshop slides or handouts. See `lab/README.md` for its thirty-mission content schema, five-slide introduction deck, build commands, and checks. Run `npm run build --prefix lab` before public staging. Public staging publishes `lab/dist` at `/lab/` alongside the existing resources.

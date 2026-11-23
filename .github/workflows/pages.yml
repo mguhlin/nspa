@@ -27,7 +27,13 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-          cache-dependency-path: lab/package-lock.json
+          cache-dependency-path: |
+            lab/package-lock.json
+            audit/web/package-lock.json
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.24.x'
+          cache-dependency-path: audit/go/go.sum
       - name: Install lab dependencies
         run: npm ci --prefix lab
       - name: Validate mission content and run engine tests
@@ -44,6 +50,17 @@ jobs:
       - name: Build lab and verify production asset paths
         working-directory: lab
         run: npm run build
+      - name: Install, test, and build Security Audit Toolkit (web)
+        working-directory: audit/web
+        run: |
+          npm ci
+          npm test
+          npm run build
+          npm run test:browser
+      - name: Sync embedded UI and test Security Audit Toolkit (Go)
+        run: |
+          ./audit/go/scripts/sync-assets.sh
+          cd audit/go && go test -v ./... && go build -trimpath -o /tmp/ssat-ci ./cmd/ssat && /tmp/ssat-ci --version
       - name: Check local links and migration destinations
         run: |
           python3 scripts/check_site.py

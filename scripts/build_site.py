@@ -27,4 +27,8 @@ lab = ROOT/'lab/dist'
 if not (lab/'index.html').is_file():
     raise SystemExit('Build the decision lab first: npm ci --prefix lab && npm run build --prefix lab')
 shutil.copytree(lab, out/'lab')
+audit = ROOT/'audit/web/dist'
+if not (audit/'index.html').is_file():
+    raise SystemExit('Build the security audit toolkit first: npm ci --prefix audit/web && npm run build --prefix audit/web')
+shutil.copytree(audit, out/'audit')
 print('Staged public website in _site; supplemental inputs excluded.')

@@ -1,0 +1,23 @@
+# Audit runtime outputs and sensitive local files (defense-in-depth; never place real audit data in this repository)
+*.ssat
+!fixtures/crypto_interop/golden_v1.ssat
+*.audit.json
+*.env
+.env.*
+exports/
+reports-out/
+local-backups/
+*.db
+*.sqlite
+*.tmp
+
+# Build outputs & dependencies
+web/node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/
+go/bin/
+go/ssat
+go/ssat.exe
+go/internal/ui/assets/*
+!go/internal/ui/assets/.gitkeep

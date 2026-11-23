@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mguhlin.github.io/nspa/audit/schema/audit.v1.schema.json",
+  "title": "Scholarship Security Audit Toolkit (SSAT) Audit Document v1",
+  "description": "Versioned structured audit payload wrapped inside encrypted .ssat v1 bundles.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "audit_id",
+    "catalog_version",
+    "created_at",
+    "updated_at",
+    "assessment_status",
+    "organization_profile",
+    "scope",
+    "systems",
+    "inventory",
+    "assessments",
+    "evidence",
+    "simulations",
+    "findings",
+    "actions",
+    "snapshots"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "audit_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "catalog_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "is_demo": {
+      "type": "boolean"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assessment_status": {
+      "type": "string",
+      "enum": ["draft", "in_progress", "under_review", "cycle_complete"]
+    },
+    "organization_profile": {
+      "type": "object",
+      "required": ["display_name", "organization_type", "size_band", "primary_cycle", "geography", "auditor_role", "legal_context_flag"],
+      "properties": {
+        "display_name": { "type": "string", "maxLength": 200 },
+        "organization_type": { "type": "string", "maxLength": 120 },
+        "size_band": { "type": "string", "maxLength": 80 },
+        "primary_cycle": { "type": "string", "maxLength": 120 },
+        "geography": { "type": "string", "maxLength": 120 },
+        "auditor_role": { "type": "string", "maxLength": 120 },
+        "legal_context_flag": { "type": "string", "maxLength": 200 },
+        "legal_notes": { "type": "string", "maxLength": 2000 }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["scholarship_stages", "data_categories", "audit_boundaries", "obligations", "exclusions"],
+      "properties": {
+        "scholarship_stages": { "type": "array", "items": { "type": "string", "maxLength": 120 } },
+        "data_categories": { "type": "array", "items": { "type": "string", "maxLength": 120 } },
+        "audit_boundaries": { "type": "string", "maxLength": 2000 },
+        "obligations": { "type": "array", "items": { "type": "string", "maxLength": 200 } },
+        "exclusions": { "type": "string", "maxLength": 2000 },
+        "unknowns": { "type": "string", "maxLength": 2000 }
+      }
+    },
+    "systems": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "required": ["system_id", "name", "processes", "owner_role", "data_categories", "criticality"],
+        "properties": {
+          "system_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "name": { "type": "string", "minLength": 1, "maxLength": 160 },
+          "processes": { "type": "array", "items": { "type": "string" } },
+          "owner_role": { "type": "string", "maxLength": 120 },
+          "vendor_or_host": { "type": "string", "maxLength": 160 },
+          "data_categories": { "type": "array", "items": { "type": "string" } },
+          "criticality": { "type": "string", "enum": ["Critical", "High", "Medium", "Low", "Unknown"] },
+          "notes": { "type": "string", "maxLength": 1000 }
+        }
+      }
+    },
+    "inventory": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "process_stage", "system_name"],
+        "properties": {
+          "asset_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "process_stage": { "type": "string", "maxLength": 80 },
+          "system_name": { "type": "string", "maxLength": 160 },
+          "business_owner_role": { "type": "string", "maxLength": 120 },
+          "technical_owner_role": { "type": "string", "maxLength": 120 },
+          "data_categories": { "type": "string", "maxLength": 400 },
+          "sensitivity": { "type": "string", "enum": ["Public", "Internal", "Confidential", "Restricted", "Unknown"] },
+          "data_origin": { "type": "string", "maxLength": 200 },
+          "purpose": { "type": "string", "maxLength": 300 },
+          "authorized_roles": { "type": "string", "maxLength": 300 },
+          "systems_receiving_copies": { "type": "string", "maxLength": 300 },
+          "storage_location": { "type": "string", "maxLength": 200 },
+          "retention_trigger": { "type": "string", "maxLength": 200 },
+          "retention_rule": { "type": "string", "maxLength": 300 },
+          "disposal_method": { "type": "string", "maxLength": 300 },
+          "control_evidence": { "type": "string", "maxLength": 200 },
+          "last_verified": { "type": "string", "maxLength": 40 },
+          "known_gaps": { "type": "string", "maxLength": 500 }
+        }
+      }
+    },
+    "assessments": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["control_id", "status"],
+        "properties": {
+          "control_id": { "type": "string" },
+          "status": { "type": "string", "enum": ["not_assessed", "assessed", "not_applicable"] },
+          "score": { "type": ["integer", "null"], "enum": [0, 1, 2, null] },
+          "priority_override": { "type": ["string", "null"], "enum": ["Critical", "High", null] },
+          "assessment_notes": { "type": "string", "maxLength": 4000 },
+          "evidence_ids": { "type": "array", "items": { "type": "string" } },
+          "review_method": { "type": "string", "maxLength": 120 },
+          "reviewer_role": { "type": "string", "maxLength": 120 },
+          "review_date": { "type": "string", "maxLength": 40 },
+          "last_test_date": { "type": "string", "maxLength": 40 },
+          "next_review_date": { "type": "string", "maxLength": 40 },
+          "not_applicable_reason": { "type": "string", "maxLength": 1000 },
+          "not_applicable_scope": { "type": "string", "maxLength": 500 },
+          "self_attestation_claim": { "type": "boolean" },
+          "finding_ids": { "type": "array", "items": { "type": "string" } },
+          "test_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "title", "artifact_type", "linked_controls", "review_status", "data_sensitivity", "redaction_status"],
+        "properties": {
+          "evidence_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "artifact_type": { "type": "string", "maxLength": 120 },
+          "linked_controls": { "type": "array", "items": { "type": "string" } },
+          "linked_systems": { "type": "array", "items": { "type": "string" } },
+          "artifact_date": { "type": "string", "maxLength": 40 },
+          "period_covered": { "type": "string", "maxLength": 120 },
+          "produced_by": { "type": "string", "maxLength": 160 },
+          "storage_reference": { "type": "string", "maxLength": 400 },
+          "evidence_origin": { "type": "string", "enum": ["system_generated", "sampled_test", "contract", "vendor_statement", "screenshot", "policy", "interview"] },
+          "review_method": { "type": "string", "enum": ["inspected_document", "observed_configuration", "sampled_transactions", "executed_controlled_test", "not_reviewed"] },
+          "reviewer_role": { "type": "string", "maxLength": 120 },
+          "review_date": { "type": "string", "maxLength": 40 },
+          "scope_sampling": { "type": "string", "maxLength": 400 },
+          "result": { "type": "string", "enum": ["supports", "partially_supports", "contradicts", "not_relevant", "pending"] },
+          "review_status": { "type": "string", "enum": ["not_requested", "requested", "received", "reviewed", "verified", "rejected", "stale"] },
+          "exceptions": { "type": "string", "maxLength": 1000 },
+          "data_sensitivity": { "type": "string", "enum": ["Public", "Internal", "Confidential", "Restricted"] },
+          "freshness_days": { "type": "integer", "minimum": 1, "maximum": 3650 },
+          "next_review_date": { "type": "string", "maxLength": 40 },
+          "redaction_status": { "type": "string", "enum": ["metadata_only", "redacted_excerpt", "approved_reference"] },
+          "optional_hash": { "type": "string", "maxLength": 128 }
+        }
+      }
+    },
+    "simulations": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "required": ["test_id", "simulation_key", "linked_control_ids", "pass_partial_fail"],
+        "properties": {
+          "test_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "simulation_key": { "type": "string", "maxLength": 64 },
+          "linked_control_ids": { "type": "array", "items": { "type": "string" } },
+          "scenario": { "type": "string", "maxLength": 200 },
+          "authorized_by_role": { "type": "string", "maxLength": 120 },
+          "test_environment": { "type": "string", "maxLength": 200 },
+          "synthetic_data_used": { "type": "string", "maxLength": 400 },
+          "date": { "type": "string", "maxLength": 40 },
+          "steps_completed": { "type": "array", "items": { "type": "string" } },
+          "actual_observation": { "type": "string", "maxLength": 3000 },
+          "expected_result": { "type": "string", "maxLength": 1000 },
+          "pass_partial_fail": { "type": "string", "enum": ["not_run", "pass", "partial", "fail"] },
+          "evidence_id": { "type": "string", "maxLength": 64 },
+          "limitations": { "type": "string", "maxLength": 1000 },
+          "owner": { "type": "string", "maxLength": 120 },
+          "retest_date": { "type": "string", "maxLength": 40 }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["finding_id", "control_id", "title", "severity", "status"],
+        "properties": {
+          "finding_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "control_id": { "type": "string", "maxLength": 40 },
+          "affected_process_system": { "type": "string", "maxLength": 200 },
+          "title": { "type": "string", "maxLength": 240 },
+          "description": { "type": "string", "maxLength": 2000 },
+          "evidence_observation": { "type": "string", "maxLength": 1500 },
+          "evidence_ids": { "type": "array", "items": { "type": "string" } },
+          "impact": { "type": "string", "maxLength": 1000 },
+          "likelihood_rationale": { "type": "string", "maxLength": 1000 },
+          "severity": { "type": "string", "enum": ["Immediate / Critical", "High", "Medium", "Low / Improvement"] },
+          "severity_override_rationale": { "type": "string", "maxLength": 500 },
+          "existing_mitigations": { "type": "string", "maxLength": 1000 },
+          "proposed_action": { "type": "string", "maxLength": 1500 },
+          "owner_role": { "type": "string", "maxLength": 120 },
+          "target_date": { "type": "string", "maxLength": 40 },
+          "horizon": { "type": "string", "enum": ["Immediate", "30-Day", "60-Day", "90-Day"] },
+          "dependencies": { "type": "string", "maxLength": 500 },
+          "cost_effort_band": { "type": "string", "enum": ["Low", "Moderate", "High", "Unknown"] },
+          "verification_steps": { "type": "string", "maxLength": 1000 },
+          "residual_risk": { "type": "string", "maxLength": 500 },
+          "approval_signoff": { "type": "string", "maxLength": 200 },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Open",
+              "Planned",
+              "In Progress",
+              "Implemented / Pending Verification",
+              "Verified Closed",
+              "Accepted by Authorized Owner"
+            ]
+          },
+          "acceptance_rationale": { "type": "string", "maxLength": 1000 },
+          "acceptance_review_date": { "type": "string", "maxLength": 40 }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["action_id", "finding_id", "action", "owner_role", "status"],
+        "properties": {
+          "action_id": { "type": "string" },
+          "finding_id": { "type": "string" },
+          "action": { "type": "string" },
+          "owner_role": { "type": "string" },
+          "due_date": { "type": "string" },
+          "verification_step": { "type": "string" },
+          "status": { "type": "string" },
+          "test_reference": { "type": "string" }
+        }
+      }
+    },
+    "snapshots": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": ["snapshot_id", "label", "captured_at", "schema_version", "catalog_version", "summary", "control_scores"],
+        "properties": {
+          "snapshot_id": { "type": "string" },
+          "label": { "type": "string" },
+          "cycle_name": { "type": "string" },
+          "captured_at": { "type": "string" },
+          "change_note": { "type": "string" },
+          "schema_version": { "type": "string" },
+          "catalog_version": { "type": "string" },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "assessed_controls": { "type": "integer" },
+              "applicable_controls": { "type": "integer" },
+              "readiness_percent": { "type": ["number", "null"] },
+              "coverage_percent": { "type": "number" },
+              "critical_gaps": { "type": "integer" },
+              "open_high_critical_findings": { "type": "integer" },
+              "stale_evidence_count": { "type": "integer" }
+            }
+          },
+          "control_scores": { "type": "object" },
+          "evidence_refs": { "type": "array", "items": { "type": "string" } },
+          "vendor_names": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

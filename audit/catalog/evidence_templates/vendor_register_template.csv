@@ -1,0 +1,2 @@
+vendor,service,business_owner,data_categories,admin_identity_method,subprocessors,linked_apps,contract_reference,data_export_format,data_deletion_terms,incident_notice_term,security_assurance_review_date,next_renewal,exit_owner,known_issues
+Example Vendor,Scholarship Portal,Program Director,Applications; essays,SSO + MFA,Confirm subprocessor list,Email; CRM,Contract ref only,CSV / JSON / PDF,Confirm written deletion SLA,Confirm incident notice SLA,YYYY-MM-DD,YYYY-MM-DD,Program Director,

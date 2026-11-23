@@ -1,0 +1,2 @@
+asset_id,process_stage,system_name,business_owner_role,technical_owner_role,data_categories,sensitivity,data_origin,purpose,authorized_roles,systems_receiving_copies,storage_location,retention_trigger,retention_rule,disposal_method,control_evidence,last_verified,known_gaps
+INV-001,Intake,,Program Director,IT Lead,,Confidential,,,,,Vendor cloud (confirm region),Cycle close,Pending approved schedule — Requires Counsel/Authorized Review,,,,

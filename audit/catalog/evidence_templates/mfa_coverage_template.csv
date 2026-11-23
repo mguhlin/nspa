@@ -1,0 +1,2 @@
+system,role_group,number_of_active_accounts,mfa_enforced,mfa_method_or_policy,exceptions,last_reviewed,reviewer_role,supporting_config_reference
+Scholarship Portal,Administrators,0,Yes/No,Phishing-resistant FIDO2 / Authenticator app / SMS,0,YYYY-MM-DD,IT Lead,Redacted config screenshot reference
